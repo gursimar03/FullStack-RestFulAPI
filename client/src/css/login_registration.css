@@ -1,0 +1,102 @@
+#loginOrRegistrationForm 
+{
+    width:100%;
+}
+
+#loginOrRegistrationForm input
+{
+    display: block;
+    width: 100%;
+    padding: 5px 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+
+#loginOrRegistrationForm input.error
+{
+    border-color: red;
+}
+
+#loginOrRegistrationForm div.error
+{
+    margin:10px;
+    padding:5px;
+    margin-top:0px;
+    padding-top:0px;
+    color:red;
+}
+
+#loginOrRegistrationForm div.error ul
+{
+    margin-left:0px;
+    padding-left:0px;
+    
+}
+
+#loginOrRegistrationForm input 
+{
+    box-sizing: border-box;
+}
+
+#loginOrRegistrationForm input:focus
+{
+    border-radius: 0px;
+    border-color:blue;
+}
+
+#loginOrRegistrationForm input[type=submit] 
+{
+    padding: 7px 10px;
+    font-size: 0.875rem;
+    line-height: normal;
+    border-radius: 0.2rem;
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+    margin-right: 10px;
+    position: relative;
+    top: 1px;  
+    text-decoration: none;
+    cursor:pointer;
+    width:70px;
+}
+
+#loginOrRegistrationForm input[type=submit]:hover 
+{
+    background-color: #669509;
+}
+
+#loginOrRegistrationForm input[type=submit]:disabled 
+{
+    background-color: #dbf99f;
+    color: #999;
+}
+
+#nameContainer,
+#emailContainer,
+#passwordContainer,
+#confirmPasswordContainer
+{
+    position:relative;
+}
+
+#nameContainer span,
+#emailContainer span,
+#passwordContainer span,
+#confirmPasswordContainer span
+{
+    position:absolute;
+    top:0px;
+    right:2px;
+    font-size: 20px;
+    color:green;
+    vertical-align: middle;  
+    display:none; 
+}
+
+.showCorrectTick
+{
+    display:block !important;
+}

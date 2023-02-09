@@ -1,0 +1,138 @@
+.container {
+  padding-top: 10px;
+}
+
+.form-container,
+.table-container 
+{
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.form-container
+{
+      border:thin solid #aaaaaa;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    background: #f7f7f7;
+}
+
+
+.logout
+{
+    margin-bottom:30px;
+}
+
+/* link buttons */
+.green-button,
+.red-button,
+.blue-button
+{
+  padding: 7px 10px;
+  font-size: 0.875rem;
+  line-height: normal;
+  border-radius: 0.2rem;
+  color: #fff;
+  background-color: #28a745;
+  border-color: #28a745;
+  margin-right: 10px;
+  position: relative;
+  top: 1px;  
+  text-decoration: none;
+  cursor:pointer;
+}
+
+.green-button
+{
+    background-color: #28a745;
+}
+
+.red-button
+{
+    background-color: #dc3545;
+}
+
+.blue-button
+{
+    background-color: #3545dc;
+}
+
+.green-button:hover,
+.red-button:hover,
+.blue-button:hover
+{
+    text-decoration: none;
+    color:#fff;
+}
+
+.green-button:hover
+{
+    background-color: #107020; 
+}
+
+.red-button:hover
+{
+  background-color: #a01020; 
+}
+
+.blue-button:hover
+{
+  background-color: #1020a0; 
+}
+/* end of link buttons */
+
+
+
+
+input [type="button"] 
+{
+color:pink;
+}
+
+
+
+
+
+
+/* table of cars */
+.table-container table
+{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.table-container thead
+{
+    background-color: #aaa;
+    color:#fff;
+    text-align: left;
+    text-transform: capitalize;
+}
+
+.table-container tbody tr
+{
+    height:3em;
+}
+
+.table-container thead th,
+.table-container tbody td
+{
+    padding:5px;
+}
+.table-container tbody tr:nth-child(odd) 
+{
+    background-color: #eee;
+}
+
+.table-container tbody tr:nth-child(even) 
+{
+    background-color: #ffa;
+}
+
+.add-new-car
+{
+    margin-top:1em;
+}
+/*end of table of cars */
