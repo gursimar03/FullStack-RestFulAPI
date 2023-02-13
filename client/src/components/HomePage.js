@@ -1,25 +1,13 @@
-import React, {Component} from "react"
-import {Link} from "react-router-dom"
+import React from "react";
 
-import axios from "axios"
-
-
-export default class HomePage extends Component 
-{
-    constructor(props) 
-    {
-      super(props)
-    }
-    
-    
-    componentDidMount() 
-    {
-        
-    }
-
-  
-    render() 
-    {   
-        return (0)
-    }
+class HomePage extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>Hello World</h1>
+      </div>
+    )
+  }
 }
+
+export default HomePage;
