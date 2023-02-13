@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* If editing css please use these variables */
+:root {
+    --main-font: 'Open Sans', sans-serif;
+    --header-font: "";
+
+}
+
+/* Using these for now, going to change them to Images/Icons */
+#logo, #linkToSignIn, #linkToAccount {
+    text-decoration: none;
+    font-family: var(--main-font);
+}
+
+.content-top {
+    display: flex;
+    flex-direction: column;
+}
+
+.top-nav {
+    background-color: rgb(22, 22, 22);
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-content-left {
+    background-color: blue;
+    margin-left: 10px;
+}
+
+.nav-content-right {
+    background-color: red;
+    margin-right: 10px;
+}
+
+#linkToSignIn {
+    margin-right: 10px;
+}
+
+
+
+
+/* Setting up device breakpoints */
+
+/* Mobile */
+@media only screen  and (max-width: 600px){
+    
+}
+
+@media only screen  and (min-width: 600px){
+    
+}
+
+/* Large Mobile Devices */
+@media only screen  and (min-width: 768px){
+    
+}
+
+/* Laptops and Desktop */
+@media only screen and (min-width: 992px) {
+    
+}
