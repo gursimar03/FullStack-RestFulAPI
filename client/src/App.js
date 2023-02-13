@@ -1,6 +1,9 @@
 import React, {Component} from "react"
 import {BrowserRouter, Switch, Route} from "react-router-dom"
 
+import "bootstrap/dist/css/bootstrap.css"
+import "./css/App.css"
+
 import AllProducts from "./components/AllProducts"
 import Cart from "./components/Cart"
 import HomePage from "./components/HomePage"
@@ -8,6 +11,7 @@ import Login from "./components/Login"
 import Logout from "./components/Logout"
 import Register from "./components/Register"
 import ProductPage from "./components/ProductPage"
+import LoggedInRoute from "./components/LoggedInRoute"
 
 import {ACCESS_LEVEL_GUEST} from "./config/global_constants"
 
@@ -27,6 +31,7 @@ export default class App extends Component
         return (
             <BrowserRouter>
                 <Switch>
+                    <Route exact path="/Register" component={Register} />
                     <Route exact path="/HomePage" component={HomePage} />             
                     <Route exact path="/" component={HomePage} />
                     <Route exact path="/Login" component={Login} />
