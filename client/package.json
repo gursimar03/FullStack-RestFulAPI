@@ -34,10 +34,7 @@
   },
   "description": "Example using JSON Web Tokens with a .PEM file",
   "main": "index.js",
-  "devDependencies": {
-    "@react-icons/all-files": "^4.1.0",
-    "eslint": "^6.1.0"
-  },
+  "devDependencies": {},
   "author": "Derek O Reilly",
   "license": "ISC"
 }
