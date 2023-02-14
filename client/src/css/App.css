@@ -8,7 +8,6 @@ body {
 /* If editing css please use these variables */
 :root {
     --main-font: 'Open Sans', sans-serif;
-    --header-font: "";
 
 }
 
@@ -16,35 +15,72 @@ body {
 #logo, #linkToSignIn, #linkToAccount {
     text-decoration: none;
     font-family: var(--main-font);
+    font-weight: 600;
+    color: #FFCBA4;
+    
 }
 
 .content-top {
     display: flex;
-    flex-direction: column;
+    flex-direction: column
 }
 
 .top-nav {
-    background-color: rgb(22, 22, 22);
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    height: 2.5em;
 }
 
 .nav-content-left {
-    background-color: blue;
-    margin-left: 10px;
+    flex-basis: 60%;
 }
 
 .nav-content-right {
-    background-color: red;
-    margin-right: 10px;
+   flex-basis: 40%;
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+}
+
+#logo {
+    margin-left: 10px;
 }
 
 #linkToSignIn {
+    margin-right: 10px;  
+}
+
+#linkToSignIn:hover {
+    color: #ff8528;
+}
+
+#linkToAccount {
     margin-right: 10px;
+    display: flex;
+    align-items: center;
 }
 
 
 
+.account-icon {
+    font-size: 2em;
+    color: #FFCBA4;
+}
+
+.account-icon:hover {
+    color: #ff8528;
+}
+
+.homepage-hero {
+    background-color: red;
+    height: 500px;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+}
 
 /* Setting up device breakpoints */
 
