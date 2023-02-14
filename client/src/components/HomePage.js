@@ -1,4 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
+import { RxCross1 } from 'react-icons/rx';
 
 class HomePage extends React.Component {
   render() {
@@ -7,16 +10,27 @@ class HomePage extends React.Component {
 
         <div className="homepage-body">
           <div className="homepage-hero">
-            {/* <img className="hero-image"  alt="homepage" src={require('../images/Hero-Image.jpg')}/> */}
+            <div className="homepage-hero-images">
+              <img className="hero-image1" alt="homepage" src={require('../images/Hero-Image.jpg')} />
+              <img className="hero-image2" alt="homepage" src={require('../images/Hero-Image7.jpg')} />
+            </div>
             <div className="homepage-hero-info">
-
+                <div>
+                  <p></p>
+                </div>
+                <div className="shop-now-button">
+                  <Link to={'/'}>Shop Now</Link>
+                </div>
             </div>
           </div>
           <main>
 
           </main>
         </div>
-
+        <div id="search-page">
+          <RxCross1 className="nav-button" onClick={this.props.openSearchPage}/>
+          <h1>I am the search page</h1>
+        </div>
       </div>
     )
   }

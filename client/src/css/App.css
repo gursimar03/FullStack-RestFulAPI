@@ -12,11 +12,10 @@ body {
 }
 
 /* Using these for now, going to change them to Images/Icons */
-#logo, #linkToSignIn, #linkToAccount {
+#logo, #linkToSignIn, #linkToAccount, .nav-link {
     text-decoration: none;
     font-family: var(--main-font);
-    font-weight: 600;
-    color: #FFCBA4;
+    color: black;
     
 }
 
@@ -61,41 +60,162 @@ body {
     align-items: center;
 }
 
-
-
 .account-icon {
-    font-size: 2em;
-    color: #FFCBA4;
+    font-size: 1.5em;
+    color: black;
 }
 
 .account-icon:hover {
     color: #ff8528;
+
+}
+
+.homepage-container {
+    min-height: 100vh;
 }
 
 .header-container {
-    height: 100px;
-    background-color: blue;
+    height: 45px;
+    background-color: rgb(240, 240, 240);
+    position: relative;
+}
+
+.bottom-nav {
+    background-color: red;
+    display: flex;
+}
+
+#mobile-nav {
+    position: absolute;
+    top: 45px;
+    width: 100%;
+    height: 0vh;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+    transition: 0.2s;
+}
+
+.mobile-header-content {
+    display: none;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.mobile-nav-open {
+    display: flex;
+    align-items: center;
+    position: relative;
+    left: 10px;
+    flex-basis: 10%;
+}
+
+.nav-button {
+    font-size: 1.5em;
+}
+
+.mobile-header-content-middle {
+    display: flex;
+    align-items: center;
+}
+
+.text-logo {
+    position: relative;
+    left: 20px;
+}
+.text-logo > p {
+    font-size: 1.4em;
+    font-style: italic;
+    font-family: var(--main-font);
+    font-weight: 600;
+    margin: 0;
+    color: rgb(23, 23, 23)
+}
+
+.mobile-header-content-right {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-basis: 20%;
+}
+
+.search-bar-icon-btn {
+    font-size: 1.5em;
+}
+
+.cart-btn {
+    font-size: 1.5em;
+}
+
+.mobile-nav-links {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-inline-start: 0px;
+}
+
+.mobile-nav-links > li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    border: 1.5px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(211, 212, 213);
+    padding-inline-start: 10px;
 }
 
 .homepage-hero {
-    background-color: red;
-    height: 500px;
-}
-
-.hero-image {
-    width: 100%;
     height: auto;
 }
+
+.homepage-hero-images {
+    display: flex;
+}
+
+.hero-image1 {
+    width: 50%;
+}
+
+.hero-image2 {
+    width: 50%;
+    height: auto;
+}
+
+
+
+#search-page {
+    background-color: white;
+    position: absolute;
+    height: 0vh;
+    width: 100vw;
+    overflow: hidden;
+    bottom: 0;
+    transition: 0.2s;
+}
+
 
 /* Setting up device breakpoints */
 
 /* Mobile */
 @media only screen  and (max-width: 600px){
-    
-}
+    .hero-image1 {
+        width: 100%;
+    }
 
-@media only screen  and (min-width: 600px){
-    
+    .hero-image2 {
+        display: none;
+    }
+
+    .bottom-nav {
+        display: none;
+    }
+
+    .mobile-header-content, #mobile-nav {
+        display: flex;
+    } 
+
 }
 
 /* Large Mobile Devices */
