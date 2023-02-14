@@ -72,6 +72,11 @@ body {
     color: #ff8528;
 }
 
+.header-container {
+    height: 100px;
+    background-color: blue;
+}
+
 .homepage-hero {
     background-color: red;
     height: 500px;
