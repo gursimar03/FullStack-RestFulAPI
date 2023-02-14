@@ -93,6 +93,7 @@ body {
     background-color: white;
     display: none;
     overflow: hidden;
+    z-index: 1;
     transition: 0.2s;
 }
 
@@ -168,6 +169,7 @@ body {
 
 .homepage-hero {
     height: auto;
+    position: relative;
 }
 
 .homepage-hero-images {
@@ -184,6 +186,22 @@ body {
 }
 
 
+.homepage-hero-info {
+    position: absolute;
+    bottom: 30px;
+    left: 5px;
+}
+
+.shop-now-button-text {
+    text-decoration: none;
+    font-weight: 800;
+    font-family: var(--main-font);
+    font-size: 1.em;
+    background-color: white;
+    padding: 10px 30px;
+    border-radius: 2px;
+    color: black;
+}
 
 #search-page {
     background-color: white;

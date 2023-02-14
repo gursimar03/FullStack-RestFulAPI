@@ -15,21 +15,23 @@ class HomePage extends React.Component {
               <img className="hero-image2" alt="homepage" src={require('../images/Hero-Image7.jpg')} />
             </div>
             <div className="homepage-hero-info">
-                <div>
-                  <p></p>
-                </div>
                 <div className="shop-now-button">
-                  <Link to={'/'}>Shop Now</Link>
+                  <Link className="shop-now-button-text" to={'/'}>Shop Now</Link>
                 </div>
             </div>
           </div>
           <main>
-
+            <h1>Doing this part next</h1>
           </main>
+          <footer>
+
+          </footer>
         </div>
+
+        {/* keep this constant at bottom of page */}
         <div id="search-page">
           <RxCross1 className="nav-button" onClick={this.props.openSearchPage}/>
-          <h1>I am the search page</h1>
+          <h1>I will sort out the search page later</h1>
         </div>
       </div>
     )
