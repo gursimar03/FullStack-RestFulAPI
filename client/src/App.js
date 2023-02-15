@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { FaSistrix } from 'react-icons/fa';
 import { GrCart } from 'react-icons/gr';
 import { RxHamburgerMenu, RxCross1 } from 'react-icons/rx';
-import { VscAccount } from 'react-icons/vsc'
+import { VscAccount } from 'react-icons/vsc';
 
 import HomePage from "./components/HomePage";
 
@@ -32,17 +32,17 @@ class App extends React.Component {
     }
 
     openMobileNav = () => {
-        this.state.mobileNavOpen ? this.setState({mobileNavOpen: false}, () => {
+        this.state.mobileNavOpen ? this.setState({ mobileNavOpen: false }, () => {
             document.getElementById('mobile-nav').style.height = '0vh';
-        }) : this.setState({mobileNavOpen: true}, () => {
+        }) : this.setState({ mobileNavOpen: true }, () => {
             document.getElementById('mobile-nav').style.height = '100vh';
         })
     }
 
     openSearchPage = () => {
-        this.state.searchPageOpen ? this.setState({searchPageOpen: false}, () => {
+        this.state.searchPageOpen ? this.setState({ searchPageOpen: false }, () => {
             document.getElementById('search-page').style.height = '0vh';
-        }) : this.setState({searchPageOpen: true}, () => {
+        }) : this.setState({ searchPageOpen: true }, () => {
             document.getElementById('search-page').style.height = '100vh';
         })
     }
@@ -66,8 +66,8 @@ class App extends React.Component {
                             {/* mobile */}
                             <div className="mobile-header-content">
                                 <div className="mobile-nav-open">
-                                    {this.state.mobileNavOpen ? <RxCross1 className="nav-button" onClick={this.openMobileNav}/> : <RxHamburgerMenu className="nav-button" onClick={this.openMobileNav}/>}
-                                    
+                                    {this.state.mobileNavOpen ? <RxCross1 className="nav-button" onClick={this.openMobileNav} /> : <RxHamburgerMenu className="nav-button" onClick={this.openMobileNav} />}
+
                                 </div>
                                 <div className="mobile-header-content-middle">
                                     <div className="text-logo">
@@ -76,7 +76,7 @@ class App extends React.Component {
                                 </div>
                                 <div className="mobile-header-content-right">
                                     <div className="search-btn-container">
-                                        <FaSistrix onClick={this.openSearchPage} className="search-bar-icon-btn"/>
+                                        <FaSistrix onClick={this.openSearchPage} className="search-bar-icon-btn" />
                                     </div>
                                     <div className="cart-btn-container">
                                         <GrCart className="cart-btn" />
@@ -134,8 +134,19 @@ class App extends React.Component {
                     </div>
                     <Routes>
                         <Route path="/" element={<HomePage openSearchPage={this.openSearchPage} />}></Route>
+
+                        {/* Page doesn't exist css later */}
+                        <Route path="*" element={<h2>This page does not exist</h2>} />
                     </Routes>
                 </BrowserRouter>
+                <footer className="constant-footer">
+                    Footer
+                </footer>
+                {/* keep this constant at bottom of page */}
+                <div id="search-page">
+                    <RxCross1 className="nav-button" onClick={this.openSearchPage} />
+                    <h1>I will sort out the search page later</h1>
+                </div>
             </div>
 
         )

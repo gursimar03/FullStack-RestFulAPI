@@ -34,6 +34,8 @@ body {
     justify-content: space-between;
     align-items: center;
     height: 2.5em;
+    background-color: white;
+    border-bottom: 1px solid gray;
 }
 
 .nav-content-left {
@@ -81,7 +83,7 @@ body {
 
 .header-container {
     height: 45px;
-    background-color: rgb(240, 240, 240);
+    background-color: white;
     position: relative;
 }
 
@@ -245,7 +247,6 @@ body {
     height: auto;
     margin: 0 10px 0px 10px;
     box-shadow: 5px 8px 0px 0px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(157, 157, 157, 0.655);
     scroll-snap-align: center;
     position: relative;
     overflow-y: hidden;
@@ -377,6 +378,13 @@ body {
     width: 80%;
     height: auto;
     margin: 10px;
+}
+
+
+.constant-footer {
+    background-color: black;
+    height: 300px;
+    color: white;
 }
 
 

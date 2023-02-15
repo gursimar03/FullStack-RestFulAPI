@@ -83,16 +83,10 @@ class HomePage extends React.Component {
               </div>
             </div>
 
+            <div className="contact-us-container">
+
+            </div>
           </main>
-          <footer>
-
-          </footer>
-        </div>
-
-        {/* keep this constant at bottom of page */}
-        <div id="search-page">
-          <RxCross1 className="nav-button" onClick={this.props.openSearchPage} />
-          <h1>I will sort out the search page later</h1>
         </div>
       </div>
     )
