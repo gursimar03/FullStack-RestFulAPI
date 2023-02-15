@@ -332,8 +332,10 @@ body {
 }
 
 .product-advertisment-container > h2 {
-    margin: 0;
+    margin: 0 0 10px 0;
     padding-inline-start: 10px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(211, 212, 213);
 }
 
 .favourite-product-container {
@@ -357,6 +359,12 @@ body {
     display: flex;
     flex-direction: column;
     text-align: center;
+}
+
+.style-genre-container > h2 {
+    margin-bottom: 10px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(211, 212, 213);
 }
 
 .contrast-genres {
