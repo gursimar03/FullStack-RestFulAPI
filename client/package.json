@@ -37,6 +37,7 @@
   },
   "devDependencies": {
     "react-icons": "^4.7.1",
-    "react-router-dom": "^6.8.1"
+    "react-router-dom": "^6.8.1",
+    "typescript": "^4.9.5"
   }
 }
