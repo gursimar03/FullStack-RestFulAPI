@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
 body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: var(--main-font);
 }
 
 /* If editing css please use these variables */
@@ -12,11 +14,14 @@ body {
 }
 
 /* Using these for now, going to change them to Images/Icons */
-#logo, #linkToSignIn, #linkToAccount, .nav-link {
+#logo,
+#linkToSignIn,
+#linkToAccount,
+.nav-link {
     text-decoration: none;
     font-family: var(--main-font);
     color: black;
-    
+
 }
 
 .content-top {
@@ -36,10 +41,10 @@ body {
 }
 
 .nav-content-right {
-   flex-basis: 40%;
-   display: flex;
-   justify-content: flex-end;
-   align-items: center;
+    flex-basis: 40%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 #logo {
@@ -47,7 +52,7 @@ body {
 }
 
 #linkToSignIn {
-    margin-right: 10px;  
+    margin-right: 10px;
 }
 
 #linkToSignIn:hover {
@@ -126,7 +131,8 @@ body {
     position: relative;
     left: 20px;
 }
-.text-logo > p {
+
+.text-logo>p {
     font-size: 1.4em;
     font-style: italic;
     font-family: var(--main-font);
@@ -157,7 +163,7 @@ body {
     padding-inline-start: 0px;
 }
 
-.mobile-nav-links > li {
+.mobile-nav-links>li {
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -196,12 +202,175 @@ body {
     text-decoration: none;
     font-weight: 800;
     font-family: var(--main-font);
-    font-size: 1.em;
+    font-size: 1em;
     background-color: white;
     padding: 10px 30px;
     border-radius: 2px;
     color: black;
 }
+
+.main-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.find-your-style-container {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.find-your-style-container>h2 {
+    display: block;
+    font-weight: 600;
+    width: auto;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(211, 212, 213);
+    border-bottom-width: 2px;
+    padding-left: 5px;
+    padding-bottom: 5px;
+}
+
+.find-your-style-boxes {
+    display: flex;
+    width: 100%;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+}
+
+.find-your-style-boxes>div {
+    background-color: white;
+    min-width: 300px;
+    height: auto;
+    margin: 0 10px 0px 10px;
+    box-shadow: 5px 8px 0px 0px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(157, 157, 157, 0.655);
+    scroll-snap-align: center;
+    position: relative;
+    overflow-y: hidden;
+}
+
+.style-box-text {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    font-weight: 800;
+    font-family: var(--main-font);
+    font-size: 1em;
+    background-color: white;
+    padding: 10px 30px;
+    width: 120px;
+    text-align: center;
+    opacity: 90%;
+    border-radius: 2px;
+    color: black;
+    box-shadow: 5px 8px 0px 0px rgba(0,0,0,0.1);
+} 
+
+.style-box-text > a {
+    text-decoration: none;
+    color: black;
+}
+
+
+.find-your-style-boxes>div>img {
+    height: 100%;
+    width: 100%;
+}
+
+
+.community-container {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.community-image {
+    height: 100%;
+}
+
+.community-image > img{
+    width: 100%;
+    height: auto;
+}
+
+.join-community-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.join-community-container > h2{
+    text-align: center;
+    margin: 10px 0 0px 0;
+}
+
+.join-community-container > p {
+    font-size: 1.1em;
+    font-weight: 300;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.join-community-container > a {
+    text-decoration: none;
+    font-weight: 800;
+    font-family: var(--main-font);
+    font-size: 1em;
+    background-color: rgb(25, 25, 25);
+    padding: 10px 30px;
+    border-radius: 2px;
+    color: rgb(255, 255, 255);
+}
+
+.product-advertisment-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.product-advertisment-container > h2 {
+    margin: 0;
+    padding-inline-start: 10px;
+}
+
+.favourite-product-container {
+    display: flex;
+    width: 100%;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+}
+
+.product {
+    min-width: 250px;
+    height: 250px;
+    margin: 10px;
+    border: 1px solid black;
+    box-shadow: 5px 8px 0px 0px rgba(0,0,0,0.1);
+}
+
+.style-genre-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.contrast-genres {
+    width: 100%;
+    display: flex;
+    overflow-x: scroll;
+}
+
+.contrast-genres > img {
+    width: 80%;
+    height: auto;
+    margin: 10px;
+}
+
 
 #search-page {
     background-color: white;
@@ -217,7 +386,7 @@ body {
 /* Setting up device breakpoints */
 
 /* Mobile */
-@media only screen  and (max-width: 600px){
+@media only screen and (max-width: 600px) {
     .hero-image1 {
         width: 100%;
     }
@@ -230,18 +399,15 @@ body {
         display: none;
     }
 
-    .mobile-header-content, #mobile-nav {
+    .mobile-header-content,
+    #mobile-nav {
         display: flex;
-    } 
+    }
 
 }
 
 /* Large Mobile Devices */
-@media only screen  and (min-width: 768px){
-    
-}
+@media only screen and (min-width: 768px) {}
 
 /* Laptops and Desktop */
-@media only screen and (min-width: 992px) {
-    
-}
+@media only screen and (min-width: 992px) {}

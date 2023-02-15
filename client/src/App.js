@@ -91,6 +91,9 @@ class App extends React.Component {
                                     <li>
                                         <Link className="nav-link" to={'/'}><p>Shop Women</p></Link>
                                     </li>
+                                    <li>
+                                        <Link className="nav-link" to={'/'}><p>Shop Kids</p></Link>
+                                    </li>
                                     <li className="contact-btn">
                                         <Link className="nav-link" to={'/'}><p>Contact Us</p></Link>
                                     </li>
