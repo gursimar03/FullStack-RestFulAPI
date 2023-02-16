@@ -71,11 +71,11 @@ header {
 }
 
 .nav-content-left {
-    flex-basis: 60%;
+    flex-basis: 50%;
 }
 
 .nav-content-right {
-    flex-basis: 40%;
+    flex-basis: 50%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -86,6 +86,10 @@ header {
 }
 
 #linkToSignIn {
+    margin-right: 10px;
+}
+
+#welcome {
     margin-right: 10px;
 }
 
