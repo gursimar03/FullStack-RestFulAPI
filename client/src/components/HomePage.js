@@ -2,8 +2,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { RxCross1 } from 'react-icons/rx';
-
 class HomePage extends React.Component {
   render() {
     return (
@@ -47,6 +45,7 @@ class HomePage extends React.Component {
             </div>
 
             <div className="community-container">
+              <h2>The Fastest Growing Community</h2>
               <div className="community-image">
                   <img alt="community" src={require('../images/community.jpg')} />
               </div>
@@ -57,7 +56,7 @@ class HomePage extends React.Component {
                   Members recieve free delivery, daily rewards and a 100% money back
                   guarantee.
                 </p>
-                <Link to={'/'}>Join The Community Today</Link>
+                <Link to={'/account-register'}>Join The Community Today</Link>
               </div>
             </div>
 
@@ -78,14 +77,41 @@ class HomePage extends React.Component {
             <div className="style-genre-container">
               <h2>Find Your Style</h2>
               <div className="contrast-genres">
-                <img alt="contrast" src={require('../images/formal.jpg')} />
-                <img  alt="contrast" src={require('../images/casual.jpg')} />
-                <img  alt="contrast" src={require('../images/football.jpg')} />
+                <div>
+                  <img alt="contrast" src={require('../images/formal.jpg')} />
+                </div>
+                <div>
+                  <img alt="contrast" src={require('../images/casual.jpg')} />
+                </div>
+                <div>
+                  <img alt="contrast" src={require('../images/football.jpg')} />
+                </div>
               </div>
             </div>
 
             <div className="contact-us-container">
-
+              <div className="contact-us">
+                {/* create a contact us form */}
+                <h2>Contact Us</h2>
+                <p>
+                  If you have any questions or concerns, please contact us using the form below.
+                </p>
+                <form id="contact">
+                  <div className="form-group">
+                    
+                    <input type="text" className="form-input" id="name" placeholder="Enter your name" />
+                  </div>
+                  <div className="form-group">
+                    
+                    <input type="email" className="form-input" id="email" placeholder="Enter your email" />
+                  </div>
+                  <div className="form-group">
+                    
+                    <textarea className="form-input" id="message" rows="3" placeholder="Enter your message"  ></textarea>
+                  </div>
+                  <button type="submit" className="form-submit-btn">Submit</button>
+                </form>
+              </div>
             </div>
           </main>
         </div>

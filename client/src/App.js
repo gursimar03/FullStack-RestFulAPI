@@ -7,8 +7,11 @@ import { FaSistrix } from 'react-icons/fa';
 import { GrCart } from 'react-icons/gr';
 import { RxHamburgerMenu, RxCross1 } from 'react-icons/rx';
 import { VscAccount } from 'react-icons/vsc';
+import { FiHelpCircle } from 'react-icons/fi';
 
+//components
 import HomePage from "./components/HomePage";
+import Login from "./components/Login";
 
 import { ACCESS_LEVEL_GUEST } from "./config/global_constants";
 
@@ -56,7 +59,7 @@ class App extends React.Component {
                                 <Link id="logo" to={'/'}>Logo</Link>
                             </div>
                             <div className="nav-content-right">
-                                <Link id="linkToSignIn" to={'/'}><p>Sign In</p></Link>
+                                <Link id="linkToSignIn" to={'/account-login'}><p>Sign In</p></Link>
                                 <Link id="linkToAccount" to={'/'}><VscAccount className="account-icon" /></Link>
                             </div>
                         </nav>
@@ -106,8 +109,9 @@ class App extends React.Component {
                             <nav className="bottom-nav">
                                 <div className="bottom-nav-content-left">
                                     <div className="nav-links">
-                                        <Link to={'/'}><p>Men</p></Link>
-                                        <Link to={'/'}><p>Women</p></Link>
+                                        <Link to={'/'}>Shop Men</Link>
+                                        <Link to={'/'}>Shop Woman</Link>
+                                        <Link to={'/'}>Shop Kids</Link>
                                     </div>
                                 </div>
                                 <div className="bottom-nav-content-middle">
@@ -118,13 +122,13 @@ class App extends React.Component {
                                 <div className="bottom-nav-content-right">
                                     <div className="website-informatics">
                                         <div className="help-btn">
-                                            <button>Help</button>
+                                            <a id="linkToContact" href="#contact"><FiHelpCircle /></a>
                                         </div>
                                         <div className="search-btn">
-                                            <button>Search</button>
+                                            <FaSistrix />
                                         </div>
                                         <div className="cart-container">
-                                            <Link id="cart" to={'/'}></Link>
+                                            <Link id="cart" to={'/'}><GrCart id="dCart" /></Link>
                                         </div>
                                     </div>
                                 </div>
@@ -133,19 +137,22 @@ class App extends React.Component {
                     </div>
                     <Routes>
                         <Route path="/" element={<HomePage openSearchPage={this.openSearchPage} />}></Route>
-
+                        <Route path="/account-login" element={<Login />}></Route>
+                        <Route path="/account-register" element={<h2>Account Register</h2>}></Route>
                         {/* Page doesn't exist css later */}
                         <Route path="*" element={<h2>This page does not exist</h2>} />
                     </Routes>
                 </BrowserRouter>
-                <footer className="constant-footer">
-                    Footer
-                </footer>
-                {/* keep this constant at bottom of page */}
+                {/* keep these constant at bottom of page */}
                 <div id="search-page">
                     <RxCross1 className="nav-button" onClick={this.openSearchPage} />
                     <h1>I will sort out the search page later</h1>
                 </div>
+                <footer className="constant-footer">
+                    <div className="footer-content">
+                        Footer for Now
+                    </div>
+                </footer>
             </div>
 
         )
