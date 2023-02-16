@@ -10,19 +10,19 @@
   "license": "ISC",
   "dependencies": {
     "base64url": "^3.0.1",
-    "bcrypt": "^5.0.1",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-session": "^1.17.0",
-    "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.6.9",
     "session-file-store": "^1.4.0",
     "sessionstore": "^0.4.8"
   },
   "devDependencies": {
+    "bcrypt": "^5.1.0",
+    "jsonwebtoken": "^9.0.0",
     "nodemon": "^2.0.15"
   }
 }
