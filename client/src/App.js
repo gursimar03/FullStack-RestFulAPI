@@ -30,9 +30,11 @@ class App extends React.Component {
 
         this.state = {
             mobileNavOpen: false,
-            searchPageOpen: false
+            searchPageOpen: false,
+            name: localStorage.name,
         }
     }
+
 
     openMobileNav = () => {
         this.state.mobileNavOpen ? this.setState({ mobileNavOpen: false }, () => {
@@ -60,7 +62,7 @@ class App extends React.Component {
                                 <Link id="logo" to={'/'}>Logo</Link>
                             </div>
                             <div className="nav-content-right">
-                                <Link id="linkToSignIn" to={'/account-login'}><p>Sign In</p></Link>
+                                {this.state.name != "" && this.state.name != null && this.state.name != "GUEST" ? <p id="welcome">Welcome, {this.state.name}</p> : <Link id="linkToSignIn" to={'/account-login'}><p>Sign In</p></Link>}
                                 <Link id="linkToAccount" to={'/'}><VscAccount className="account-icon" /></Link>
                             </div>
                         </nav>
