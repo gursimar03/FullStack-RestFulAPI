@@ -409,6 +409,7 @@ header {
 .contrast-genres > div > img {
     width: 100%;
     height: auto;
+    border-bottom-right-radius: 180px;
 }
 
 .contact-us-container {
@@ -542,6 +543,7 @@ form {
     .contrast-genres > div > img {
         width: 100%;
         height: 100%;
+        border-bottom-right-radius: 0;
 
     }
 
