@@ -19,9 +19,6 @@ body {
 
 }
 
-.App {
-    position: relative;
-}
 
 *::-webkit-scrollbar-track
 {
@@ -507,6 +504,9 @@ form {
     min-height: calc(100vh - 200px);
 }
 
+.search-btn {
+    cursor: pointer;
+}
 
 #search-page {
     background-color: white;

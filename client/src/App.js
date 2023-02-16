@@ -128,7 +128,7 @@ class App extends React.Component {
                                             <a id="linkToContact" href="#contact"><FiHelpCircle /></a>
                                         </div>
                                         <div className="search-btn">
-                                            <FaSistrix />
+                                            <FaSistrix onClick={this.openSearchPage}/>
                                         </div>
                                         <div className="cart-container">
                                             <Link id="cart" to={'/'}><GrCart id="dCart" /></Link>
