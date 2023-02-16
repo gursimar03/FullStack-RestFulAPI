@@ -1,11 +1,11 @@
-import React, { Component } from "react"
+import React from "react"
 import { Navigate as Redirect, Link } from "react-router-dom"
 import axios from "axios";
 
 import { SERVER_HOST } from "../config/global_constants"
 
 
-export default class Login extends Component {
+class Login extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -14,7 +14,6 @@ export default class Login extends Component {
             isLoggedIn: false
         }
     }
-
 
     handleChange = (e) => {
         this.setState({ [e.target.name]: e.target.value })
@@ -47,7 +46,7 @@ export default class Login extends Component {
 
 
     render() {
-        return (<form className="form-container" noValidate={true} id="loginOrRegistrationForm">
+        return (<form className="login-form-container" noValidate={true} id="loginOrRegistrationForm">
             <h2>Login</h2>
 
             {this.state.isLoggedIn ? <Redirect to="/" /> : null}
@@ -75,3 +74,5 @@ export default class Login extends Component {
         </form>)
     }
 }
+
+export default Login;
