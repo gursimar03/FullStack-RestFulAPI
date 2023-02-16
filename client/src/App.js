@@ -12,6 +12,7 @@ import { FiHelpCircle } from 'react-icons/fi';
 //components
 import HomePage from "./components/HomePage";
 import Login from "./components/Login";
+import Register from "./components/Register";
 
 import { ACCESS_LEVEL_GUEST } from "./config/global_constants";
 
@@ -138,7 +139,7 @@ class App extends React.Component {
                     <Routes>
                         <Route path="/" element={<HomePage openSearchPage={this.openSearchPage} />}></Route>
                         <Route path="/account-login" element={<Login />}></Route>
-                        <Route path="/account-register" element={<h2>Account Register</h2>}></Route>
+                        <Route path="/account-register" element={<Register />}></Route>
                         {/* Page doesn't exist css later */}
                         <Route path="*" element={<h2>This page does not exist</h2>} />
                     </Routes>
