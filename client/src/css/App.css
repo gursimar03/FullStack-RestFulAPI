@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     box-sizing: border-box;
     margin: 0;
@@ -10,7 +14,32 @@ body {
 /* If editing css please use these variables */
 :root {
     --main-font: 'Open Sans', sans-serif;
+    --selector-color: #ff8528;
+    
 
+}
+
+.App {
+    position: relative;
+}
+
+*::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 0.5px rgba(191, 191, 191, 0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+*::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+*::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0);
+	background-color: #d1d1d1;
 }
 
 /* Using these for now, going to change them to Images/Icons */
@@ -21,7 +50,10 @@ body {
     text-decoration: none;
     font-family: var(--main-font);
     color: black;
+}
 
+header {
+    padding: 10px 0px 10px 0px;; 
 }
 
 .content-top {
@@ -87,11 +119,6 @@ body {
     position: relative;
 }
 
-.bottom-nav {
-    background-color: red;
-    display: flex;
-}
-
 #mobile-nav {
     position: absolute;
     top: 45px;
@@ -122,6 +149,7 @@ body {
 
 .nav-button {
     font-size: 1.5em;
+    cursor: pointer;
 }
 
 .mobile-header-content-middle {
@@ -135,7 +163,7 @@ body {
 }
 
 .text-logo>p {
-    font-size: 1.4em;
+    font-size: 1.6em;
     font-style: italic;
     font-family: var(--main-font);
     font-weight: 600;
@@ -152,10 +180,12 @@ body {
 
 .search-bar-icon-btn {
     font-size: 1.5em;
+    cursor: pointer;
 }
 
 .cart-btn {
     font-size: 1.5em;
+    cursor: pointer;
 }
 
 .mobile-nav-links {
@@ -229,7 +259,7 @@ body {
     border-bottom-style: solid;
     border-bottom-color: rgb(211, 212, 213);
     border-bottom-width: 2px;
-    padding-left: 5px;
+    text-align: center;
     padding-bottom: 5px;
 }
 
@@ -244,12 +274,14 @@ body {
 .find-your-style-boxes>div {
     background-color: white;
     min-width: 300px;
+    max-width: 300px;
     height: auto;
     margin: 0 10px 0px 10px;
     box-shadow: 5px 8px 0px 0px rgba(0, 0, 0, 0.1);
     scroll-snap-align: center;
     position: relative;
     overflow-y: hidden;
+    border-radius: 3px;
 }
 
 .style-box-text {
@@ -334,7 +366,7 @@ body {
 
 .product-advertisment-container > h2 {
     margin: 0 0 10px 0;
-    padding-inline-start: 10px;
+    text-align: center;
     border-bottom-style: solid;
     border-bottom-color: rgb(211, 212, 213);
 }
@@ -374,17 +406,100 @@ body {
     overflow-x: scroll;
 }
 
-.contrast-genres > img {
-    width: 80%;
+.contrast-genres > div > img {
+    width: 100%;
     height: auto;
-    margin: 10px;
 }
 
+.contact-us-container {
+    margin: 50px auto 50px auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-us {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.contact-us > h2 {
+    text-align: center;
+    margin: 0 0 0px 0;
+}
+
+.contact-us > p {
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: 300;
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.form-input {
+    width: 90%;
+    height: 50px;
+    border: none;
+    background-color: rgb(233, 233, 233);
+    border-radius: 2px;
+    margin: 10px auto 10px auto;
+    padding: 0 10px 0 10px;
+}
+
+.form-submit-btn {
+    width: 90%;
+    height: 50px;
+    border: none;
+    background-color: rgb(25, 25, 25);
+    border-radius: 2px;
+    margin: 10px auto 10px auto;
+    padding: 0 10px 0 10px;
+    color: white;
+    font-weight: 800;
+    font-family: var(--main-font);
+    font-size: 1em;
+}
+
+.form-input:focus {
+    outline: 1px solid black;
+}
+
+#name, #email, #message {
+    font-size: 1em;
+    font-weight: 300;
+    font-family: var(--main-font);
+}
+
+#message {
+    height: 200px;
+}
 
 .constant-footer {
     background-color: black;
-    height: 300px;
     color: white;
+    /* make this footer stuck at bottom */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.footer-content {
+    /* temporary */
+    min-height: calc(100vh - 200px);
 }
 
 
@@ -420,10 +535,117 @@ body {
         display: flex;
     }
 
+    .contrast-genres > div {
+        min-width: 300px;
+    }
+
+    .contrast-genres > div > img {
+        width: 100%;
+        height: 100%;
+
+    }
+
 }
 
-/* Large Mobile Devices */
-@media only screen and (min-width: 768px) {}
+/* Large Mobile Devices+> */
+@media only screen and (min-width: 600px) {
+    .bottom-nav {
+        display: flex;
+        justify-content: space-around;
+    }
 
-/* Laptops and Desktop */
-@media only screen and (min-width: 992px) {}
+    .bottom-nav-content-left {
+        display: flex;
+        justify-content: space-around;
+        flex-basis: 30%;
+    }
+    
+    .bottom-nav-content-left > .nav-links {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .bottom-nav-content-left > .nav-links > a {
+        text-decoration: none;
+        color: black;
+        font-size: 1rem;
+        font-weight: 500;
+        margin: 0 10px 0 10px;
+    }
+
+    .bottom-nav-content-left > .nav-links > a:hover {
+        color: var(--selector-color);
+    }
+
+    .bottom-nav-content-middle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-basis: 40%;
+    }
+
+    .bottom-nav-content-middle > div {
+        font-size: 1.3em;
+    }
+
+    .bottom-nav-content-right {
+        display: flex;
+        justify-content: space-around;
+        flex-basis: 30%;
+        align-items: center;
+    }
+
+    .bottom-nav-content-right > div {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    #linkToContact {
+        text-decoration: none;
+        color: black;
+        display: flex;
+    }
+
+    #linkToContact:hover {
+        color: var(--selector-color);
+    }
+
+    .bottom-nav-content-right > div > div {
+        display: flex;
+        align-items: center;
+        font-size: 1.8em;
+        margin: 0 25px 0 25px;
+    }
+
+    .bottom-nav-content-right > div > div > *:hover {
+        color: var(--selector-color);
+    }
+
+    #cart {
+        display: flex;
+    }
+
+    #dCart:hover > path{
+        stroke: var(--selector-color);
+    }
+
+    .find-your-style-boxes {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+@media only screen and (min-width: 960px) {
+    .find-your-style-boxes {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .find-your-style-boxes > div {
+        max-width: 400px;
+    }
+}
