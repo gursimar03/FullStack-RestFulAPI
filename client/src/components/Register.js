@@ -131,7 +131,10 @@ class Register extends React.Component {
                         <div className="register-btn-container">
                             <LinkInClass value="Register" className="register-btn" onClick={this.handleSubmit} />
                         </div>
-
+                        <div className="hidden-to-desktop">
+                        <h2>ALREADY HAVE AN ACCOUNT?</h2>
+                        <Link className="mobile-login-btn to-login-link" to={'/account-login'}>LOGIN <FaArrowRight /></Link>
+                    </div>
                     </div>
 
                     <div className="register-page-container-right">

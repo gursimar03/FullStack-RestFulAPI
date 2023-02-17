@@ -632,6 +632,21 @@ input[type="radio"] {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    border: none;
+    background-color: rgb(25, 25, 25);
+    border-radius: 2px;
+    /* margin: 10px auto 10px auto; */
+    padding: 20px 50px;
+    color: white;
+    font-weight: 800;
+    font-family: var(--main-font);
+    font-size: 1em;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.hidden-to-desktop {
+    display: none;
 }
 
 .overlay {
@@ -640,7 +655,7 @@ input[type="radio"] {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.75);
     z-index: 0;
 }
 
@@ -689,20 +704,8 @@ input[type="radio"] {
     font-style: oblique;
     margin: 0 0 0px 0;
     z-index: 1;
-    -webkit-animation: glow 1s ease-in-out infinite alternate;
-    -moz-animation: glow 1s ease-in-out infinite alternate;
-    animation: glow 1s ease-in-out infinite alternate;
+    text-shadow: 0 0 2px #f1ffb9, 0 0 2px #f1ffb9, 0 0 2px #f1ffb9, 0 0 2px #f1ffb9, 0 0 2px #f1ffb9, 0 0 2px #f1ffb9, 0 0 2px #f1ffb9;
 }
-
-@keyframes glow {
-    from {
-      text-shadow: 0 0 2px #fff, 0 0 2px #fff, 0 0 2px #ffffff, 0 0 2px #ffffff, 0 0 2px #ffffff, 0 0 2px #ffffff, 0 0 2px #ffffff;
-    }
-    
-    to {
-      text-shadow: 0 0 2px #f1ffb9, 0 0 2px #f1ffb9, 0 0 2px #f1ffb9, 0 0 2px #f1ffb9, 0 0 2px #f1ffb9, 0 0 2px #f1ffb9, 0 0 2px #f1ffb9;
-    }
-  }
 
 .logo-grid-item > h1::before {
     content: "NOT NIKE";
@@ -722,28 +725,30 @@ input[type="radio"] {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 90%;
 }
 
 .register-btn , .login-button {
-    width: 90%;
+    width: 100%;
     height: 50px;
     border: none;
-    background-color: rgb(25, 25, 25);
+    background-color: rgb(25, 25, 25);  
     border-radius: 2px;
-    /* margin: 10px auto 10px auto; */
     padding: 0 10px 0 10px;
     color: white;
-    font-weight: 800;
     font-family: var(--main-font);
-    font-size: 1em;
+    font-size: 1.3em;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Setting up device breakpoints */
 
 /* Mobile */
 @media only screen and (max-width: 600px) {
+    
     .hero-image1 {
         width: 100%;
     }
@@ -875,4 +880,26 @@ input[type="radio"] {
     .find-your-style-boxes > div {
         max-width: 400px;
     }
+}
+
+@media only screen and (max-width: 1308px) {
+
+    .login-page-container, .register-page-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .register-page-container > div, .login-page-container > div {
+        width: 100%;
+    }
+
+    .login-page-container-right, .register-page-container-right {
+        display: none;
+    }
+
+    .hidden-to-desktop {
+        display: block;
+    }
+    
+
 }

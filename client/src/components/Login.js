@@ -51,7 +51,7 @@ class Login extends React.Component {
     render() {
         return (<form className="login-form-container" noValidate={true} id="loginOrRegistrationForm">
 
-            {this.state.isLoggedIn ? <Redirect to="/" /> : <Redirect to="/account-login"/>}
+            {this.state.isLoggedIn ? <Redirect to="/" /> : null}
 
             <div className="login-page-container">
                 <div className="login-page-container-left">
@@ -77,6 +77,10 @@ class Login extends React.Component {
                     </div>
                     <div className="login-btn-container">
                         <LinkInClass value="Login" className="login-button" onClick={this.handleSubmit}/>
+                    </div>
+                    <div className="hidden-to-desktop">
+                        <h2>DON'T HAVE AN ACCOUNT?</h2>
+                        <Link className="mobile-login-btn to-login-link" to={'/account-register'}>REGISTER <FaArrowRight /></Link>
                     </div>
                 </div>
                 <div className="login-page-container-right">

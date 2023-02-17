@@ -48,7 +48,7 @@ export default class Logout extends Component
             {
                 console.log("Logout failed")
             }
-        }) 
+        })
     }
 
 
