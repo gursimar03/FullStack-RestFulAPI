@@ -1,6 +1,7 @@
 import React from "react"
 import { Navigate as Redirect, Link } from "react-router-dom"
 import axios from "axios";
+import LinkInClass from "./LinkInClass";
 
 import { SERVER_HOST } from "../config/global_constants"
 
@@ -75,7 +76,7 @@ class Login extends React.Component {
                         />
                     </div>
                     <div className="login-btn-container">
-                        <button value="Login" className="login-button" onClick={this.handleSubmit}>Login</button>
+                        <LinkInClass value="Login" className="login-button" onClick={this.handleSubmit}/>
                     </div>
                 </div>
                 <div className="login-page-container-right">

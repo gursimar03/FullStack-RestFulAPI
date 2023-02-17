@@ -1,6 +1,7 @@
 import React from "react"
 import { Navigate as Redirect, Link } from "react-router-dom"
 import axios from "axios"
+import LinkInClass from "./LinkInClass"
 
 import { SERVER_HOST } from "../config/global_constants"
 
@@ -33,7 +34,7 @@ class Register extends React.Component {
     handleSubmit = (e) => {
         e.preventDefault()
 
-        axios.post(`${SERVER_HOST}/users/register/${this.state.name}/${this.state.email}/${this.state.password}`)
+        axios.post(`${SERVER_HOST}/users/register/${this.state.name}/${this.state.surname}/${this.state.email}/${this.state.password}/${this.state.gender}`)
             .then(res => {
                 if (res.data) {
                     if (res.data.errorMessage) {
@@ -96,20 +97,14 @@ class Register extends React.Component {
                             {/* handle chosen gender later */}
                             <h2>GENDER</h2>
                             <div className="gender-form-radio-buttons">
-                                <label htmlFor="male" className="gender-label">
-                                    <input type="radio" id="male" name="gender" value="male" />
-                                    Male
-                                </label>
+                                <input type="radio" id="male" name="gender" value="male" onChange={this.handleChange} checked={this.state.gender === "male"} />
+                                <label htmlFor="male">Male</label>
 
-                                <label htmlFor="female" className="gender-label">
-                                    <input type="radio" id="female" name="gender" value="female" />
-                                    Female
-                                </label>
+                                <input type="radio" id="female" name="gender" value="female" onChange={this.handleChange} checked={this.state.gender === "female"} />
+                                <label htmlFor="female">Female</label>
 
-                                <label htmlFor="non-binary" className="gender-label">
-                                    <input type="radio" id="non-binary" name="gender" value="non-binary" />
-                                    Non-binary
-                                </label>
+                                <input type="radio" id="non-binary" name="gender" value="non-binary" onChange={this.handleChange} checked={this.state.gender === "non-binary"} />
+                                <label htmlFor="female">Non-Binary</label>
                             </div>
                         </div>
                         <div className="registration-form">
@@ -134,7 +129,7 @@ class Register extends React.Component {
                             />
                         </div>
                         <div className="register-btn-container">
-                            <button className="register-btn" onClick={this.handleSubmit}>Register</button>
+                            <LinkInClass value="Register" className="register-btn" onClick={this.handleSubmit} />
                         </div>
 
                     </div>
