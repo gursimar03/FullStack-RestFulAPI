@@ -1,5 +1,5 @@
 import React from "react";
-import {BrowserRouter, Routes, Route} from "react-router-dom"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { Link } from "react-router-dom";
 
 //Icon imports
@@ -32,6 +32,7 @@ class App extends React.Component {
             mobileNavOpen: false,
             searchPageOpen: false,
             name: localStorage.name,
+            showDropdown: false
         }
     }
 
@@ -52,7 +53,12 @@ class App extends React.Component {
         })
     }
 
+    toggleDropdown = () => {
+        this.setState({ showDropdown: !this.state.showDropdown });
+    };
+
     render() {
+        const { showDropdown } = this.state;
         return (
             <div className="App">
                 <BrowserRouter>
@@ -63,7 +69,15 @@ class App extends React.Component {
                             </div>
                             <div className="nav-content-right">
                                 {this.state.name !== "" && this.state.name !== null && this.state.name !== "GUEST" ? <p id="welcome">Welcome, {this.state.name}</p> : <Link id="linkToSignIn" to={'/account-login'}><p>Sign In</p></Link>}
-                                <Link id="linkToAccount" to={'/'}><VscAccount className="account-icon" /></Link>
+                                <Link id="linkToAccount" to={'/'} onClick={this.toggleDropdown}><VscAccount className="account-icon" /></Link>
+                                {showDropdown && (
+                                    <div className="dropdown-content">
+                                        <Link to="/profile">Profile</Link>
+                                        <Link to="/orders">Orders</Link>
+                                        <Link to="/payment-method">Payment Method</Link>
+                                        <Link className="to-logout-link" to={'/account-logout'}>LOG OUT</Link>
+                                    </div>
+                                )}
                             </div>
                         </nav>
                         <header className="header-container">
@@ -128,7 +142,7 @@ class App extends React.Component {
                                             <a id="linkToContact" href="#contact"><FiHelpCircle /></a>
                                         </div>
                                         <div className="search-btn">
-                                            <FaSistrix onClick={this.openSearchPage}/>
+                                            <FaSistrix onClick={this.openSearchPage} />
                                         </div>
                                         <div className="cart-container">
                                             <Link id="cart" to={'/'}><GrCart id="dCart" /></Link>
@@ -141,6 +155,7 @@ class App extends React.Component {
                     <Routes>
                         <Route path="/" element={<HomePage openSearchPage={this.openSearchPage} />}></Route>
                         <Route path="/account-login" element={<Login />}></Route>
+                    
                         <Route path="/account-register" element={<Register />}></Route>
                         {/* Page doesn't exist css later */}
                         <Route path="*" element={<h2>This page does not exist</h2>} />

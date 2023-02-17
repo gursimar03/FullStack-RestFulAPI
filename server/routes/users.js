@@ -40,7 +40,7 @@ router.post(`/users/reset_user_collection`, (req,res) =>
 })
 
 
-router.post(`/users/register/:name/:email/:password`, (req,res) => 
+router.post(`/users/register/:name/:surname/:email/:password/:gender`, (req,res) => 
 {
     // If a user with this email does not already exist, then create new user
     usersModel.findOne({email:req.params.email}, (uniqueError, uniqueData) => 
@@ -53,7 +53,7 @@ router.post(`/users/register/:name/:email/:password`, (req,res) =>
         {
             bcrypt.hash(req.params.password, parseInt(process.env.PASSWORD_HASH_SALT_ROUNDS), (err, hash) =>  
             {
-                usersModel.create({name:req.params.name,email:req.params.email,password:hash}, (error, data) => 
+                usersModel.create({name:req.params.name,surname:req.params.surname,email:req.params.email,password:hash,gender:req.params.gender}, (error, data) => 
                 {
                     if(data)
                     {
@@ -63,6 +63,7 @@ router.post(`/users/register/:name/:email/:password`, (req,res) =>
                     }
                     else
                     {
+                        console.log(error) // Add this line to log the error
                         res.json({errorMessage:`User was not registered`})
                     }
                 }) 
@@ -70,6 +71,10 @@ router.post(`/users/register/:name/:email/:password`, (req,res) =>
         }
     })         
 })
+
+
+
+
 
 
 router.post(`/users/login/:email/:password`, (req,res) => 
