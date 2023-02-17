@@ -50,7 +50,7 @@ class Login extends React.Component {
     render() {
         return (<form className="login-form-container" noValidate={true} id="loginOrRegistrationForm">
 
-            {this.state.isLoggedIn ? <Redirect to="/" /> : null}
+            {this.state.isLoggedIn ? <Redirect to="/" /> : <Redirect to="/account-login"/>}
 
             <div className="login-page-container">
                 <div className="login-page-container-left">
