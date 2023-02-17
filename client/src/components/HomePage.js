@@ -15,7 +15,7 @@ class HomePage extends React.Component {
             </div>
             <div className="homepage-hero-info">
               <div className="shop-now-button">
-                <Link className="shop-now-button-text" to={'/'}>Shop Now</Link>
+                <Link className="shop-now-button-text" to={'/products'}>Shop Now</Link>
               </div>
             </div>
           </div>
