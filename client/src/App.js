@@ -12,6 +12,7 @@ import { FiHelpCircle } from 'react-icons/fi';
 //components
 import HomePage from "./components/HomePage";
 import Login from "./components/Login";
+import Logout from "./components/Logout";
 import Register from "./components/Register";
 
 import { ACCESS_LEVEL_GUEST } from "./config/global_constants";
@@ -32,6 +33,7 @@ class App extends React.Component {
             mobileNavOpen: false,
             searchPageOpen: false,
             name: localStorage.name,
+            accessLevel:localStorage.accessLevel,
             showDropdown: false
         }
     }
@@ -57,10 +59,17 @@ class App extends React.Component {
         this.setState({ showDropdown: !this.state.showDropdown });
     };
 
+    reloadPageAfterLogOut = () =>{
+        window.location.hash = "reload"
+    }
+
+    
+
     render() {
         const { showDropdown } = this.state;
         return (
             <div className="App">
+                { localStorage.accessLevel === 0 ? this.reloadPageAfterLogOut():null}
                 <BrowserRouter>
                     <div className="content-top">
                         <nav className="top-nav">
@@ -68,7 +77,7 @@ class App extends React.Component {
                                 <Link id="logo" to={'/'}>Logo</Link>
                             </div>
                             <div className="nav-content-right">
-                                {this.state.name !== "" && this.state.name !== null && this.state.name !== "GUEST" ? <p id="welcome">Welcome, {this.state.name}</p> : <Link id="linkToSignIn" to={'/account-login'}><p>Sign In</p></Link>}
+                                {this.state.name !== "" && this.state.name !== null && this.state.name !== "GUEST" ? <p id="welcome">Welcome, {localStorage.name}</p> : <Link id="linkToSignIn" to={'/account-login'}><p>Sign In</p></Link>}
                                 <Link id="linkToAccount" to={'/'} onClick={this.toggleDropdown}><VscAccount className="account-icon" /></Link>
                                 {showDropdown && (
                                     <div className="dropdown-content">
@@ -155,7 +164,7 @@ class App extends React.Component {
                     <Routes>
                         <Route path="/" element={<HomePage openSearchPage={this.openSearchPage} />}></Route>
                         <Route path="/account-login" element={<Login />}></Route>
-                    
+                        <Route path="/account-logout" element={<Logout />}></Route>
                         <Route path="/account-register" element={<Register />}></Route>
                         {/* Page doesn't exist css later */}
                         <Route path="*" element={<h2>This page does not exist</h2>} />

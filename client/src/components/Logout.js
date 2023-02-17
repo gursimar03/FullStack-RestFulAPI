@@ -1,7 +1,6 @@
 import React, {Component} from "react"
-import {Redirect} from "react-router-dom"
+import {Navigate as Redirect} from "react-router-dom"
 import axios from "axios"
-
 import LinkInClass from "../components/LinkInClass"
 import {SERVER_HOST} from "../config/global_constants"
 
@@ -16,6 +15,14 @@ export default class Logout extends Component
         }
     }
     
+
+    handleLogoutLocalStorage = () =>{
+
+        localStorage.accessLevel = 0
+        localStorage.name = "GUEST"
+        localStorage.token = null
+
+    }
     
     handleSubmit = (e) => 
     {
@@ -32,7 +39,7 @@ export default class Logout extends Component
                 else
                 { 
                     console.log("User logged out")
-                    localStorage.clear() 
+                    this.handleLogoutLocalStorage()
                     
                     this.setState({isLoggedIn:false}) 
                 }
@@ -50,7 +57,7 @@ export default class Logout extends Component
         return (
             <div>   
         
-                {!this.state.isLoggedIn ? <Redirect to="/HomePage"/> : null} 
+                {!this.state.isLoggedIn ? <Redirect to="/"/> : null} 
                   
                 <LinkInClass value="Log out" className="red-button" onClick={this.handleSubmit}/> 
             </div>
