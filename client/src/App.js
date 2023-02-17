@@ -1,6 +1,8 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { Link } from "react-router-dom";
+import axios from "axios";
+import {SERVER_HOST} from "./config/global_constants"
 
 //Icon imports
 import { FaSistrix } from 'react-icons/fa';
@@ -14,6 +16,8 @@ import HomePage from "./components/HomePage";
 import Login from "./components/Login";
 import Logout from "./components/Logout";
 import Register from "./components/Register";
+import AllProducts from "./components/AllProducts";
+import ProductPage from "./components/ProductPage";
 
 import { ACCESS_LEVEL_GUEST } from "./config/global_constants";
 
@@ -22,6 +26,7 @@ if (typeof localStorage.accessLevel === "undefined") {
     localStorage.name = "GUEST"
     localStorage.accessLevel = ACCESS_LEVEL_GUEST
     localStorage.token = null
+    localStorage.isLoggedIn = false
 }
 
 class App extends React.Component {
@@ -34,9 +39,19 @@ class App extends React.Component {
             searchPageOpen: false,
             name: localStorage.name,
             accessLevel:localStorage.accessLevel,
-            showDropdown: false
+            showDropdown: false,
+
+            products: []
         }
     }
+
+    componentDidMount() 
+    {
+        axios.get(`${SERVER_HOST}/products`).then(res => {
+            this.setState({products: res.data})
+        })
+    }
+
 
 
     openMobileNav = () => {
@@ -55,18 +70,22 @@ class App extends React.Component {
         })
     }
 
-    toggleDropdown = () => {
-        this.setState({ showDropdown: !this.state.showDropdown });
+    toggleDropdown = () => { 
+        this.setState({ showDropdown: !this.state.showDropdown },
+            () => {
+                this.state.showDropdown ? document.getElementById('dropdown-content').style.top = '40.5px' : document.getElementById('dropdown-content').style.top = '-190px'
+            }
+        );
     };
 
     reloadPageAfterLogOut = () =>{
-        window.location.hash = "reload"
+        window.location.reload();
     }
+
 
     
 
     render() {
-        const { showDropdown } = this.state;
         return (
             <div className="App">
                 { localStorage.accessLevel === 0 ? this.reloadPageAfterLogOut():null}
@@ -78,15 +97,13 @@ class App extends React.Component {
                             </div>
                             <div className="nav-content-right">
                                 {this.state.name !== "" && this.state.name !== null && this.state.name !== "GUEST" ? <p id="welcome">Welcome, {localStorage.name}</p> : <Link id="linkToSignIn" to={'/account-login'}><p>Sign In</p></Link>}
-                                <Link id="linkToAccount" to={'/'} onClick={this.toggleDropdown}><VscAccount className="account-icon" /></Link>
-                                {showDropdown && (
-                                    <div className="dropdown-content">
+                                {this.state.accessLevel > 0 ? <Link id="linkToAccount" onClick={this.toggleDropdown}><VscAccount className="account-icon" /></Link> : null}
+                                    <div id="dropdown-content">
                                         <Link to="/profile">Profile</Link>
                                         <Link to="/orders">Orders</Link>
                                         <Link to="/payment-method">Payment Method</Link>
-                                        <Link className="to-logout-link" to={'/account-logout'}>LOG OUT</Link>
+                                        <Logout refresh={this.reloadPageAfterLogOut}/>
                                     </div>
-                                )}
                             </div>
                         </nav>
                         <header className="header-container">
@@ -163,9 +180,10 @@ class App extends React.Component {
                     </div>
                     <Routes>
                         <Route path="/" element={<HomePage openSearchPage={this.openSearchPage} />}></Route>
-                        <Route path="/account-login" element={<Login />}></Route>
-                        <Route path="/account-logout" element={<Logout />}></Route>
+                        <Route path="/account-login" element={<Login refresh={this.reloadPageAfterLogOut} />}></Route>
                         <Route path="/account-register" element={<Register />}></Route>
+                        <Route path="/products" element={<AllProducts/>}></Route>
+                        <Route path="/products/:id" element={<ProductPage />}></Route>
                         {/* Page doesn't exist css later */}
                         <Route path="*" element={<h2>This page does not exist</h2>} />
                     </Routes>

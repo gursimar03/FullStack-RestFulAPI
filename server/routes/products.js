@@ -1,17 +1,45 @@
 const router = require(`express`).Router()
+const productsModel = require(`../models/products`)
+
+const dataset = require('../dataset/shoes.json');
 
 
-const fetch = require('node-fetch');
+//stores the dataset in the database when the server starts
+productsModel.deleteMany({}, (error, data) => {
+    if (data) {
+        dataset["Shoes"].forEach((product) => {
+            productsModel.create(
+                {
+                    brand: product.brand,
+                    name: product.name,
+                    description: product.description,
+                    age: product.age,
+                    type: product.type,
+                    colors: product.colors,
+                    productImage: product["product-image"],
+                    images: product.images,
+                    sizes: product.sizes,
+                    price: product.price,
+                    inventory: product.inventory
+                }
+            )
+        })  
+
+    } else {
+        console.log('dataset not inserted')
+    }
+})
 
 
 
-let url = "https://github.com/iffi96/Shoe-store-data-json/blob/master/data001.json";
+router.get(`/products`, (req, res) => {
+    productsModel.find({}, (error, data) => {
+        if (data) {
+            res.json(data)
+        } else {
+            res.json(error)
+        }
+    })
+})
 
-let settings = { method: "Get" };
-
-fetch(url, settings)
-    .then(res => res.json())
-    .then((json) => {
-        let a  = json
-        console.log(a[0])
-    });
+module.exports = router
