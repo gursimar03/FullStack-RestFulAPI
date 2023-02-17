@@ -518,25 +518,25 @@ form {
     transition: 0.2s;
 }
 
-.form-container {
+.form-container, .login-form-container {
     display: block;
     margin-top: 50px;
 }
 
-.register-page-container-left > h1{
+.register-page-container-left, .login-page-container-left > h1{
     text-align: center;
     margin: 0 0 0px 0;
 }
 
-.register-page-container {
+.register-page-container, .login-page-container {
     display: flex;
 }
 
-.register-page-container > div {
+.register-page-container > div, .login-page-container > div {
     width: 50%;
 }
 
-.register-page-container-left {
+.register-page-container-left, .login-page-container-left {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -595,7 +595,7 @@ input[type="radio"] {
     height: 28px;
 }
 
-.registration-form {
+.registration-form, .login-form {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -603,7 +603,7 @@ input[type="radio"] {
     margin: 10px auto 10px auto;
 }
 
-.registration-form > input {
+.registration-form > input, .login-form > input {
     width: 100%;
     box-sizing: border-box;
     height: 50px;
@@ -614,11 +614,11 @@ input[type="radio"] {
     padding: 0 10px 0 10px;
 }
 
-.registration-form > input:focus {
+.registration-form > input:focus, .login-form > input:focus {
     outline: 1px solid black;
 }
 
-.register-page-container-right {
+.register-page-container-right, .login-page-container-right {
     position: relative;
     background-image: url(../images/account.jpg);
     background-size: cover;
@@ -718,15 +718,14 @@ input[type="radio"] {
     color: black;
 }
 
-.register-btn-container {
+.register-btn-container, .login-btn-container {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100%;
 }
 
-.register-btn {
+.register-btn , .login-button {
     width: 90%;
     height: 50px;
     border: none;
