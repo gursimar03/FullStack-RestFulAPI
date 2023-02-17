@@ -59,7 +59,7 @@ router.post(`/users/register/:name/:surname/:email/:password/:gender`, (req,res)
                     {
                         const token = jwt.sign({email: data.email, accessLevel:data.accessLevel}, process.env.JWT_PRIVATE_KEY, {algorithm: 'HS256', expiresIn:process.env.JWT_EXPIRY})     
            
-                        res.json({name: data.name, accessLevel:data.accessLevel, token:token})
+                        res.json({name: data.name, accessLevel:data.accessLevel, token:token, isLoggedIn:true})
                     }
                     else
                     {
@@ -89,7 +89,7 @@ router.post(`/users/login/:email/:password`, (req,res) =>
                 {
                     const token = jwt.sign({email: data.email, accessLevel:data.accessLevel}, process.env.JWT_PRIVATE_KEY, {algorithm: 'HS256', expiresIn:process.env.JWT_EXPIRY})     
            
-                    res.json({name: data.name, accessLevel:data.accessLevel, token:token})
+                    res.json({name: data.name, accessLevel:data.accessLevel, token:token, isLoggedIn:true})
                 }
                 else
                 {
