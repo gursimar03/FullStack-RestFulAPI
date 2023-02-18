@@ -20,6 +20,7 @@ import AllProducts from "./components/AllProducts";
 import ProductPage from "./components/ProductPage";
 
 import { ACCESS_LEVEL_GUEST } from "./config/global_constants";
+import AdminBoard from "./components/AdminDashboard";
 
 
 if (typeof localStorage.accessLevel === "undefined") {
@@ -93,7 +94,9 @@ class App extends React.Component {
                     <div className="content-top">
                         <nav className="top-nav">
                             <div className="nav-content-left">
-                                <Link id="logo" to={'/'}>Logo</Link>
+                                <Link id="logo" to={'/'}>
+                                    <img src={require('./images/Not-Nike.png')} />
+                                </Link>
                             </div>
                             <div className="nav-content-right">
                                 {this.state.name !== "" && this.state.name !== null && this.state.name !== "GUEST" ? <p id="welcome">Welcome, {localStorage.name}</p> : <Link id="linkToSignIn" to={'/account-login'}><p>Sign In</p></Link>}
@@ -102,6 +105,7 @@ class App extends React.Component {
                                         <Link to="/profile">Profile</Link>
                                         <Link to="/orders">Orders</Link>
                                         <Link to="/payment-method">Payment Method</Link>
+                                        {localStorage.accessLevel == 2 ? <Link to="/admin"> Admin Dashboard </Link> : null}
                                         <Logout refresh={this.reloadPageAfterLogOut}/>
                                     </div>
                             </div>
@@ -184,6 +188,7 @@ class App extends React.Component {
                         <Route path="/account-register" element={<Register />}></Route>
                         <Route path="/products" element={<AllProducts/>}></Route>
                         <Route path="/products/:id" element={<ProductPage />}></Route>
+                        <Route path="/admin" element={<AdminBoard />}></Route>
                         {/* Page doesn't exist css later */}
                         <Route path="*" element={<h2>This page does not exist</h2>} />
                     </Routes>
