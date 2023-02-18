@@ -54,6 +54,6 @@ class AllProducts extends Component {
             )
         }
     }
-}
+}   
 
 export default AllProducts;

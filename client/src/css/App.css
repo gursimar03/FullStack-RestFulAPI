@@ -22,7 +22,7 @@ body {
 #dropdown-content {
     position: absolute;
     display: none;
-    top: -190px;
+    top: -250px;
     right: 0px;
     background-color: white;
     display: flex;
