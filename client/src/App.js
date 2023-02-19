@@ -18,7 +18,8 @@ import Logout from "./components/Logout";
 import Register from "./components/Register";
 import AllProducts from "./components/AllProducts";
 import ProductPage from "./components/ProductPage";
-
+import Profile from "./components/Profile";
+import DeleteAccount from "./components/DeleteAccount";
 import { ACCESS_LEVEL_GUEST } from "./config/global_constants";
 import AdminBoard from "./components/AdminDashboard";
 
@@ -28,6 +29,7 @@ if (typeof localStorage.accessLevel === "undefined") {
     localStorage.accessLevel = ACCESS_LEVEL_GUEST
     localStorage.token = null
     localStorage.isLoggedIn = false
+    localStorage.profilePhoto = null
 }
 
 class App extends React.Component {
@@ -102,7 +104,7 @@ class App extends React.Component {
                                 {this.state.name !== "" && this.state.name !== null && this.state.name !== "GUEST" ? <p id="welcome">Welcome, {localStorage.name}</p> : <Link id="linkToSignIn" to={'/account-login'}><p>Sign In</p></Link>}
                                 {this.state.accessLevel > 0 ? <Link id="linkToAccount" onClick={this.toggleDropdown}><VscAccount className="account-icon" /></Link> : null}
                                     <div id="dropdown-content">
-                                        <Link to="/profile">Profile</Link>
+                                        <Link to={'/profile'}>Profile</Link>
                                         <Link to="/orders">Orders</Link>
                                         <Link to="/payment-method">Payment Method</Link>
                                         {localStorage.accessLevel == 2 ? <Link to="/admin"> Admin Dashboard </Link> : null}
@@ -187,6 +189,8 @@ class App extends React.Component {
                         <Route path="/account-login" element={<Login refresh={this.reloadPageAfterLogOut} />}></Route>
                         <Route path="/account-register" element={<Register />}></Route>
                         <Route path="/products" element={<AllProducts/>}></Route>
+                        <Route path="/profile" element={<Profile />}></Route>
+                        <Route path="/delete-account" element={<DeleteAccount />}></Route>
                         <Route path="/products/:id" element={<ProductPage />}></Route>
                         <Route path="/admin" element={<AdminBoard />}></Route>
                         {/* Page doesn't exist css later */}
