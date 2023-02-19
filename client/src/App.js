@@ -76,7 +76,7 @@ class App extends React.Component {
     toggleDropdown = () => { 
         this.setState({ showDropdown: !this.state.showDropdown },
             () => {
-                this.state.showDropdown ? document.getElementById('dropdown-content').style.top = '40.5px' : document.getElementById('dropdown-content').style.top = '-190px'
+                this.state.showDropdown ? document.getElementById('dropdown-content').style.top = '40.5px' : document.getElementById('dropdown-content').style.top = '-250px'
             }
         );
     };

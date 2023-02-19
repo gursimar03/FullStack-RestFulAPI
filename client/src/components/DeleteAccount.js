@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import {Navigate as  Redirect } from 'react-router-dom';
-
+import { Link } from 'react-router-dom';
 import { SERVER_HOST } from '../config/global_constants';
 
 class DeleteAccount extends Component {

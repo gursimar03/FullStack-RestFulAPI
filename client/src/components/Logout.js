@@ -55,7 +55,7 @@ export default class Logout extends Component
     render()
     {
         return (
-                <Link value="Log out" className="red-button" onClick={this.handleSubmit}>LOG OUT</Link> 
+                <Link value="Log out" className="red-button" to={'/'} onClick={this.handleSubmit}>LOG OUT</Link> 
         )
     }
 }
