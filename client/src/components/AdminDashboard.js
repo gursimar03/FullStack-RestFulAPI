@@ -9,7 +9,9 @@ class AllProducts extends Component {
         super(props)
         this.state = {
             products: [],
-            clientView:false
+            clientView:false,
+            email:localStorage.email,
+            level:0
         }
     }
 
@@ -17,6 +19,24 @@ class AllProducts extends Component {
         axios.get(`${SERVER_HOST}/products`).then(res => {
             this.setState({ products: res.data })
         })
+    }
+
+    handleSubmit = (e) => {
+        axios.post(`${SERVER_HOST}/users/login/${this.state.email}/${this.state.password}`)
+            .then(res => {
+                if (res.data) {
+                    if (res.data.errorMessage) {
+                        console.log(res.data.errorMessage)
+                    }
+                    else // user successfully logged in
+                    {
+                    
+                    }
+                }
+                else {
+                    console.log("Login failed")
+                }
+            })
     }
 
     handleClientView = () => {
