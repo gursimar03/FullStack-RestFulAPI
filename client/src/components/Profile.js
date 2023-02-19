@@ -167,6 +167,12 @@ export default class Profile extends Component {
 
     render() {
         const { isPasswordUpdated } = this.state;
+
+
+        if (localStorage.isLoggedIn === "false") {
+            return <Redirect to="/" />
+        }
+
         return (
             <div className="profile-container">
                 {this.state.redirectToHome ? <Redirect to={{pathname: "/", }}/> : null}

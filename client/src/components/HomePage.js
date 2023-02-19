@@ -1,9 +1,31 @@
 
+import axios from "axios";
 import React from "react";
 import { Link } from "react-router-dom";
+import { SERVER_HOST } from "../config/global_constants";
 
 class HomePage extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      products: []
+    };
+  }
+
+  componentDidMount() {
+    axios.get(`${SERVER_HOST}/products`)
+      .then(response => {
+        this.setState({ products: response.data });
+      });
+    
+  }
+
   render() {
+    if (!this.state.products) {
+      return <div>Loading...</div>;
+    }
+
     return (
       <div className="homepage-container">
 
@@ -63,14 +85,13 @@ class HomePage extends React.Component {
             <div className="product-advertisment-container">
               <h2>Our Favourites</h2>
               <div className="favourite-product-container">
-                <div className="product">Product Placeholder</div>
-                <div className="product">Product Placeholder</div>
-                <div className="product">Product Placeholder</div>
-                <div className="product">Product Placeholder</div>
-                <div className="product">Product Placeholder</div>
-                <div className="product">Product Placeholder</div>
-                <div className="product">Product Placeholder</div>
-                <div className="product">Product Placeholder</div>
+                {this.state.products.slice(0, 8).map(product => (
+                  <div className="product" key={product._id}>
+                    <Link to={`/products/${product._id}`}>
+                      <img alt="product" src={product.productImage} />
+                    </Link>
+                  </div>
+                ))}
               </div>
             </div>
 

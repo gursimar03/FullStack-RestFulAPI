@@ -1,37 +1,77 @@
-import React, {Component} from "react"
+import React, { Component } from "react"
 import axios from "axios"
-import {SERVER_HOST} from "../config/global_constants"
+import { SERVER_HOST } from "../config/global_constants"
 
 
-export default class ProductPage extends Component 
-{
-    constructor(props) 
-    {
+export default class ProductPage extends Component {
+    constructor(props) {
         super(props)
         this.state = {
-            product: null
+            product: null,
+            activeIndex: 0
         }
     }
-    
-    
-    componentDidMount() 
-    {
 
-        axios.get(`${SERVER_HOST}/products/:name`).then(res => {
-            this.setState({products: res.data})
-        })
+
+    componentDidMount() {
+        const url = window.location.href
+        const id = url.substring(url.lastIndexOf('/') + 1)
+
+        axios.get(`${SERVER_HOST}/products/${id}`)
+            .then(response => {
+                this.setState({ product: response.data })
+            }
+            )
+
     }
 
-  
-    render() 
-    {   
+    handlePrevClick = () => {
+        const { activeIndex } = this.state;
+        const lastIndex = this.state.product.images.length - 1;
+        const shouldResetIndex = activeIndex === 0;
+        const index = shouldResetIndex ? lastIndex : activeIndex - 1;
+
+        this.setState({
+            activeIndex: index,
+        }, 
+            () => console.log(this.state.product.images[activeIndex])
+        );
+    }
+
+    handleNextClick = () => {
+        const { activeIndex } = this.state;
+        const lastIndex = this.state.product.images.length - 1;
+        const shouldResetIndex = activeIndex === lastIndex;
+        const index = shouldResetIndex ? 0 : activeIndex + 1;
+
+        this.setState({
+            activeIndex: index,
+        }, 
+        () => console.log(this.state.product.images[activeIndex]));
+    }
+
+
+    render() {
+        if (!this.state.product) {
+            return <div>Loading...</div>
+        }
+        const { activeIndex } = this.state;
         return (
             <div>
-                {/* <img src={this.state.product.productImage} alt={this.state.product.name} />
-                <p>{this.state.product.name}</p>
-                <p>{this.state.product.age}</p>
-                <h3>{this.state.product.price}</h3> */}
-                <h1>Individual Product Page</h1>
+                <h1>{this.state.product.name}</h1>
+                <div className="carousel">
+                    <button className="carousel-button" onClick={this.handlePrevClick}>
+                        Prev
+                    </button>
+                    <div className="carousel-images-container">
+                        <div className="carousel-image">
+                            <img src={this.state.product.images[activeIndex]} alt={this.state.product.name} />
+                        </div>
+                    </div>
+                    <button className="carousel-button" onClick={this.handleNextClick}>
+                        Next
+                    </button>
+                </div>
             </div>
         )
     }
