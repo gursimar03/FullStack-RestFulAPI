@@ -39,6 +39,7 @@ class AllProducts extends Component {
                         <div className="filter-bar">
                         <input type="checkbox" name="client" onClick={this.handleClientView}/>
                         <label htmlFor="client">Client View</label>
+
                         </div>
                        {this.state.clientView ? 
                             <div className="products">
