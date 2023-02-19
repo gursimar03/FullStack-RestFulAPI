@@ -42,4 +42,15 @@ router.get(`/products`, (req, res) => {
     })
 })
 
+router.get(`/products/:_id`, (req, res) => {
+    productsModel.findById(req.params._id, (error, data) => {
+        if (data) {
+            res.json(data)
+        } else {
+            res.json(error)
+        }
+    })
+})
+
+
 module.exports = router
