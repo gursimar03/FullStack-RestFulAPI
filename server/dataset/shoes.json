@@ -5,30 +5,15 @@
             "name": "Nike Air Force 1 '07",
             "description": "The radiance lives on in the Nike Air Force 1 '07, the basketball original that puts a fresh spin on what you know best: durably stitched overlays, clean finishes and the perfect amount of flash to make you shine.",
             "age": "Men",
-            "type": "LifeStyle",
-            "colors": [
-                "Black",
-                "White"
-            ],
+            "type": "Lifestyle",
+            "color": "White",
             "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b7d9211c-26e7-431a-ac24-b0540fb3c00f/air-force-1-07-shoes-GjGXSP.png",
-            "images": {
-                "Black": {
-                    "images": [
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/fc4622c4-2769-4665-aa6e-42c974a7705e/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/0ac482bd-f8e4-4d59-a652-4a50de7dbce5/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/900c2ac8-8a3e-45f7-aac7-c92ccce8505a/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/ddec7bcc-6100-4d27-ac7c-d15771e1780e/air-force-1-07-shoes-GjGXSP.png"
-                    ]
-                },
-                "White": {
-                    "images": [
+            "images": [
                         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b7d9211c-26e7-431a-ac24-b0540fb3c00f/air-force-1-07-shoes-GjGXSP.png",
                         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/a0a300da-2e16-4483-ba64-9815cf0598ac/air-force-1-07-shoes-GjGXSP.png",
                         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/00375837-849f-4f17-ba24-d201d27be49b/air-force-1-07-shoes-GjGXSP.png",
                         "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/82aa97ed-98bf-4b6f-9d0b-31a9f907077b/air-force-1-07-shoes-GjGXSP.png"
-                    ]
-                }
-            },
+            ],
             "sizes": [
                 "7",
                 "7.5",
@@ -44,20 +29,7 @@
             ],
             "price": 119.99,
             "inventory": {
-                "Black": [
-                    {"size": 7, "quanity": 10},
-                    {"size":7.5, "quanity": 15},
-                    {"size":8, "quanity": 20},
-                    {"size":8.5, "quanity": 20},
-                    {"size":9, "quanity": 25},
-                    {"size":9.5, "quanity": 30},
-                    {"size":10, "quanity": 35},
-                    {"size":10.5, "quanity": 40},
-                    {"size":11, "quanity": 45},
-                    {"size":11.5, "quanity": 50},
-                    {"size":12, "quanity": 55}
-                ],
-                "White": [     
+                "stock": [     
                     {"size": 7, "quanity": 10},
                     {"size":7.5, "quanity": 15},
                     {"size":8, "quanity": 20},
@@ -74,33 +46,18 @@
         },
         {
             "brand": "Nike",
-            "name": "Nike Air Force 1 '07",
-            "description": "The radiance lives on in the Nike Air Force 1 '07, the basketball original that puts a fresh spin on what you know best: durably stitched overlays, clean finishes and the perfect amount of flash to make you shine.",
+            "name": "Nike Dunk Low Unlocked",
+            "description": "Playful, timeless and now with your own special twist, the '80s b-ball icon returns with customisable details. Choose a perpetual fashion fave with tie-dye print detailing or mix in a paisley graphic to breathe new life into a classic style. Make a statement with your choice between leather and recycled canvas on the upper. Then tell a part of your story with a personalised message. It's tried-and-tested meets you.",
             "age": "Men",
-            "type": "LifeStyle",
-            "colors": [
-                "Black",
-                "White"
+            "type": "Lifestyle",
+            "color": "Yellow",
+            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b848cdd9-508e-48c8-9e64-f1e4ebe7b793/custom-nike-dunk-unlocked-by-you.png",
+            "images": [
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b848cdd9-508e-48c8-9e64-f1e4ebe7b793/custom-nike-dunk-unlocked-by-you.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/4852e621-0732-43fe-b3a9-1870ece35dbb/custom-nike-dunk-unlocked-by-you.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/e1fe4a3d-a25b-4b5b-ab3a-ad63c488aa77/custom-nike-dunk-unlocked-by-you.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/ec6c99c0-4900-4c87-8aad-104578ed09d2/custom-nike-dunk-unlocked-by-you.png"
             ],
-            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b7d9211c-26e7-431a-ac24-b0540fb3c00f/air-force-1-07-shoes-GjGXSP.png",
-            "images": {
-                "Black": {
-                    "images": [
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/fc4622c4-2769-4665-aa6e-42c974a7705e/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/0ac482bd-f8e4-4d59-a652-4a50de7dbce5/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/900c2ac8-8a3e-45f7-aac7-c92ccce8505a/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/ddec7bcc-6100-4d27-ac7c-d15771e1780e/air-force-1-07-shoes-GjGXSP.png"
-                    ]
-                },
-                "White": {
-                    "images": [
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b7d9211c-26e7-431a-ac24-b0540fb3c00f/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/a0a300da-2e16-4483-ba64-9815cf0598ac/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/00375837-849f-4f17-ba24-d201d27be49b/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/82aa97ed-98bf-4b6f-9d0b-31a9f907077b/air-force-1-07-shoes-GjGXSP.png"
-                    ]
-                }
-            },
             "sizes": [
                 "7",
                 "7.5",
@@ -114,22 +71,9 @@
                 "11.5",
                 "12"
             ],
-            "price": 119.99,
+            "price": 149.99,
             "inventory": {
-                "Black": [
-                    {"size": 7, "quanity": 10},
-                    {"size":7.5, "quanity": 15},
-                    {"size":8, "quanity": 20},
-                    {"size":8.5, "quanity": 20},
-                    {"size":9, "quanity": 25},
-                    {"size":9.5, "quanity": 30},
-                    {"size":10, "quanity": 35},
-                    {"size":10.5, "quanity": 40},
-                    {"size":11, "quanity": 45},
-                    {"size":11.5, "quanity": 50},
-                    {"size":12, "quanity": 55}
-                ],
-                "White": [     
+                "stock": [     
                     {"size": 7, "quanity": 10},
                     {"size":7.5, "quanity": 15},
                     {"size":8, "quanity": 20},
@@ -146,33 +90,310 @@
         },
         {
             "brand": "Nike",
-            "name": "Nike Air Force 1 '07",
-            "description": "The radiance lives on in the Nike Air Force 1 '07, the basketball original that puts a fresh spin on what you know best: durably stitched overlays, clean finishes and the perfect amount of flash to make you shine.",
+            "name": "Nike Air Max Flyknit Racer",
+            "description": "Paying homage to both heritage and innovation, we've blended 2 icons (old and new) to go beyond what's expected in the Air Max Flyknit Racer. Incredibly light and airy Flyknit pairs with oh-so-comfy cushioning. Lace up and let your feet do the talking.",
             "age": "Men",
-            "type": "LifeStyle",
-            "colors": [
-                "Black",
-                "White"
+            "type": "Lifestyle",
+            "color": "Multi-Colour",
+            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/6211e85c-7bcf-4045-b3a6-54985ba0f6a5/air-max-flyknit-racer-shoes-40BDB5.png",
+            "images": [
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/6211e85c-7bcf-4045-b3a6-54985ba0f6a5/air-max-flyknit-racer-shoes-40BDB5.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/270245ef-590b-4288-8f23-f999992ae115/air-max-flyknit-racer-shoes-40BDB5.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/7322a952-e131-49f5-a9e4-601c64bf49b8/air-max-flyknit-racer-shoes-40BDB5.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/7ef9a503-0950-4df2-ab63-5e2ba8e5ca72/air-max-flyknit-racer-shoes-40BDB5.png"
             ],
-            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b7d9211c-26e7-431a-ac24-b0540fb3c00f/air-force-1-07-shoes-GjGXSP.png",
-            "images": {
-                "Black": {
-                    "images": [
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/fc4622c4-2769-4665-aa6e-42c974a7705e/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/0ac482bd-f8e4-4d59-a652-4a50de7dbce5/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/900c2ac8-8a3e-45f7-aac7-c92ccce8505a/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/ddec7bcc-6100-4d27-ac7c-d15771e1780e/air-force-1-07-shoes-GjGXSP.png"
-                    ]
-                },
-                "White": {
-                    "images": [
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b7d9211c-26e7-431a-ac24-b0540fb3c00f/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/a0a300da-2e16-4483-ba64-9815cf0598ac/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/00375837-849f-4f17-ba24-d201d27be49b/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/82aa97ed-98bf-4b6f-9d0b-31a9f907077b/air-force-1-07-shoes-GjGXSP.png"
-                    ]
-                }
-            },
+            "sizes": [
+                "7",
+                "7.5",
+                "8",
+                "8.5",
+                "9",
+                "9.5",
+                "10",
+                "10.5",
+                "11",
+                "11.5",
+                "12",
+                "13",
+                "14"
+            ],
+            "price": 169.99,
+            "inventory": {
+                "stock": [     
+                    {"size": 7, "quanity": 10},
+                    {"size":7.5, "quanity": 15},
+                    {"size":8, "quanity": 20},
+                    {"size":8.5, "quanity": 20},
+                    {"size":9, "quanity": 25},
+                    {"size":9.5, "quanity": 30},
+                    {"size":10, "quanity": 35},
+                    {"size":10.5, "quanity": 40},
+                    {"size":11, "quanity": 45},
+                    {"size":11.5, "quanity": 50},
+                    {"size":12, "quanity": 55},
+                    {"size":13, "quanity": 10},
+                    {"size":14, "quanity": 5}
+                ]
+            }
+        },
+        {
+            "brand": "Nike",
+            "name": "Nike Dunk Low",
+            "description": "Take your game anywhere with the Nike Dunk Low By You. Created for the hardwood but taken to the streets, the '80s b-ball icon returns with a new design thought up by you. Select a Nike Grind, Gum or standard outsole. Pick your favourite colours. Then seal the deal with a personalised inscription on the back.",
+            "age": "Men",
+            "type": "Lifestyle",
+            "color": "Purple",
+            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/1f957f5f-9038-4984-ab1c-235f8df618a6/custom-nike-dunk-low-by-you.png",
+            "images": [
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/1f957f5f-9038-4984-ab1c-235f8df618a6/custom-nike-dunk-low-by-you.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/c5d983ca-9079-42fd-b402-f9f546e373bf/custom-nike-dunk-low-by-you.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/98bfa6e4-e30b-4de1-b1a6-46d9a9fd0779/custom-nike-dunk-low-by-you.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/eb36c53c-f694-4b41-ae2a-9b08b79d9836/custom-nike-dunk-low-by-you.png"
+            ],
+            "sizes": [
+                "7",
+                "7.5",
+                "8",
+                "8.5",
+                "9",
+                "9.5",
+                "10",
+                "10.5",
+                "11",
+                "11.5",
+                "12",
+                "13",
+                "14",
+                "15"
+            ],
+            "price": 129.99,
+            "inventory": {
+                "stock": [     
+                    {"size": 7, "quanity": 10},
+                    {"size":7.5, "quanity": 15},
+                    {"size":8, "quanity": 20},
+                    {"size":8.5, "quanity": 20},
+                    {"size":9, "quanity": 25},
+                    {"size":9.5, "quanity": 30},
+                    {"size":10, "quanity": 35},
+                    {"size":10.5, "quanity": 40},
+                    {"size":11, "quanity": 45},
+                    {"size":11.5, "quanity": 50},
+                    {"size":12, "quanity": 55},
+                    {"size":13, "quanity": 10},
+                    {"size":14, "quanity": 5},
+                    {"size":15, "quanity": 5}
+                ]
+            }
+        },
+
+        {
+            "brand": "Nike",
+            "name": "Nike Pegasus Trail 4 GORE-TEX",
+            "description": "The Nike Pegasus Trail 4 GORE-TEX is your Football companion for those days when the weather turns. Its waterproof GORE-TEX layer helps keep your feet dry, and less rubber in the outsole creates a smooth transition from road to trail without breaking stride.",
+            "age": "Men",
+            "type": "Running",
+            "color": "Black",
+            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/bcf29547-f309-4b27-80a8-55f482273826/pegasus-trail-4-gore-tex-waterproof-trail-running-shoes-tVWltb.png",
+            "images": [
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/bcf29547-f309-4b27-80a8-55f482273826/pegasus-trail-4-gore-tex-waterproof-trail-running-shoes-tVWltb.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/1b2b68a1-a8a3-4ca9-a852-ab6941d0c7a3/pegasus-trail-4-gore-tex-waterproof-trail-running-shoes-tVWltb.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/8f6cdfb2-9382-4283-b899-a9958a922f54/pegasus-trail-4-gore-tex-waterproof-trail-running-shoes-tVWltb.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/f14e2da8-fb86-44fd-b107-5a48f39830cc/pegasus-trail-4-gore-tex-waterproof-trail-running-shoes-tVWltb.png"
+            ],
+            "sizes": [
+                "7",
+                "7.5",
+                "8",
+                "8.5",
+                "9",
+                "9.5",
+                "10",
+                "10.5",
+                "11",
+                "11.5",
+                "12",
+                "13",
+                "14"
+            ],
+            "price": 159.99,
+            "inventory": {
+                "stock": [     
+                    {"size": 7, "quanity": 10},
+                    {"size":7.5, "quanity": 15},
+                    {"size":8, "quanity": 20},
+                    {"size":8.5, "quanity": 20},
+                    {"size":9, "quanity": 25},
+                    {"size":9.5, "quanity": 30},
+                    {"size":10, "quanity": 35},
+                    {"size":10.5, "quanity": 40},
+                    {"size":11, "quanity": 45},
+                    {"size":11.5, "quanity": 50},
+                    {"size":12, "quanity": 55},
+                    {"size":13, "quanity": 10},
+                    {"size":14, "quanity": 5}
+                ]
+            }
+        },
+        {
+            "brand": "Nike",
+            "name": "Nike Alphafly 2",
+            "description": "Once you take a few strides in the Nike Air Zoom Alphafly NEXT% 2, you'll never look at your favourite pair of old racing shoes the same way again. These rocket ships are made to help shave precious time off your personal records without surrendering the foundation you need to go the full distance. A thick, lightweight support system marries the 2 worlds of comfort and speed in holy running matrimony. Enjoy the greatest energy return of all our racing shoes while you chase your personal bests.",
+            "age": "Men",
+            "type": "Running",
+            "color": "Pink",
+            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/1e4ffa00-ad76-4d6f-9ada-c4d73234dd26/alphafly-2-road-racing-shoes-Cvn2X1.png",
+            "images": [
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/1e4ffa00-ad76-4d6f-9ada-c4d73234dd26/alphafly-2-road-racing-shoes-Cvn2X1.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/98e5ccda-bab5-4039-ae9e-d11140c08ecd/alphafly-2-road-racing-shoes-Cvn2X1.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/d864e108-6412-4bfd-9f6f-8a7158cfc7db/alphafly-2-road-racing-shoes-Cvn2X1.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/87f37714-b2a2-4f7d-ba79-b3e0e08da090/alphafly-2-road-racing-shoes-Cvn2X1.png"
+            ],
+            "sizes": [
+                "7",
+                "7.5",
+                "8",
+                "8.5",
+                "9",
+                "9.5",
+                "10",
+                "10.5",
+                "11",
+                "11.5",
+                "12",
+                "13",
+                "14"
+            ],
+            "price": 309.99,
+            "inventory": {
+                "stock": [     
+                    {"size": 7, "quanity": 10},
+                    {"size":7.5, "quanity": 15},
+                    {"size":8, "quanity": 20},
+                    {"size":8.5, "quanity": 20},
+                    {"size":9, "quanity": 25},
+                    {"size":9.5, "quanity": 30},
+                    {"size":10, "quanity": 35},
+                    {"size":10.5, "quanity": 40},
+                    {"size":11, "quanity": 45},
+                    {"size":11.5, "quanity": 50},
+                    {"size":12, "quanity": 55},
+                    {"size":13, "quanity": 10},
+                    {"size":14, "quanity": 5}
+                ]
+            }
+        },
+        {
+            "brand": "Nike",
+            "name": "Nike Vaporfly 2",
+            "description": "Continue the next evolution of speed with racing shoes designed to help you chase new goals and records. The Nike Vaporfly 2 builds on a model loved by racers everywhere with a redesigned upper that aims to improve comfort and breathability. From a 10K to a marathon, this version maintains the responsive cushioning and secure support of the original to help push you towards your personal best.",
+            "age": "Men",
+            "type": "Running",
+            "color": "Green",
+            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/8368dcfc-a3dc-4cab-b069-766f837fc8a5/vaporfly-2-road-racing-shoes-JsqBT5.png",
+            "images": [
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/8368dcfc-a3dc-4cab-b069-766f837fc8a5/vaporfly-2-road-racing-shoes-JsqBT5.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/a2f62b68-3cc3-4a9c-8e9e-aa38bdf1a7c8/vaporfly-2-road-racing-shoes-JsqBT5.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/db0a9db4-ca19-4163-bbaf-b602b6a22046/vaporfly-2-road-racing-shoes-JsqBT5.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/2580623c-a665-4c53-8094-d756599900f9/vaporfly-2-road-racing-shoes-JsqBT5.png"
+            ],
+            "sizes": [
+                "7",
+                "7.5",
+                "8",
+                "8.5",
+                "9",
+                "9.5",
+                "10",
+                "10.5",
+                "11",
+                "11.5",
+                "12",
+                "13",
+                "14"
+            ],
+            "price": 259.99,
+            "inventory": {
+                "stock": [     
+                    {"size": 7, "quanity": 10},
+                    {"size":7.5, "quanity": 15},
+                    {"size":8, "quanity": 20},
+                    {"size":8.5, "quanity": 20},
+                    {"size":9, "quanity": 25},
+                    {"size":9.5, "quanity": 30},
+                    {"size":10, "quanity": 35},
+                    {"size":10.5, "quanity": 40},
+                    {"size":11, "quanity": 45},
+                    {"size":11.5, "quanity": 50},
+                    {"size":12, "quanity": 55},
+                    {"size":13, "quanity": 10},
+                    {"size":14, "quanity": 5}
+                ]
+            }
+        },
+        {
+            "brand": "Nike",
+            "name": "Nike Downshifter 12",
+            "description": "Take those first steps on your running journey in the Nike Downshifter 12. Made from at least 20% recycled content by weight, it has a supportive fit and stable ride, with a lightweight feel that easily transitions from your workout to hangout. Your trek begins. Lace up and hit the road.",
+            "age": "Men",
+            "type": "Running",
+            "color": "White",
+            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/f2fb7071-fd1f-4949-bb66-78d1dff590b7/downshifter-12-road-running-shoes-zhJr9p.png",
+            "images": [
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/f2fb7071-fd1f-4949-bb66-78d1dff590b7/downshifter-12-road-running-shoes-zhJr9p.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b1cb4863-684e-486e-8b5d-d08c5ba2b129/downshifter-12-road-running-shoes-zhJr9p.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/7d1b6462-a7c9-4939-90b1-05b000d98ef2/downshifter-12-road-running-shoes-zhJr9p.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/eb3fff0b-e6b8-4bdc-a071-edd08cd62835/downshifter-12-road-running-shoes-zhJr9p.png"
+            ],
+            "sizes": [
+                "7",
+                "7.5",
+                "8",
+                "8.5",
+                "9",
+                "9.5",
+                "10",
+                "10.5",
+                "11",
+                "11.5",
+                "12",
+                "13",
+                "14"
+            ],
+            "price": 69.99,
+            "inventory": {
+                "stock": [     
+                    {"size": 7, "quanity": 10},
+                    {"size":7.5, "quanity": 15},
+                    {"size":8, "quanity": 20},
+                    {"size":8.5, "quanity": 20},
+                    {"size":9, "quanity": 25},
+                    {"size":9.5, "quanity": 30},
+                    {"size":10, "quanity": 35},
+                    {"size":10.5, "quanity": 40},
+                    {"size":11, "quanity": 45},
+                    {"size":11.5, "quanity": 50},
+                    {"size":12, "quanity": 55},
+                    {"size":13, "quanity": 10},
+                    {"size":14, "quanity": 5}
+                ]
+            }
+        },
+
+        {
+            "brand": "Nike",
+            "name": "Nike Zoom Mercurial Superfly 9 Elite FG",
+            "description": "Instantly tilt the pitch in the bold design of the Superfly 9 Elite FG. We added a Zoom Air unit made specifically for football and grippy texture up top for exceptional touch, so you can dominate in the waning minutes of a match—when it matters most. Feel the explosive speed as you race around the pitch, making the critical plays with velocity and pace. Fast is in the Air.",
+            "age": "Men",
+            "type": "Football",
+            "color": "Yellow",
+            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/9f22e494-8110-404b-8616-f483163e0aec/zoom-mercurial-superfly-9-elite-fg-football-boot-cBrvKJ.png",
+            "images": [
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/9f22e494-8110-404b-8616-f483163e0aec/zoom-mercurial-superfly-9-elite-fg-football-boot-cBrvKJ.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/2641c125-b0a5-40de-996c-63bcf8871f38/zoom-mercurial-superfly-9-elite-fg-football-boot-cBrvKJ.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/cff79401-941e-43b9-8266-1ad7cf47d7fd/zoom-mercurial-superfly-9-elite-fg-football-boot-cBrvKJ.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/1e2987e2-d49c-467d-b337-d742e22410ff/zoom-mercurial-superfly-9-elite-fg-football-boot-cBrvKJ.png"
+            ],
             "sizes": [
                 "7",
                 "7.5",
@@ -186,22 +407,9 @@
                 "11.5",
                 "12"
             ],
-            "price": 119.99,
+            "price": 167.97,
             "inventory": {
-                "Black": [
-                    {"size": 7, "quanity": 10},
-                    {"size":7.5, "quanity": 15},
-                    {"size":8, "quanity": 20},
-                    {"size":8.5, "quanity": 20},
-                    {"size":9, "quanity": 25},
-                    {"size":9.5, "quanity": 30},
-                    {"size":10, "quanity": 35},
-                    {"size":10.5, "quanity": 40},
-                    {"size":11, "quanity": 45},
-                    {"size":11.5, "quanity": 50},
-                    {"size":12, "quanity": 55}
-                ],
-                "White": [     
+                "stock": [     
                     {"size": 7, "quanity": 10},
                     {"size":7.5, "quanity": 15},
                     {"size":8, "quanity": 20},
@@ -218,33 +426,18 @@
         },
         {
             "brand": "Nike",
-            "name": "Nike Air Force 1 '07",
-            "description": "The radiance lives on in the Nike Air Force 1 '07, the basketball original that puts a fresh spin on what you know best: durably stitched overlays, clean finishes and the perfect amount of flash to make you shine.",
+            "name": "Nike Phantom GX Academy MG",
+            "description": "Looking to take your game and creative ethos to the next level? Academy boots give you the precision touch you need to let your innermost playing instincts dazzle. Featuring NikeSkin, a mesh touch zone for enhanced ball control and an agility plate that's designed to swerve and sprint with you, it's ready to ignite your spontaneous playmaking spirit",
             "age": "Men",
-            "type": "LifeStyle",
-            "colors": [
-                "Black",
-                "White"
+            "type": "Football",
+            "color": "Orange",
+            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/bb25c121-5a4a-4ccf-b4a8-c0f5ba227e5b/custom-phantom-academy-low-by-you.png",
+            "images": [
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/bb25c121-5a4a-4ccf-b4a8-c0f5ba227e5b/custom-phantom-academy-low-by-you.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/35a6f634-736a-4e8b-a53a-8f61a5542d02/custom-phantom-academy-low-by-you.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/3f5843f5-a63f-4ce2-b2e1-093aa6a8cd14/custom-phantom-academy-low-by-you.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/964ab619-5626-44d4-9435-3524f8770ba7/custom-phantom-academy-low-by-you.png"
             ],
-            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b7d9211c-26e7-431a-ac24-b0540fb3c00f/air-force-1-07-shoes-GjGXSP.png",
-            "images": {
-                "Black": {
-                    "images": [
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/fc4622c4-2769-4665-aa6e-42c974a7705e/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/0ac482bd-f8e4-4d59-a652-4a50de7dbce5/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/900c2ac8-8a3e-45f7-aac7-c92ccce8505a/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/ddec7bcc-6100-4d27-ac7c-d15771e1780e/air-force-1-07-shoes-GjGXSP.png"
-                    ]
-                },
-                "White": {
-                    "images": [
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b7d9211c-26e7-431a-ac24-b0540fb3c00f/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/a0a300da-2e16-4483-ba64-9815cf0598ac/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/00375837-849f-4f17-ba24-d201d27be49b/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/82aa97ed-98bf-4b6f-9d0b-31a9f907077b/air-force-1-07-shoes-GjGXSP.png"
-                    ]
-                }
-            },
             "sizes": [
                 "7",
                 "7.5",
@@ -258,22 +451,9 @@
                 "11.5",
                 "12"
             ],
-            "price": 119.99,
+            "price": 114.99,
             "inventory": {
-                "Black": [
-                    {"size": 7, "quanity": 10},
-                    {"size":7.5, "quanity": 15},
-                    {"size":8, "quanity": 20},
-                    {"size":8.5, "quanity": 20},
-                    {"size":9, "quanity": 25},
-                    {"size":9.5, "quanity": 30},
-                    {"size":10, "quanity": 35},
-                    {"size":10.5, "quanity": 40},
-                    {"size":11, "quanity": 45},
-                    {"size":11.5, "quanity": 50},
-                    {"size":12, "quanity": 55}
-                ],
-                "White": [     
+                "stock": [     
                     {"size": 7, "quanity": 10},
                     {"size":7.5, "quanity": 15},
                     {"size":8, "quanity": 20},
@@ -290,33 +470,18 @@
         },
         {
             "brand": "Nike",
-            "name": "Nike Air Force 1 '07",
-            "description": "The radiance lives on in the Nike Air Force 1 '07, the basketball original that puts a fresh spin on what you know best: durably stitched overlays, clean finishes and the perfect amount of flash to make you shine.",
+            "name": "Nike Gripknit Phantom GX Elite Dynamic Fit SG-Pro Anti-Clog",
+            "description": "Obsessed with perfecting your craft and on-the-pitch look? We design Elite boots for you and the world's biggest stars to give you high-level quality, because you demand greatness from yourself and your footwear. Infused with revolutionary Nike Gripknit, this boot provides better touch on the ball in an intuitive design that's made to optimise performance both when striking and during close control.",
             "age": "Men",
-            "type": "LifeStyle",
-            "colors": [
-                "Black",
-                "White"
+            "type": "Football",
+            "color": "Multi-Colour",
+            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/cf595155-fec9-4b06-8b35-702dfd17b1b5/custom-nike-phantom-elite-dynamic-fit-by-you.png",
+            "images": [
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/cf595155-fec9-4b06-8b35-702dfd17b1b5/custom-nike-phantom-elite-dynamic-fit-by-you.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/f0dbacfe-19ef-4fcb-94da-df3054edafba/custom-nike-phantom-elite-dynamic-fit-by-you.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/71ad80ae-74dc-464f-b683-2e51e99992b2/custom-nike-phantom-elite-dynamic-fit-by-you.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/24c74e67-95ce-4764-8dd3-0c1d1ff950a7/custom-nike-phantom-elite-dynamic-fit-by-you.png"
             ],
-            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b7d9211c-26e7-431a-ac24-b0540fb3c00f/air-force-1-07-shoes-GjGXSP.png",
-            "images": {
-                "Black": {
-                    "images": [
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/fc4622c4-2769-4665-aa6e-42c974a7705e/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/0ac482bd-f8e4-4d59-a652-4a50de7dbce5/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/900c2ac8-8a3e-45f7-aac7-c92ccce8505a/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/ddec7bcc-6100-4d27-ac7c-d15771e1780e/air-force-1-07-shoes-GjGXSP.png"
-                    ]
-                },
-                "White": {
-                    "images": [
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b7d9211c-26e7-431a-ac24-b0540fb3c00f/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/a0a300da-2e16-4483-ba64-9815cf0598ac/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/00375837-849f-4f17-ba24-d201d27be49b/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/82aa97ed-98bf-4b6f-9d0b-31a9f907077b/air-force-1-07-shoes-GjGXSP.png"
-                    ]
-                }
-            },
             "sizes": [
                 "7",
                 "7.5",
@@ -330,22 +495,9 @@
                 "11.5",
                 "12"
             ],
-            "price": 119.99,
+            "price": 319.99,
             "inventory": {
-                "Black": [
-                    {"size": 7, "quanity": 10},
-                    {"size":7.5, "quanity": 15},
-                    {"size":8, "quanity": 20},
-                    {"size":8.5, "quanity": 20},
-                    {"size":9, "quanity": 25},
-                    {"size":9.5, "quanity": 30},
-                    {"size":10, "quanity": 35},
-                    {"size":10.5, "quanity": 40},
-                    {"size":11, "quanity": 45},
-                    {"size":11.5, "quanity": 50},
-                    {"size":12, "quanity": 55}
-                ],
-                "White": [     
+                "stock": [     
                     {"size": 7, "quanity": 10},
                     {"size":7.5, "quanity": 15},
                     {"size":8, "quanity": 20},
@@ -362,33 +514,18 @@
         },
         {
             "brand": "Nike",
-            "name": "Nike Air Force 1 '07",
-            "description": "The radiance lives on in the Nike Air Force 1 '07, the basketball original that puts a fresh spin on what you know best: durably stitched overlays, clean finishes and the perfect amount of flash to make you shine.",
+            "name": "The Nike Premier 3 FG",
+            "description": "The Nike Premier 3 gets back to the basics with a timeless silhouette wrapped in supple kangaroo leather—helping you to move confidently as an unstoppable force on the pitch.",
             "age": "Men",
-            "type": "LifeStyle",
-            "colors": [
-                "Black",
-                "White"
+            "type": "Football",
+            "color": "Red",
+            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/a5091ec3-1526-4399-8248-2439b88d355c/premier-3-fg-football-boots-St1KzZ.png",
+            "images": [
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/a5091ec3-1526-4399-8248-2439b88d355c/premier-3-fg-football-boots-St1KzZ.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/bf20d5c6-bd8f-4945-a22f-eaf63424f2de/premier-3-fg-football-boots-St1KzZ.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/e456b43b-b68b-462b-9b0d-c3ff702de3db/premier-3-fg-football-boots-St1KzZ.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/ce4751ab-a8de-447f-98c7-eb8fbf4426f4/premier-3-fg-football-boots-St1KzZ.png"
             ],
-            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b7d9211c-26e7-431a-ac24-b0540fb3c00f/air-force-1-07-shoes-GjGXSP.png",
-            "images": {
-                "Black": {
-                    "images": [
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/fc4622c4-2769-4665-aa6e-42c974a7705e/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/0ac482bd-f8e4-4d59-a652-4a50de7dbce5/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/900c2ac8-8a3e-45f7-aac7-c92ccce8505a/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/ddec7bcc-6100-4d27-ac7c-d15771e1780e/air-force-1-07-shoes-GjGXSP.png"
-                    ]
-                },
-                "White": {
-                    "images": [
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b7d9211c-26e7-431a-ac24-b0540fb3c00f/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/a0a300da-2e16-4483-ba64-9815cf0598ac/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/00375837-849f-4f17-ba24-d201d27be49b/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/82aa97ed-98bf-4b6f-9d0b-31a9f907077b/air-force-1-07-shoes-GjGXSP.png"
-                    ]
-                }
-            },
             "sizes": [
                 "7",
                 "7.5",
@@ -400,11 +537,71 @@
                 "10.5",
                 "11",
                 "11.5",
-                "12"
+                "12",
+                "12.5",
+                "13",
+                "13.5",
+                "14"
+            ],
+            "price": 99.99,
+            "inventory": {
+                "stock": [     
+                    {"size": 7, "quanity": 10},
+                    {"size":7.5, "quanity": 15},
+                    {"size":8, "quanity": 20},
+                    {"size":8.5, "quanity": 20},
+                    {"size":9, "quanity": 25},
+                    {"size":9.5, "quanity": 30},
+                    {"size":10, "quanity": 35},
+                    {"size":10.5, "quanity": 40},
+                    {"size":11, "quanity": 45},
+                    {"size":11.5, "quanity": 50},
+                    {"size":12, "quanity": 35},
+                    {"size":12.5, "quanity": 20},
+                    {"size":13, "quanity": 15},
+                    {"size":13.5, "quanity": 10},
+                    {"size":14, "quanity": 5}
+                ]
+            }
+        },
+
+        {
+            "brand": "Jordan",
+            "name": "Zion 2",
+            "description": "Channel your school spirit in colours that nod to Zion Williamson's iconic university basketball season. Then, take over the game in a shoe that supports your ability to quickly change direction and avoid defenders on the court.",
+            "age": "Men",
+            "type": "Basketball",
+            "color": "Purple",
+            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/deba8d1b-3f34-4b54-b2db-e56901ca7f7a/zion-2-basketball-shoes-8vtRkh.png",
+            "images": [
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/deba8d1b-3f34-4b54-b2db-e56901ca7f7a/zion-2-basketball-shoes-8vtRkh.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/285571aa-7dff-4916-a8f3-e2d807730838/zion-2-basketball-shoes-8vtRkh.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/55c87338-8d1e-4704-b74a-0bad1d87df5d/zion-2-basketball-shoes-8vtRkh.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/53d214a3-db3d-4545-a034-2ff1896e6dea/zion-2-basketball-shoes-8vtRkh.png"
+            ],
+            "sizes": [
+                "7",
+                "7.5",
+                "8",
+                "8.5",
+                "9",
+                "9.5",
+                "10",
+                "10.5",
+                "11",
+                "11.5",
+                "12",
+                "12.5",
+                "13",
+                "13.5",
+                "14",
+                "15",
+                "16",
+                "17"
             ],
             "price": 119.99,
             "inventory": {
-                "Black": [
+                "stock": [     
                     {"size": 7, "quanity": 10},
                     {"size":7.5, "quanity": 15},
                     {"size":8, "quanity": 20},
@@ -415,9 +612,54 @@
                     {"size":10.5, "quanity": 40},
                     {"size":11, "quanity": 45},
                     {"size":11.5, "quanity": 50},
-                    {"size":12, "quanity": 55}
-                ],
-                "White": [     
+                    {"size":12, "quanity": 35},
+                    {"size":12.5, "quanity": 20},
+                    {"size":13, "quanity": 15},
+                    {"size":13.5, "quanity": 10},
+                    {"size":14, "quanity": 5},
+                    {"size":15, "quanity": 15},
+                    {"size":16, "quanity": 15},
+                    {"size":17, "quanity": 15}
+                ]
+            }
+        },
+        {
+            "brand": "Jordan",
+            "name": "Luka 1",
+            "description": "Designed for No. 77 and made for every athlete craving speed and efficiency, Luka's debut delivers the goods. The first shoe with full-length Formula 23 foam, it has an ultra-supportive fit crafted with the step-back in mind. Meanwhile, strong and lightweight Flight Wire cables keep you feeling contained, whether you're playing indoors or out. This is the assist you've been waiting for—get out there and make your shot.",
+            "age": "Men",
+            "type": "Basketball",
+            "color": "Red",
+            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/cdde45af-82f1-4649-9f0c-fc1ec6802f94/luka-1-basketball-shoes-CCfKwx.png",
+            "images": [
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/cdde45af-82f1-4649-9f0c-fc1ec6802f94/luka-1-basketball-shoes-CCfKwx.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/8d0c435b-0701-4aa2-b0f2-acef7c6a3882/luka-1-basketball-shoes-CCfKwx.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/e2b009ba-c177-48ef-84ea-b433d404ae00/luka-1-basketball-shoes-CCfKwx.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/834ada1b-2cf9-45d4-ae9a-6840d098f42f/luka-1-basketball-shoes-CCfKwx.png"
+            ],
+            "sizes": [
+                "7",
+                "7.5",
+                "8",
+                "8.5",
+                "9",
+                "9.5",
+                "10",
+                "10.5",
+                "11",
+                "11.5",
+                "12",
+                "12.5",
+                "13",
+                "13.5",
+                "14",
+                "15",
+                "16",
+                "17"
+            ],
+            "price": 109.99,
+            "inventory": {
+                "stock": [     
                     {"size": 7, "quanity": 10},
                     {"size":7.5, "quanity": 15},
                     {"size":8, "quanity": 20},
@@ -428,39 +670,31 @@
                     {"size":10.5, "quanity": 40},
                     {"size":11, "quanity": 45},
                     {"size":11.5, "quanity": 50},
-                    {"size":12, "quanity": 55}
+                    {"size":12, "quanity": 35},
+                    {"size":12.5, "quanity": 20},
+                    {"size":13, "quanity": 15},
+                    {"size":13.5, "quanity": 10},
+                    {"size":14, "quanity": 5},
+                    {"size":15, "quanity": 15},
+                    {"size":16, "quanity": 15},
+                    {"size":17, "quanity": 15}
                 ]
             }
         },
         {
             "brand": "Nike",
-            "name": "Nike Air Force 1 '07",
-            "description": "The radiance lives on in the Nike Air Force 1 '07, the basketball original that puts a fresh spin on what you know best: durably stitched overlays, clean finishes and the perfect amount of flash to make you shine.",
+            "name": "Giannis Immortality 2",
+            "description": "Morph into all-timer with the Giannis Immortality 2. A plush foam package combined with a more focused fit in the midfoot in a super-lightweight design means you can maintain a high level of intensity and focus when victory hangs in the balance—just like Giannis at the critical moment.",
             "age": "Men",
-            "type": "LifeStyle",
-            "colors": [
-                "Black",
-                "White"
+            "type": "Basketball",
+            "color": "Grey",
+            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/bf1c9a8e-af53-47b3-9eac-a501e8870b29/giannis-immortality-2-basketball-shoes-fV94xn.png",
+            "images": [
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/bf1c9a8e-af53-47b3-9eac-a501e8870b29/giannis-immortality-2-basketball-shoes-fV94xn.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/f457bd4b-d3a8-496c-919a-d25f92acf842/giannis-immortality-2-basketball-shoes-fV94xn.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/0a2e59ff-a4c9-4ce8-a6d1-7a7db43cf20c/giannis-immortality-2-basketball-shoes-fV94xn.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/57a735e9-5177-471b-8f4c-5e30c02d866e/giannis-immortality-2-basketball-shoes-fV94xn.png"
             ],
-            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b7d9211c-26e7-431a-ac24-b0540fb3c00f/air-force-1-07-shoes-GjGXSP.png",
-            "images": {
-                "Black": {
-                    "images": [
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/fc4622c4-2769-4665-aa6e-42c974a7705e/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/0ac482bd-f8e4-4d59-a652-4a50de7dbce5/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/900c2ac8-8a3e-45f7-aac7-c92ccce8505a/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/ddec7bcc-6100-4d27-ac7c-d15771e1780e/air-force-1-07-shoes-GjGXSP.png"
-                    ]
-                },
-                "White": {
-                    "images": [
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b7d9211c-26e7-431a-ac24-b0540fb3c00f/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/a0a300da-2e16-4483-ba64-9815cf0598ac/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/00375837-849f-4f17-ba24-d201d27be49b/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/82aa97ed-98bf-4b6f-9d0b-31a9f907077b/air-force-1-07-shoes-GjGXSP.png"
-                    ]
-                }
-            },
             "sizes": [
                 "7",
                 "7.5",
@@ -472,11 +706,16 @@
                 "10.5",
                 "11",
                 "11.5",
-                "12"
+                "12",
+                "12.5",
+                "13",
+                "13.5",
+                "14",
+                "15"
             ],
-            "price": 119.99,
+            "price": 84.99,
             "inventory": {
-                "Black": [
+                "stock": [     
                     {"size": 7, "quanity": 10},
                     {"size":7.5, "quanity": 15},
                     {"size":8, "quanity": 20},
@@ -487,52 +726,29 @@
                     {"size":10.5, "quanity": 40},
                     {"size":11, "quanity": 45},
                     {"size":11.5, "quanity": 50},
-                    {"size":12, "quanity": 55}
-                ],
-                "White": [     
-                    {"size": 7, "quanity": 10},
-                    {"size":7.5, "quanity": 15},
-                    {"size":8, "quanity": 20},
-                    {"size":8.5, "quanity": 20},
-                    {"size":9, "quanity": 25},
-                    {"size":9.5, "quanity": 30},
-                    {"size":10, "quanity": 35},
-                    {"size":10.5, "quanity": 40},
-                    {"size":11, "quanity": 45},
-                    {"size":11.5, "quanity": 50},
-                    {"size":12, "quanity": 55}
+                    {"size":12, "quanity": 35},
+                    {"size":12.5, "quanity": 20},
+                    {"size":13, "quanity": 15},
+                    {"size":13.5, "quanity": 10},
+                    {"size":14, "quanity": 5},
+                    {"size":15, "quanity": 15}
                 ]
             }
         },
         {
             "brand": "Nike",
-            "name": "Nike Air Force 1 '07",
-            "description": "The radiance lives on in the Nike Air Force 1 '07, the basketball original that puts a fresh spin on what you know best: durably stitched overlays, clean finishes and the perfect amount of flash to make you shine.",
+            "name": "LeBron XX 'Stocking Stuffer'",
+            "description": "Bah, humbug! Not with the LeBron 20 'Stocking Stuffer' under the tree. Revisiting the iconic line-up of the King's Christmas Day kicks, this design's festive array of graphics and colours creates a mash-up of Christmas' past. From dimes to dunks, this is no ugly jumper—its lightweight, low-to-the-ground and ultra-cushioned design is fresher than pine and cosier than a cup of cocoa by the fireside. Hope you've been nice.",
             "age": "Men",
-            "type": "LifeStyle",
-            "colors": [
-                "Black",
-                "White"
+            "type": "Basketball",
+            "color": "Green",
+            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/2d2f0c7e-0379-4c3c-b4fd-1afa49425641/lebron-xx-stocking-stuffer-basketball-shoes-hdhVdr.png",
+            "images": [
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/2d2f0c7e-0379-4c3c-b4fd-1afa49425641/lebron-xx-stocking-stuffer-basketball-shoes-hdhVdr.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/7e26df85-f755-4db7-b27e-771b1785e508/lebron-xx-stocking-stuffer-basketball-shoes-hdhVdr.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/5057c35d-f1d5-43eb-84fc-7b2f3131dd53/lebron-xx-stocking-stuffer-basketball-shoes-hdhVdr.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/8d56df99-0d85-45b5-a01b-074e6da03508/lebron-xx-stocking-stuffer-basketball-shoes-hdhVdr.png"
             ],
-            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b7d9211c-26e7-431a-ac24-b0540fb3c00f/air-force-1-07-shoes-GjGXSP.png",
-            "images": {
-                "Black": {
-                    "images": [
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/fc4622c4-2769-4665-aa6e-42c974a7705e/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/0ac482bd-f8e4-4d59-a652-4a50de7dbce5/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/900c2ac8-8a3e-45f7-aac7-c92ccce8505a/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/ddec7bcc-6100-4d27-ac7c-d15771e1780e/air-force-1-07-shoes-GjGXSP.png"
-                    ]
-                },
-                "White": {
-                    "images": [
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b7d9211c-26e7-431a-ac24-b0540fb3c00f/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/a0a300da-2e16-4483-ba64-9815cf0598ac/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/00375837-849f-4f17-ba24-d201d27be49b/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/82aa97ed-98bf-4b6f-9d0b-31a9f907077b/air-force-1-07-shoes-GjGXSP.png"
-                    ]
-                }
-            },
             "sizes": [
                 "7",
                 "7.5",
@@ -544,11 +760,18 @@
                 "10.5",
                 "11",
                 "11.5",
-                "12"
+                "12",
+                "12.5",
+                "13",
+                "13.5",
+                "14",
+                "15",
+                "16",
+                "17"
             ],
-            "price": 119.99,
+            "price": 199.99,
             "inventory": {
-                "Black": [
+                "stock": [     
                     {"size": 7, "quanity": 10},
                     {"size":7.5, "quanity": 15},
                     {"size":8, "quanity": 20},
@@ -559,9 +782,52 @@
                     {"size":10.5, "quanity": 40},
                     {"size":11, "quanity": 45},
                     {"size":11.5, "quanity": 50},
-                    {"size":12, "quanity": 55}
-                ],
-                "White": [     
+                    {"size":12, "quanity": 35},
+                    {"size":12.5, "quanity": 20},
+                    {"size":13, "quanity": 15},
+                    {"size":13.5, "quanity": 10},
+                    {"size":14, "quanity": 5},
+                    {"size":15, "quanity": 15},
+                    {"size":16, "quanity": 10},
+                    {"size":17, "quanity": 5}
+                ]
+            }
+        },
+
+        {
+            "brand": "Nike",
+            "name": "Nike Air Max Alpha Trainer 5",
+            "description": "Finish your last rep with power and rack it with a roar that stuns the gym floor in the Nike Air Max Alpha Trainer 5. Max Air cushioning offers comfortable stability for lifting whether it's a light or heavy day. A wide, flat base gives you enhanced stability and grip for all kinds of tough workouts without sacrificing style, as you roam from station to station and set to set.",
+            "age": "Men",
+            "type": "Training",
+            "color": "Black",
+            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/e7c867e1-598a-4544-b670-1f378de3754e/air-max-alpha-trainer-5-training-shoes-5Cbtsh.png",
+            "images": [
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/e7c867e1-598a-4544-b670-1f378de3754e/air-max-alpha-trainer-5-training-shoes-5Cbtsh.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/73aad0c0-3905-4c56-86fc-31f8f2b9f8fa/air-max-alpha-trainer-5-training-shoes-5Cbtsh.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/9f0a5c73-6e3c-44f5-be3f-16d0b4dc7a86/air-max-alpha-trainer-5-training-shoes-5Cbtsh.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/a8827158-6554-4117-8528-193bed772e3e/air-max-alpha-trainer-5-training-shoes-5Cbtsh.png"
+            ],
+            "sizes": [
+                "7",
+                "7.5",
+                "8",
+                "8.5",
+                "9",
+                "9.5",
+                "10",
+                "10.5",
+                "11",
+                "11.5",
+                "12",
+                "12.5",
+                "13",
+                "13.5",
+                "14"
+            ],
+            "price": 79.99,
+            "inventory": {
+                "stock": [     
                     {"size": 7, "quanity": 10},
                     {"size":7.5, "quanity": 15},
                     {"size":8, "quanity": 20},
@@ -572,39 +838,28 @@
                     {"size":10.5, "quanity": 40},
                     {"size":11, "quanity": 45},
                     {"size":11.5, "quanity": 50},
-                    {"size":12, "quanity": 55}
+                    {"size":12, "quanity": 35},
+                    {"size":12.5, "quanity": 20},
+                    {"size":13, "quanity": 15},
+                    {"size":13.5, "quanity": 10},
+                    {"size":14, "quanity": 5}
                 ]
             }
         },
         {
             "brand": "Nike",
-            "name": "Nike Air Force 1 '07",
-            "description": "The radiance lives on in the Nike Air Force 1 '07, the basketball original that puts a fresh spin on what you know best: durably stitched overlays, clean finishes and the perfect amount of flash to make you shine.",
+            "name": "Nike Metcon 8 AMP",
+            "description": "We're here to help get you moving! Regardless of whether your pace is snail-like or lickety-split, the Nike Metcon 8 AMP helps keep you on the go. Expressive, playful graphics remind your fun can be found in every workout, no matter how tough. The upper is lighter and more breathable than our previous edition to complement our standards of durability and comfort so that you can float through your cardio and power through your lifts. So go ahead, put 1 foot in front of the other, we've got you, from your friends at the Moving Co.",
             "age": "Men",
-            "type": "LifeStyle",
-            "colors": [
-                "Black",
-                "White"
+            "type": "Training",
+            "color": "Brown",
+            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/8f11d52e-2a1e-4e8b-afd1-0eadf8341d00/metcon-8-amp-training-shoes-LzJFXk.png",
+            "images": [
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/8f11d52e-2a1e-4e8b-afd1-0eadf8341d00/metcon-8-amp-training-shoes-LzJFXk.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/10098680-57c3-4074-9773-72b89dde72aa/metcon-8-amp-training-shoes-LzJFXk.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/18d3e5b7-24b4-4128-a3b5-2083f433faee/metcon-8-amp-training-shoes-LzJFXk.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/ad426688-efcd-4448-9bb5-dd9e677a921b/metcon-8-amp-training-shoes-LzJFXk.png"
             ],
-            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b7d9211c-26e7-431a-ac24-b0540fb3c00f/air-force-1-07-shoes-GjGXSP.png",
-            "images": {
-                "Black": {
-                    "images": [
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/fc4622c4-2769-4665-aa6e-42c974a7705e/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/0ac482bd-f8e4-4d59-a652-4a50de7dbce5/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/900c2ac8-8a3e-45f7-aac7-c92ccce8505a/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/ddec7bcc-6100-4d27-ac7c-d15771e1780e/air-force-1-07-shoes-GjGXSP.png"
-                    ]
-                },
-                "White": {
-                    "images": [
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b7d9211c-26e7-431a-ac24-b0540fb3c00f/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/a0a300da-2e16-4483-ba64-9815cf0598ac/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/00375837-849f-4f17-ba24-d201d27be49b/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/82aa97ed-98bf-4b6f-9d0b-31a9f907077b/air-force-1-07-shoes-GjGXSP.png"
-                    ]
-                }
-            },
             "sizes": [
                 "7",
                 "7.5",
@@ -616,11 +871,15 @@
                 "10.5",
                 "11",
                 "11.5",
-                "12"
+                "12",
+                "12.5",
+                "13",
+                "13.5",
+                "14"
             ],
-            "price": 119.99,
+            "price": 149.99,
             "inventory": {
-                "Black": [
+                "stock": [     
                     {"size": 7, "quanity": 10},
                     {"size":7.5, "quanity": 15},
                     {"size":8, "quanity": 20},
@@ -631,52 +890,28 @@
                     {"size":10.5, "quanity": 40},
                     {"size":11, "quanity": 45},
                     {"size":11.5, "quanity": 50},
-                    {"size":12, "quanity": 55}
-                ],
-                "White": [     
-                    {"size": 7, "quanity": 10},
-                    {"size":7.5, "quanity": 15},
-                    {"size":8, "quanity": 20},
-                    {"size":8.5, "quanity": 20},
-                    {"size":9, "quanity": 25},
-                    {"size":9.5, "quanity": 30},
-                    {"size":10, "quanity": 35},
-                    {"size":10.5, "quanity": 40},
-                    {"size":11, "quanity": 45},
-                    {"size":11.5, "quanity": 50},
-                    {"size":12, "quanity": 55}
+                    {"size":12, "quanity": 35},
+                    {"size":12.5, "quanity": 20},
+                    {"size":13, "quanity": 15},
+                    {"size":13.5, "quanity": 10},
+                    {"size":14, "quanity": 5}
                 ]
             }
         },
         {
             "brand": "Nike",
-            "name": "Nike Air Force 1 '07",
-            "description": "The radiance lives on in the Nike Air Force 1 '07, the basketball original that puts a fresh spin on what you know best: durably stitched overlays, clean finishes and the perfect amount of flash to make you shine.",
+            "name": "Nike SuperRep Go 3 Next Nature Flyknit",
+            "description": "The new Nike SuperRep Go 3 Flyknit Shoe is a radical design story rooted in sustainability and innovation. The zoned Flyknit construction wraps your foot in 360 degrees of comfort and support. A finely ground, reclaimed foam midsole gives you responsive cushioning for high-impact training. The lightweight, packable design lets you keep them close, no matter where your next workout takes you.",
             "age": "Men",
-            "type": "LifeStyle",
-            "colors": [
-                "Black",
-                "White"
+            "type": "Training",
+            "color": "Blue",
+            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/a3990db8-a573-445c-b499-8b5fe510c692/superrep-go-3-next-nature-flyknit-training-shoes-MKC6Qs.png",
+            "images": [
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/a3990db8-a573-445c-b499-8b5fe510c692/superrep-go-3-next-nature-flyknit-training-shoes-MKC6Qs.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/a518e3f6-55d4-4dbc-bc43-76cad59e6a2f/superrep-go-3-next-nature-flyknit-training-shoes-MKC6Qs.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/39edd3ff-8c11-487c-9c28-ac5be68eae3b/superrep-go-3-next-nature-flyknit-training-shoes-MKC6Qs.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/e8463e5c-6cab-4cf3-bdc9-e17104ca4fcf/superrep-go-3-next-nature-flyknit-training-shoes-MKC6Qs.png"
             ],
-            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b7d9211c-26e7-431a-ac24-b0540fb3c00f/air-force-1-07-shoes-GjGXSP.png",
-            "images": {
-                "Black": {
-                    "images": [
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/fc4622c4-2769-4665-aa6e-42c974a7705e/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/0ac482bd-f8e4-4d59-a652-4a50de7dbce5/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/900c2ac8-8a3e-45f7-aac7-c92ccce8505a/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/ddec7bcc-6100-4d27-ac7c-d15771e1780e/air-force-1-07-shoes-GjGXSP.png"
-                    ]
-                },
-                "White": {
-                    "images": [
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b7d9211c-26e7-431a-ac24-b0540fb3c00f/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/a0a300da-2e16-4483-ba64-9815cf0598ac/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/00375837-849f-4f17-ba24-d201d27be49b/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/82aa97ed-98bf-4b6f-9d0b-31a9f907077b/air-force-1-07-shoes-GjGXSP.png"
-                    ]
-                }
-            },
             "sizes": [
                 "7",
                 "7.5",
@@ -688,11 +923,16 @@
                 "10.5",
                 "11",
                 "11.5",
-                "12"
+                "12",
+                "12.5",
+                "13",
+                "13.5",
+                "14",
+                "15"
             ],
-            "price": 119.99,
+            "price": 109.99,
             "inventory": {
-                "Black": [
+                "stock": [     
                     {"size": 7, "quanity": 10},
                     {"size":7.5, "quanity": 15},
                     {"size":8, "quanity": 20},
@@ -703,52 +943,29 @@
                     {"size":10.5, "quanity": 40},
                     {"size":11, "quanity": 45},
                     {"size":11.5, "quanity": 50},
-                    {"size":12, "quanity": 55}
-                ],
-                "White": [     
-                    {"size": 7, "quanity": 10},
-                    {"size":7.5, "quanity": 15},
-                    {"size":8, "quanity": 20},
-                    {"size":8.5, "quanity": 20},
-                    {"size":9, "quanity": 25},
-                    {"size":9.5, "quanity": 30},
-                    {"size":10, "quanity": 35},
-                    {"size":10.5, "quanity": 40},
-                    {"size":11, "quanity": 45},
-                    {"size":11.5, "quanity": 50},
-                    {"size":12, "quanity": 55}
+                    {"size":12, "quanity": 35},
+                    {"size":12.5, "quanity": 20},
+                    {"size":13, "quanity": 15},
+                    {"size":13.5, "quanity": 10},
+                    {"size":14, "quanity": 5},
+                    {"size":15, "quanity": 15}
                 ]
             }
         },
         {
             "brand": "Nike",
-            "name": "Nike Air Force 1 '07",
-            "description": "The radiance lives on in the Nike Air Force 1 '07, the basketball original that puts a fresh spin on what you know best: durably stitched overlays, clean finishes and the perfect amount of flash to make you shine.",
+            "name": "Nike Vapor Drive",
+            "description": "Keep up with the rigours of hockey in lightweight shoes designed specifically for wet turf. Plus, new levels of turf traction and reinforcements help keep you moving fast.",
             "age": "Men",
-            "type": "LifeStyle",
-            "colors": [
-                "Black",
-                "White"
+            "type": "Training",
+            "color": "Blue",
+            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/7df3f342-2f88-4bab-ac8f-86c2b05d94f9/vapor-drive-hockey-shoes-fFGwgM.png",
+            "images": [
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/7df3f342-2f88-4bab-ac8f-86c2b05d94f9/vapor-drive-hockey-shoes-fFGwgM.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/977408b7-f6c0-4c1f-a8dd-a98113ebcd5d/vapor-drive-hockey-shoes-fFGwgM.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/fe4d983c-3139-47a9-9637-4cc1e2f8c956/vapor-drive-hockey-shoes-fFGwgM.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b720c004-42f3-49e4-984b-b541b4e09da6/vapor-drive-hockey-shoes-fFGwgM.png"
             ],
-            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b7d9211c-26e7-431a-ac24-b0540fb3c00f/air-force-1-07-shoes-GjGXSP.png",
-            "images": {
-                "Black": {
-                    "images": [
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/fc4622c4-2769-4665-aa6e-42c974a7705e/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/0ac482bd-f8e4-4d59-a652-4a50de7dbce5/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/900c2ac8-8a3e-45f7-aac7-c92ccce8505a/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/ddec7bcc-6100-4d27-ac7c-d15771e1780e/air-force-1-07-shoes-GjGXSP.png"
-                    ]
-                },
-                "White": {
-                    "images": [
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b7d9211c-26e7-431a-ac24-b0540fb3c00f/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/a0a300da-2e16-4483-ba64-9815cf0598ac/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/00375837-849f-4f17-ba24-d201d27be49b/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/82aa97ed-98bf-4b6f-9d0b-31a9f907077b/air-force-1-07-shoes-GjGXSP.png"
-                    ]
-                }
-            },
             "sizes": [
                 "7",
                 "7.5",
@@ -760,11 +977,15 @@
                 "10.5",
                 "11",
                 "11.5",
-                "12"
+                "12",
+                "12.5",
+                "13",
+                "13.5",
+                "14"
             ],
-            "price": 119.99,
+            "price": 134.99,
             "inventory": {
-                "Black": [
+                "stock": [     
                     {"size": 7, "quanity": 10},
                     {"size":7.5, "quanity": 15},
                     {"size":8, "quanity": 20},
@@ -775,340 +996,337 @@
                     {"size":10.5, "quanity": 40},
                     {"size":11, "quanity": 45},
                     {"size":11.5, "quanity": 50},
-                    {"size":12, "quanity": 55}
-                ],
-                "White": [     
+                    {"size":12, "quanity": 35},
+                    {"size":12.5, "quanity": 20},
+                    {"size":13, "quanity": 15},
+                    {"size":13.5, "quanity": 10},
+                    {"size":14, "quanity": 5}
+                ]
+            }
+        },
+
+        {
+            "brand": "Jordan",
+            "name": "Air Jordan 1 Acclimate",
+            "description": "Cold, wet weather usually means it's time to put away your J's until the spring. With the Air Jordan 1 Acclimate, those days are over. Part boot, part sneaker, it uses winterized materials in a toe-to-heel overhaul that's designed to help you stay warm and dry without losing the iconic AJ1 appeal.",
+            "age": "Women",
+            "type": "Lifestyle",
+            "color": "Blue",
+            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/7584e3a3-32a8-4f3d-a74f-241c215ef39d/air-jordan-1-acclimate-shoes-ZkcPmt.png",
+            "images": [
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/7584e3a3-32a8-4f3d-a74f-241c215ef39d/air-jordan-1-acclimate-shoes-ZkcPmt.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/20e22f9c-66a8-46f0-8ae2-86ece6c672e9/air-jordan-1-acclimate-shoes-ZkcPmt.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/abeabe7d-12a5-4c95-a92a-6d5e72c06b1e/air-jordan-1-acclimate-shoes-ZkcPmt.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/6219249b-9846-4f0a-9318-07996f77a12e/air-jordan-1-acclimate-shoes-ZkcPmt.png"
+            ],
+            "sizes": [
+                "7",
+                "7.5",
+                "8",
+                "8.5",
+                "9",
+                "9.5"
+            ],
+            "price": 159.99,
+            "inventory": {
+                "stock": [     
                     {"size": 7, "quanity": 10},
                     {"size":7.5, "quanity": 15},
                     {"size":8, "quanity": 20},
                     {"size":8.5, "quanity": 20},
                     {"size":9, "quanity": 25},
-                    {"size":9.5, "quanity": 30},
-                    {"size":10, "quanity": 35},
-                    {"size":10.5, "quanity": 40},
-                    {"size":11, "quanity": 45},
-                    {"size":11.5, "quanity": 50},
-                    {"size":12, "quanity": 55}
+                    {"size":9.5, "quanity": 30}
                 ]
             }
         },
         {
             "brand": "Nike",
-            "name": "Nike Air Force 1 '07",
-            "description": "The radiance lives on in the Nike Air Force 1 '07, the basketball original that puts a fresh spin on what you know best: durably stitched overlays, clean finishes and the perfect amount of flash to make you shine.",
-            "age": "Men",
-            "type": "LifeStyle",
-            "colors": [
-                "Black",
-                "White"
+            "name": "Nike Air Max 2090",
+            "description": "We'Bring the past into the future with the Nike Air Max 2090. Inspired by the iconic Air Max 90, the 2090 features Nike Air cushioning underfoot that adds unparalleled comfort, while transparent mesh on the upper is blended with timeless OG features for an edgy, modernised look.'ve got you, from your friends at the Moving Co.",
+            "age": "Women",
+            "type": "Lifestyle",
+            "color": "Black",
+            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/84675f67-3bf9-4db9-846c-7368b65bd97d/air-max-2090-shoe-x1nt1p.png",
+            "images": [
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/84675f67-3bf9-4db9-846c-7368b65bd97d/air-max-2090-shoe-x1nt1p.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/0a231e24-c6f0-47e2-bb88-7e8b70e1a90d/air-max-2090-shoe-x1nt1p.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/6f4a7fa9-0042-47ca-92fa-481d75e28810/air-max-2090-shoe-x1nt1p.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/f311e180-3f7a-4418-8f79-00ec14bca9a5/air-max-2090-shoe-x1nt1p.png"
             ],
-            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b7d9211c-26e7-431a-ac24-b0540fb3c00f/air-force-1-07-shoes-GjGXSP.png",
-            "images": {
-                "Black": {
-                    "images": [
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/fc4622c4-2769-4665-aa6e-42c974a7705e/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/0ac482bd-f8e4-4d59-a652-4a50de7dbce5/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/900c2ac8-8a3e-45f7-aac7-c92ccce8505a/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/ddec7bcc-6100-4d27-ac7c-d15771e1780e/air-force-1-07-shoes-GjGXSP.png"
-                    ]
-                },
-                "White": {
-                    "images": [
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b7d9211c-26e7-431a-ac24-b0540fb3c00f/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/a0a300da-2e16-4483-ba64-9815cf0598ac/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/00375837-849f-4f17-ba24-d201d27be49b/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/82aa97ed-98bf-4b6f-9d0b-31a9f907077b/air-force-1-07-shoes-GjGXSP.png"
-                    ]
-                }
-            },
             "sizes": [
                 "7",
                 "7.5",
                 "8",
                 "8.5",
                 "9",
-                "9.5",
-                "10",
-                "10.5",
-                "11",
-                "11.5",
-                "12"
+                "9.5"
             ],
-            "price": 119.99,
+            "price": 149.99,
             "inventory": {
-                "Black": [
+                "stock": [     
                     {"size": 7, "quanity": 10},
                     {"size":7.5, "quanity": 15},
                     {"size":8, "quanity": 20},
                     {"size":8.5, "quanity": 20},
                     {"size":9, "quanity": 25},
-                    {"size":9.5, "quanity": 30},
-                    {"size":10, "quanity": 35},
-                    {"size":10.5, "quanity": 40},
-                    {"size":11, "quanity": 45},
-                    {"size":11.5, "quanity": 50},
-                    {"size":12, "quanity": 55}
-                ],
-                "White": [     
-                    {"size": 7, "quanity": 10},
-                    {"size":7.5, "quanity": 15},
-                    {"size":8, "quanity": 20},
-                    {"size":8.5, "quanity": 20},
-                    {"size":9, "quanity": 25},
-                    {"size":9.5, "quanity": 30},
-                    {"size":10, "quanity": 35},
-                    {"size":10.5, "quanity": 40},
-                    {"size":11, "quanity": 45},
-                    {"size":11.5, "quanity": 50},
-                    {"size":12, "quanity": 55}
+                    {"size":9.5, "quanity": 30}
                 ]
             }
         },
         {
             "brand": "Nike",
-            "name": "Nike Air Force 1 '07",
-            "description": "The radiance lives on in the Nike Air Force 1 '07, the basketball original that puts a fresh spin on what you know best: durably stitched overlays, clean finishes and the perfect amount of flash to make you shine.",
-            "age": "Men",
-            "type": "LifeStyle",
-            "colors": [
-                "Black",
-                "White"
+            "name": "Nike Air Force 1 Shadow",
+            "description": "Surround yourself with warmth and comfort in kicks that put a cosy twist on a hoops icon. Soft suede is paired with smooth leather and fluffy faux fur to add a comforting touch to these blushing kicks. Using a layered approach, double the branding and an exaggerated midsole highlight AF-1 DNA with a bold new look.",
+            "age": "Women",
+            "type": "Lifestyle",
+            "color": "Brown",
+            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/ae13300b-a77a-4733-a8b7-eb817b0bc920/air-force-1-shadow-shoes-6q0Lmb.png",
+            "images": [
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/ae13300b-a77a-4733-a8b7-eb817b0bc920/air-force-1-shadow-shoes-6q0Lmb.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/6d40e9b8-5b30-4b60-8b37-bd31d9692bda/air-force-1-shadow-shoes-6q0Lmb.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/c39737c9-f3f6-4f09-8204-dbb3877dc455/air-force-1-shadow-shoes-6q0Lmb.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/81c1ec65-8733-4170-9d42-47737b50c4f7/air-force-1-shadow-shoes-6q0Lmb.png"
             ],
-            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b7d9211c-26e7-431a-ac24-b0540fb3c00f/air-force-1-07-shoes-GjGXSP.png",
-            "images": {
-                "Black": {
-                    "images": [
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/fc4622c4-2769-4665-aa6e-42c974a7705e/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/0ac482bd-f8e4-4d59-a652-4a50de7dbce5/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/900c2ac8-8a3e-45f7-aac7-c92ccce8505a/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/ddec7bcc-6100-4d27-ac7c-d15771e1780e/air-force-1-07-shoes-GjGXSP.png"
-                    ]
-                },
-                "White": {
-                    "images": [
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b7d9211c-26e7-431a-ac24-b0540fb3c00f/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/a0a300da-2e16-4483-ba64-9815cf0598ac/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/00375837-849f-4f17-ba24-d201d27be49b/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/82aa97ed-98bf-4b6f-9d0b-31a9f907077b/air-force-1-07-shoes-GjGXSP.png"
-                    ]
-                }
-            },
             "sizes": [
                 "7",
                 "7.5",
                 "8",
                 "8.5",
                 "9",
-                "9.5",
-                "10",
-                "10.5",
-                "11",
-                "11.5",
-                "12"
+                "9.5"
             ],
-            "price": 119.99,
+            "price": 129.99,
             "inventory": {
-                "Black": [
+                "stock": [     
                     {"size": 7, "quanity": 10},
                     {"size":7.5, "quanity": 15},
                     {"size":8, "quanity": 20},
                     {"size":8.5, "quanity": 20},
                     {"size":9, "quanity": 25},
-                    {"size":9.5, "quanity": 30},
-                    {"size":10, "quanity": 35},
-                    {"size":10.5, "quanity": 40},
-                    {"size":11, "quanity": 45},
-                    {"size":11.5, "quanity": 50},
-                    {"size":12, "quanity": 55}
-                ],
-                "White": [     
-                    {"size": 7, "quanity": 10},
-                    {"size":7.5, "quanity": 15},
-                    {"size":8, "quanity": 20},
-                    {"size":8.5, "quanity": 20},
-                    {"size":9, "quanity": 25},
-                    {"size":9.5, "quanity": 30},
-                    {"size":10, "quanity": 35},
-                    {"size":10.5, "quanity": 40},
-                    {"size":11, "quanity": 45},
-                    {"size":11.5, "quanity": 50},
-                    {"size":12, "quanity": 55}
+                    {"size":9.5, "quanity": 30}
                 ]
             }
         },
         {
             "brand": "Nike",
-            "name": "Nike Air Force 1 '07",
-            "description": "The radiance lives on in the Nike Air Force 1 '07, the basketball original that puts a fresh spin on what you know best: durably stitched overlays, clean finishes and the perfect amount of flash to make you shine.",
-            "age": "Men",
-            "type": "LifeStyle",
-            "colors": [
-                "Black",
-                "White"
+            "name": "Nike Air Max 270",
+            "description": "Nike's first lifestyle Air Max brings you style, comfort and big attitude in the Nike Air Max 270. The design draws inspiration from Air Max icons, showcasing Nike's greatest innovation with its large window and fresh array of colours.",
+            "age": "Women",
+            "type": "Lifestyle",
+            "color": "Pink",
+            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/7a49d204-7ea0-460b-806f-21ac1b0c6fcc/air-max-270-shoes-QwjlfC.png",
+            "images": [
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/7a49d204-7ea0-460b-806f-21ac1b0c6fcc/air-max-270-shoes-QwjlfC.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/1a72ea77-b4f8-4c10-be99-27184aaa12dc/air-max-270-shoes-QwjlfC.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/4981e89b-5129-40f5-80b6-0a22ff5877ff/air-max-270-shoes-QwjlfC.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/405994ea-870b-46a7-a783-0d4a9d9bdd0d/air-max-270-shoes-QwjlfC.png"
             ],
-            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b7d9211c-26e7-431a-ac24-b0540fb3c00f/air-force-1-07-shoes-GjGXSP.png",
-            "images": {
-                "Black": {
-                    "images": [
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/fc4622c4-2769-4665-aa6e-42c974a7705e/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/0ac482bd-f8e4-4d59-a652-4a50de7dbce5/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/900c2ac8-8a3e-45f7-aac7-c92ccce8505a/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/ddec7bcc-6100-4d27-ac7c-d15771e1780e/air-force-1-07-shoes-GjGXSP.png"
-                    ]
-                },
-                "White": {
-                    "images": [
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b7d9211c-26e7-431a-ac24-b0540fb3c00f/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/a0a300da-2e16-4483-ba64-9815cf0598ac/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/00375837-849f-4f17-ba24-d201d27be49b/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/82aa97ed-98bf-4b6f-9d0b-31a9f907077b/air-force-1-07-shoes-GjGXSP.png"
-                    ]
-                }
-            },
             "sizes": [
                 "7",
                 "7.5",
                 "8",
                 "8.5",
                 "9",
-                "9.5",
-                "10",
-                "10.5",
-                "11",
-                "11.5",
-                "12"
+                "9.5"
             ],
-            "price": 119.99,
+            "price": 159.99,
             "inventory": {
-                "Black": [
+                "stock": [     
                     {"size": 7, "quanity": 10},
                     {"size":7.5, "quanity": 15},
                     {"size":8, "quanity": 20},
                     {"size":8.5, "quanity": 20},
                     {"size":9, "quanity": 25},
-                    {"size":9.5, "quanity": 30},
-                    {"size":10, "quanity": 35},
-                    {"size":10.5, "quanity": 40},
-                    {"size":11, "quanity": 45},
-                    {"size":11.5, "quanity": 50},
-                    {"size":12, "quanity": 55}
-                ],
-                "White": [     
+                    {"size":9.5, "quanity": 30}
+                ]
+            }
+        },
+
+        {
+            "brand": "Nike",
+            "name": "Nike Zoom Fly 5",
+            "description": "Bridge the gap between your weekend training run and race day in a durable design that can be deployed not just at the starting line of your favourite race but in the days and months after your conquest. It offers comfort and reliability but with a propulsive sensation that'll help you feel fast and fresh. That kind of versatility is uncommon in the running arena. But who said you can't have it all?",
+            "age": "Women",
+            "type": "Running",
+            "color": "Purple",
+            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/9b99f135-4f77-4a41-b73c-f39ae332a088/zoom-fly-5-road-running-shoes-KXs5tW.png",
+            "images": [
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/9b99f135-4f77-4a41-b73c-f39ae332a088/zoom-fly-5-road-running-shoes-KXs5tW.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/91242ae9-4f39-42aa-b2f6-c5b99c4bb8b0/zoom-fly-5-road-running-shoes-KXs5tW.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/1af1d5b3-938f-4a6c-8781-252e52799695/zoom-fly-5-road-running-shoes-KXs5tW.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/12c7f838-c4e3-4e99-8c5e-1ad90888ae5d/zoom-fly-5-road-running-shoes-KXs5tW.png"
+            ],
+            "sizes": [
+                "7",
+                "7.5",
+                "8",
+                "8.5",
+                "9",
+                "9.5"
+            ],
+            "price": 159.99,
+            "inventory": {
+                "stock": [     
                     {"size": 7, "quanity": 10},
                     {"size":7.5, "quanity": 15},
                     {"size":8, "quanity": 20},
                     {"size":8.5, "quanity": 20},
                     {"size":9, "quanity": 25},
-                    {"size":9.5, "quanity": 30},
-                    {"size":10, "quanity": 35},
-                    {"size":10.5, "quanity": 40},
-                    {"size":11, "quanity": 45},
-                    {"size":11.5, "quanity": 50},
-                    {"size":12, "quanity": 55}
+                    {"size":9.5, "quanity": 30}
                 ]
             }
         },
         {
             "brand": "Nike",
-            "name": "Nike Air Force 1 '07",
-            "description": "The radiance lives on in the Nike Air Force 1 '07, the basketball original that puts a fresh spin on what you know best: durably stitched overlays, clean finishes and the perfect amount of flash to make you shine.",
-            "age": "Men",
-            "type": "LifeStyle",
-            "colors": [
-                "Black",
-                "White"
+            "name": "Nike Experience Run 11 Next Nature",
+            "description": "Comfortably zen, just like every run should be. On the Nike Experience Run 11 Next Nature, we created a lightweight and clean design that feels as good as it looks. It's supportive in all the right ways with movement so natural, you'll swear you've been wearing it for years. Plus, we've made it with at least 20% recycled content by weight, keeping us on our sustainability journey.",
+            "age": "Women",
+            "type": "Running",
+            "color": "Red",
+            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/d8642b48-a451-4ad9-b18e-c412647f3141/experience-run-11-next-nature-road-running-shoes-m1VzJq.png",
+            "images": [
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/d8642b48-a451-4ad9-b18e-c412647f3141/experience-run-11-next-nature-road-running-shoes-m1VzJq.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/f1ddd247-685d-4e82-956c-6a1fa3ef9bad/experience-run-11-next-nature-road-running-shoes-m1VzJq.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/98faa010-6bcb-42e1-a9f1-abec66470898/experience-run-11-next-nature-road-running-shoes-m1VzJq.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/345e0717-99ab-4495-86ee-a2adc5442882/experience-run-11-next-nature-road-running-shoes-m1VzJq.png"
             ],
-            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b7d9211c-26e7-431a-ac24-b0540fb3c00f/air-force-1-07-shoes-GjGXSP.png",
-            "images": {
-                "Black": {
-                    "images": [
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/fc4622c4-2769-4665-aa6e-42c974a7705e/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/0ac482bd-f8e4-4d59-a652-4a50de7dbce5/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/900c2ac8-8a3e-45f7-aac7-c92ccce8505a/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/ddec7bcc-6100-4d27-ac7c-d15771e1780e/air-force-1-07-shoes-GjGXSP.png"
-                    ]
-                },
-                "White": {
-                    "images": [
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b7d9211c-26e7-431a-ac24-b0540fb3c00f/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/a0a300da-2e16-4483-ba64-9815cf0598ac/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/00375837-849f-4f17-ba24-d201d27be49b/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/82aa97ed-98bf-4b6f-9d0b-31a9f907077b/air-force-1-07-shoes-GjGXSP.png"
-                    ]
-                }
-            },
             "sizes": [
                 "7",
                 "7.5",
                 "8",
                 "8.5",
                 "9",
-                "9.5",
-                "10",
-                "10.5",
-                "11",
-                "11.5",
-                "12"
+                "9.5"
             ],
-            "price": 119.99,
+            "price": 64.99,
             "inventory": {
-                "Black": [
+                "stock": [     
                     {"size": 7, "quanity": 10},
                     {"size":7.5, "quanity": 15},
                     {"size":8, "quanity": 20},
                     {"size":8.5, "quanity": 20},
                     {"size":9, "quanity": 25},
-                    {"size":9.5, "quanity": 30},
-                    {"size":10, "quanity": 35},
-                    {"size":10.5, "quanity": 40},
-                    {"size":11, "quanity": 45},
-                    {"size":11.5, "quanity": 50},
-                    {"size":12, "quanity": 55}
-                ],
-                "White": [     
-                    {"size": 7, "quanity": 10},
-                    {"size":7.5, "quanity": 15},
-                    {"size":8, "quanity": 20},
-                    {"size":8.5, "quanity": 20},
-                    {"size":9, "quanity": 25},
-                    {"size":9.5, "quanity": 30},
-                    {"size":10, "quanity": 35},
-                    {"size":10.5, "quanity": 40},
-                    {"size":11, "quanity": 45},
-                    {"size":11.5, "quanity": 50},
-                    {"size":12, "quanity": 55}
+                    {"size":9.5, "quanity": 30}
                 ]
             }
         },
         {
             "brand": "Nike",
-            "name": "Nike Air Force 1 '07",
-            "description": "The radiance lives on in the Nike Air Force 1 '07, the basketball original that puts a fresh spin on what you know best: durably stitched overlays, clean finishes and the perfect amount of flash to make you shine.",
-            "age": "Men",
-            "type": "LifeStyle",
-            "colors": [
-                "Black",
-                "White"
+            "name": "Nike Juniper Trail 2 Next Nature",
+            "description": "Break away from the norm and dash up that tempting trail in the Nike Juniper Trail 2. Durable material on the top and tough traction on the bottom give you a consistent, confident ride for those off-road runs calling your name. It's built for earthy terrain and unbeaten tracks, with reliable traction that'll help keep you on course.",
+            "age": "Women",
+            "type": "Running",
+            "color": "Multi-Colour",
+            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/905adf24-8174-4232-bfd4-33e014e3270d/juniper-trail-2-next-nature-trail-running-shoes-KVgq98.png",
+            "images": [
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/905adf24-8174-4232-bfd4-33e014e3270d/juniper-trail-2-next-nature-trail-running-shoes-KVgq98.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/8b7fcef6-fe82-4355-acc7-c29788766898/juniper-trail-2-next-nature-trail-running-shoes-KVgq98.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/26d633f6-f41e-4f61-a532-c3d733677d10/juniper-trail-2-next-nature-trail-running-shoes-KVgq98.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/da71bc5d-82ae-4ba6-91dc-a0c146b88e6b/juniper-trail-2-next-nature-trail-running-shoes-KVgq98.png"
             ],
-            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b7d9211c-26e7-431a-ac24-b0540fb3c00f/air-force-1-07-shoes-GjGXSP.png",
-            "images": {
-                "Black": {
-                    "images": [
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/fc4622c4-2769-4665-aa6e-42c974a7705e/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/0ac482bd-f8e4-4d59-a652-4a50de7dbce5/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/900c2ac8-8a3e-45f7-aac7-c92ccce8505a/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/ddec7bcc-6100-4d27-ac7c-d15771e1780e/air-force-1-07-shoes-GjGXSP.png"
-                    ]
-                },
-                "White": {
-                    "images": [
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b7d9211c-26e7-431a-ac24-b0540fb3c00f/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/a0a300da-2e16-4483-ba64-9815cf0598ac/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/00375837-849f-4f17-ba24-d201d27be49b/air-force-1-07-shoes-GjGXSP.png",
-                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/82aa97ed-98bf-4b6f-9d0b-31a9f907077b/air-force-1-07-shoes-GjGXSP.png"
-                    ]
-                }
-            },
+            "sizes": [
+                "7",
+                "7.5",
+                "8",
+                "8.5",
+                "9",
+                "9.5"
+            ],
+            "price": 89.99,
+            "inventory": {
+                "stock": [     
+                    {"size": 7, "quanity": 10},
+                    {"size":7.5, "quanity": 15},
+                    {"size":8, "quanity": 20},
+                    {"size":8.5, "quanity": 20},
+                    {"size":9, "quanity": 25},
+                    {"size":9.5, "quanity": 30}
+                ]
+            }
+        },
+        {
+            "brand": "Nike",
+            "name": "Nike Revolution 6 Next Nature",
+            "description": "Made from at least 20% recycled material by weight, old materials find new beginnings.Now you can find yours.Set the pace at the start of your running journey with the plush feel of the Nike Revolution 6 Next Nature.We know comfort is key to a successful run, so we made sure your steps are cushioned and flexible for a soft ride.It's an evolution of a favourite, with a breathable design.",
+            "age": "Women",
+            "type": "Running",
+            "color": "White",
+            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/145962de-857c-4204-83ee-03090d025a9d/revolution-6-next-nature-road-running-shoes-hbjW0p.png",
+            "images": [
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/145962de-857c-4204-83ee-03090d025a9d/revolution-6-next-nature-road-running-shoes-hbjW0p.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/ca53af07-7361-45dc-943d-15b616a3fbb3/revolution-6-next-nature-road-running-shoes-hbjW0p.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/acc7ca54-1c47-428c-a775-5254a30306ac/revolution-6-next-nature-road-running-shoes-hbjW0p.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/da23d9a4-4e01-4239-8b07-9bece41c77bd/revolution-6-next-nature-road-running-shoes-hbjW0p.png"
+            ],
+            "sizes": [
+                "7",
+                "7.5",
+                "8",
+                "8.5",
+                "9",
+                "9.5"
+            ],
+            "price": 64.99,
+            "inventory": {
+                "stock": [     
+                    {"size": 7, "quanity": 10},
+                    {"size":7.5, "quanity": 15},
+                    {"size":8, "quanity": 20},
+                    {"size":8.5, "quanity": 20},
+                    {"size":9, "quanity": 25},
+                    {"size":9.5, "quanity": 30}
+                ]
+            }
+        },
+
+        {
+            "brand": "Nike",
+            "name": "Nike Zoom Mercurial Vapor 15 Elite FG",
+            "description": "The pitch is yours when you lace up in the Vapor 15 Elite FG. We added a Zoom Air unit made specifically for football and grippy texture up top for exceptional touch, so you can dominate in the waning minutes of a match—when it matters most. Feel the explosive speed as you race around the pitch, making the critical plays with velocity and pace. Fast is in the Air.",
+            "age": "Women",
+            "type": "Football",
+            "color": "White",
+            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/8601b1f4-88b1-4416-bdb0-a88aff71fa32/zoom-mercurial-vapor-15-elite-fg-football-boot-zlzSkD.png",
+            "images": [
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/8601b1f4-88b1-4416-bdb0-a88aff71fa32/zoom-mercurial-vapor-15-elite-fg-football-boot-zlzSkD.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/8c3f5f24-65ef-49bc-b314-732f4fdf8914/zoom-mercurial-vapor-15-elite-fg-football-boot-zlzSkD.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/5148eef8-8ee7-474a-92a8-a4e95d56b2d5/zoom-mercurial-vapor-15-elite-fg-football-boot-zlzSkD.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/037c06e5-9551-42c4-98da-19d8c90b79be/zoom-mercurial-vapor-15-elite-fg-football-boot-zlzSkD.png"
+            ],
+            "sizes": [
+                "7",
+                "7.5",
+                "8",
+                "8.5",
+                "9",
+                "9.5"
+            ],
+            "price": 259.99,
+            "inventory": {
+                "stock": [     
+                    {"size": 7, "quanity": 10},
+                    {"size":7.5, "quanity": 15},
+                    {"size":8, "quanity": 20},
+                    {"size":8.5, "quanity": 20},
+                    {"size":9, "quanity": 25},
+                    {"size":9.5, "quanity": 30}
+                ]
+            }
+        },
+        {
+            "brand": "Nike",
+            "name": "Nike Streetgato",
+            "description": "Rule the streets in the Nike Streetgato.They blend performance details with streetwear flair so you can be ready to play at any moment.",
+            "age": "Women",
+            "type": "Football",
+            "color": "Pink",
+            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/a2d05a3d-b56a-44fa-915a-db77fda87907/streetgato-football-shoes-zhWVgz.png",
+            "images": [
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/a2d05a3d-b56a-44fa-915a-db77fda87907/streetgato-football-shoes-zhWVgz.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/9289188c-dd72-43a8-b21d-1964e8459616/streetgato-football-shoes-zhWVgz.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/34a56901-b025-4126-b66c-b5a03f41714f/streetgato-football-shoes-zhWVgz.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/0398c566-8c01-4b60-85ce-b3a839db7c8b/streetgato-football-shoes-zhWVgz.png"
+            ],
             "sizes": [
                 "7",
                 "7.5",
@@ -1117,14 +1335,152 @@
                 "9",
                 "9.5",
                 "10",
-                "10.5",
-                "11",
-                "11.5",
-                "12"
+                "10.5"
+            ],
+            "price": 79.99,
+            "inventory": {
+                "stock": [     
+                    {"size": 7, "quanity": 10},
+                    {"size":7.5, "quanity": 15},
+                    {"size":8, "quanity": 20},
+                    {"size":8.5, "quanity": 20},
+                    {"size":9, "quanity": 25},
+                    {"size":9.5, "quanity": 30},
+                    {"size":10, "quanity": 35},
+                    {"size":10.5, "quanity": 40}
+                ]
+            }
+        },
+        {
+            "brand": "Nike",
+            "name": "Nike Zoom Mercurial Vapor 15 Academy FG/MG",
+            "description": "Embrace the big stage in this custom Vapor 15. Express your creative side with a wide array of vibrant, eye-catching colours that reflect your distinct, brash style. With special design details like flamboyant colour options that nod to the game's biggest global event to personalised messages, there's no limit to your creativity on or off the pitch. Now loaded with a Nike Air Zoom unit in the heel, you can put the pedal down in the waning minutes of a match—when it matters most. Fast is in the AIR.",
+            "age": "Women",
+            "type": "Football",
+            "color": "Green",
+            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/f4255596-9385-45a2-8616-ee4739082a21/custom-nike-zoom-mercurial-vapor-15-academy-by-you.png",
+            "images": [
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/f4255596-9385-45a2-8616-ee4739082a21/custom-nike-zoom-mercurial-vapor-15-academy-by-you.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/094d4584-a114-46a0-99ff-60c01e3da788/custom-nike-zoom-mercurial-vapor-15-academy-by-you.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/98133dc7-a0f0-40f0-8982-10a451c0930b/custom-nike-zoom-mercurial-vapor-15-academy-by-you.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/1373ffa9-6488-41e2-b81d-905ff56d5af0/custom-nike-zoom-mercurial-vapor-15-academy-by-you.png"
+            ],
+            "sizes": [
+                "7",
+                "7.5",
+                "8",
+                "8.5",
+                "9",
+                "9.5"
             ],
             "price": 119.99,
             "inventory": {
-                "Black": [
+                "stock": [     
+                    {"size": 7, "quanity": 10},
+                    {"size":7.5, "quanity": 15},
+                    {"size":8, "quanity": 20},
+                    {"size":8.5, "quanity": 20},
+                    {"size":9, "quanity": 25},
+                    {"size":9.5, "quanity": 30}
+                ]
+            }
+        },
+        {
+            "brand": "Nike",
+            "name": "Nike Zoom Mercurial Superfly 9 Elite AG-Pro",
+            "description": "Celebrate the game's biggest competition in a design ignited by the science of connectivity and gravity that the world stage inspires. A carbon fibre chrome plate complements a stunning futuristic look made for the feet of the globe's greatest players. Loaded with a Zoom Air unit and grippy texture up top for exceptional touch, it helps you dominate in the waning minutes of a match—when it matters most.",
+            "age": "Women",
+            "type": "Football",
+            "color": "Brown",
+            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/80236740-0f6d-4b57-b867-9585077c30ea/zoom-mercurial-superfly-9-elite-ag-pro-football-boot-l3FD6w.png",
+            "images": [
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/80236740-0f6d-4b57-b867-9585077c30ea/zoom-mercurial-superfly-9-elite-ag-pro-football-boot-l3FD6w.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/e7a7cbc7-9d32-4bf8-b619-952fd0dc1438/zoom-mercurial-superfly-9-elite-ag-pro-football-boot-l3FD6w.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/0d9d8b47-20bb-428c-8405-e42c81fc74c6/zoom-mercurial-superfly-9-elite-ag-pro-football-boot-l3FD6w.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/4a8b8867-3bdd-43d5-b6e7-844601885fca/zoom-mercurial-superfly-9-elite-ag-pro-football-boot-l3FD6w.png"
+            ],
+            "sizes": [
+                "7",
+                "7.5",
+                "8",
+                "8.5",
+                "9",
+                "9.5"
+            ],
+            "price": 223.97,
+            "inventory": {
+                "stock": [     
+                    {"size": 7, "quanity": 10},
+                    {"size":7.5, "quanity": 15},
+                    {"size":8, "quanity": 20},
+                    {"size":8.5, "quanity": 20},
+                    {"size":9, "quanity": 25},
+                    {"size":9.5, "quanity": 30}
+                ]
+            }
+        },
+
+        {
+            "brand": "Nike",
+            "name": "Nike Free Metcon 4",
+            "description": "The Nike Free Metcon 4 combines flexibility with stability to help you get the most out of your training programme. Updated 'chain-link' mesh cools and flexes as you speed through agility drills, while support at the midfoot and heel braces you for your heaviest sets in the weight room.",
+            "age": "Women",
+            "type": "Training",
+            "color": "Black",
+            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/4fa65f97-c9a9-4446-847f-fa73db77c681/free-metcon-4-training-shoes-TQMCZg.png",
+            "images": [
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/4fa65f97-c9a9-4446-847f-fa73db77c681/free-metcon-4-training-shoes-TQMCZg.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/aa1da09c-84fb-412e-9acf-c6e47cc1e0bd/free-metcon-4-training-shoes-TQMCZg.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/34ea0147-c850-407e-8024-349506bed56b/free-metcon-4-training-shoes-TQMCZg.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/a2346407-0c39-44e6-ac6f-d3fa1dba1bb3/free-metcon-4-training-shoes-TQMCZg.png"
+            ],
+            "sizes": [
+                "7",
+                "7.5",
+                "8",
+                "8.5",
+                "9",
+                "9.5"
+            ],
+            "price": 119.99,
+            "inventory": {
+                "stock": [     
+                    {"size": 7, "quanity": 10},
+                    {"size":7.5, "quanity": 15},
+                    {"size":8, "quanity": 20},
+                    {"size":8.5, "quanity": 20},
+                    {"size":9, "quanity": 25},
+                    {"size":9.5, "quanity": 30}
+                ]
+            }
+        },
+        {
+            "brand": "Nike",
+            "name": "Nike Vapor Drive",
+            "description": "Keep up with the rigours of hockey in lightweight shoes designed specifically for wet turf. Plus, new levels of turf traction and reinforcements help keep you moving fast.",
+            "age": "Women",
+            "type": "Training",
+            "color": "Red",
+            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/ca49da7f-8bbd-4b2d-880b-a55587252c28/vapor-drive-hockey-shoes-fFGwgM.png",
+            "images": [
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/ca49da7f-8bbd-4b2d-880b-a55587252c28/vapor-drive-hockey-shoes-fFGwgM.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/d5beb21f-1522-4970-94cd-e63d85894746/vapor-drive-hockey-shoes-fFGwgM.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/56797880-64aa-4a7d-9da4-8c941167739c/vapor-drive-hockey-shoes-fFGwgM.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/e8c433f4-2985-4923-9092-400dace99c92/vapor-drive-hockey-shoes-fFGwgM.png"
+            ],
+            "sizes": [
+                "7",
+                "7.5",
+                "8",
+                "8.5",
+                "9",
+                "9.5",
+                "10",
+                "10.5"
+            ],
+            "price": 134.99,
+            "inventory": {
+                "stock": [     
                     {"size": 7, "quanity": 10},
                     {"size":7.5, "quanity": 15},
                     {"size":8, "quanity": 20},
@@ -1132,26 +1488,459 @@
                     {"size":9, "quanity": 25},
                     {"size":9.5, "quanity": 30},
                     {"size":10, "quanity": 35},
-                    {"size":10.5, "quanity": 40},
-                    {"size":11, "quanity": 45},
-                    {"size":11.5, "quanity": 50},
-                    {"size":12, "quanity": 55}
-                ],
-                "White": [     
+                    {"size":10.5, "quanity": 40}
+                ]
+            }
+        },
+        {
+            "brand": "Nike",
+            "name": "Nike Metcon 8 FlyEase",
+            "description": "You chase the clock, challenging and encouraging each other all in the name of achieving goals and making gains. Our go-to model for training relies on a lighter, more breathable upper than our previous edition to complement our standards of durability and comfort, so that you can float through your cardio, power through your lifts and dominate your workouts. This version has a collapsible heel that lets you step in without using your hands; then it snaps back up to secure your foot.",
+            "age": "Women",
+            "type": "Training",
+            "color": "Grey",
+            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/10830b12-c8a8-4a50-9eb9-52abe85fbdd5/metcon-8-flyease-easy-on-off-training-shoes-Dq0WBg.png",
+            "images": [
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/10830b12-c8a8-4a50-9eb9-52abe85fbdd5/metcon-8-flyease-easy-on-off-training-shoes-Dq0WBg.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/725b5605-1c45-4a37-be12-5efd840d1229/metcon-8-flyease-easy-on-off-training-shoes-Dq0WBg.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/4ca2da10-81e1-492b-b957-10233b5ff2b5/metcon-8-flyease-easy-on-off-training-shoes-Dq0WBg.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/9afbe245-6bde-44a3-9d0a-f8eb8c63a454/metcon-8-flyease-easy-on-off-training-shoes-Dq0WBg.png"
+            ],
+            "sizes": [
+                "7",
+                "7.5",
+                "8",
+                "8.5",
+                "9",
+                "9.5"
+            ],
+            "price": 139.99,
+            "inventory": {
+                "stock": [     
                     {"size": 7, "quanity": 10},
                     {"size":7.5, "quanity": 15},
                     {"size":8, "quanity": 20},
                     {"size":8.5, "quanity": 20},
                     {"size":9, "quanity": 25},
-                    {"size":9.5, "quanity": 30},
-                    {"size":10, "quanity": 35},
-                    {"size":10.5, "quanity": 40},
-                    {"size":11, "quanity": 45},
-                    {"size":11.5, "quanity": 50},
-                    {"size":12, "quanity": 55}
+                    {"size":9.5, "quanity": 30}
+                ]
+            }
+        },
+        {
+            "brand": "Nike",
+            "name": "Nike Legend Essential 2",
+            "description": "The Nike Legend Essential 2 comes equipped with a flat, stable heel, flexibility under the toes and side-to-side support. With loads of grip, you're ready to lift, HIIT, conquer a class or get stronger at the machines.",
+            "age": "Women",
+            "type": "Training",
+            "color": "Black",
+            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/144ef24f-c581-4c5a-bfa3-14ac46caf9e9/legend-essential-2-training-shoes-Gd2nrn.png",
+            "images": [
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/144ef24f-c581-4c5a-bfa3-14ac46caf9e9/legend-essential-2-training-shoes-Gd2nrn.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/3a8de163-97f1-4f3a-9bbb-b6cef83ef399/legend-essential-2-training-shoes-Gd2nrn.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/1117a1b7-189a-4fbd-a4ee-9cf20e3aa18b/legend-essential-2-training-shoes-Gd2nrn.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/14ac19fd-ac0c-46c2-a879-f388890673da/legend-essential-2-training-shoes-Gd2nrn.png"
+            ],
+            "sizes": [
+                "7",
+                "7.5",
+                "8",
+                "8.5",
+                "9",
+                "9.5"
+            ],
+            "price": 64.99,
+            "inventory": {
+                "stock": [     
+                    {"size": 7, "quanity": 10},
+                    {"size":7.5, "quanity": 15},
+                    {"size":8, "quanity": 20},
+                    {"size":8.5, "quanity": 20},
+                    {"size":9, "quanity": 25},
+                    {"size":9.5, "quanity": 30}
+                ]
+            }
+        },
+
+        {
+            "brand": "Jordan",
+            "name": "Air Jordan 1 Hi FlyEase",
+            "description": "The Air Jordan 1 Hi FlyEase gives you a quick way to get into your sneakers while maintaining the timeless appeal of the original. Its collar unzips and the top folds open to create a wide entry, making one of the most iconic shoes of all time easier than ever to get on.",
+            "age": "Boys",
+            "type": "Lifestyle",
+            "color": "Red",
+            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/541aa9f1-5d0a-459c-a8f3-2613b508faa6/air-jordan-1-hi-flyease-older-shoes-2m3VjW.png",
+            "images": [
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/541aa9f1-5d0a-459c-a8f3-2613b508faa6/air-jordan-1-hi-flyease-older-shoes-2m3VjW.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/335d0661-bf05-4994-8aa7-b4fc1f1d866a/air-jordan-1-hi-flyease-older-shoes-2m3VjW.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/8eb1bbf7-fa9d-4349-af68-fd6d4cbccea9/air-jordan-1-hi-flyease-older-shoes-2m3VjW.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/a1de13d1-b37d-4eea-b6f2-4bfc81b9fd55/air-jordan-1-hi-flyease-older-shoes-2m3VjW.png"
+            ],
+            "sizes": [
+                "3",
+                "3.5",
+                "4",
+                "4.5",
+                "5",
+                "5.5",
+                "6",
+                "6.5"
+            ],
+            "price": 84.99,
+            "inventory": {
+                "stock": [     
+                    {"size": 3, "quanity": 10},
+                    {"size":3.5, "quanity": 15},
+                    {"size":4, "quanity": 20},
+                    {"size":4.5, "quanity": 20},
+                    {"size":5, "quanity": 25},
+                    {"size":5.5, "quanity": 30},
+                    {"size":6, "quanity": 10},
+                    {"size":6.5, "quanity": 15}
+                ]
+            }
+        },
+        {
+            "brand": "Nike",
+            "name": "Nike Flex Runner 2",
+            "description": "Running shoes made easy! The Nike Flex Runner 2 is for the kid on the go who loves to play all day—from gym class to a sprint down the block. They're lace-free, meaning they're super-quick to slip on and off. Who's ready to race?",
+            "age": "Boys",
+            "type": "Running",
+            "color": "Green",
+            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/576627ba-a24e-4649-af3a-c9414d375232/flex-runner-2-older-road-running-shoes-b2QZzh.png",
+            "images": [
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/576627ba-a24e-4649-af3a-c9414d375232/flex-runner-2-older-road-running-shoes-b2QZzh.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/88924bf0-fe41-4e8f-9488-a2492aa89091/flex-runner-2-older-road-running-shoes-b2QZzh.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/e2d6f7fc-d9d3-43c9-814c-65f6e2fcf4e2/flex-runner-2-older-road-running-shoes-b2QZzh.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/59a3a239-13c2-43fd-baff-16cda496107a/flex-runner-2-older-road-running-shoes-b2QZzh.png"
+            ],
+            "sizes": [
+                "3",
+                "3.5",
+                "4",
+                "4.5",
+                "5",
+                "5.5",
+                "6",
+                "6.5"
+            ],
+            "price": 34.99,
+            "inventory": {
+                "stock": [     
+                    {"size": 3, "quanity": 10},
+                    {"size":3.5, "quanity": 15},
+                    {"size":4, "quanity": 20},
+                    {"size":4.5, "quanity": 20},
+                    {"size":5, "quanity": 25},
+                    {"size":5.5, "quanity": 30},
+                    {"size":6, "quanity": 10},
+                    {"size":6.5, "quanity": 15}
+                ]
+            }
+        },
+        {
+            "brand": "Nike",
+            "name": "Nike Jr. Phantom GX Academy Dynamic Fit MG",
+            "description": "Looking to take your game to the next level? Academy boots give you the precision touch you need to let your innermost playing instincts dazzle. Featuring NikeSkin and a mesh touch zone to help enhance your precision and an agility plate that's designed to swerve and sprint with you, it's ready to ignite your spontaneous playmaking spirit. This version has a Dynamic Fit collar, which wraps your ankle in soft, stretchy fabric for a secure feel.",
+            "age": "Boys",
+            "type": "Football",
+            "color": "Blue",
+            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/223b2be1-b0b0-4657-a11b-4d41223e1ae6/jr-phantom-gx-academy-dynamic-fit-mg-older-multi-ground-football-boot-s1FtLL.png",
+            "images": [
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/223b2be1-b0b0-4657-a11b-4d41223e1ae6/jr-phantom-gx-academy-dynamic-fit-mg-older-multi-ground-football-boot-s1FtLL.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/d081eb1a-3422-4dad-be0e-cf233f889238/jr-phantom-gx-academy-dynamic-fit-mg-older-multi-ground-football-boot-s1FtLL.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/29f0d000-01ae-483f-b743-dc7103491c3f/jr-phantom-gx-academy-dynamic-fit-mg-older-multi-ground-football-boot-s1FtLL.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b24dbe53-90c3-44a8-b1f4-77115eb64e1c/jr-phantom-gx-academy-dynamic-fit-mg-older-multi-ground-football-boot-s1FtLL.png"
+            ],
+            "sizes": [
+                "3",
+                "3.5",
+                "4",
+                "4.5",
+                "5",
+                "5.5",
+                "6",
+                "6.5"
+            ],
+            "price": 62.99,
+            "inventory": {
+                "stock": [     
+                    {"size": 3, "quanity": 10},
+                    {"size":3.5, "quanity": 15},
+                    {"size":4, "quanity": 20},
+                    {"size":4.5, "quanity": 20},
+                    {"size":5, "quanity": 25},
+                    {"size":5.5, "quanity": 30},
+                    {"size":6, "quanity": 10},
+                    {"size":6.5, "quanity": 15}
+                ]
+            }
+        },
+        {
+            "brand": "Nike",
+            "name": "Nike Air VaporMax 2021 FK",
+            "description": "Made with at least 40% recycled content by weight, the Nike Air VaporMax 2021 FK defines innovative comfort.Super-stretchy and supportive Flyknit fabric feels like wearing a sock, plus VaporMax Air from heel to toe gives you ultra-lightweight bounce.Flex into the future with us and feel the good vibes.",
+            "age": "Boys",
+            "type": "Lifestyle",
+            "color": "Black",
+            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/f6cf8592-bd09-461f-90da-fe2a09437ac4/air-vapormax-2021-fk-older-shoes-F8Mc2f.png",
+            "images": [
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/f6cf8592-bd09-461f-90da-fe2a09437ac4/air-vapormax-2021-fk-older-shoes-F8Mc2f.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/a49bc60b-0f1b-492d-baf4-7f5b4fbd0710/air-vapormax-2021-fk-older-shoes-F8Mc2f.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/53a364a4-5e3a-4365-aac9-f586d1d45909/air-vapormax-2021-fk-older-shoes-F8Mc2f.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/cfe74dad-f541-4cf3-bc97-2c630e9c9a1f/air-vapormax-2021-fk-older-shoes-F8Mc2f.png"
+            ],
+            "sizes": [
+                "3",
+                "3.5",
+                "4",
+                "4.5",
+                "5",
+                "5.5",
+                "6",
+                "6.5"
+            ],
+            "price": 149.99,
+            "inventory": {
+                "stock": [     
+                    {"size": 3, "quanity": 10},
+                    {"size":3.5, "quanity": 15},
+                    {"size":4, "quanity": 20},
+                    {"size":4.5, "quanity": 20},
+                    {"size":5, "quanity": 25},
+                    {"size":5.5, "quanity": 30},
+                    {"size":6, "quanity": 10},
+                    {"size":6.5, "quanity": 15}
+                ]
+            }
+        },
+        {
+            "brand": "Jordan",
+            "name": "Jordan Max Aura 4",
+            "description": "Made with at least 40% recycled content by weight, the Nike Air VaporMax 2021 FK defines innovative comfort.Super-stretchy and supportive Flyknit fabric feels like wearing a sock, plus VaporMax Air from heel to toe gives you ultra-lightweight bounce.Flex into the future with us and feel the good vibes.",
+            "age": "Boys",
+            "type": "Basketball",
+            "color": "White",
+            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/dbd4481b-697d-448d-9a71-3554bd4e3060/jordan-max-aura-4-older-shoes-P5GZ9k.png",
+            "images": [
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/dbd4481b-697d-448d-9a71-3554bd4e3060/jordan-max-aura-4-older-shoes-P5GZ9k.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/9ffc506e-04b8-4989-9a70-a907781c5170/jordan-max-aura-4-older-shoes-P5GZ9k.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/47c227ea-69c5-47f5-98d1-58be58445f25/jordan-max-aura-4-older-shoes-P5GZ9k.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/414ef1d4-134d-4b9d-a497-3921eac3bf0a/jordan-max-aura-4-older-shoes-P5GZ9k.png"
+            ],
+            "sizes": [
+                "3",
+                "3.5",
+                "4",
+                "4.5",
+                "5",
+                "5.5",
+                "6",
+                "6.5"
+            ],
+            "price": 74.99,
+            "inventory": {
+                "stock": [     
+                    {"size": 3, "quanity": 10},
+                    {"size":3.5, "quanity": 15},
+                    {"size":4, "quanity": 20},
+                    {"size":4.5, "quanity": 20},
+                    {"size":5, "quanity": 25},
+                    {"size":5.5, "quanity": 30},
+                    {"size":6, "quanity": 10},
+                    {"size":6.5, "quanity": 15}
+                ]
+            }
+        },
+
+        {
+            "brand": "Nike",
+            "name": "Nike Dunk Low",
+            "description": "Whether you're a hooper, skater or just love kicks, the Nike Dunk Low has been a fave for many athletes for decades. Durable leather gives you a classic '80s feel while the rubber sole gives grip and traction. It's time to play.",
+            "age": "Girls",
+            "type": "Lifestyle",
+            "color": "Green",
+            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/dd74d75f-7597-4682-8aca-88caa30f8e1e/dunk-low-older-shoes-hJSvZh.png",
+            "images": [
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/dd74d75f-7597-4682-8aca-88caa30f8e1e/dunk-low-older-shoes-hJSvZh.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/bc37795c-d395-4feb-adde-290b3ccd7d9e/dunk-low-older-shoes-hJSvZh.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/fc82985f-66e1-4703-a604-a6a8983467a4/dunk-low-older-shoes-hJSvZh.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/cf522793-d7dd-4cc4-80cb-b7642a6b47df/dunk-low-older-shoes-hJSvZh.png"
+            ],
+            "sizes": [
+                "3",
+                "3.5",
+                "4",
+                "4.5",
+                "5",
+                "5.5",
+                "6",
+                "6.5"
+            ],
+            "price": 74.99,
+            "inventory": {
+                "stock": [     
+                    {"size": 3, "quanity": 10},
+                    {"size":3.5, "quanity": 15},
+                    {"size":4, "quanity": 20},
+                    {"size":4.5, "quanity": 20},
+                    {"size":5, "quanity": 25},
+                    {"size":5.5, "quanity": 30},
+                    {"size":6, "quanity": 10},
+                    {"size":6.5, "quanity": 15}
+                ]
+            }
+        },
+        {
+            "brand": "Nike",
+            "name": "Nike Omni Multi-Court",
+            "description": "Whether you're a hooper, skater or just love kicks, the Nike Dunk Low has been a fave for many athletes for decades. Durable leather gives you a classic '80s feel while the rubber sole gives grip and traction. It's time to play.",
+            "age": "Girls",
+            "type": "Basketball",
+            "color": "Pink",
+            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/f287ba48-0784-4151-bb6c-f5f4005dbd7d/omni-multi-court-older-indoor-court-shoes-cm46R4.png",
+            "images": [
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/f287ba48-0784-4151-bb6c-f5f4005dbd7d/omni-multi-court-older-indoor-court-shoes-cm46R4.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/5a177b0e-c55d-474b-91df-3c4f6533cb85/omni-multi-court-older-indoor-court-shoes-cm46R4.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/9eda9551-6b2c-4310-9f4d-7371b33b188b/omni-multi-court-older-indoor-court-shoes-cm46R4.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/7368ef2e-223e-49b5-b3db-436b771e0b8d/omni-multi-court-older-indoor-court-shoes-cm46R4.png"
+            ],
+            "sizes": [
+                "3",
+                "3.5",
+                "4",
+                "4.5",
+                "5",
+                "5.5",
+                "6",
+                "6.5"
+            ],
+            "price": 33.97,
+            "inventory": {
+                "stock": [     
+                    {"size": 3, "quanity": 10},
+                    {"size":3.5, "quanity": 15},
+                    {"size":4, "quanity": 20},
+                    {"size":4.5, "quanity": 20},
+                    {"size":5, "quanity": 25},
+                    {"size":5.5, "quanity": 30},
+                    {"size":6, "quanity": 10},
+                    {"size":6.5, "quanity": 15}
+                ]
+            }
+        },
+        {
+            "brand": "Nike",
+            "name": "NikeCourt Legacy",
+            "description": "The NikeCourt Legacy serves up style rooted in tennis culture. They are durable and comfy with heritage stitching and a retro Swoosh. When you pull these on—it's game, set, match.",
+            "age": "Girls",
+            "type": "Lifestyle",
+            "color": "White",
+            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/e2e3972e-86fb-4f53-a3e9-0b900117deab/nikecourt-legacy-older-shoes-ZLr9jJ.png",
+            "images": [
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/e2e3972e-86fb-4f53-a3e9-0b900117deab/nikecourt-legacy-older-shoes-ZLr9jJ.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/42ba6ba0-2bd3-4d88-beb7-7f2fb3c105a1/nikecourt-legacy-older-shoes-ZLr9jJ.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/5a8fa352-793c-4a57-8da0-e46142fee674/nikecourt-legacy-older-shoes-ZLr9jJ.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/425c0aeb-08b4-4bb0-a7dc-b91eebe2d0b4/nikecourt-legacy-older-shoes-ZLr9jJ.png"
+            ],
+            "sizes": [
+                "3",
+                "3.5",
+                "4",
+                "4.5",
+                "5",
+                "5.5",
+                "6",
+                "6.5"
+            ],
+            "price": 49.99,
+            "inventory": {
+                "stock": [     
+                    {"size": 3, "quanity": 10},
+                    {"size":3.5, "quanity": 15},
+                    {"size":4, "quanity": 20},
+                    {"size":4.5, "quanity": 20},
+                    {"size":5, "quanity": 25},
+                    {"size":5.5, "quanity": 30},
+                    {"size":6, "quanity": 10},
+                    {"size":6.5, "quanity": 15}
+                ]
+            }
+        },
+        {
+            "brand": "Nike",
+            "name": "Nike Air Max 90 LTR",
+            "description": "The Nike Air Max 90 LTR returns with an even better feel for you. Cushioning is softer and more flexible, the Max Air unit is tuned for growing feet and the shape gives your toes more wiggle room. With a design and look that are still the same, it brings a '90s fave to a new generation.",
+            "age": "Girls",
+            "type": "Lifestyle",
+            "color": "Purple",
+            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/dfb26ee2-698f-48d0-81d7-5caba4da8dd6/air-max-90-ltr-older-shoes-3grjJD.png",
+            "images": [
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/dfb26ee2-698f-48d0-81d7-5caba4da8dd6/air-max-90-ltr-older-shoes-3grjJD.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/d56c03b5-b511-4233-a714-7bd60636b7d0/air-max-90-ltr-older-shoes-3grjJD.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/eb72eecc-6682-48a8-81f8-dbfef7a163c8/air-max-90-ltr-older-shoes-3grjJD.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/31be1e6d-b1c2-411e-811e-f057ca8391e3/air-max-90-ltr-older-shoes-3grjJD.png"
+            ],
+            "sizes": [
+                "3",
+                "3.5",
+                "4",
+                "4.5",
+                "5",
+                "5.5",
+                "6",
+                "6.5"
+            ],
+            "price": 99.99,
+            "inventory": {
+                "stock": [     
+                    {"size": 3, "quanity": 10},
+                    {"size":3.5, "quanity": 15},
+                    {"size":4, "quanity": 20},
+                    {"size":4.5, "quanity": 20},
+                    {"size":5, "quanity": 25},
+                    {"size":5.5, "quanity": 30},
+                    {"size":6, "quanity": 10},
+                    {"size":6.5, "quanity": 15}
+                ]
+            }
+        },
+        {
+            "brand": "Nike",
+            "name": "Nike Air Max 97 SE",
+            "description": "XXXV—what does that mean? It means that 35 years ago, Max Air changed the shoe game. The full-length Air unit kept athletes on their feet with super-soft cushioning like never before. Today, it means that you get the same cushioning with graphics and colours that honour the original.",
+            "age": "Girls",
+            "type": "Lifestyle",
+            "color": "Black",
+            "product-image": "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/9d7a50aa-e37e-4962-b4e7-811b43a04e48/air-max-97-se-older-shoes-7HjfnL.png",
+            "images": [
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/9d7a50aa-e37e-4962-b4e7-811b43a04e48/air-max-97-se-older-shoes-7HjfnL.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/97e91d25-eae0-4f80-ac8e-8c8a647d595e/air-max-97-se-older-shoes-7HjfnL.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/33dd03bc-eb38-4166-837c-94b8f2938a80/air-max-97-se-older-shoes-7HjfnL.png",
+                        "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b51d25cf-4738-4ac4-86d6-4b7416ae0718/air-max-97-se-older-shoes-7HjfnL.png"
+            ],
+            "sizes": [
+                "3",
+                "3.5",
+                "4",
+                "4.5",
+                "5",
+                "5.5",
+                "6",
+                "6.5"
+            ],
+            "price": 68.97,
+            "inventory": {
+                "stock": [     
+                    {"size": 3, "quanity": 10},
+                    {"size":3.5, "quanity": 15},
+                    {"size":4, "quanity": 20},
+                    {"size":4.5, "quanity": 20},
+                    {"size":5, "quanity": 25},
+                    {"size":5.5, "quanity": 30},
+                    {"size":6, "quanity": 10},
+                    {"size":6.5, "quanity": 15}
                 ]
             }
         }
-
     ]
 }

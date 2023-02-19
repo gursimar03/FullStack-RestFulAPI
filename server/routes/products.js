@@ -15,7 +15,7 @@ productsModel.deleteMany({}, (error, data) => {
                     description: product.description,
                     age: product.age,
                     type: product.type,
-                    colors: product.colors,
+                    color: product.color,
                     productImage: product["product-image"],
                     images: product.images,
                     sizes: product.sizes,
