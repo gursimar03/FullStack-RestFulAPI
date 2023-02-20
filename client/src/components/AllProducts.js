@@ -14,10 +14,13 @@ class AllProducts extends Component {
                 brand: [],
                 colour: [],
                 age: [],
-                type: []
+                type: [],
+                size: []
+                
             },
             showFilterBar: true,
-            sort: ""
+            sort: "",
+            search: ""
         }
     }
 
@@ -30,9 +33,10 @@ class AllProducts extends Component {
     }
 
     applyFilters = () => {
-        if (this.state.filters.brand.length === 0 && this.state.filters.colour.length === 0 && this.state.filters.age.length === 0 && this.state.filters.type.length === 0) {
+        if (this.state.filters.brand.length === 0 && this.state.filters.colour.length === 0 && this.state.filters.age.length === 0 && this.state.filters.type.length === 0 && this.state.filters.size.length === 0) {
             this.setState({ shoesData: this.state.data }, () => {
                 this.sort();
+                this.search();
             })
             return;
         }
@@ -50,11 +54,16 @@ class AllProducts extends Component {
                 if (this.state.filters.type.length > 0 && !this.state.filters.type.includes(shoe.type)) {
                     return false;
                 }
+                if(this.state.filters.size.length > 0 && !this.state.filters.size.some(size => shoe.sizes.includes(size))) {
+                    return false;
+                }
+                
                 return true;
             }
             )
         }, () => {
             this.sort();
+            this.search();
         })
     }
 
@@ -70,7 +79,8 @@ class AllProducts extends Component {
                         brand: [...this.state.filters.brand, value],
                         colour: [...this.state.filters.colour],
                         age: [...this.state.filters.age],
-                        type: [...this.state.filters.type]
+                        type: [...this.state.filters.type],
+                        size: [...this.state.filters.size]
                     }
                 }, () => {
                     this.applyFilters();
@@ -83,7 +93,8 @@ class AllProducts extends Component {
                         brand: [...this.state.filters.brand],
                         colour: [...this.state.filters.colour, value],
                         age: [...this.state.filters.age],
-                        type: [...this.state.filters.type]
+                        type: [...this.state.filters.type],
+                        size: [...this.state.filters.size]
                     }
                 }, () => {
                     this.applyFilters();
@@ -96,7 +107,8 @@ class AllProducts extends Component {
                         brand: [...this.state.filters.brand],
                         colour: [...this.state.filters.colour],
                         age: [...this.state.filters.age, value],
-                        type: [...this.state.filters.type]
+                        type: [...this.state.filters.type],
+                        size: [...this.state.filters.size]
                     }
                 }, () => {
                     this.applyFilters();
@@ -109,7 +121,22 @@ class AllProducts extends Component {
                         brand: [...this.state.filters.brand],
                         colour: [...this.state.filters.colour],
                         age: [...this.state.filters.age],
-                        type: [...this.state.filters.type, value]
+                        type: [...this.state.filters.type, value],
+                        size: [...this.state.filters.size]
+                    }
+                }, () => {
+                    this.applyFilters();
+                })
+            }
+
+            if (name === "size") {
+                this.setState({
+                    filters: {
+                        brand: [...this.state.filters.brand],
+                        colour: [...this.state.filters.colour],
+                        age: [...this.state.filters.age],
+                        type: [...this.state.filters.type],
+                        size: [...this.state.filters.size, value]
                     }
                 }, () => {
                     this.applyFilters();
@@ -122,7 +149,8 @@ class AllProducts extends Component {
                         brand: this.state.filters.brand.filter(brand => brand !== value),
                         colour: [...this.state.filters.colour],
                         age: [...this.state.filters.age],
-                        type: [...this.state.filters.type]
+                        type: [...this.state.filters.type],
+                        size: [...this.state.filters.size]
                     }
                 }, () => {
                     this.applyFilters();
@@ -135,7 +163,8 @@ class AllProducts extends Component {
                         brand: [...this.state.filters.brand],
                         colour: this.state.filters.colour.filter(colour => colour !== value),
                         age: [...this.state.filters.age],
-                        type: [...this.state.filters.type]
+                        type: [...this.state.filters.type],
+                        size: [...this.state.filters.size]
                     }
                 }, () => {
                     this.applyFilters();
@@ -148,7 +177,8 @@ class AllProducts extends Component {
                         brand: [...this.state.filters.brand],
                         colour: [...this.state.filters.colour],
                         age: this.state.filters.age.filter(age => age !== value),
-                        type: [...this.state.filters.type]
+                        type: [...this.state.filters.type],
+                        size: [...this.state.filters.size]
                     }
                 }, () => {
                     this.applyFilters();
@@ -161,7 +191,22 @@ class AllProducts extends Component {
                         brand: [...this.state.filters.brand],
                         colour: [...this.state.filters.colour],
                         age: [...this.state.filters.age],
-                        type: this.state.filters.type.filter(type => type !== value)
+                        type: this.state.filters.type.filter(type => type !== value),
+                        size: [...this.state.filters.size]
+                    }
+                }, () => {
+                    this.applyFilters();
+                })
+            }
+
+            if (name === "size") {
+                this.setState({
+                    filters: {
+                        brand: [...this.state.filters.brand],
+                        colour: [...this.state.filters.colour],
+                        age: [...this.state.filters.age],
+                        type: [...this.state.filters.type],
+                        size: this.state.filters.size.filter(size => size !== value)
                     }
                 }, () => {
                     this.applyFilters();
@@ -170,6 +215,17 @@ class AllProducts extends Component {
 
         }
     }
+
+    handleSearch = (e) => {
+        const { value } = e.target;
+
+        this.setState({
+            search: value
+        }, () => {
+            this.applyFilters();
+        })
+    }
+
 
 
     handleSort = (e) => {
@@ -183,6 +239,21 @@ class AllProducts extends Component {
             }
         )
 
+    }
+
+    search = () => {
+        if (this.state.search === "") {
+            return this.state.shoesData;
+        } else {
+            this.setState({
+                shoesData: this.state.shoesData.filter(shoe => shoe.name.toLowerCase().includes(this.state.search.toLowerCase().trim())
+                || shoe.brand.toLowerCase().includes(this.state.search.toLowerCase().trim())
+                || shoe.color.toLowerCase().includes(this.state.search.toLowerCase().trim())
+                || shoe.type.toLowerCase().includes(this.state.search.toLowerCase().trim())
+                || shoe.age.toLowerCase().includes(this.state.search.toLowerCase().trim())
+                )
+            })
+        }
     }
 
     sort = () => {
@@ -226,7 +297,7 @@ class AllProducts extends Component {
 
 
     render() {
-        if (this.state.data.length === 0) {
+        if (this.state.data.length < 1) {
             return (
                 <div>
                     <p>Loading...</p>
@@ -237,10 +308,22 @@ class AllProducts extends Component {
             const uniqueBrands = [...new Set(this.state.data.map(item => item.brand))];
             const uniqueAge = [...new Set(this.state.data.map(item => item.age))];
             const uniqueType = [...new Set(this.state.data.map(item => item.type))];
+            let sizes = [];
+            this.state.data.forEach(item => {
+                item.sizes.forEach(size => {
+                    sizes.push(parseInt(size));
+                })
+            })
+            const uniqueSizes = [...new Set(sizes)].sort((a, b) => a - b);
+            
+    
             return (
                 <div className="products-page-container">
                     <div className="products-page-functions">
                         <h1>Shoes ({this.state.shoesData.length})</h1>
+                        <div className="search">
+                            <input type="text" placeholder="Search" onChange={this.handleSearch} />
+                        </div>
                         <div>
                             <button onClick={this.handleFilterBar}>Filters</button>
                             <div className="sort" >
@@ -288,6 +371,13 @@ class AllProducts extends Component {
                                     <input type="checkbox" name="type" value={type} onChange={this.handleFilter} />
                                     <label>{type}</label>
                                 </div>)}
+
+                                <h2>Size</h2>
+                                {uniqueSizes.map(size => <div key={size}>
+                                    <input type="checkbox" name="size" value={size} onChange={this.handleFilter} />
+                                    <label>{size}</label>
+                                </div>)}
+
 
                             </div>
                         </div>
