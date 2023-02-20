@@ -22,6 +22,8 @@ import Profile from "./components/Profile";
 import DeleteAccount from "./components/DeleteAccount";
 import { ACCESS_LEVEL_GUEST } from "./config/global_constants";
 import AdminBoard from "./components/AdminDashboard";
+import MenProducts from "./components/MenProducts";
+import WomenProducts from "./components/WomenProducts";
 
 
 if (typeof localStorage.accessLevel === "undefined") {
@@ -97,7 +99,7 @@ class App extends React.Component {
                         <nav className="top-nav">
                             <div className="nav-content-left">
                                 <Link id="logo" to={'/'}>
-                                    <img src={require('./images/Not-Nike.png')} />
+                                    <img src={require('./images/Not-Nike.png')} alt='logo'/>
                                 </Link>
                             </div>
                             <div className="nav-content-right">
@@ -107,7 +109,7 @@ class App extends React.Component {
                                         <Link to={'/profile'}>Profile</Link>
                                         <Link to="/orders">Orders</Link>
                                         <Link to="/payment-method">Payment Method</Link>
-                                        {localStorage.accessLevel == 2 ? <Link to="/admin"> Admin Dashboard </Link> : null}
+                                        {localStorage.accessLevel === 2 ? <Link to="/admin"> Admin Dashboard </Link> : null}
                                         <Logout refresh={this.reloadPageAfterLogOut}/>
                                     </div>
                             </div>
@@ -158,9 +160,9 @@ class App extends React.Component {
                             <nav className="bottom-nav">
                                 <div className="bottom-nav-content-left">
                                     <div className="nav-links">
-                                        <Link to={'/'}>Shop Men</Link>
-                                        <Link to={'/'}>Shop Woman</Link>
-                                        <Link to={'/'}>Shop Kids</Link>
+                                        <Link to={'/products/men'}>Shop Men</Link>
+                                        <Link to={'/products/women'}>Shop Woman</Link>
+                                        <Link to={'/products/kids'}>Shop Kids</Link>
                                     </div>
                                 </div>
                                 <div className="bottom-nav-content-middle">
@@ -193,6 +195,8 @@ class App extends React.Component {
                         <Route path="/delete-account" element={<DeleteAccount />}></Route>
                         <Route path="/products/:id" element={<ProductPage />}></Route>
                         <Route path="/admin" element={<AdminBoard />}></Route>
+                        <Route path='/products/men' element={<MenProducts />}></Route>
+                        <Route path="/products/women" element={<WomenProducts />}></Route>
                         {/* Page doesn't exist css later */}
                         <Route path="*" element={<h2>This page does not exist</h2>} />
                     </Routes>
