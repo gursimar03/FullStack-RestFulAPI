@@ -3,7 +3,7 @@ import { SERVER_HOST } from "../config/global_constants";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-class MenProducts extends React.Component {
+class KidsProducts extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -24,7 +24,7 @@ class MenProducts extends React.Component {
     }
 
     componentDidMount() {
-        axios.get(`${SERVER_HOST}/shoes/men`)
+        axios.get(`${SERVER_HOST}/shoes/kids`)
             .then((response) => {
                 this.setState({ data: response.data })
             }
@@ -304,6 +304,7 @@ class MenProducts extends React.Component {
             const uniqueColors = [...new Set(this.state.data.map(item => item.color))];
             const uniqueBrands = [...new Set(this.state.data.map(item => item.brand))];
             const uniqueType = [...new Set(this.state.data.map(item => item.type))];
+            const uniqueAge = [...new Set(this.state.data.map(item => item.age))];
             let sizes = [];
             this.state.data.forEach(item => {
                 item.sizes.forEach(size => {
@@ -316,7 +317,7 @@ class MenProducts extends React.Component {
             return (
                 <div className="products-page-container">
                     <div className="products-page-functions">
-                        <h1>Men's Shoes ({this.state.shoesData.length})</h1>
+                        <h1>Kids' Shoes ({this.state.shoesData.length})</h1>
                         <div className="search">
                             <input type="text" placeholder="Search" onChange={this.handleSearch} />
                         </div>
@@ -362,6 +363,12 @@ class MenProducts extends React.Component {
                                     <label>{type}</label>
                                 </div>)}
 
+                                <h2>Gender</h2>
+                                {uniqueAge.map(age => <div key={age}>
+                                    <input type="checkbox" name="age" value={age} onChange={this.handleFilter} />
+                                    <label>{age}</label>
+                                </div>)}
+
                                 <h2>Size</h2>
                                 {uniqueSizes.map(size => <div key={size}>
                                     <input type="checkbox" name="size" value={size} onChange={this.handleFilter} />
@@ -396,4 +403,4 @@ class MenProducts extends React.Component {
 
 }
 
-export default MenProducts;
+export default KidsProducts;
