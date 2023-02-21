@@ -48,19 +48,19 @@ class HomePage extends React.Component {
                 <div className="shop-men">
                   <img alt="man" src={require('../images/Shop-Men.jpg')} />
                   <div className="style-box-text">
-                    <Link to={'/'}>Shop Men</Link>
+                    <Link to={'/products/men'}>Shop Men</Link>
                   </div>
                 </div>
                 <div className="shop-women">
                   <img alt="man" src={require('../images/Shop-Woman.jpg')} />
                   <div className="style-box-text">
-                    <Link to={'/'}>Shop Women</Link>
+                    <Link to={'/products/women'}>Shop Women</Link>
                   </div>
                 </div>
                 <div className="shop-kids">
                   <img alt="man" src={require('../images/Shop-Kids.jpg')} />
                   <div className="style-box-text">
-                    <Link to={'/'}>Shop Kids</Link>
+                    <Link to={'/products/kids'}>Shop Kids</Link>
                   </div>
                 </div>
               </div>

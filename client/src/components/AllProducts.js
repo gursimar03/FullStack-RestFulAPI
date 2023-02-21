@@ -32,42 +32,9 @@ class AllProducts extends Component {
         })
     }
 
-    applyFilters = () => {
-        if (this.state.filters.brand.length === 0 && this.state.filters.colour.length === 0 && this.state.filters.age.length === 0 && this.state.filters.type.length === 0 && this.state.filters.size.length === 0) {
-            this.setState({ shoesData: this.state.data }, () => {
-                this.sort();
-                this.search();
-            })
-            return;
-        }
-        this.setState({
-            shoesData: this.state.data.filter(shoe => {
-                if (this.state.filters.brand.length > 0 && !this.state.filters.brand.includes(shoe.brand)) {
-                    return false;
-                }
-                if (this.state.filters.colour.length > 0 && !this.state.filters.colour.includes(shoe.color)) {
-                    return false;
-                }
-                if (this.state.filters.age.length > 0 && !this.state.filters.age.includes(shoe.age)) {
-                    return false;
-                }
-                if (this.state.filters.type.length > 0 && !this.state.filters.type.includes(shoe.type)) {
-                    return false;
-                }
-                if(this.state.filters.size.length > 0 && !this.state.filters.size.some(size => shoe.sizes.includes(size))) {
-                    return false;
-                }
-                
-                return true;
-            }
-            )
-        }, () => {
-            this.sort();
-            this.search();
-        })
-    }
 
-
+    //these three functions set the state of the sort, search and filter
+    //and then they call the apply filters function
 
     handleFilter = (e) => {
         const { name, value, checked } = e.target
@@ -226,8 +193,6 @@ class AllProducts extends Component {
         })
     }
 
-
-
     handleSort = (e) => {
         const { value } = e.target;
 
@@ -239,6 +204,42 @@ class AllProducts extends Component {
             }
         )
 
+    }
+
+
+    applyFilters = () => {
+        if (this.state.filters.brand.length === 0 && this.state.filters.colour.length === 0 && this.state.filters.age.length === 0 && this.state.filters.type.length === 0 && this.state.filters.size.length === 0) {
+            this.setState({ shoesData: this.state.data }, () => {
+                this.sort();
+                this.search();
+            })
+            return;
+        }
+        this.setState({
+            shoesData: this.state.data.filter(shoe => {
+                if (this.state.filters.brand.length > 0 && !this.state.filters.brand.includes(shoe.brand)) {
+                    return false;
+                }
+                if (this.state.filters.colour.length > 0 && !this.state.filters.colour.includes(shoe.color)) {
+                    return false;
+                }
+                if (this.state.filters.age.length > 0 && !this.state.filters.age.includes(shoe.age)) {
+                    return false;
+                }
+                if (this.state.filters.type.length > 0 && !this.state.filters.type.includes(shoe.type)) {
+                    return false;
+                }
+                if(this.state.filters.size.length > 0 && !this.state.filters.size.some(size => shoe.sizes.includes(size))) {
+                    return false;
+                }
+                
+                return true;
+            }
+            )
+        }, () => {
+            this.sort();
+            this.search();
+        })
     }
 
     search = () => {
@@ -321,6 +322,7 @@ class AllProducts extends Component {
                 <div className="products-page-container">
                     <div className="products-page-functions">
                         <h1>Shoes ({this.state.shoesData.length})</h1>
+                        <p>will sort the css for this header tommorow</p>
                         <div className="search">
                             <input type="text" placeholder="Search" onChange={this.handleSearch} />
                         </div>
