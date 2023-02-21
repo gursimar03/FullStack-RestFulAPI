@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import axios from "axios"
 import { SERVER_HOST } from "../config/global_constants"
+import { AiOutlineArrowRight, AiOutlineArrowLeft } from 'react-icons/ai';
 
 
 export default class ProductPage extends Component {
@@ -33,7 +34,7 @@ export default class ProductPage extends Component {
 
         this.setState({
             activeIndex: index,
-        }, 
+        },
             () => console.log(this.state.product.images[activeIndex])
         );
     }
@@ -46,31 +47,53 @@ export default class ProductPage extends Component {
 
         this.setState({
             activeIndex: index,
-        }, 
-        () => console.log(this.state.product.images[activeIndex]));
+        });
     }
 
 
     render() {
-        if (!this.state.product) {
+        if (this.state.product === null) {
             return <div>Loading...</div>
         }
         const { activeIndex } = this.state;
         return (
             <div>
-                <h1>{this.state.product.name}</h1>
-                <div className="carousel">
-                    <button className="carousel-button" onClick={this.handlePrevClick}>
-                        Prev
-                    </button>
-                    <div className="carousel-images-container">
-                        <div className="carousel-image">
-                            <img src={this.state.product.images[activeIndex]} alt={this.state.product.name} />
+                <div className="shoe-page-container">
+                    <div className="shoe-page-container-left">
+                        <div className="carousel">
+                            <button className="carousel-button" onClick={this.handlePrevClick}>
+                                <AiOutlineArrowLeft className="carousel-icon"/>
+                            </button>
+                            <div className="carousel-images-container">
+                                <div className="carousel-image">
+                                    <img src={this.state.product.images[activeIndex]} alt={this.state.product.name} />
+                                </div>
+                            </div>
+                            <button className="carousel-button" onClick={this.handleNextClick}>
+                                <AiOutlineArrowRight  className="carousel-icon"/>
+                            </button>
                         </div>
                     </div>
-                    <button className="carousel-button" onClick={this.handleNextClick}>
-                        Next
-                    </button>
+                    <div className="shoe-page-container-right">
+                        <div className="shoe-page-container-right-top">
+                            <p>{this.state.product.name}</p>
+                            <p>€{this.state.product.price}</p>
+                            <p>{this.state.product.description}</p>
+                            <div className="shoe-sizes">
+                                {this.state.product.inventory.stock.map((stock => {
+
+                                    return (<div key={stock.size}>
+                                        <input disabled={stock.quantity === 0} type='radio' name="size" />
+                                        <label disabled={stock.quantity === 0}>UK {stock.size}</label>
+                                    </div>)
+
+                                }))}
+                            </div>
+                        </div>
+                        <div className="shoe-page-container-right-bottom">
+                            <button>Add To Basket</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         )
