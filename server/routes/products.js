@@ -62,11 +62,9 @@ router.get(`/shoes/women`, (req, res) => {
     })
 })
 
-//get both boys and girls
 router.get(`/shoes/kids`, (req, res) => {
     productsModel.find({}, (error, data) => {
         if (data) {
-            //filter only boys and girls shoes
             let kids = [];
             data.forEach((product) => {
                 if(product.age === 'Boys' || product.age === 'Girls') {
