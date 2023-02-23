@@ -1,12 +1,11 @@
-import React, { Component } from "react"
-import { Link } from "react-router-dom"
-import { SERVER_HOST } from "../config/global_constants"
+import React from "react";
+import { SERVER_HOST } from "../config/global_constants";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
-import axios from "axios"
-
-class AllProducts extends Component {
+class KidsProducts extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
             data: [],
             shoesData: [],
@@ -25,16 +24,14 @@ class AllProducts extends Component {
     }
 
     componentDidMount() {
-        axios.get(`${SERVER_HOST}/products`).then(res => {
-            this.setState({ data: res.data })
-        }).then(() => {
+        axios.get(`${SERVER_HOST}/shoes/kids`)
+            .then((response) => {
+                this.setState({ data: response.data })
+            }
+        ).then(() => {
             this.setState({ shoesData: this.state.data })
         })
     }
-
-
-    //these three functions set the state of the sort, search and filter
-    //and then they call the apply filters function
 
     handleFilter = (e) => {
         const { name, value, checked } = e.target
@@ -251,7 +248,6 @@ class AllProducts extends Component {
                 || shoe.brand.toLowerCase().includes(this.state.search.toLowerCase().trim())
                 || shoe.color.toLowerCase().includes(this.state.search.toLowerCase().trim())
                 || shoe.type.toLowerCase().includes(this.state.search.toLowerCase().trim())
-                || shoe.age.toLowerCase().includes(this.state.search.toLowerCase().trim())
                 )
             })
         }
@@ -307,8 +303,8 @@ class AllProducts extends Component {
         } else {
             const uniqueColors = [...new Set(this.state.data.map(item => item.color))];
             const uniqueBrands = [...new Set(this.state.data.map(item => item.brand))];
-            const uniqueAge = [...new Set(this.state.data.map(item => item.age))];
             const uniqueType = [...new Set(this.state.data.map(item => item.type))];
+            const uniqueAge = [...new Set(this.state.data.map(item => item.age))];
             let sizes = [];
             this.state.data.forEach(item => {
                 item.sizes.forEach(size => {
@@ -321,8 +317,7 @@ class AllProducts extends Component {
             return (
                 <div className="products-page-container">
                     <div className="products-page-functions">
-                        <h1>Shoes ({this.state.shoesData.length})</h1>
-                        <p>will sort the css for this header tommorow</p>
+                        <h1>Kids' Shoes ({this.state.shoesData.length})</h1>
                         <div className="search">
                             <input type="text" placeholder="Search" onChange={this.handleSearch} />
                         </div>
@@ -362,16 +357,16 @@ class AllProducts extends Component {
                                     <label>{color}</label>
                                 </div>)}
 
-                                <h2>Gender</h2>
-                                {uniqueAge.map(age => <div key={age}>
-                                    <input type="checkbox" name="age" value={age} onChange={this.handleFilter} />
-                                    <label>{age}</label>
-                                </div>)}
-
                                 <h2>Type</h2>
                                 {uniqueType.map(type => <div key={type}>
                                     <input type="checkbox" name="type" value={type} onChange={this.handleFilter} />
                                     <label>{type}</label>
+                                </div>)}
+
+                                <h2>Gender</h2>
+                                {uniqueAge.map(age => <div key={age}>
+                                    <input type="checkbox" name="age" value={age} onChange={this.handleFilter} />
+                                    <label>{age}</label>
                                 </div>)}
 
                                 <h2>Size</h2>
@@ -405,6 +400,7 @@ class AllProducts extends Component {
             )
         }
     }
+
 }
 
-export default AllProducts;
+export default KidsProducts;

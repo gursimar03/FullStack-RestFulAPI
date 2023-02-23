@@ -30,17 +30,17 @@
             "price": 119.99,
             "inventory": {
                 "stock": [     
-                    {"size": 7, "quanity": 10},
-                    {"size":7.5, "quanity": 15},
-                    {"size":8, "quanity": 20},
-                    {"size":8.5, "quanity": 20},
-                    {"size":9, "quanity": 25},
-                    {"size":9.5, "quanity": 30},
-                    {"size":10, "quanity": 35},
-                    {"size":10.5, "quanity": 40},
-                    {"size":11, "quanity": 45},
-                    {"size":11.5, "quanity": 50},
-                    {"size":12, "quanity": 55}
+                    {"size": 7, "quantity": 10},
+                    {"size":7.5, "quantity": 15},
+                    {"size":8, "quantity": 20},
+                    {"size":8.5, "quantity": 20},
+                    {"size":9, "quantity": 25},
+                    {"size":9.5, "quantity": 30},
+                    {"size":10, "quantity": 35},
+                    {"size":10.5, "quantity": 40},
+                    {"size":11, "quantity": 45},
+                    {"size":11.5, "quantity": 50},
+                    {"size":12, "quantity": 55}
                 ]
             }
         },
@@ -74,17 +74,17 @@
             "price": 149.99,
             "inventory": {
                 "stock": [     
-                    {"size": 7, "quanity": 10},
-                    {"size":7.5, "quanity": 15},
-                    {"size":8, "quanity": 20},
-                    {"size":8.5, "quanity": 20},
-                    {"size":9, "quanity": 25},
-                    {"size":9.5, "quanity": 30},
-                    {"size":10, "quanity": 35},
-                    {"size":10.5, "quanity": 40},
-                    {"size":11, "quanity": 45},
-                    {"size":11.5, "quanity": 50},
-                    {"size":12, "quanity": 55}
+                    {"size": 7, "quantity": 10},
+                    {"size":7.5, "quantity": 15},
+                    {"size":8, "quantity": 20},
+                    {"size":8.5, "quantity": 20},
+                    {"size":9, "quantity": 25},
+                    {"size":9.5, "quantity": 30},
+                    {"size":10, "quantity": 35},
+                    {"size":10.5, "quantity": 40},
+                    {"size":11, "quantity": 45},
+                    {"size":11.5, "quantity": 50},
+                    {"size":12, "quantity": 55}
                 ]
             }
         },
@@ -120,19 +120,19 @@
             "price": 169.99,
             "inventory": {
                 "stock": [     
-                    {"size": 7, "quanity": 10},
-                    {"size":7.5, "quanity": 15},
-                    {"size":8, "quanity": 20},
-                    {"size":8.5, "quanity": 20},
-                    {"size":9, "quanity": 25},
-                    {"size":9.5, "quanity": 30},
-                    {"size":10, "quanity": 35},
-                    {"size":10.5, "quanity": 40},
-                    {"size":11, "quanity": 45},
-                    {"size":11.5, "quanity": 50},
-                    {"size":12, "quanity": 55},
-                    {"size":13, "quanity": 10},
-                    {"size":14, "quanity": 5}
+                    {"size": 7, "quantity": 10},
+                    {"size":7.5, "quantity": 15},
+                    {"size":8, "quantity": 20},
+                    {"size":8.5, "quantity": 20},
+                    {"size":9, "quantity": 25},
+                    {"size":9.5, "quantity": 30},
+                    {"size":10, "quantity": 35},
+                    {"size":10.5, "quantity": 40},
+                    {"size":11, "quantity": 45},
+                    {"size":11.5, "quantity": 50},
+                    {"size":12, "quantity": 55},
+                    {"size":13, "quantity": 10},
+                    {"size":14, "quantity": 5}
                 ]
             }
         },
@@ -169,20 +169,20 @@
             "price": 129.99,
             "inventory": {
                 "stock": [     
-                    {"size": 7, "quanity": 10},
-                    {"size":7.5, "quanity": 15},
-                    {"size":8, "quanity": 20},
-                    {"size":8.5, "quanity": 20},
-                    {"size":9, "quanity": 25},
-                    {"size":9.5, "quanity": 30},
-                    {"size":10, "quanity": 35},
-                    {"size":10.5, "quanity": 40},
-                    {"size":11, "quanity": 45},
-                    {"size":11.5, "quanity": 50},
-                    {"size":12, "quanity": 55},
-                    {"size":13, "quanity": 10},
-                    {"size":14, "quanity": 5},
-                    {"size":15, "quanity": 5}
+                    {"size": 7, "quantity": 10},
+                    {"size":7.5, "quantity": 15},
+                    {"size":8, "quantity": 20},
+                    {"size":8.5, "quantity": 20},
+                    {"size":9, "quantity": 25},
+                    {"size":9.5, "quantity": 30},
+                    {"size":10, "quantity": 35},
+                    {"size":10.5, "quantity": 40},
+                    {"size":11, "quantity": 45},
+                    {"size":11.5, "quantity": 50},
+                    {"size":12, "quantity": 55},
+                    {"size":13, "quantity": 10},
+                    {"size":14, "quantity": 5},
+                    {"size":15, "quantity": 5}
                 ]
             }
         },
@@ -219,19 +219,19 @@
             "price": 159.99,
             "inventory": {
                 "stock": [     
-                    {"size": 7, "quanity": 10},
-                    {"size":7.5, "quanity": 15},
-                    {"size":8, "quanity": 20},
-                    {"size":8.5, "quanity": 20},
-                    {"size":9, "quanity": 25},
-                    {"size":9.5, "quanity": 30},
-                    {"size":10, "quanity": 35},
-                    {"size":10.5, "quanity": 40},
-                    {"size":11, "quanity": 45},
-                    {"size":11.5, "quanity": 50},
-                    {"size":12, "quanity": 55},
-                    {"size":13, "quanity": 10},
-                    {"size":14, "quanity": 5}
+                    {"size": 7, "quantity": 10},
+                    {"size":7.5, "quantity": 15},
+                    {"size":8, "quantity": 20},
+                    {"size":8.5, "quantity": 20},
+                    {"size":9, "quantity": 25},
+                    {"size":9.5, "quantity": 30},
+                    {"size":10, "quantity": 35},
+                    {"size":10.5, "quantity": 40},
+                    {"size":11, "quantity": 45},
+                    {"size":11.5, "quantity": 50},
+                    {"size":12, "quantity": 55},
+                    {"size":13, "quantity": 10},
+                    {"size":14, "quantity": 5}
                 ]
             }
         },
@@ -267,19 +267,19 @@
             "price": 309.99,
             "inventory": {
                 "stock": [     
-                    {"size": 7, "quanity": 10},
-                    {"size":7.5, "quanity": 15},
-                    {"size":8, "quanity": 20},
-                    {"size":8.5, "quanity": 20},
-                    {"size":9, "quanity": 25},
-                    {"size":9.5, "quanity": 30},
-                    {"size":10, "quanity": 35},
-                    {"size":10.5, "quanity": 40},
-                    {"size":11, "quanity": 45},
-                    {"size":11.5, "quanity": 50},
-                    {"size":12, "quanity": 55},
-                    {"size":13, "quanity": 10},
-                    {"size":14, "quanity": 5}
+                    {"size": 7, "quantity": 10},
+                    {"size":7.5, "quantity": 15},
+                    {"size":8, "quantity": 20},
+                    {"size":8.5, "quantity": 20},
+                    {"size":9, "quantity": 25},
+                    {"size":9.5, "quantity": 30},
+                    {"size":10, "quantity": 35},
+                    {"size":10.5, "quantity": 40},
+                    {"size":11, "quantity": 45},
+                    {"size":11.5, "quantity": 50},
+                    {"size":12, "quantity": 55},
+                    {"size":13, "quantity": 10},
+                    {"size":14, "quantity": 5}
                 ]
             }
         },
@@ -315,19 +315,19 @@
             "price": 259.99,
             "inventory": {
                 "stock": [     
-                    {"size": 7, "quanity": 10},
-                    {"size":7.5, "quanity": 15},
-                    {"size":8, "quanity": 20},
-                    {"size":8.5, "quanity": 20},
-                    {"size":9, "quanity": 25},
-                    {"size":9.5, "quanity": 30},
-                    {"size":10, "quanity": 35},
-                    {"size":10.5, "quanity": 40},
-                    {"size":11, "quanity": 45},
-                    {"size":11.5, "quanity": 50},
-                    {"size":12, "quanity": 55},
-                    {"size":13, "quanity": 10},
-                    {"size":14, "quanity": 5}
+                    {"size": 7, "quantity": 10},
+                    {"size":7.5, "quantity": 15},
+                    {"size":8, "quantity": 20},
+                    {"size":8.5, "quantity": 20},
+                    {"size":9, "quantity": 25},
+                    {"size":9.5, "quantity": 30},
+                    {"size":10, "quantity": 35},
+                    {"size":10.5, "quantity": 40},
+                    {"size":11, "quantity": 45},
+                    {"size":11.5, "quantity": 50},
+                    {"size":12, "quantity": 55},
+                    {"size":13, "quantity": 10},
+                    {"size":14, "quantity": 5}
                 ]
             }
         },
@@ -363,19 +363,19 @@
             "price": 69.99,
             "inventory": {
                 "stock": [     
-                    {"size": 7, "quanity": 10},
-                    {"size":7.5, "quanity": 15},
-                    {"size":8, "quanity": 20},
-                    {"size":8.5, "quanity": 20},
-                    {"size":9, "quanity": 25},
-                    {"size":9.5, "quanity": 30},
-                    {"size":10, "quanity": 35},
-                    {"size":10.5, "quanity": 40},
-                    {"size":11, "quanity": 45},
-                    {"size":11.5, "quanity": 50},
-                    {"size":12, "quanity": 55},
-                    {"size":13, "quanity": 10},
-                    {"size":14, "quanity": 5}
+                    {"size": 7, "quantity": 10},
+                    {"size":7.5, "quantity": 15},
+                    {"size":8, "quantity": 20},
+                    {"size":8.5, "quantity": 20},
+                    {"size":9, "quantity": 25},
+                    {"size":9.5, "quantity": 30},
+                    {"size":10, "quantity": 35},
+                    {"size":10.5, "quantity": 40},
+                    {"size":11, "quantity": 45},
+                    {"size":11.5, "quantity": 50},
+                    {"size":12, "quantity": 55},
+                    {"size":13, "quantity": 10},
+                    {"size":14, "quantity": 5}
                 ]
             }
         },
@@ -410,17 +410,17 @@
             "price": 167.97,
             "inventory": {
                 "stock": [     
-                    {"size": 7, "quanity": 10},
-                    {"size":7.5, "quanity": 15},
-                    {"size":8, "quanity": 20},
-                    {"size":8.5, "quanity": 20},
-                    {"size":9, "quanity": 25},
-                    {"size":9.5, "quanity": 30},
-                    {"size":10, "quanity": 35},
-                    {"size":10.5, "quanity": 40},
-                    {"size":11, "quanity": 45},
-                    {"size":11.5, "quanity": 50},
-                    {"size":12, "quanity": 55}
+                    {"size": 7, "quantity": 10},
+                    {"size":7.5, "quantity": 15},
+                    {"size":8, "quantity": 20},
+                    {"size":8.5, "quantity": 20},
+                    {"size":9, "quantity": 25},
+                    {"size":9.5, "quantity": 30},
+                    {"size":10, "quantity": 35},
+                    {"size":10.5, "quantity": 40},
+                    {"size":11, "quantity": 45},
+                    {"size":11.5, "quantity": 50},
+                    {"size":12, "quantity": 55}
                 ]
             }
         },
@@ -454,17 +454,17 @@
             "price": 114.99,
             "inventory": {
                 "stock": [     
-                    {"size": 7, "quanity": 10},
-                    {"size":7.5, "quanity": 15},
-                    {"size":8, "quanity": 20},
-                    {"size":8.5, "quanity": 20},
-                    {"size":9, "quanity": 25},
-                    {"size":9.5, "quanity": 30},
-                    {"size":10, "quanity": 35},
-                    {"size":10.5, "quanity": 40},
-                    {"size":11, "quanity": 45},
-                    {"size":11.5, "quanity": 50},
-                    {"size":12, "quanity": 55}
+                    {"size": 7, "quantity": 10},
+                    {"size":7.5, "quantity": 15},
+                    {"size":8, "quantity": 20},
+                    {"size":8.5, "quantity": 20},
+                    {"size":9, "quantity": 25},
+                    {"size":9.5, "quantity": 30},
+                    {"size":10, "quantity": 35},
+                    {"size":10.5, "quantity": 40},
+                    {"size":11, "quantity": 45},
+                    {"size":11.5, "quantity": 50},
+                    {"size":12, "quantity": 55}
                 ]
             }
         },
@@ -498,17 +498,17 @@
             "price": 319.99,
             "inventory": {
                 "stock": [     
-                    {"size": 7, "quanity": 10},
-                    {"size":7.5, "quanity": 15},
-                    {"size":8, "quanity": 20},
-                    {"size":8.5, "quanity": 20},
-                    {"size":9, "quanity": 25},
-                    {"size":9.5, "quanity": 30},
-                    {"size":10, "quanity": 35},
-                    {"size":10.5, "quanity": 40},
-                    {"size":11, "quanity": 45},
-                    {"size":11.5, "quanity": 50},
-                    {"size":12, "quanity": 55}
+                    {"size": 7, "quantity": 10},
+                    {"size":7.5, "quantity": 15},
+                    {"size":8, "quantity": 20},
+                    {"size":8.5, "quantity": 20},
+                    {"size":9, "quantity": 25},
+                    {"size":9.5, "quantity": 30},
+                    {"size":10, "quantity": 35},
+                    {"size":10.5, "quantity": 40},
+                    {"size":11, "quantity": 45},
+                    {"size":11.5, "quantity": 50},
+                    {"size":12, "quantity": 55}
                 ]
             }
         },
@@ -546,21 +546,21 @@
             "price": 99.99,
             "inventory": {
                 "stock": [     
-                    {"size": 7, "quanity": 10},
-                    {"size":7.5, "quanity": 15},
-                    {"size":8, "quanity": 20},
-                    {"size":8.5, "quanity": 20},
-                    {"size":9, "quanity": 25},
-                    {"size":9.5, "quanity": 30},
-                    {"size":10, "quanity": 35},
-                    {"size":10.5, "quanity": 40},
-                    {"size":11, "quanity": 45},
-                    {"size":11.5, "quanity": 50},
-                    {"size":12, "quanity": 35},
-                    {"size":12.5, "quanity": 20},
-                    {"size":13, "quanity": 15},
-                    {"size":13.5, "quanity": 10},
-                    {"size":14, "quanity": 5}
+                    {"size": 7, "quantity": 10},
+                    {"size":7.5, "quantity": 15},
+                    {"size":8, "quantity": 20},
+                    {"size":8.5, "quantity": 20},
+                    {"size":9, "quantity": 25},
+                    {"size":9.5, "quantity": 30},
+                    {"size":10, "quantity": 35},
+                    {"size":10.5, "quantity": 40},
+                    {"size":11, "quantity": 45},
+                    {"size":11.5, "quantity": 50},
+                    {"size":12, "quantity": 35},
+                    {"size":12.5, "quantity": 20},
+                    {"size":13, "quantity": 15},
+                    {"size":13.5, "quantity": 10},
+                    {"size":14, "quantity": 5}
                 ]
             }
         },
@@ -602,24 +602,24 @@
             "price": 119.99,
             "inventory": {
                 "stock": [     
-                    {"size": 7, "quanity": 10},
-                    {"size":7.5, "quanity": 15},
-                    {"size":8, "quanity": 20},
-                    {"size":8.5, "quanity": 20},
-                    {"size":9, "quanity": 25},
-                    {"size":9.5, "quanity": 30},
-                    {"size":10, "quanity": 35},
-                    {"size":10.5, "quanity": 40},
-                    {"size":11, "quanity": 45},
-                    {"size":11.5, "quanity": 50},
-                    {"size":12, "quanity": 35},
-                    {"size":12.5, "quanity": 20},
-                    {"size":13, "quanity": 15},
-                    {"size":13.5, "quanity": 10},
-                    {"size":14, "quanity": 5},
-                    {"size":15, "quanity": 15},
-                    {"size":16, "quanity": 15},
-                    {"size":17, "quanity": 15}
+                    {"size": 7, "quantity": 10},
+                    {"size":7.5, "quantity": 15},
+                    {"size":8, "quantity": 20},
+                    {"size":8.5, "quantity": 20},
+                    {"size":9, "quantity": 25},
+                    {"size":9.5, "quantity": 30},
+                    {"size":10, "quantity": 35},
+                    {"size":10.5, "quantity": 40},
+                    {"size":11, "quantity": 45},
+                    {"size":11.5, "quantity": 50},
+                    {"size":12, "quantity": 35},
+                    {"size":12.5, "quantity": 20},
+                    {"size":13, "quantity": 15},
+                    {"size":13.5, "quantity": 10},
+                    {"size":14, "quantity": 5},
+                    {"size":15, "quantity": 15},
+                    {"size":16, "quantity": 15},
+                    {"size":17, "quantity": 15}
                 ]
             }
         },
@@ -660,24 +660,24 @@
             "price": 109.99,
             "inventory": {
                 "stock": [     
-                    {"size": 7, "quanity": 10},
-                    {"size":7.5, "quanity": 15},
-                    {"size":8, "quanity": 20},
-                    {"size":8.5, "quanity": 20},
-                    {"size":9, "quanity": 25},
-                    {"size":9.5, "quanity": 30},
-                    {"size":10, "quanity": 35},
-                    {"size":10.5, "quanity": 40},
-                    {"size":11, "quanity": 45},
-                    {"size":11.5, "quanity": 50},
-                    {"size":12, "quanity": 35},
-                    {"size":12.5, "quanity": 20},
-                    {"size":13, "quanity": 15},
-                    {"size":13.5, "quanity": 10},
-                    {"size":14, "quanity": 5},
-                    {"size":15, "quanity": 15},
-                    {"size":16, "quanity": 15},
-                    {"size":17, "quanity": 15}
+                    {"size": 7, "quantity": 10},
+                    {"size":7.5, "quantity": 15},
+                    {"size":8, "quantity": 20},
+                    {"size":8.5, "quantity": 20},
+                    {"size":9, "quantity": 25},
+                    {"size":9.5, "quantity": 30},
+                    {"size":10, "quantity": 35},
+                    {"size":10.5, "quantity": 40},
+                    {"size":11, "quantity": 45},
+                    {"size":11.5, "quantity": 50},
+                    {"size":12, "quantity": 35},
+                    {"size":12.5, "quantity": 20},
+                    {"size":13, "quantity": 15},
+                    {"size":13.5, "quantity": 10},
+                    {"size":14, "quantity": 5},
+                    {"size":15, "quantity": 15},
+                    {"size":16, "quantity": 15},
+                    {"size":17, "quantity": 15}
                 ]
             }
         },
@@ -716,22 +716,22 @@
             "price": 84.99,
             "inventory": {
                 "stock": [     
-                    {"size": 7, "quanity": 10},
-                    {"size":7.5, "quanity": 15},
-                    {"size":8, "quanity": 20},
-                    {"size":8.5, "quanity": 20},
-                    {"size":9, "quanity": 25},
-                    {"size":9.5, "quanity": 30},
-                    {"size":10, "quanity": 35},
-                    {"size":10.5, "quanity": 40},
-                    {"size":11, "quanity": 45},
-                    {"size":11.5, "quanity": 50},
-                    {"size":12, "quanity": 35},
-                    {"size":12.5, "quanity": 20},
-                    {"size":13, "quanity": 15},
-                    {"size":13.5, "quanity": 10},
-                    {"size":14, "quanity": 5},
-                    {"size":15, "quanity": 15}
+                    {"size": 7, "quantity": 10},
+                    {"size":7.5, "quantity": 15},
+                    {"size":8, "quantity": 20},
+                    {"size":8.5, "quantity": 20},
+                    {"size":9, "quantity": 25},
+                    {"size":9.5, "quantity": 30},
+                    {"size":10, "quantity": 35},
+                    {"size":10.5, "quantity": 40},
+                    {"size":11, "quantity": 45},
+                    {"size":11.5, "quantity": 50},
+                    {"size":12, "quantity": 35},
+                    {"size":12.5, "quantity": 20},
+                    {"size":13, "quantity": 15},
+                    {"size":13.5, "quantity": 10},
+                    {"size":14, "quantity": 5},
+                    {"size":15, "quantity": 15}
                 ]
             }
         },
@@ -772,24 +772,24 @@
             "price": 199.99,
             "inventory": {
                 "stock": [     
-                    {"size": 7, "quanity": 10},
-                    {"size":7.5, "quanity": 15},
-                    {"size":8, "quanity": 20},
-                    {"size":8.5, "quanity": 20},
-                    {"size":9, "quanity": 25},
-                    {"size":9.5, "quanity": 30},
-                    {"size":10, "quanity": 35},
-                    {"size":10.5, "quanity": 40},
-                    {"size":11, "quanity": 45},
-                    {"size":11.5, "quanity": 50},
-                    {"size":12, "quanity": 35},
-                    {"size":12.5, "quanity": 20},
-                    {"size":13, "quanity": 15},
-                    {"size":13.5, "quanity": 10},
-                    {"size":14, "quanity": 5},
-                    {"size":15, "quanity": 15},
-                    {"size":16, "quanity": 10},
-                    {"size":17, "quanity": 5}
+                    {"size": 7, "quantity": 10},
+                    {"size":7.5, "quantity": 15},
+                    {"size":8, "quantity": 20},
+                    {"size":8.5, "quantity": 20},
+                    {"size":9, "quantity": 25},
+                    {"size":9.5, "quantity": 30},
+                    {"size":10, "quantity": 35},
+                    {"size":10.5, "quantity": 40},
+                    {"size":11, "quantity": 45},
+                    {"size":11.5, "quantity": 50},
+                    {"size":12, "quantity": 35},
+                    {"size":12.5, "quantity": 20},
+                    {"size":13, "quantity": 15},
+                    {"size":13.5, "quantity": 10},
+                    {"size":14, "quantity": 5},
+                    {"size":15, "quantity": 15},
+                    {"size":16, "quantity": 10},
+                    {"size":17, "quantity": 5}
                 ]
             }
         },
@@ -828,21 +828,21 @@
             "price": 79.99,
             "inventory": {
                 "stock": [     
-                    {"size": 7, "quanity": 10},
-                    {"size":7.5, "quanity": 15},
-                    {"size":8, "quanity": 20},
-                    {"size":8.5, "quanity": 20},
-                    {"size":9, "quanity": 25},
-                    {"size":9.5, "quanity": 30},
-                    {"size":10, "quanity": 35},
-                    {"size":10.5, "quanity": 40},
-                    {"size":11, "quanity": 45},
-                    {"size":11.5, "quanity": 50},
-                    {"size":12, "quanity": 35},
-                    {"size":12.5, "quanity": 20},
-                    {"size":13, "quanity": 15},
-                    {"size":13.5, "quanity": 10},
-                    {"size":14, "quanity": 5}
+                    {"size": 7, "quantity": 10},
+                    {"size":7.5, "quantity": 15},
+                    {"size":8, "quantity": 20},
+                    {"size":8.5, "quantity": 20},
+                    {"size":9, "quantity": 25},
+                    {"size":9.5, "quantity": 30},
+                    {"size":10, "quantity": 35},
+                    {"size":10.5, "quantity": 40},
+                    {"size":11, "quantity": 45},
+                    {"size":11.5, "quantity": 50},
+                    {"size":12, "quantity": 35},
+                    {"size":12.5, "quantity": 20},
+                    {"size":13, "quantity": 15},
+                    {"size":13.5, "quantity": 10},
+                    {"size":14, "quantity": 5}
                 ]
             }
         },
@@ -880,21 +880,21 @@
             "price": 149.99,
             "inventory": {
                 "stock": [     
-                    {"size": 7, "quanity": 10},
-                    {"size":7.5, "quanity": 15},
-                    {"size":8, "quanity": 20},
-                    {"size":8.5, "quanity": 20},
-                    {"size":9, "quanity": 25},
-                    {"size":9.5, "quanity": 30},
-                    {"size":10, "quanity": 35},
-                    {"size":10.5, "quanity": 40},
-                    {"size":11, "quanity": 45},
-                    {"size":11.5, "quanity": 50},
-                    {"size":12, "quanity": 35},
-                    {"size":12.5, "quanity": 20},
-                    {"size":13, "quanity": 15},
-                    {"size":13.5, "quanity": 10},
-                    {"size":14, "quanity": 5}
+                    {"size": 7, "quantity": 10},
+                    {"size":7.5, "quantity": 15},
+                    {"size":8, "quantity": 20},
+                    {"size":8.5, "quantity": 20},
+                    {"size":9, "quantity": 25},
+                    {"size":9.5, "quantity": 30},
+                    {"size":10, "quantity": 35},
+                    {"size":10.5, "quantity": 40},
+                    {"size":11, "quantity": 45},
+                    {"size":11.5, "quantity": 50},
+                    {"size":12, "quantity": 35},
+                    {"size":12.5, "quantity": 20},
+                    {"size":13, "quantity": 15},
+                    {"size":13.5, "quantity": 10},
+                    {"size":14, "quantity": 5}
                 ]
             }
         },
@@ -933,22 +933,22 @@
             "price": 109.99,
             "inventory": {
                 "stock": [     
-                    {"size": 7, "quanity": 10},
-                    {"size":7.5, "quanity": 15},
-                    {"size":8, "quanity": 20},
-                    {"size":8.5, "quanity": 20},
-                    {"size":9, "quanity": 25},
-                    {"size":9.5, "quanity": 30},
-                    {"size":10, "quanity": 35},
-                    {"size":10.5, "quanity": 40},
-                    {"size":11, "quanity": 45},
-                    {"size":11.5, "quanity": 50},
-                    {"size":12, "quanity": 35},
-                    {"size":12.5, "quanity": 20},
-                    {"size":13, "quanity": 15},
-                    {"size":13.5, "quanity": 10},
-                    {"size":14, "quanity": 5},
-                    {"size":15, "quanity": 15}
+                    {"size": 7, "quantity": 10},
+                    {"size":7.5, "quantity": 15},
+                    {"size":8, "quantity": 20},
+                    {"size":8.5, "quantity": 20},
+                    {"size":9, "quantity": 25},
+                    {"size":9.5, "quantity": 30},
+                    {"size":10, "quantity": 35},
+                    {"size":10.5, "quantity": 40},
+                    {"size":11, "quantity": 45},
+                    {"size":11.5, "quantity": 50},
+                    {"size":12, "quantity": 35},
+                    {"size":12.5, "quantity": 20},
+                    {"size":13, "quantity": 15},
+                    {"size":13.5, "quantity": 10},
+                    {"size":14, "quantity": 5},
+                    {"size":15, "quantity": 15}
                 ]
             }
         },
@@ -986,21 +986,21 @@
             "price": 134.99,
             "inventory": {
                 "stock": [     
-                    {"size": 7, "quanity": 10},
-                    {"size":7.5, "quanity": 15},
-                    {"size":8, "quanity": 20},
-                    {"size":8.5, "quanity": 20},
-                    {"size":9, "quanity": 25},
-                    {"size":9.5, "quanity": 30},
-                    {"size":10, "quanity": 35},
-                    {"size":10.5, "quanity": 40},
-                    {"size":11, "quanity": 45},
-                    {"size":11.5, "quanity": 50},
-                    {"size":12, "quanity": 35},
-                    {"size":12.5, "quanity": 20},
-                    {"size":13, "quanity": 15},
-                    {"size":13.5, "quanity": 10},
-                    {"size":14, "quanity": 5}
+                    {"size": 7, "quantity": 10},
+                    {"size":7.5, "quantity": 15},
+                    {"size":8, "quantity": 20},
+                    {"size":8.5, "quantity": 20},
+                    {"size":9, "quantity": 25},
+                    {"size":9.5, "quantity": 30},
+                    {"size":10, "quantity": 35},
+                    {"size":10.5, "quantity": 40},
+                    {"size":11, "quantity": 45},
+                    {"size":11.5, "quantity": 50},
+                    {"size":12, "quantity": 35},
+                    {"size":12.5, "quantity": 20},
+                    {"size":13, "quantity": 15},
+                    {"size":13.5, "quantity": 10},
+                    {"size":14, "quantity": 5}
                 ]
             }
         },
@@ -1030,12 +1030,12 @@
             "price": 159.99,
             "inventory": {
                 "stock": [     
-                    {"size": 7, "quanity": 10},
-                    {"size":7.5, "quanity": 15},
-                    {"size":8, "quanity": 20},
-                    {"size":8.5, "quanity": 20},
-                    {"size":9, "quanity": 25},
-                    {"size":9.5, "quanity": 30}
+                    {"size": 7, "quantity": 10},
+                    {"size":7.5, "quantity": 15},
+                    {"size":8, "quantity": 20},
+                    {"size":8.5, "quantity": 20},
+                    {"size":9, "quantity": 25},
+                    {"size":9.5, "quantity": 30}
                 ]
             }
         },
@@ -1064,12 +1064,12 @@
             "price": 149.99,
             "inventory": {
                 "stock": [     
-                    {"size": 7, "quanity": 10},
-                    {"size":7.5, "quanity": 15},
-                    {"size":8, "quanity": 20},
-                    {"size":8.5, "quanity": 20},
-                    {"size":9, "quanity": 25},
-                    {"size":9.5, "quanity": 30}
+                    {"size": 7, "quantity": 10},
+                    {"size":7.5, "quantity": 15},
+                    {"size":8, "quantity": 20},
+                    {"size":8.5, "quantity": 20},
+                    {"size":9, "quantity": 25},
+                    {"size":9.5, "quantity": 30}
                 ]
             }
         },
@@ -1098,12 +1098,12 @@
             "price": 129.99,
             "inventory": {
                 "stock": [     
-                    {"size": 7, "quanity": 10},
-                    {"size":7.5, "quanity": 15},
-                    {"size":8, "quanity": 20},
-                    {"size":8.5, "quanity": 20},
-                    {"size":9, "quanity": 25},
-                    {"size":9.5, "quanity": 30}
+                    {"size": 7, "quantity": 10},
+                    {"size":7.5, "quantity": 15},
+                    {"size":8, "quantity": 20},
+                    {"size":8.5, "quantity": 20},
+                    {"size":9, "quantity": 25},
+                    {"size":9.5, "quantity": 30}
                 ]
             }
         },
@@ -1132,12 +1132,12 @@
             "price": 159.99,
             "inventory": {
                 "stock": [     
-                    {"size": 7, "quanity": 10},
-                    {"size":7.5, "quanity": 15},
-                    {"size":8, "quanity": 20},
-                    {"size":8.5, "quanity": 20},
-                    {"size":9, "quanity": 25},
-                    {"size":9.5, "quanity": 30}
+                    {"size": 7, "quantity": 10},
+                    {"size":7.5, "quantity": 15},
+                    {"size":8, "quantity": 20},
+                    {"size":8.5, "quantity": 20},
+                    {"size":9, "quantity": 25},
+                    {"size":9.5, "quantity": 30}
                 ]
             }
         },
@@ -1167,12 +1167,12 @@
             "price": 159.99,
             "inventory": {
                 "stock": [     
-                    {"size": 7, "quanity": 10},
-                    {"size":7.5, "quanity": 15},
-                    {"size":8, "quanity": 20},
-                    {"size":8.5, "quanity": 20},
-                    {"size":9, "quanity": 25},
-                    {"size":9.5, "quanity": 30}
+                    {"size": 7, "quantity": 10},
+                    {"size":7.5, "quantity": 15},
+                    {"size":8, "quantity": 20},
+                    {"size":8.5, "quantity": 20},
+                    {"size":9, "quantity": 25},
+                    {"size":9.5, "quantity": 30}
                 ]
             }
         },
@@ -1201,12 +1201,12 @@
             "price": 64.99,
             "inventory": {
                 "stock": [     
-                    {"size": 7, "quanity": 10},
-                    {"size":7.5, "quanity": 15},
-                    {"size":8, "quanity": 20},
-                    {"size":8.5, "quanity": 20},
-                    {"size":9, "quanity": 25},
-                    {"size":9.5, "quanity": 30}
+                    {"size": 7, "quantity": 10},
+                    {"size":7.5, "quantity": 15},
+                    {"size":8, "quantity": 20},
+                    {"size":8.5, "quantity": 20},
+                    {"size":9, "quantity": 25},
+                    {"size":9.5, "quantity": 30}
                 ]
             }
         },
@@ -1235,12 +1235,12 @@
             "price": 89.99,
             "inventory": {
                 "stock": [     
-                    {"size": 7, "quanity": 10},
-                    {"size":7.5, "quanity": 15},
-                    {"size":8, "quanity": 20},
-                    {"size":8.5, "quanity": 20},
-                    {"size":9, "quanity": 25},
-                    {"size":9.5, "quanity": 30}
+                    {"size": 7, "quantity": 10},
+                    {"size":7.5, "quantity": 15},
+                    {"size":8, "quantity": 20},
+                    {"size":8.5, "quantity": 20},
+                    {"size":9, "quantity": 25},
+                    {"size":9.5, "quantity": 30}
                 ]
             }
         },
@@ -1269,12 +1269,12 @@
             "price": 64.99,
             "inventory": {
                 "stock": [     
-                    {"size": 7, "quanity": 10},
-                    {"size":7.5, "quanity": 15},
-                    {"size":8, "quanity": 20},
-                    {"size":8.5, "quanity": 20},
-                    {"size":9, "quanity": 25},
-                    {"size":9.5, "quanity": 30}
+                    {"size": 7, "quantity": 10},
+                    {"size":7.5, "quantity": 15},
+                    {"size":8, "quantity": 20},
+                    {"size":8.5, "quantity": 20},
+                    {"size":9, "quantity": 25},
+                    {"size":9.5, "quantity": 30}
                 ]
             }
         },
@@ -1304,12 +1304,12 @@
             "price": 259.99,
             "inventory": {
                 "stock": [     
-                    {"size": 7, "quanity": 10},
-                    {"size":7.5, "quanity": 15},
-                    {"size":8, "quanity": 20},
-                    {"size":8.5, "quanity": 20},
-                    {"size":9, "quanity": 25},
-                    {"size":9.5, "quanity": 30}
+                    {"size": 7, "quantity": 10},
+                    {"size":7.5, "quantity": 15},
+                    {"size":8, "quantity": 20},
+                    {"size":8.5, "quantity": 20},
+                    {"size":9, "quantity": 25},
+                    {"size":9.5, "quantity": 30}
                 ]
             }
         },
@@ -1340,14 +1340,14 @@
             "price": 79.99,
             "inventory": {
                 "stock": [     
-                    {"size": 7, "quanity": 10},
-                    {"size":7.5, "quanity": 15},
-                    {"size":8, "quanity": 20},
-                    {"size":8.5, "quanity": 20},
-                    {"size":9, "quanity": 25},
-                    {"size":9.5, "quanity": 30},
-                    {"size":10, "quanity": 35},
-                    {"size":10.5, "quanity": 40}
+                    {"size": 7, "quantity": 10},
+                    {"size":7.5, "quantity": 15},
+                    {"size":8, "quantity": 20},
+                    {"size":8.5, "quantity": 20},
+                    {"size":9, "quantity": 25},
+                    {"size":9.5, "quantity": 30},
+                    {"size":10, "quantity": 35},
+                    {"size":10.5, "quantity": 40}
                 ]
             }
         },
@@ -1376,12 +1376,12 @@
             "price": 119.99,
             "inventory": {
                 "stock": [     
-                    {"size": 7, "quanity": 10},
-                    {"size":7.5, "quanity": 15},
-                    {"size":8, "quanity": 20},
-                    {"size":8.5, "quanity": 20},
-                    {"size":9, "quanity": 25},
-                    {"size":9.5, "quanity": 30}
+                    {"size": 7, "quantity": 10},
+                    {"size":7.5, "quantity": 15},
+                    {"size":8, "quantity": 20},
+                    {"size":8.5, "quantity": 20},
+                    {"size":9, "quantity": 25},
+                    {"size":9.5, "quantity": 30}
                 ]
             }
         },
@@ -1410,12 +1410,12 @@
             "price": 223.97,
             "inventory": {
                 "stock": [     
-                    {"size": 7, "quanity": 10},
-                    {"size":7.5, "quanity": 15},
-                    {"size":8, "quanity": 20},
-                    {"size":8.5, "quanity": 20},
-                    {"size":9, "quanity": 25},
-                    {"size":9.5, "quanity": 30}
+                    {"size": 7, "quantity": 10},
+                    {"size":7.5, "quantity": 15},
+                    {"size":8, "quantity": 20},
+                    {"size":8.5, "quantity": 20},
+                    {"size":9, "quantity": 25},
+                    {"size":9.5, "quantity": 30}
                 ]
             }
         },
@@ -1445,12 +1445,12 @@
             "price": 119.99,
             "inventory": {
                 "stock": [     
-                    {"size": 7, "quanity": 10},
-                    {"size":7.5, "quanity": 15},
-                    {"size":8, "quanity": 20},
-                    {"size":8.5, "quanity": 20},
-                    {"size":9, "quanity": 25},
-                    {"size":9.5, "quanity": 30}
+                    {"size": 7, "quantity": 10},
+                    {"size":7.5, "quantity": 15},
+                    {"size":8, "quantity": 20},
+                    {"size":8.5, "quantity": 20},
+                    {"size":9, "quantity": 25},
+                    {"size":9.5, "quantity": 30}
                 ]
             }
         },
@@ -1481,14 +1481,14 @@
             "price": 134.99,
             "inventory": {
                 "stock": [     
-                    {"size": 7, "quanity": 10},
-                    {"size":7.5, "quanity": 15},
-                    {"size":8, "quanity": 20},
-                    {"size":8.5, "quanity": 20},
-                    {"size":9, "quanity": 25},
-                    {"size":9.5, "quanity": 30},
-                    {"size":10, "quanity": 35},
-                    {"size":10.5, "quanity": 40}
+                    {"size": 7, "quantity": 10},
+                    {"size":7.5, "quantity": 15},
+                    {"size":8, "quantity": 20},
+                    {"size":8.5, "quantity": 20},
+                    {"size":9, "quantity": 25},
+                    {"size":9.5, "quantity": 30},
+                    {"size":10, "quantity": 35},
+                    {"size":10.5, "quantity": 40}
                 ]
             }
         },
@@ -1517,12 +1517,12 @@
             "price": 139.99,
             "inventory": {
                 "stock": [     
-                    {"size": 7, "quanity": 10},
-                    {"size":7.5, "quanity": 15},
-                    {"size":8, "quanity": 20},
-                    {"size":8.5, "quanity": 20},
-                    {"size":9, "quanity": 25},
-                    {"size":9.5, "quanity": 30}
+                    {"size": 7, "quantity": 10},
+                    {"size":7.5, "quantity": 15},
+                    {"size":8, "quantity": 20},
+                    {"size":8.5, "quantity": 20},
+                    {"size":9, "quantity": 25},
+                    {"size":9.5, "quantity": 30}
                 ]
             }
         },
@@ -1551,12 +1551,12 @@
             "price": 64.99,
             "inventory": {
                 "stock": [     
-                    {"size": 7, "quanity": 10},
-                    {"size":7.5, "quanity": 15},
-                    {"size":8, "quanity": 20},
-                    {"size":8.5, "quanity": 20},
-                    {"size":9, "quanity": 25},
-                    {"size":9.5, "quanity": 30}
+                    {"size": 7, "quantity": 10},
+                    {"size":7.5, "quantity": 15},
+                    {"size":8, "quantity": 20},
+                    {"size":8.5, "quantity": 20},
+                    {"size":9, "quantity": 25},
+                    {"size":9.5, "quantity": 30}
                 ]
             }
         },
@@ -1588,14 +1588,14 @@
             "price": 84.99,
             "inventory": {
                 "stock": [     
-                    {"size": 3, "quanity": 10},
-                    {"size":3.5, "quanity": 15},
-                    {"size":4, "quanity": 20},
-                    {"size":4.5, "quanity": 20},
-                    {"size":5, "quanity": 25},
-                    {"size":5.5, "quanity": 30},
-                    {"size":6, "quanity": 10},
-                    {"size":6.5, "quanity": 15}
+                    {"size": 3, "quantity": 10},
+                    {"size":3.5, "quantity": 15},
+                    {"size":4, "quantity": 20},
+                    {"size":4.5, "quantity": 20},
+                    {"size":5, "quantity": 25},
+                    {"size":5.5, "quantity": 30},
+                    {"size":6, "quantity": 10},
+                    {"size":6.5, "quantity": 15}
                 ]
             }
         },
@@ -1626,14 +1626,14 @@
             "price": 34.99,
             "inventory": {
                 "stock": [     
-                    {"size": 3, "quanity": 10},
-                    {"size":3.5, "quanity": 15},
-                    {"size":4, "quanity": 20},
-                    {"size":4.5, "quanity": 20},
-                    {"size":5, "quanity": 25},
-                    {"size":5.5, "quanity": 30},
-                    {"size":6, "quanity": 10},
-                    {"size":6.5, "quanity": 15}
+                    {"size": 3, "quantity": 10},
+                    {"size":3.5, "quantity": 15},
+                    {"size":4, "quantity": 20},
+                    {"size":4.5, "quantity": 20},
+                    {"size":5, "quantity": 25},
+                    {"size":5.5, "quantity": 30},
+                    {"size":6, "quantity": 10},
+                    {"size":6.5, "quantity": 15}
                 ]
             }
         },
@@ -1664,14 +1664,14 @@
             "price": 62.99,
             "inventory": {
                 "stock": [     
-                    {"size": 3, "quanity": 10},
-                    {"size":3.5, "quanity": 15},
-                    {"size":4, "quanity": 20},
-                    {"size":4.5, "quanity": 20},
-                    {"size":5, "quanity": 25},
-                    {"size":5.5, "quanity": 30},
-                    {"size":6, "quanity": 10},
-                    {"size":6.5, "quanity": 15}
+                    {"size": 3, "quantity": 10},
+                    {"size":3.5, "quantity": 15},
+                    {"size":4, "quantity": 20},
+                    {"size":4.5, "quantity": 20},
+                    {"size":5, "quantity": 25},
+                    {"size":5.5, "quantity": 30},
+                    {"size":6, "quantity": 10},
+                    {"size":6.5, "quantity": 15}
                 ]
             }
         },
@@ -1702,14 +1702,14 @@
             "price": 149.99,
             "inventory": {
                 "stock": [     
-                    {"size": 3, "quanity": 10},
-                    {"size":3.5, "quanity": 15},
-                    {"size":4, "quanity": 20},
-                    {"size":4.5, "quanity": 20},
-                    {"size":5, "quanity": 25},
-                    {"size":5.5, "quanity": 30},
-                    {"size":6, "quanity": 10},
-                    {"size":6.5, "quanity": 15}
+                    {"size": 3, "quantity": 10},
+                    {"size":3.5, "quantity": 15},
+                    {"size":4, "quantity": 20},
+                    {"size":4.5, "quantity": 20},
+                    {"size":5, "quantity": 25},
+                    {"size":5.5, "quantity": 30},
+                    {"size":6, "quantity": 10},
+                    {"size":6.5, "quantity": 15}
                 ]
             }
         },
@@ -1740,14 +1740,14 @@
             "price": 74.99,
             "inventory": {
                 "stock": [     
-                    {"size": 3, "quanity": 10},
-                    {"size":3.5, "quanity": 15},
-                    {"size":4, "quanity": 20},
-                    {"size":4.5, "quanity": 20},
-                    {"size":5, "quanity": 25},
-                    {"size":5.5, "quanity": 30},
-                    {"size":6, "quanity": 10},
-                    {"size":6.5, "quanity": 15}
+                    {"size": 3, "quantity": 10},
+                    {"size":3.5, "quantity": 15},
+                    {"size":4, "quantity": 20},
+                    {"size":4.5, "quantity": 20},
+                    {"size":5, "quantity": 25},
+                    {"size":5.5, "quantity": 30},
+                    {"size":6, "quantity": 10},
+                    {"size":6.5, "quantity": 15}
                 ]
             }
         },
@@ -1779,14 +1779,14 @@
             "price": 74.99,
             "inventory": {
                 "stock": [     
-                    {"size": 3, "quanity": 10},
-                    {"size":3.5, "quanity": 15},
-                    {"size":4, "quanity": 20},
-                    {"size":4.5, "quanity": 20},
-                    {"size":5, "quanity": 25},
-                    {"size":5.5, "quanity": 30},
-                    {"size":6, "quanity": 10},
-                    {"size":6.5, "quanity": 15}
+                    {"size": 3, "quantity": 10},
+                    {"size":3.5, "quantity": 15},
+                    {"size":4, "quantity": 20},
+                    {"size":4.5, "quantity": 20},
+                    {"size":5, "quantity": 25},
+                    {"size":5.5, "quantity": 30},
+                    {"size":6, "quantity": 10},
+                    {"size":6.5, "quantity": 15}
                 ]
             }
         },
@@ -1817,14 +1817,14 @@
             "price": 33.97,
             "inventory": {
                 "stock": [     
-                    {"size": 3, "quanity": 10},
-                    {"size":3.5, "quanity": 15},
-                    {"size":4, "quanity": 20},
-                    {"size":4.5, "quanity": 20},
-                    {"size":5, "quanity": 25},
-                    {"size":5.5, "quanity": 30},
-                    {"size":6, "quanity": 10},
-                    {"size":6.5, "quanity": 15}
+                    {"size": 3, "quantity": 10},
+                    {"size":3.5, "quantity": 15},
+                    {"size":4, "quantity": 20},
+                    {"size":4.5, "quantity": 20},
+                    {"size":5, "quantity": 25},
+                    {"size":5.5, "quantity": 30},
+                    {"size":6, "quantity": 10},
+                    {"size":6.5, "quantity": 15}
                 ]
             }
         },
@@ -1855,14 +1855,14 @@
             "price": 49.99,
             "inventory": {
                 "stock": [     
-                    {"size": 3, "quanity": 10},
-                    {"size":3.5, "quanity": 15},
-                    {"size":4, "quanity": 20},
-                    {"size":4.5, "quanity": 20},
-                    {"size":5, "quanity": 25},
-                    {"size":5.5, "quanity": 30},
-                    {"size":6, "quanity": 10},
-                    {"size":6.5, "quanity": 15}
+                    {"size": 3, "quantity": 10},
+                    {"size":3.5, "quantity": 15},
+                    {"size":4, "quantity": 20},
+                    {"size":4.5, "quantity": 20},
+                    {"size":5, "quantity": 25},
+                    {"size":5.5, "quantity": 30},
+                    {"size":6, "quantity": 10},
+                    {"size":6.5, "quantity": 15}
                 ]
             }
         },
@@ -1893,14 +1893,14 @@
             "price": 99.99,
             "inventory": {
                 "stock": [     
-                    {"size": 3, "quanity": 10},
-                    {"size":3.5, "quanity": 15},
-                    {"size":4, "quanity": 20},
-                    {"size":4.5, "quanity": 20},
-                    {"size":5, "quanity": 25},
-                    {"size":5.5, "quanity": 30},
-                    {"size":6, "quanity": 10},
-                    {"size":6.5, "quanity": 15}
+                    {"size": 3, "quantity": 10},
+                    {"size":3.5, "quantity": 15},
+                    {"size":4, "quantity": 20},
+                    {"size":4.5, "quantity": 20},
+                    {"size":5, "quantity": 25},
+                    {"size":5.5, "quantity": 30},
+                    {"size":6, "quantity": 10},
+                    {"size":6.5, "quantity": 15}
                 ]
             }
         },
@@ -1931,14 +1931,14 @@
             "price": 68.97,
             "inventory": {
                 "stock": [     
-                    {"size": 3, "quanity": 10},
-                    {"size":3.5, "quanity": 15},
-                    {"size":4, "quanity": 20},
-                    {"size":4.5, "quanity": 20},
-                    {"size":5, "quanity": 25},
-                    {"size":5.5, "quanity": 30},
-                    {"size":6, "quanity": 10},
-                    {"size":6.5, "quanity": 15}
+                    {"size": 3, "quantity": 10},
+                    {"size":3.5, "quantity": 15},
+                    {"size":4, "quantity": 20},
+                    {"size":4.5, "quantity": 20},
+                    {"size":5, "quantity": 25},
+                    {"size":5.5, "quantity": 30},
+                    {"size":6, "quantity": 10},
+                    {"size":6.5, "quantity": 15}
                 ]
             }
         }

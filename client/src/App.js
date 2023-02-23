@@ -23,6 +23,9 @@ import LoggedInRoute from "./components/LoggedInRoute";
 import DeleteAccount from "./components/DeleteAccount";
 import { ACCESS_LEVEL_GUEST } from "./config/global_constants";
 import AdminBoard from "./components/AdminDashboard";
+import MenProducts from "./components/MenProducts";
+import WomenProducts from "./components/WomenProducts";
+import KidsProducts from "./components/KidProducts";
 
 
 if (typeof localStorage.accessLevel === "undefined") {
@@ -45,13 +48,17 @@ class App extends React.Component {
             accessLevel: localStorage.accessLevel,
             showDropdown: false,
 
-            products: []
+            products: [],
+            productsData: [],
         }
     }
 
     componentDidMount() {
         axios.get(`${SERVER_HOST}/products`).then(res => {
             this.setState({ products: res.data })
+        }).then(() => {
+            this.setState({ productsData: this.state.products })
+
         })
     }
 
@@ -86,6 +93,21 @@ class App extends React.Component {
     }
 
 
+    handleSearch = (e) => {
+        const { value } = e.target;
+        if (value === "") {
+            this.setState({ productsData: this.state.products })
+        } else {
+            this.setState({
+                productsData: this.state.products.filter(shoe => shoe.name.toLowerCase().includes(value.toLowerCase().trim())
+                || shoe.brand.toLowerCase().includes(value.toLowerCase().trim())
+                || shoe.color.toLowerCase().includes(value.toLowerCase().trim())
+                || shoe.type.toLowerCase().includes(value.toLowerCase().trim())
+                || shoe.age.toLowerCase().includes(value.toLowerCase().trim())
+                )
+            })
+        }
+    }
 
 
     render() {
@@ -97,22 +119,25 @@ class App extends React.Component {
                         <nav className="top-nav">
                             <div className="nav-content-left">
                                 <Link id="logo" to={'/'}>
-                                    <img src={require('./images/Not-Nike.png')} />
+                                    <img src={require('./images/Not-Nike.png')} alt='logo' />
                                 </Link>
                             </div>
                             <div className="nav-content-right">
                                 {this.state.name !== "" && this.state.name !== null && this.state.name !== "GUEST" ? <p id="welcome">Welcome, {localStorage.name}</p> : <Link id="linkToSignIn" to={'/account-login'}><p>Sign In</p></Link>}
+
                                 {this.state.accessLevel > 0 ? <Link id="linkToAccount" onClick={this.toggleDropdown}> {
                                     localStorage.profilePhoto !== "null" ?
                                         <img id="profilePhoto" className="profileImg" src={`data:;base64,${localStorage.profilePhoto}`} alt="Loading photo" />
                                         :
                                         <VscAccount className="account-icon" />
                                 }</Link> : null}
+
                                 <div id="dropdown-content">
                                     <Link to={'/profile'}>Profile</Link>
                                     <Link to="/orders">Orders</Link>
-                                    <Link to="/payment-method">Payment Method</Link>
-                                    {localStorage.accessLevel == 2 ? <Link to="/admin"> Admin Dashboard </Link> : null}
+                                    <Link to="/payment-method">Payment Method</Link><<<<<<< Jason
+                                    {localStorage.accessLevel === '2' ? <Link to="/admin"> Admin Dashboard </Link> : null}
+
                                     <Logout refresh={this.reloadPageAfterLogOut} />
                                 </div>
                             </div>
@@ -142,19 +167,19 @@ class App extends React.Component {
                             <div id="mobile-nav">
                                 <ul className="mobile-nav-links">
                                     <li>
-                                        <Link className="nav-link" to={'/'}><p>Shop Men</p></Link>
+                                        <Link className="nav-link" to={'/products'} onClick={this.openMobileNav} ><p>Shop All</p></Link>
                                     </li>
                                     <li>
-                                        <Link className="nav-link" to={'/'}><p>Shop Women</p></Link>
+                                        <Link className="nav-link" to={'/products/men'} onClick={this.openMobileNav}><p>Shop Men</p></Link>
                                     </li>
                                     <li>
-                                        <Link className="nav-link" to={'/'}><p>Shop Kids</p></Link>
+                                        <Link className="nav-link" to={'/products/women'} onClick={this.openMobileNav}><p>Shop Women</p></Link>
                                     </li>
-                                    <li className="contact-btn">
-                                        <Link className="nav-link" to={'/'}><p>Contact Us</p></Link>
+                                    <li>
+                                        <Link className="nav-link" to={'/products/kids'} onClick={this.openMobileNav}><p>Shop Kids</p></Link>
                                     </li>
                                     <li className="FAQ-btn">
-                                        <Link className="nav-link" to={'/'}><p>Account</p></Link>
+                                        <Link className="nav-link" to={'/profile'} onClick={this.openMobileNav}><p>Account</p></Link>
                                     </li>
                                 </ul>
                             </div>
@@ -163,9 +188,10 @@ class App extends React.Component {
                             <nav className="bottom-nav">
                                 <div className="bottom-nav-content-left">
                                     <div className="nav-links">
-                                        <Link to={'/'}>Shop Men</Link>
-                                        <Link to={'/'}>Shop Woman</Link>
-                                        <Link to={'/'}>Shop Kids</Link>
+                                        <Link to={'/products'}>Shop All</Link>
+                                        <Link to={'/products/men'}>Shop Men</Link>
+                                        <Link to={'/products/women'}>Shop Woman</Link>
+                                        <Link to={'/products/kids'}>Shop Kids</Link>
                                     </div>
                                 </div>
                                 <div className="bottom-nav-content-middle">
@@ -198,15 +224,28 @@ class App extends React.Component {
                         <Route path="/delete-account" element={<DeleteAccount />}></Route>
                         <Route path="/products/:id" element={<ProductPage />}></Route>
                         <Route path="/admin" element={<AdminBoard />}></Route>
+                        <Route path='/products/men' element={<MenProducts />}></Route>
+                        <Route path="/products/women" element={<WomenProducts />}></Route>
+                        <Route path="/products/kids" element={<KidsProducts />}></Route>
                         {/* Page doesn't exist css later */}
                         <Route path="*" element={<h2>This page does not exist</h2>} />
                     </Routes>
+                    <div id="search-page">
+                    <RxCross1 className="nav-button" onClick={this.openSearchPage} />
+                    <div className="search-page-content">
+                        <div className="search-bar-container">
+                            <input type="text" placeholder="Search" onChange={this.handleSearch}/>
+                            <FaSistrix className="search-bar-icon" />
+                        </div>
+                        <div className="search-results">
+                            {this.state.productsData.map(product => <div key={product._id}>
+                                <Link to={`/products/${product._id}`}><p>{product.name}</p></Link></div>
+                            )}
+                        </div>
+                    </div>
+                </div>
                 </BrowserRouter>
                 {/* keep these constant at bottom of page */}
-                <div id="search-page">
-                    <RxCross1 className="nav-button" onClick={this.openSearchPage} />
-                    <h1>I will sort out the search page later</h1>
-                </div>
                 <footer className="constant-footer">
                     <div className="footer-content">
                         Footer for Now
