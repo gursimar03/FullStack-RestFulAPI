@@ -19,6 +19,11 @@ body {
 
 }
 
+svg, path {
+    stroke-width: 1.2;
+}
+
+
 #dropdown-content {
     position: absolute;
     display: none;
@@ -81,8 +86,19 @@ body {
     color: black;
 }
 
+#logo {
+    display: flex;
+    align-items: center;
+    width: 3em;
+}
+
+#logo > img {
+    height: 2.5em;
+    border-radius: 50%;
+}
+
 header {
-    padding: 10px 0px 10px 0px;; 
+    padding: 10px 0px 10px 0px;
 }
 
 .content-top {
@@ -96,7 +112,7 @@ header {
     align-items: center;
     height: 2.5em;
     background-color: white;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.473);
 }
 
 .nav-content-left {
@@ -539,7 +555,6 @@ form {
     position: relative;
     bottom: 0;
     width: 100%;
-    margin-top: 50px;
 }
 
 .footer-content {
@@ -564,6 +579,7 @@ form {
 .form-container, .login-form-container {
     display: block;
     margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .register-page-container-left, .login-page-container-left > h1{
@@ -663,12 +679,16 @@ input[type="radio"] {
 
 .register-page-container-right, .login-page-container-right {
     position: relative;
-    background-image: url(../images/account.jpg);
+    background-image: url(../images/Not-Nike.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     display: flex;
     justify-content: center;
+}
+
+.register-page-container-right {
+    background-image: url(../images/account.jpg);
 }
 
 .to-login-link {
@@ -733,16 +753,22 @@ input[type="radio"] {
     text-decoration: none;
 }
  
-.logo-grid {
+.register-page-container-right > .logo-grid {
     height: 100%;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    overflow: hidden;
 }
 
-.logo-grid-item > h1 {
-    color: white;
+.login-page-container-right > .logo-grid > .logo-grid-item > h1 {
+    color: rgba(255, 0, 0, 0);
+}
+
+.register-page-container-right > .logo-grid > .logo-grid-item > h1 {
+    color: rgba(255, 255, 255, 0.212);
     font-size: 3em;
+    transform: rotate(45deg);
     font-weight: 800;
     font-style: oblique;
     margin: 0 0 0px 0;
@@ -750,14 +776,14 @@ input[type="radio"] {
     text-shadow: 0 0 2px #f1ffb9, 0 0 2px #f1ffb9, 0 0 2px #f1ffb9, 0 0 2px #f1ffb9, 0 0 2px #f1ffb9, 0 0 2px #f1ffb9, 0 0 2px #f1ffb9;
 }
 
-.logo-grid-item > h1::before {
+.register-page-container-right > .logo-grid > .logo-grid-item > h1::before {
     content: "NOT NIKE";
     display: block;
     margin: 10px 0 0 0;
     color: yellow;
 }
 
-.logo-grid-item > h1::after {
+.register-page-container-right > .logo-grid > .logo-grid-item > h1::after {
     content: "NOT NIKE";
     display: block;
     margin: 10px 0 0 0;
@@ -824,6 +850,7 @@ input[type="radio"] {
   
   .product-image img {
     max-width: 100%;
+    height: 474px;
   }
   
   .product-info {

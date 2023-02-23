@@ -7,7 +7,7 @@ let productsSchema = new mongoose.Schema(
         description : {type: String},
         age : {type: String},
         type : {type: String},
-        colors : {type: Array},
+        color : {type: String},
         productImage : {type: String},
         images : {type: Array},
         sizes : {type: Array},

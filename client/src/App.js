@@ -76,7 +76,7 @@ class App extends React.Component {
     toggleDropdown = () => {
         this.setState({ showDropdown: !this.state.showDropdown },
             () => {
-                this.state.showDropdown ? document.getElementById('dropdown-content').style.top = '40.5px' : document.getElementById('dropdown-content').style.top = '-190px'
+                this.state.showDropdown ? document.getElementById('dropdown-content').style.top = '40.5px' : document.getElementById('dropdown-content').style.top = '-250px'
             }
         );
     };
@@ -96,7 +96,9 @@ class App extends React.Component {
                     <div className="content-top">
                         <nav className="top-nav">
                             <div className="nav-content-left">
-                                <Link id="logo" to={'/'}>Logo</Link>
+                                <Link id="logo" to={'/'}>
+                                    <img src={require('./images/Not-Nike.png')} />
+                                </Link>
                             </div>
                             <div className="nav-content-right">
                                 {this.state.name !== "" && this.state.name !== null && this.state.name !== "GUEST" ? <p id="welcome">Welcome, {localStorage.name}</p> : <Link id="linkToSignIn" to={'/account-login'}><p>Sign In</p></Link>}
