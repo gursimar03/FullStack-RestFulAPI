@@ -38,6 +38,7 @@ class Login extends React.Component {
                         localStorage.token = res.data.token
                         localStorage.email = res.data.email
                         localStorage.isLoggedIn = res.data.isLoggedIn
+                        localStorage.profilePhoto = res.data.profilePhoto
                         
                         window.location.replace(`http://localhost:3000/`)
                     }
