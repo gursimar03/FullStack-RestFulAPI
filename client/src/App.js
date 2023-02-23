@@ -135,7 +135,7 @@ class App extends React.Component {
                                 <div id="dropdown-content">
                                     <Link to={'/profile'}>Profile</Link>
                                     <Link to="/orders">Orders</Link>
-                                    <Link to="/payment-method">Payment Method</Link><<<<<<< Jason
+                                    <Link to="/payment-method">Payment Method</Link>
                                     {localStorage.accessLevel === '2' ? <Link to="/admin"> Admin Dashboard </Link> : null}
 
                                     <Logout refresh={this.reloadPageAfterLogOut} />
