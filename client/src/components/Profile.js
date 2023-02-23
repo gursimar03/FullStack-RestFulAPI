@@ -12,12 +12,14 @@ export default class Profile extends Component {
             name: ``,
             surname: ``,
             email: ``,
+            oldPassword: ``,
             password: ``,
             confirmPassword: ``,
             gender: ``,
             nameError: '',
             surnameError: '',
             emailError: '',
+            oldPasswordError: '',
             passwordError: '',
             confirmPasswordError: '',
             genderError: '',
@@ -25,6 +27,8 @@ export default class Profile extends Component {
             isPasswordUpdated: false,
             redirectToHome: false,
             change: false,
+            selectedFile: null,
+            formChanged: false, // Add a new flag to track if the form has been changed
         }
     }
 
@@ -32,7 +36,6 @@ export default class Profile extends Component {
         const token = localStorage.getItem('token') // get the token from local storage
         const decodedToken = jwt_decode(token) // decode the token
         const email = decodedToken.email // get the user's email from the decoded token
-
 
         // get the user's profile from the database using the user's email address and set the state with the user's profile data
         axios.get(`${SERVER_HOST}/users/profile/${email}`)
@@ -46,9 +49,10 @@ export default class Profile extends Component {
                             name: res.data.name,
                             surname: res.data.surname,
                             email: res.data.email,
-                            password: res.data.password,
-                            confirmPassword: res.data.password,
+                            // password: res.data.password,
+                            // confirmPassword: res.data.password,
                             gender: res.data.gender,
+                            profilePhoto: res.data.profilePhoto
                         })
                     }
                 } else {
@@ -80,6 +84,28 @@ export default class Profile extends Component {
             emailError = 'Email is invalid'
         }
 
+        if (!this.state.gender) {
+            genderError = 'Gender is required'
+        }
+
+        if (nameError || surnameError || emailError || genderError) {
+            this.setState({ nameError, surnameError, emailError, genderError })
+            return false
+        }
+
+        return true
+    }
+
+    validatePassword = () => {
+        let oldPasswordError = ''
+        let passwordError = ''
+        let confirmPasswordError = ''
+
+        if (!this.state.oldPassword) {
+            oldPasswordError = 'Old password is required'
+        }
+
+
         if (this.state.password && this.state.password.length < 8) {
             passwordError = 'Password must be at least 8 characters'
         }
@@ -88,24 +114,21 @@ export default class Profile extends Component {
             confirmPasswordError = 'Passwords do not match'
         }
 
-        if (!this.state.gender) {
-            genderError = 'Gender is required'
-        }
-
-        if (nameError || surnameError || emailError || passwordError || confirmPasswordError || genderError) {
-            this.setState({ nameError, surnameError, emailError, passwordError, confirmPasswordError, genderError })
+        if (passwordError || confirmPasswordError || oldPasswordError) {
+            this.setState({ passwordError, confirmPasswordError, oldPasswordError })
             return false
         }
 
         return true
+
     }
 
     handleChange = (e) => {
-        this.setState({ [e.target.name]: e.target.value })
+        this.setState({ [e.target.name]: e.target.value, formChanged: true })
     }
 
     handleFileChange = (e) => {
-        this.setState({ selectedFile: e.target.files[0] })
+        this.setState({ selectedFile: e.target.files[0], formChanged: true })
     }
 
     handlePasswordChange = (e) => {
@@ -115,56 +138,121 @@ export default class Profile extends Component {
     //the function that handles the password update form submission 
     handlePasswordUpdate = (e) => {
         e.preventDefault();
-        const { password, confirmPassword } = this.state;
 
-        if (password === '' || confirmPassword === '') {
-            this.setState({ passwordError: 'Please enter a new password and confirm it' });
+        const isValidPassword = this.validatePassword();
+
+        if (!isValidPassword) {
             return;
-        }
-
-        if (password !== confirmPassword) {
-            this.setState({ confirmPasswordError: 'Passwords do not match' });
-            return;
-        }
-
-        // Password and confirm password match
-        this.setState({ isPasswordUpdated: true, passwordError: '', confirmPasswordError: '' });
-    }
-
-    handleSubmit = (e) => {
-        e.preventDefault()
-
-        const isValid = this.validate()
-
-        if (!isValid) {
-            return
         }
 
         const data = {
-            name: this.state.name,
-            surname: this.state.surname,
-            email: this.state.email,
+            oldPassword: this.state.oldPassword,
             password: this.state.password,
-            gender: this.state.gender
-        }
+            confirmPassword: this.state.confirmPassword
+        };
 
-        // update the user's profile in the database using the user's email address and set the state with the user's profile data
-        axios.put(`${SERVER_HOST}/users/profile/${this.state.email}`, data)
-            .then(res => {
+        axios
+            .put(`${SERVER_HOST}/users/password/${this.state.email}`, data)
+            .then((res) => {
                 if (res.data) {
                     if (res.data.errorMessage) {
-                        console.log(res.data.errorMessage)
+                        console.log(res.data.errorMessage);
                     } else {
-                        console.log(`Record updated`)
-                        this.setState({ redirectToHome: true })
+                        console.log(`Record updated`);
+                        this.setState({
+                            isPasswordUpdated: true
+                        });
+                        setTimeout(() => {
+                            this.setState({ isPasswordUpdated: false });
+                            window.location.reload();
+                        }, 3000);
                     }
                 } else {
-                    console.log(`Record not updated`)
+                    console.log(`Record not updated`);
                 }
-            })
+            });
     }
 
+    // the function that handles the profile update form submission
+    handleProfilePictureUpdate = (e) => {
+        this.setState({ selectedFile: e.target.files[0], formChanged: true })
+    }
 
+    handleSubmit = (e) => {
+        e.preventDefault();
+
+            // If the form hasn't been changed, return without submitting
+        if (!this.state.formChanged) {
+            return;
+        }
+      
+        if (!this.validate()) {
+          return;
+        }
+      
+        const data = new FormData();
+        data.append("name", this.state.name);
+        data.append("surname", this.state.surname);
+        data.append("email", this.state.email);
+        data.append("gender", this.state.gender);
+        
+        // Only append the selected file if it exists
+        if (this.state.selectedFile) {
+          data.append("profilePhoto", this.state.selectedFile);
+        } else {
+          data.append("profilePhoto", null);
+        }
+
+        if(this.state.selectedFile){
+            axios
+          .put(`${SERVER_HOST}/users/profile/${this.state.email}`, data)
+          .then((res) => {
+            if (res.data) {
+              if (res.data.errorMessage) {
+                console.log(res.data.errorMessage);
+                this.setState({ errorMessage: res.data.errorMessage });
+              } else {
+                console.log(`Record updated`);
+                localStorage.setItem("profilePhoto", res.data.profilePhoto);
+                        this.setState({
+                            redirectToHome: true,
+                            profilePhoto: res.data.profilePhoto
+                        });
+                        setTimeout(() => {
+                            this.setState({ redirectToHome: false });
+                            window.location.reload();
+                        }, 1000);
+              }
+            } else {
+              console.log(`Record not updated`);
+            }
+          });
+        }
+        else{
+            axios
+          .put(`${SERVER_HOST}/users/profile/${this.state.email}`, data)
+          .then((res) => {
+            if (res.data) {
+              if (res.data.errorMessage) {
+                console.log(res.data.errorMessage);
+                this.setState({ errorMessage: res.data.errorMessage });
+              } else {
+                console.log(`Record updated`);
+                        this.setState({
+                            redirectToHome: true,
+                        });
+                        setTimeout(() => {
+                            this.setState({ redirectToHome: false });
+                            window.location.reload();
+                        }, 1000);
+              }
+            } else {
+              console.log(`Record not updated`);
+            }
+          });
+        }
+      };
+      
     render() {
         const { isPasswordUpdated } = this.state;
 
@@ -175,11 +263,24 @@ export default class Profile extends Component {
 
         return (
             <div className="profile-container">
-                {this.state.redirectToHome ? <Redirect to={{pathname: "/", }}/> : null}
+                {this.state.redirectToHome ? <Redirect to={{ pathname: "/", }} /> : null}
 
                 <div className="profile-form">
                     <h2>Profile</h2>
-                    <form onSubmit={this.handleSubmit}>
+                    {this.state.isPasswordUpdated ? <div>Password updated</div> : null}
+                    <form onSubmit={this.handleSubmit} encType="multipart/form-data">
+                        <div className="form-group">
+                            <div className="form-group">
+                                <label htmlFor="profile-picture">Profile Picture</label>
+                                {
+                                    localStorage.profilePhoto !== "null" ?
+                                        <img id="profilePhoto" className="profileImg" src={`data:;base64,${localStorage.profilePhoto}`} alt="Loading photo" style={{ display: "block", maxWidth: "200px", marginTop: "10px" }}/>
+                                        :
+                                        null
+                                }
+                                <input type="file" id="profile-picture" name="profile-picture" onChange={this.handleProfilePictureUpdate} />
+                            </div>
+                        </div>
                         <div className="form-group">
                             <label htmlFor="name">Name</label>
                             <input
@@ -228,6 +329,18 @@ export default class Profile extends Component {
                         </div>
                         {this.state.change ? (
                             <div className="form-group">
+                                <label htmlFor="oldPassword"> Old Password</label>
+                                <input
+                                    type="password"
+                                    className={`form-control ${this.state.oldPasswordError ? 'is-invalid' : ''}`}
+                                    id="oldPassword"
+                                    name="oldPassword"
+                                    value={this.state.oldPassword}
+                                    onChange={this.handleChange}
+                                    placeholder="Enter old password"
+                                    required
+                                />
+                                <div className="invalid-feedback">{this.state.oldPasswordError}</div>
                                 <label htmlFor="password">Password</label>
                                 <input
                                     type="password"
@@ -254,10 +367,10 @@ export default class Profile extends Component {
                                 <div className="invalid-feedback">{this.state.confirmPasswordError}</div>
                                 {isPasswordUpdated ? (
                                     <p>
-                                        Password updated. <button onClick={() => this.setState({ isPasswordUpdated: false, password: '', confirmPassword: '' })}>Undo</button>
+                                        Password updated.
                                     </p>
                                 ) : (
-                                    <button onClick={this.handlePasswordUpdate}>Update Password</button>
+                                    <button onClick={this.handlePasswordUpdate} disabled={!this.state.formChanged}>Update Password</button>
                                 )}
                             </div>
                         ) : (
@@ -284,7 +397,7 @@ export default class Profile extends Component {
                         <button type="submit" className="green-button">Update</button>
                         <Link to="/" className="red-button">Cancel</Link>
                     </form>
-                    
+
                     <Link to="/delete-account" className="red-button">Delete Account</Link>
                 </div>
             </div>

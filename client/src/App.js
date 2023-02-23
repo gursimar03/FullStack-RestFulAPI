@@ -19,6 +19,7 @@ import Register from "./components/Register";
 import AllProducts from "./components/AllProducts";
 import ProductPage from "./components/ProductPage";
 import Profile from "./components/Profile";
+import LoggedInRoute from "./components/LoggedInRoute";
 import DeleteAccount from "./components/DeleteAccount";
 import { ACCESS_LEVEL_GUEST } from "./config/global_constants";
 import AdminBoard from "./components/AdminDashboard";
@@ -57,6 +58,7 @@ class App extends React.Component {
             this.setState({ products: res.data })
         }).then(() => {
             this.setState({ productsData: this.state.products })
+
         })
     }
 
@@ -108,7 +110,6 @@ class App extends React.Component {
     }
 
 
-
     render() {
         return (
             <div className="App">
@@ -123,12 +124,20 @@ class App extends React.Component {
                             </div>
                             <div className="nav-content-right">
                                 {this.state.name !== "" && this.state.name !== null && this.state.name !== "GUEST" ? <p id="welcome">Welcome, {localStorage.name}</p> : <Link id="linkToSignIn" to={'/account-login'}><p>Sign In</p></Link>}
-                                {this.state.accessLevel > 0 ? <Link id="linkToAccount" onClick={this.toggleDropdown}><VscAccount className="account-icon" /></Link> : null}
+
+                                {this.state.accessLevel > 0 ? <Link id="linkToAccount" onClick={this.toggleDropdown}> {
+                                    localStorage.profilePhoto !== "null" ?
+                                        <img id="profilePhoto" className="profileImg" src={`data:;base64,${localStorage.profilePhoto}`} alt="Loading photo" />
+                                        :
+                                        <VscAccount className="account-icon" />
+                                }</Link> : null}
+
                                 <div id="dropdown-content">
                                     <Link to={'/profile'}>Profile</Link>
                                     <Link to="/orders">Orders</Link>
                                     <Link to="/payment-method">Payment Method</Link>
                                     {localStorage.accessLevel === '2' ? <Link to="/admin"> Admin Dashboard </Link> : null}
+
                                     <Logout refresh={this.reloadPageAfterLogOut} />
                                 </div>
                             </div>

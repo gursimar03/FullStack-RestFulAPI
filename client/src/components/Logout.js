@@ -21,6 +21,7 @@ export default class Logout extends Component
         localStorage.name = "GUEST"
         localStorage.token = null
         localStorage.isLoggedIn = false
+        localStorage.profilePhoto = null
 
     }
     
