@@ -1,5 +1,5 @@
 import React from 'react'
-import {Route, Redirect } from "react-router-dom"
+import {Route, Navigate as Redirect } from "react-router-dom"
 
 import {ACCESS_LEVEL_GUEST} from "../config/global_constants"
 
