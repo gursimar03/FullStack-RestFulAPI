@@ -929,9 +929,6 @@ input[type="radio"] {
     z-index: 1;
 }
 
-.products-page-functions>* {
-    margin: 20px;
-}
 
 
 .shoe-page-container {
@@ -1059,6 +1056,10 @@ input[type="radio"] {
   .carousel-icon {
     color: white;
     scale: 2.5;
+  }
+  
+  #mobile-products-filters {
+    display: none;
   }
   
 
@@ -1199,6 +1200,17 @@ input[type="radio"] {
         max-width: 400px;
     }
 }
+
+@media only screen and (max-width: 768px) {
+    #filter-bar {
+        display: none;
+    }
+
+    #mobile-products-filters {
+        display: block;
+    }
+}
+
 
 @media only screen and (max-width: 1000px) {
     .shoe-page-container {

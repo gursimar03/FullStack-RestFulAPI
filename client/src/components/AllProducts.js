@@ -16,7 +16,7 @@ class AllProducts extends Component {
                 age: [],
                 type: [],
                 size: []
-                
+
             },
             showFilterBar: true,
             sort: "",
@@ -206,7 +206,7 @@ class AllProducts extends Component {
 
     }
 
-
+    //for mobile devices just call this function with an apply button.
     applyFilters = () => {
         if (this.state.filters.brand.length === 0 && this.state.filters.colour.length === 0 && this.state.filters.age.length === 0 && this.state.filters.type.length === 0 && this.state.filters.size.length === 0) {
             this.setState({ shoesData: this.state.data }, () => {
@@ -229,10 +229,10 @@ class AllProducts extends Component {
                 if (this.state.filters.type.length > 0 && !this.state.filters.type.includes(shoe.type)) {
                     return false;
                 }
-                if(this.state.filters.size.length > 0 && !this.state.filters.size.some(size => shoe.sizes.includes(size))) {
+                if (this.state.filters.size.length > 0 && !this.state.filters.size.some(size => shoe.sizes.includes(size))) {
                     return false;
                 }
-                
+
                 return true;
             }
             )
@@ -248,10 +248,10 @@ class AllProducts extends Component {
         } else {
             this.setState({
                 shoesData: this.state.shoesData.filter(shoe => shoe.name.toLowerCase().includes(this.state.search.toLowerCase().trim())
-                || shoe.brand.toLowerCase().includes(this.state.search.toLowerCase().trim())
-                || shoe.color.toLowerCase().includes(this.state.search.toLowerCase().trim())
-                || shoe.type.toLowerCase().includes(this.state.search.toLowerCase().trim())
-                || shoe.age.toLowerCase().includes(this.state.search.toLowerCase().trim())
+                    || shoe.brand.toLowerCase().includes(this.state.search.toLowerCase().trim())
+                    || shoe.color.toLowerCase().includes(this.state.search.toLowerCase().trim())
+                    || shoe.type.toLowerCase().includes(this.state.search.toLowerCase().trim())
+                    || shoe.age.toLowerCase().includes(this.state.search.toLowerCase().trim())
                 )
             })
         }
@@ -316,37 +316,37 @@ class AllProducts extends Component {
                 })
             })
             const uniqueSizes = [...new Set(sizes)].sort((a, b) => a - b);
-            
-    
+
+
             return (
                 <div className="products-page-container">
                     <div className="products-page-functions">
-                        <h1>Shoes ({this.state.shoesData.length})</h1>
-                        <p>will sort the css for this header tommorow</p>
-                        <div className="search">
-                            <input type="text" placeholder="Search" onChange={this.handleSearch} />
+                        <div className='functions-left'>
+                            <h1>Shoes ({this.state.shoesData.length})</h1>
                         </div>
-                        <div>
-                            <button onClick={this.handleFilterBar}>Filters</button>
-                            <div className="sort" >
-                                <div>
-                                    <label>Sort By</label>
-                                </div>
-                                <div>
-                                    <select name="sort" onChange={this.handleSort}>
-                                        <option value="L-H">Lowest to Highest</option>
-                                        <option value="H-L">Highest to Lowest</option>
-                                        <option value='A-Z'>A-Z</option>
-                                        <option value='Z-A'>Z-A</option>
-                                    </select>
+                        <div className="functions-right">
+                            <div className="search">
+                                <input type="text" placeholder="Search" onChange={this.handleSearch} />
+                            </div>
+                            <div>
+                                <button onClick={this.handleFilterBar}>Filters</button>
+                                <div className="sort" >
+                                    <div>
+                                        <label>Sort By</label>
+                                    </div>
+                                    <div>
+                                        <select name="sort" onChange={this.handleSort}>
+                                            <option value="L-H">Lowest to Highest</option>
+                                            <option value="H-L">Highest to Lowest</option>
+                                            <option value='A-Z'>A-Z</option>
+                                            <option value='Z-A'>Z-A</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div className="products-container">
-                        <div className="mobile-sidebar">
-
-                        </div>
                         <div id="filter-bar">
                             <div className="filter">
                                 <h2>Brand</h2>
@@ -400,6 +400,47 @@ class AllProducts extends Component {
                                 </div>
                             )}
                         </div>
+                    </div>
+                    <div id="mobile-products-filters">
+                            <h2>Sort By</h2>
+                            <input type="radio" name="sort" value="L-H" onChange={this.handleSort} />
+                            <label>Lowest to Highest</label>
+                            <input type="radio" name="sort" value="H-L" onChange={this.handleSort} />
+                            <label>Highest to Lowest</label>
+                            <input type="radio" name="sort" value="A-Z" onChange={this.handleSort} />
+                            <label>A-Z</label>
+                            <input type="radio" name="sort" value="Z-A" onChange={this.handleSort} />
+                            <label>Z-A</label>
+                            <h2>Brand</h2>
+                            {uniqueBrands.map(brand => <div key={brand}>
+                                <input type="checkbox" name="brand" value={brand} onChange={this.handleFilter} />
+                                <label>{brand}</label>
+                            </div>)}
+                            <h2>Colour</h2>
+                            {uniqueColors.map(color => <div key={color}>
+                                <input type="checkbox" name="colour" value={color} onChange={this.handleFilter} />
+                                <label>{color}</label>
+                            </div>)}
+                            <h2>Gender</h2>
+                                {uniqueAge.map(age => <div key={age}>
+                                    <input type="checkbox" name="age" value={age} onChange={this.handleFilter} />
+                                    <label>{age}</label>
+                                </div>)}
+
+                                <h2>Type</h2>
+                                {uniqueType.map(type => <div key={type}>
+                                    <input type="checkbox" name="type" value={type} onChange={this.handleFilter} />
+                                    <label>{type}</label>
+                                </div>)}
+
+                                <h2>Size</h2>
+                                {uniqueSizes.map(size => <div key={size}>
+                                    <input type="checkbox" name="size" value={size} onChange={this.handleFilter} />
+                                    <label>{size}</label>
+                                </div>)}
+                                <div id="mobile-apply-filters">
+                                    <button onClick={this.applyFilters}>Apply Filters</button>
+                                </div>
                     </div>
                 </div>
             )
