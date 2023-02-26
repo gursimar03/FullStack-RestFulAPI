@@ -34,9 +34,7 @@ export default class ProductPage extends Component {
 
         this.setState({
             activeIndex: index,
-        },
-            () => console.log(this.state.product.images[activeIndex])
-        );
+        });
     }
 
     handleNextClick = () => {

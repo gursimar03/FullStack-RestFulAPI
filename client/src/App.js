@@ -31,6 +31,7 @@ import KidsProducts from "./components/KidProducts";
 if (typeof localStorage.accessLevel === "undefined") {
     localStorage.name = "GUEST"
     localStorage.accessLevel = ACCESS_LEVEL_GUEST
+    localStorage.email = null
     localStorage.token = null
     localStorage.isLoggedIn = false
     localStorage.profilePhoto = null
