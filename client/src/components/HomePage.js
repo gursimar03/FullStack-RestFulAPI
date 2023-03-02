@@ -113,7 +113,7 @@ class HomePage extends React.Component {
             <div className="contact-us-container">
               <div className="contact-us">
                 {/* create a contact us form */}
-                <h2>Contact Us</h2>
+                <h2 id="contacth1">Contact Us</h2>
                 <p>
                   If you have any questions or concerns, please contact us using the form below.
                 </p>
