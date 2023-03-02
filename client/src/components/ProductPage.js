@@ -49,8 +49,14 @@ export default class ProductPage extends Component {
     }
 
     handleAddToCartClick = () =>{
+       
+        
+    axios.post(`${SERVER_HOST}/users/${localStorage.getItem("email")}`)
+    .then(res =>{
+        console.log(res.objID)
+    })
 
-     axios.post(`${SERVER_HOST}/cart/${this.state.product["_id"]}/11/1`)
+     axios.post(`${SERVER_HOST}/cart/${this.state.product["_id"]}/10.5/1`)
      .then(res =>{
 
         console.log(res)

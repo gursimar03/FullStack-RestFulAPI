@@ -19,7 +19,20 @@ router.post(`/cart/:_id/:size/:quantity`,(req,res) =>{
         if (uniqueData) {
           res.json({ errorMessage: `User already exists` })
         }else{
-            cartsModel.create({userId:req.params._id,})
+
+            // making so that last 3 degits represent size of id .. i.e ID : 213g2y1u3vgj12gv3jg2 + 10.5 
+            // if its two digets  it would below
+            //010
+            let sizeS = req.params.size.toString()
+            
+            if(sizeS.length == 2){
+                sizeS = "0" + sizeS
+            }
+
+            let newProductId = req.params._id + sizeS
+            console.log(newProductId)
+
+            
         }
     })
 
