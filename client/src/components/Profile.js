@@ -6,7 +6,6 @@ import jwt_decode from 'jwt-decode'; // to decode the token and get the user's e
 //icons
 import { FaEdit } from "react-icons/fa"
 import { FaHome } from "react-icons/fa"
-import { RiImageEditFill } from "react-icons/ri"
 
 export default class Profile extends Component {
     constructor(props) {
@@ -49,6 +48,7 @@ export default class Profile extends Component {
 
         const token = localStorage.getItem('token') // get the token from local storage
         const decodedToken = jwt_decode(token) // decode the token
+        // eslint-disable-next-line
         const email = decodedToken.email // get the user's email from the decoded token
 
         // get the user's profile from the database using the user's email address and set the state with the user's profile data
