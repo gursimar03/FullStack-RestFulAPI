@@ -17,7 +17,7 @@ class KidsProducts extends React.Component {
                 size: []
                 
             },
-            showFilterBar: true,
+            showFilterBar: false,
             sort: "",
             search: ""
         }

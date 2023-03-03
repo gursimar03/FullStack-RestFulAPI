@@ -52,14 +52,8 @@ export default class ProductPage extends Component {
 
      axios.post(`${SERVER_HOST}/cart/${this.state.product["_id"]}/11/1`)
      .then(res =>{
-
         console.log(res)
-
-
      })
-    
-
-
     }
 
 

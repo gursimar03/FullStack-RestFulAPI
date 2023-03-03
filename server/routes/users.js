@@ -80,8 +80,7 @@ router.post(`/users/login/:email/:password`, (req, res) => {
       bcrypt.compare(req.params.password, data.password, (err, result) => {
         if (result) {
           const token = jwt.sign({ email: data.email, accessLevel: data.accessLevel }, process.env.JWT_PRIVATE_KEY, { algorithm: 'HS256', expiresIn: process.env.JWT_EXPIRY })
-
-          res.json({ name: data.name, accessLevel: data.accessLevel, token: token, isLoggedIn: true })
+          res.json({ name: data.name, accessLevel: data.accessLevel, token: token, isLoggedIn: true, email: data.email, profilePhoto: data.profilePhotoFilename })
         }
         else {
           res.json({ errorMessage: `User is not logged in` })
@@ -156,7 +155,7 @@ router.put('/users/password/:email', (req, res) => {
           }
 
           //then update the password in the database
-          usersModel.findOneAndUpdate({ email: req.params.email }, { $set: { password: hash } }, (error, data) => {
+          usersModel.findOneAndUpdate({ email: req.params.email }, { $set: { password: hash } }, (error, data) => {        
             if (error) {
               console.log(error);
               res.json({ errorMessage: 'An error occurred. Please try again.' });
@@ -185,15 +184,15 @@ router.put('/users/profile/:email', upload.single('profilePhoto'), (req, res) =>
   }
 
   if (req.file) {
-    updatedProfile.profilePhotoFilename = req.file.filename;
-    updatedProfile.profilePhoto = fs.readFileSync(req.file.path, 'base64');
+    console.log(req.file.path);
+    updatedProfile.profilePhotoFilename = fs.readFileSync(req.file.path, 'base64');
   }
 
   // Update the user's profile in the database
   usersModel.findOneAndUpdate({ email: req.params.email }, { $set: { ...updatedProfile } }, (error, data) => {
     if (data) {
-      const token = jwt.sign({ email: data.email, accessLevel: data.accessLevel }, process.env.JWT_PRIVATE_KEY, { algorithm: 'HS256', expiresIn: process.env.JWT_EXPIRY })
-      res.json({ name: data.name, accessLevel: data.accessLevel, profilePhoto: updatedProfile.profilePhoto, token: token, isLoggedIn: true })
+      const token = jwt.sign({ email: updatedProfile.email, accessLevel: data.accessLevel }, process.env.JWT_PRIVATE_KEY, { algorithm: 'HS256', expiresIn: process.env.JWT_EXPIRY })
+      res.json({ name: updatedProfile.name, email: updatedProfile.email, accessLevel: data.accessLevel, profilePhoto: updatedProfile.profilePhotoFilename, token: token, isLoggedIn: true })
     }
     else {
       res.json({ errorMessage: `Failed to update profile` })
