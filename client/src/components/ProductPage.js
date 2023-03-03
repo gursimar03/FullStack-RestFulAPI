@@ -9,7 +9,13 @@ export default class ProductPage extends Component {
         super(props)
         this.state = {
             product: null,
-            activeIndex: 0
+            activeIndex: 0,
+            maxQuantity: 0,
+
+            selected: {
+                size: 0,
+                quantity: 0,
+            }
         }
     }
 
@@ -48,12 +54,69 @@ export default class ProductPage extends Component {
         });
     }
 
-    handleAddToCartClick = () =>{
+    handleAddToCartClick = () => {
 
-     axios.post(`${SERVER_HOST}/cart/${this.state.product["_id"]}/11/1`)
-     .then(res =>{
-        console.log(res)
-     })
+        axios.post(`${SERVER_HOST}/cart/${this.state.product["_id"]}/11/1`)
+            .then(res => {
+                console.log(res)
+            })
+    }
+
+    updateSize = (e) => {
+        const { value } = e.target;
+        this.setState({
+            selected: {
+                size: value,
+                quantity: this.state.selected.quantity
+            }
+        }, () => {
+            // eslint-disable-next-line
+            this.state.product.inventory.stock.map(stock => {
+                if (stock.size === parseInt(this.state.selected.size)) {
+                    this.setState({
+                        maxQuantity: stock.quantity
+                    }, () => {
+                        if (this.state.selected.quantity > this.state.maxQuantity) {
+                            this.setState({
+                                selected: {
+                                    size: this.state.selected.size,
+                                    quantity: this.state.maxQuantity
+                                }
+                            })
+                        }
+                    })
+                }
+            })
+        })
+    }
+
+    setQuantity = (e) => {
+        let { value } = e.target
+
+        if (value > this.state.maxQuantity) {
+            value = this.state.maxQuantity
+            this.setState({
+                selected: {
+                    size: this.state.selected.size,
+                    quantity: value
+                }
+            })
+        } else if (value < 0) {
+            value = 1
+            this.setState({
+                selected: {
+                    size: this.state.selected.size,
+                    quantity: value
+                }
+            })
+        }
+
+        this.setState({
+            selected: {
+                size: this.state.selected.size,
+                quantity: value
+            }
+        })
     }
 
 
@@ -68,7 +131,7 @@ export default class ProductPage extends Component {
                     <div className="shoe-page-container-left">
                         <div className="carousel">
                             <button className="carousel-button" onClick={this.handlePrevClick}>
-                                <AiOutlineArrowLeft className="carousel-icon"/>
+                                <AiOutlineArrowLeft className="carousel-icon" />
                             </button>
                             <div className="carousel-images-container">
                                 <div className="carousel-image">
@@ -76,7 +139,7 @@ export default class ProductPage extends Component {
                                 </div>
                             </div>
                             <button className="carousel-button" onClick={this.handleNextClick}>
-                                <AiOutlineArrowRight  className="carousel-icon"/>
+                                <AiOutlineArrowRight className="carousel-icon" />
                             </button>
                         </div>
                     </div>
@@ -89,16 +152,18 @@ export default class ProductPage extends Component {
                                 {this.state.product.inventory.stock.map((stock => {
 
                                     return (<div key={stock.size}>
-                                        <input disabled={stock.quantity === 0} type='radio' name="size" />
+                                        <input disabled={stock.quantity === 0} value={stock.size} type='radio' name="size" onClick={this.updateSize} />
                                         <label disabled={stock.quantity === 0}>UK {stock.size}</label>
                                     </div>)
 
                                 }))}
                             </div>
+                            <div id="quantity" className="shoe-page-container-right-bottom">
+                                <input type="range" min={1} max={this.state.maxQuantity} defaultValue={1} onChange={this.setQuantity} />
+                                <p>Quantity: {this.state.selected.quantity}</p>
+                            </div>
                         </div>
-                        <div className="shoe-page-container-right-bottom">
-                            <button onClick={this.handleAddToCartClick}>Add To Basket</button>
-                        </div>
+
                     </div>
                 </div>
             </div>

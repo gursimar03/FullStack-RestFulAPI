@@ -480,7 +480,7 @@ class AllProducts extends Component {
                             </div>
                             <div className="sort-container">
                                 <select id="sort-functions" name="sort" onChange={this.handleSort}>
-                                    <option value="default" selected disabled hidden>Sort By</option>
+                                    <option defaultValue="default" disabled hidden>Sort By</option>
                                     <option value="L-H">Lowest to Highest</option>
                                     <option value="H-L">Highest to Lowest</option>
                                     <option value='A-Z'>A-Z</option>
