@@ -31,6 +31,7 @@ class Login extends React.Component {
                     }
                     else // user successfully logged in
                     {
+                        console.log("alsjfbhikahsdbk")    
                         console.log("User logged in")
                         console.log("email:"+res.data.email)
                         localStorage.name = res.data.name

@@ -50,21 +50,7 @@ router.post(`/users/reset_user_collection`, (req, res) => {
 })
 
 
-router.get(`/user/:email`,(req,res) =>{
-
-  usersModel.findOne({email:req.params.email},(uniqueErr,uniqueData)  =>  {
-
-    if(uniqueData){
-      console.log(uniqueData)
-      res.json({objID:uniqueData._id})
-    }
-
-
-  })
-
-
-
-})
+  
 
 
 router.post(`/users/register/:name/:surname/:email/:password/:gender`, (req, res) => {

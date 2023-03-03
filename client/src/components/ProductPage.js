@@ -50,13 +50,9 @@ export default class ProductPage extends Component {
 
     handleAddToCartClick = () =>{
        
-        
-    axios.post(`${SERVER_HOST}/users/${localStorage.getItem("email")}`)
-    .then(res =>{
-        console.log(res.objID)
-    })
+    
 
-     axios.post(`${SERVER_HOST}/cart/${this.state.product["_id"]}/10.5/1`)
+     axios.post(`${SERVER_HOST}/cart/${this.state.product["_id"]}/10.5/1/${localStorage.email}`)
      .then(res =>{
 
         console.log(res)
@@ -101,7 +97,7 @@ export default class ProductPage extends Component {
                                 {this.state.product.inventory.stock.map((stock => {
 
                                     return (<div key={stock.size}>
-                                        <input disabled={stock.quantity === 0} type='radio' name="size" />
+                                        <input disabled={stock.quantity === 0} type='radio' name="size" value={stock.size} />
                                         <label disabled={stock.quantity === 0}>UK {stock.size}</label>
                                     </div>)
 
