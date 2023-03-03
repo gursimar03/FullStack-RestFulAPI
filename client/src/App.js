@@ -188,8 +188,8 @@ class App extends React.Component {
                                 <div className="bottom-nav-content-left">
                                     <div className="nav-links">
                                         <Link to={'/products'}>Shop All</Link>
-                                        <Link to={'/products/men'}>Shop Men</Link>
-                                        <Link to={'/products/women'}>Shop Woman</Link>
+                                        <Link to={'/products/men'}>Shop Mens'</Link>
+                                        <Link to={'/products/women'}>Shop Womens'</Link>
                                         <Link to={'/products/kids'}>Shop Kids</Link>
                                     </div>
                                 </div>
