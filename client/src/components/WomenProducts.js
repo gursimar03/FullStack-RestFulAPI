@@ -17,7 +17,7 @@ class WomenProducts extends React.Component {
                 size: []
                 
             },
-            showFilterBar: true,
+            showFilterBar: false,
             sort: "",
             search: ""
         }

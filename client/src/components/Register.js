@@ -93,17 +93,23 @@ class Register extends React.Component {
 
                             </div>
                             <div className="gender-form">
-                                {/* handle chosen gender later */}
                                 <h2>GENDER</h2>
                                 <div className="gender-form-radio-buttons">
-                                    <input type="radio" id="male" name="gender" value="male" onChange={this.handleChange} checked={this.state.gender === "male"} />
-                                    <label htmlFor="male">Male</label>
+                                    <div>
+                                        <input type="radio" id="male" name="gender" value="male" onChange={this.handleChange} checked={this.state.gender === "male"} />
+                                        <label htmlFor="male">Male</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="female" name="gender" value="female" onChange={this.handleChange} checked={this.state.gender === "female"} />
+                                        <label htmlFor="female">Female</label>
 
-                                    <input type="radio" id="female" name="gender" value="female" onChange={this.handleChange} checked={this.state.gender === "female"} />
-                                    <label htmlFor="female">Female</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="non-binary" name="gender" value="non-binary" onChange={this.handleChange} checked={this.state.gender === "non-binary"} />
+                                        <label htmlFor="female">Non-Binary</label>
+                                    </div>
 
-                                    <input type="radio" id="non-binary" name="gender" value="non-binary" onChange={this.handleChange} checked={this.state.gender === "non-binary"} />
-                                    <label htmlFor="female">Non-Binary</label>
+
                                 </div>
                             </div>
                             <div className="registration-form">

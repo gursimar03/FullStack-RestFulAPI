@@ -651,10 +651,15 @@ form {
     margin: 10px auto 10px auto;
 }
 
-.gender-form>div {
+.gender-form-radio-buttons {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-evenly;
+}
+
+.gender-form-radio-buttons > div {
+    display: flex;
+    align-items: center;
 }
 
 .gender-label {
@@ -890,10 +895,10 @@ input[type="radio"] {
 
 #filter-bar {
     min-height: 100%;
-    flex-basis: 30%;
+    flex-basis: 0%;
     width: 100%;
     position: relative;
-    right: 0;
+    right: 100%;
     transition: 0.5s ease-in-out;
     position: relative;
     display: flex;
@@ -929,6 +934,68 @@ input[type="radio"] {
     z-index: 1;
 }
 
+
+.functions-right {
+    flex-basis: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+
+}
+
+.functions-left {
+    flex-basis: 50%;
+}
+
+.sideBarButton {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: fixed;
+    top: 85%;
+    right: 0;
+    z-index: 1;
+    font-size: 1.5em;
+}
+
+select#sort-functions {
+    background-color: white;
+    border: none;
+    padding: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+select#sort-functions:focus {
+    outline: none;
+}
+
+.search > input {
+    width: 100%;
+    height: 50px;
+    border: none;
+    background-color: white;
+    padding: 0 10px 0 10px;
+    color: rgb(25, 25, 25);
+    font-family: var(--main-font);
+    font-size: 1.3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid black;
+}
+
+.search > input:focus {
+    outline: none;
+}
 
 
 .shoe-page-container {
@@ -1060,6 +1127,209 @@ input[type="radio"] {
   
   #mobile-products-filters {
     display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+  }
+
+  .profile-form > form {
+    display: flex;
+    
+  }
+
+  .profile-form > form > div {
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .span-grey {
+    color: rgb(165, 165, 165);
+  }
+
+  .profile-form > form > div > button {
+    height: 50px;
+    border: none;
+    background: none;
+    border-radius: 2px;
+    padding: 0 10px 0 10px;
+    color: black;
+    font-family: var(--main-font);
+    font-size: 1.3em;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .profile-form > form > div > button:hover {
+    background-color: rgb(25, 25, 25);
+    color: white;
+  }
+
+  #name-modal, #email-modal, #password-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .modal-content {
+    position: relative;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .modal-title {
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  .modal-body {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .modal-body > div > label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .modal-body > div > input[type="text"], .modal-body > div > input[type="password"], .modal-body > div > input[type="email"] {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  .invalid-feedback {
+    color: red;
+    margin-top: 5px;
+    font-size: 14px;
+  }
+  
+  .modal-footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .modal-footer > button {
+    height: 50px;
+    border: none;
+    background: none;
+    border-radius: 2px;
+    color: black;
+    font-family: var(--main-font);
+    font-size: 1.3em;
+    cursor: pointer;
+  }
+
+  .modal-footer > button:hover {
+    color: lime;
+  }
+
+  .modal-footer > button:first-child:hover {
+    color: red;
+  }
+
+  #save-update-button {
+    width: 5em;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    font-family: var(--main-font);
+    font-size: 1.3em;
+  }
+
+  #save-update-button:hover {
+    border: 1px solid black;
+    background-color: white;
+    color: black;
+  } 
+
+  #fixed-home-button {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 9999;
+    transition: background-color 0.2s ease-in-out;
+    font-size: 1.5em;
+    border: 1px solid black;
+  }
+
+  #fixed-home-button:hover {
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+
+  }
+
+  .profile-photo {
+    position: relative;
+    padding: 20px;
+  }
+
+  .profile-photo> img#profilePhoto {
+    position: absolute;
+    top: 0;
+    left: -150px;
+    border-radius: 0;
+    margin-top: 0;
+    height: 150px;
+    width: 150px;
+  }
+
+  .profile-photo > input[type="file"] {
+    color: red;
+    position: absolute;
+    top: 130px;
+    left: -150px;
+  }
+
+  select.form-control {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
   }
   
 
@@ -1203,6 +1473,10 @@ input[type="radio"] {
 
 @media only screen and (max-width: 768px) {
     #filter-bar {
+        display: none;
+    }
+
+    .sort-container {
         display: none;
     }
 

@@ -19,7 +19,6 @@ import Register from "./components/Register";
 import AllProducts from "./components/AllProducts";
 import ProductPage from "./components/ProductPage";
 import Profile from "./components/Profile";
-import LoggedInRoute from "./components/LoggedInRoute";
 import DeleteAccount from "./components/DeleteAccount";
 import { ACCESS_LEVEL_GUEST } from "./config/global_constants";
 import AdminBoard from "./components/AdminDashboard";
@@ -59,7 +58,6 @@ class App extends React.Component {
             this.setState({ products: res.data })
         }).then(() => {
             this.setState({ productsData: this.state.products })
-
         })
     }
 
@@ -127,8 +125,8 @@ class App extends React.Component {
                                 {this.state.name !== "" && this.state.name !== null && this.state.name !== "GUEST" ? <p id="welcome">Welcome, {localStorage.name}</p> : <Link id="linkToSignIn" to={'/account-login'}><p>Sign In</p></Link>}
 
                                 {this.state.accessLevel > 0 ? <Link id="linkToAccount" onClick={this.toggleDropdown}> {
-                                    localStorage.profilePhoto !== "null" ?
-                                        <img id="profilePhoto" className="profileImg" src={`data:;base64,${localStorage.profilePhoto}`} alt="Loading photo" />
+                                    localStorage.profilePhoto !== "undefined" ?
+                                        <img id="profilePhoto" className="profileImg" src={`data:;base64,${localStorage.profilePhoto}`} alt="Profile" />
                                         :
                                         <VscAccount className="account-icon" />
                                 }</Link> : null}
@@ -190,8 +188,8 @@ class App extends React.Component {
                                 <div className="bottom-nav-content-left">
                                     <div className="nav-links">
                                         <Link to={'/products'}>Shop All</Link>
-                                        <Link to={'/products/men'}>Shop Men</Link>
-                                        <Link to={'/products/women'}>Shop Woman</Link>
+                                        <Link to={'/products/men'}>Shop Mens'</Link>
+                                        <Link to={'/products/women'}>Shop Womens'</Link>
                                         <Link to={'/products/kids'}>Shop Kids</Link>
                                     </div>
                                 </div>
