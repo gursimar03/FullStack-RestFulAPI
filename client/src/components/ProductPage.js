@@ -83,7 +83,7 @@ export default class ProductPage extends Component {
         }, () => {
             // eslint-disable-next-line
             this.state.product.inventory.stock.map(stock => {
-                if (stock.size === parseInt(this.state.selected.size)) {
+                if (stock.size === parseFloat(this.state.selected.size)) {
                     this.setState({
                         maxQuantity: stock.quantity
                     }, () => {

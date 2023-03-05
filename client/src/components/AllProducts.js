@@ -459,7 +459,7 @@ class AllProducts extends Component {
             let sizes = [];
             this.state.data.forEach(item => {
                 item.sizes.forEach(size => {
-                    sizes.push(parseInt(size));
+                    sizes.push(parseFloat(size));
                 })
             })
             const uniqueSizes = [...new Set(sizes)].sort((a, b) => a - b);
