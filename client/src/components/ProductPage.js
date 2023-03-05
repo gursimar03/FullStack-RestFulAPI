@@ -68,7 +68,9 @@ export default class ProductPage extends Component {
             .then(res => {
                 console.log(res)
             })
-    }
+    })
+}
+
 
     updateSize = (e) => {
         const { value } = e.target;
