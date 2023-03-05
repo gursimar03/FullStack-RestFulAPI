@@ -50,6 +50,9 @@ router.post(`/users/reset_user_collection`, (req, res) => {
 })
 
 
+  
+
+
 router.post(`/users/register/:name/:surname/:email/:password/:gender`, (req, res) => {
   // If a user with this email does not already exist, then create new user
   usersModel.findOne({ email: req.params.email }, (uniqueError, uniqueData) => {
@@ -80,7 +83,9 @@ router.post(`/users/login/:email/:password`, (req, res) => {
       bcrypt.compare(req.params.password, data.password, (err, result) => {
         if (result) {
           const token = jwt.sign({ email: data.email, accessLevel: data.accessLevel }, process.env.JWT_PRIVATE_KEY, { algorithm: 'HS256', expiresIn: process.env.JWT_EXPIRY })
+
           res.json({ name: data.name, accessLevel: data.accessLevel, token: token, isLoggedIn: true, email: data.email, profilePhoto: data.profilePhotoFilename })
+
         }
         else {
           res.json({ errorMessage: `User is not logged in` })

@@ -201,7 +201,7 @@ class App extends React.Component {
                                 <div className="bottom-nav-content-right">
                                     <div className="website-informatics">
                                         <div className="help-btn">
-                                            <a id="linkToContact" href="#contact"><FiHelpCircle /></a>
+                                            <a id="linkToContact" href="#contacth1"><FiHelpCircle /></a>
                                         </div>
                                         <div className="search-btn">
                                             <FaSistrix onClick={this.openSearchPage} />
