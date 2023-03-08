@@ -25,6 +25,7 @@ import AdminBoard from "./components/AdminDashboard";
 import MenProducts from "./components/MenProducts";
 import WomenProducts from "./components/WomenProducts";
 import KidsProducts from "./components/KidProducts";
+import SearchPage from "./components/SearchPage";
 
 
 if (typeof localStorage.accessLevel === "undefined") {
@@ -99,10 +100,10 @@ class App extends React.Component {
         } else {
             this.setState({
                 productsData: this.state.products.filter(shoe => shoe.name.toLowerCase().includes(value.toLowerCase().trim())
-                || shoe.brand.toLowerCase().includes(value.toLowerCase().trim())
-                || shoe.color.toLowerCase().includes(value.toLowerCase().trim())
-                || shoe.type.toLowerCase().includes(value.toLowerCase().trim())
-                || shoe.age.toLowerCase().includes(value.toLowerCase().trim())
+                    || shoe.brand.toLowerCase().includes(value.toLowerCase().trim())
+                    || shoe.color.toLowerCase().includes(value.toLowerCase().trim())
+                    || shoe.type.toLowerCase().includes(value.toLowerCase().trim())
+                    || shoe.age.toLowerCase().includes(value.toLowerCase().trim())
                 )
             })
         }
@@ -229,20 +230,7 @@ class App extends React.Component {
                         {/* Page doesn't exist css later */}
                         <Route path="*" element={<h2>This page does not exist</h2>} />
                     </Routes>
-                    <div id="search-page">
-                    <RxCross1 className="nav-button" onClick={this.openSearchPage} />
-                    <div className="search-page-content">
-                        <div className="search-bar-container">
-                            <input type="text" placeholder="Search" onChange={this.handleSearch}/>
-                            <FaSistrix className="search-bar-icon" />
-                        </div>
-                        <div className="search-results">
-                            {this.state.productsData.map(product => <div key={product._id}>
-                                <Link to={`/products/${product._id}`}><p>{product.name}</p></Link></div>
-                            )}
-                        </div>
-                    </div>
-                </div>
+                        <SearchPage openSearchPage={this.openSearchPage} handleSearch={this.handleSearch} productsData={this.state.productsData}/>
                 </BrowserRouter>
                 {/* keep these constant at bottom of page */}
                 <footer className="constant-footer">

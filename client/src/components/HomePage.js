@@ -120,15 +120,15 @@ class HomePage extends React.Component {
                 <form id="contact">
                   <div className="form-group">
                     
-                    <input type="text" className="form-input" id="name" placeholder="Enter your name" />
+                    <input type="text" className="form-input" id="name" placeholder="Enter your name" required/>
                   </div>
                   <div className="form-group">
                     
-                    <input type="email" className="form-input" id="email" placeholder="Enter your email" />
+                    <input type="email" className="form-input" id="email" placeholder="Enter your email" required/>
                   </div>
                   <div className="form-group">
                     
-                    <textarea className="form-input" id="message" rows="3" placeholder="Enter your message"  ></textarea>
+                    <textarea className="form-input" id="message" rows="3" placeholder="Enter your message" required={true} ></textarea>
                   </div>
                   <button type="submit" className="form-submit-btn">Submit</button>
                 </form>

@@ -23,6 +23,10 @@ body {
     stroke-width: 0;
 }
 
+.nav-content-right:hover{
+    color: lightblue;
+}
+
 svg,
 path {
     stroke-width: 1;
@@ -211,6 +215,10 @@ header {
 .nav-button {
     font-size: 1.5em;
     cursor: pointer;
+}
+
+.nav-button:hover {
+    color: lightblue;
 }
 
 .mobile-header-content-middle {
@@ -576,13 +584,31 @@ form {
 
 #search-page {
     background-color: white;
-    position: absolute;
+    position: fixed;
     height: 0vh;
     width: 100vw;
-    overflow: hidden;
+    overflow-y: scroll;
     bottom: 0;
     transition: 0.2s;
+    z-index: 9999;
 }
+
+.search-page-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.search-page-content > .search {
+    margin: auto;
+    position: relative;
+    left: 0;
+    right: 0;
+    display: flex;
+    padding-bottom: 40px;
+    width: 60%;
+}
+
+
 
 .form-container,
 .login-form-container {
@@ -865,6 +891,10 @@ input[type="radio"] {
     justify-content: flex-start;
 }
 
+.products-shoe:hover {
+    color: lightblue;
+}
+
 .product-image {
     border-top-right-radius: 5px;
     border-top-right-radius: 5px;
@@ -877,7 +907,9 @@ input[type="radio"] {
 .product-image img {
     max-width: 100%;
     height: 474px;
+    
 }
+
 
 .product-info {
     padding: 20px;
@@ -1475,7 +1507,9 @@ select#sort-functions:focus {
     #filter-bar {
         display: none;
     }
-
+.sideBarButton {
+    display: none;
+}
     .sort-container {
         display: none;
     }
