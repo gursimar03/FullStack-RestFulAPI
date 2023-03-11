@@ -109,31 +109,6 @@ class HomePage extends React.Component {
                 </div>
               </div>
             </div>
-
-            <div className="contact-us-container">
-              <div className="contact-us">
-                {/* create a contact us form */}
-                <h2 id="contacth1">Contact Us</h2>
-                <p>
-                  If you have any questions or concerns, please contact us using the form below.
-                </p>
-                <form id="contact">
-                  <div className="form-group">
-                    
-                    <input type="text" className="form-input" id="name" placeholder="Enter your name" required/>
-                  </div>
-                  <div className="form-group">
-                    
-                    <input type="email" className="form-input" id="email" placeholder="Enter your email" required/>
-                  </div>
-                  <div className="form-group">
-                    
-                    <textarea className="form-input" id="message" rows="3" placeholder="Enter your message" required={true} ></textarea>
-                  </div>
-                  <button type="submit" className="form-submit-btn">Submit</button>
-                </form>
-              </div>
-            </div>
           </main>
         </div>
       </div>
