@@ -1,8 +1,10 @@
 import React, { Component } from "react"
-import { Link } from "react-router-dom"
+// import { Link } from "react-router-dom"
 import { SERVER_HOST } from "../config/global_constants"
 import { FaFilter } from "react-icons/fa"
 import axios from "axios"
+import Card from "./ShoeCard"
+import FilterBar from "./FilterBar"
 
 class AllProducts extends Component {
     constructor(props) {
@@ -441,7 +443,7 @@ class AllProducts extends Component {
                 }
             })
     }
-    
+
 
 
     render() {
@@ -479,7 +481,7 @@ class AllProducts extends Component {
                                 <button className="sideBarButton" onClick={this.handleFilterBar}><FaFilter /></button>
                             </div>
                             <div className="sort-container">
-                                <select id="sort-functions" name="sort" onChange={this.handleSort}>
+                                <select id="sort-functions" name="sort" onChange={this.handleSort} defaultValue="Sort By">
                                     <option defaultValue="default" disabled hidden>Sort By</option>
                                     <option value="L-H">Lowest to Highest</option>
                                     <option value="H-L">Highest to Lowest</option>
@@ -490,57 +492,18 @@ class AllProducts extends Component {
                         </div>
                     </div>
                     <div className="products-container">
-                        <div id="filter-bar">
-                            <div className="filter">
-                                <h2>Brand</h2>
-                                {uniqueBrands.map(brand => <div key={brand}>
-
-                                    <input type="checkbox" name="brand" value={brand} onChange={this.handleFilter} />
-                                    <label>{brand}</label>
-                                </div>)}
-
-                                <h2>Colour</h2>
-                                {uniqueColors.map(color => <div key={color}>
-                                    <input type="checkbox" name="colour" value={color} onChange={this.handleFilter} />
-                                    <label>{color}</label>
-                                </div>)}
-
-                                <h2>Gender</h2>
-                                {uniqueAge.map(age => <div key={age}>
-                                    <input type="checkbox" name="age" value={age} onChange={this.handleFilter} />
-                                    <label>{age}</label>
-                                </div>)}
-
-                                <h2>Type</h2>
-                                {uniqueType.map(type => <div key={type}>
-                                    <input type="checkbox" name="type" value={type} onChange={this.handleFilter} />
-                                    <label>{type}</label>
-                                </div>)}
-
-                                <h2>Size</h2>
-                                {uniqueSizes.map(size => <div key={size}>
-                                    <input type="checkbox" name="size" value={size} onChange={this.handleFilter} />
-                                    <label>{size}</label>
-                                </div>)}
-
-
-                            </div>
-                        </div>
+                        <FilterBar
+                            brands={uniqueBrands}
+                            colours={uniqueColors}
+                            types={uniqueType}
+                            sizes={uniqueSizes}
+                            genders={uniqueAge}
+                            handleFilter={this.handleFilter}
+                        />
                         <div className="products">
+ 
                             {this.state.shoesData.map(product =>
-                                <div className="products-shoe" key={product._id}>
-                                    <div className="product-image">
-                                        <Link to={`/products/${product._id}`}>
-                                            <img src={product.productImage} alt={product.name} />
-                                        </Link>
-                                    </div>
-                                    <div className="product-info">
-                                        <p>{product.name}</p>
-                                        <p>{product.age}</p>
-                                        <br></br>
-                                        <p>{`€${product.price}`}</p>
-                                    </div>
-                                </div>
+                                <Card key={product._id} product={product} />
                             )}
                         </div>
                     </div>
