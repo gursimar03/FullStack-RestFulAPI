@@ -26,6 +26,7 @@ import MenProducts from "./components/MenProducts";
 import WomenProducts from "./components/WomenProducts";
 import KidsProducts from "./components/KidProducts";
 import SearchPage from "./components/SearchPage";
+import ErrorPage from "./components/ErrorPage";
 
 
 if (typeof localStorage.accessLevel === "undefined") {
@@ -83,7 +84,7 @@ class App extends React.Component {
     toggleDropdown = () => {
         this.setState({ showDropdown: !this.state.showDropdown },
             () => {
-                this.state.showDropdown ? document.getElementById('dropdown-content').style.top = '40.5px' : document.getElementById('dropdown-content').style.top = '-250px'
+                this.state.showDropdown ? document.getElementById('dropdown-content').style.top = '60.5px' : document.getElementById('dropdown-content').style.top = '-250px'
             }
         );
     };
@@ -228,14 +229,40 @@ class App extends React.Component {
                         <Route path="/products/women" element={<WomenProducts />}></Route>
                         <Route path="/products/kids" element={<KidsProducts />}></Route>
                         {/* Page doesn't exist css later */}
-                        <Route path="*" element={<h2>This page does not exist</h2>} />
+                        <Route path="*" element={<ErrorPage />} />
                     </Routes>
-                        <SearchPage openSearchPage={this.openSearchPage} handleSearch={this.handleSearch} productsData={this.state.productsData}/>
+                    <SearchPage openSearchPage={this.openSearchPage} handleSearch={this.handleSearch} productsData={this.state.productsData} />
                 </BrowserRouter>
                 {/* keep these constant at bottom of page */}
                 <footer className="constant-footer">
                     <div className="footer-content">
-                        Footer for Now
+                        <div className="footer-content-left">
+                            social links, etc
+                        </div>
+                        <div className="contact-us-container">
+                            <div className="contact-us">
+                                {/* create a contact us form */}
+                                <h2 id="contacth1">Contact Us</h2>
+                                <p>
+                                    If you have any questions or concerns, please contact us using the form below.
+                                </p>
+                                <form id="contact">
+                                    <div className="form-group">
+
+                                        <input type="text" className="form-input" id="name" placeholder="Enter your name" required />
+                                    </div>
+                                    <div className="form-group">
+
+                                        <input type="email" className="form-input" id="email" placeholder="Enter your email" required />
+                                    </div>
+                                    <div className="form-group">
+
+                                        <textarea className="form-input" id="message" rows="3" placeholder="Enter your message" required={true} ></textarea>
+                                    </div>
+                                    <button type="submit" className="form-submit-btn">Submit</button>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                 </footer>
             </div>
