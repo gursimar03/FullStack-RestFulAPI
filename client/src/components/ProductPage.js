@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import axios from "axios"
 import { SERVER_HOST } from "../config/global_constants"
 import { AiOutlineArrowRight, AiOutlineArrowLeft } from 'react-icons/ai';
+import { Navigate as Redirect } from "react-router-dom";
 
 
 export default class ProductPage extends Component {
@@ -26,11 +27,19 @@ export default class ProductPage extends Component {
 
         axios.get(`${SERVER_HOST}/products/${id}`)
             .then(response => {
-                this.setState({ product: response.data })
+                if(response.data.name === "CastError") {
+                   this.setState({product: response.data.name})
+                } else {
+                    this.setState({ product: response.data })
+                }
+                
             }
-            )
+            ).catch((error) => {
+                console.log(error)
+        })
 
     }
+ 
 
     handlePrevClick = () => {
         const { activeIndex } = this.state;
@@ -134,9 +143,11 @@ export default class ProductPage extends Component {
     render() {
         if (this.state.product === null) {
             return <div>Loading...</div>
+        }  else if (this.state.product === "CastError") {
+            return <Redirect to="/404" />
         }
         const { activeIndex } = this.state;
-        return (
+        return (   
             <div>
                 <div className="shoe-page-container">
                     <div className="shoe-page-container-left">
