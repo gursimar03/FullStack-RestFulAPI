@@ -1,7 +1,9 @@
 import React from "react";
 import { SERVER_HOST } from "../config/global_constants";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { FaFilter } from "react-icons/fa";
+import FilterBar from "./FilterBar";
+import Card from "./ShoeCard";
 
 class MenProducts extends React.Component {
     constructor(props) {
@@ -15,7 +17,7 @@ class MenProducts extends React.Component {
                 age: [],
                 type: [],
                 size: []
-                
+
             },
             showFilterBar: false,
             sort: "",
@@ -28,9 +30,9 @@ class MenProducts extends React.Component {
             .then((response) => {
                 this.setState({ data: response.data })
             }
-        ).then(() => {
-            this.setState({ shoesData: this.state.data })
-        })
+            ).then(() => {
+                this.setState({ shoesData: this.state.data })
+            })
     }
 
     handleFilter = (e) => {
@@ -226,10 +228,10 @@ class MenProducts extends React.Component {
                 if (this.state.filters.type.length > 0 && !this.state.filters.type.includes(shoe.type)) {
                     return false;
                 }
-                if(this.state.filters.size.length > 0 && !this.state.filters.size.some(size => shoe.sizes.includes(size))) {
+                if (this.state.filters.size.length > 0 && !this.state.filters.size.some(size => shoe.sizes.includes(size))) {
                     return false;
                 }
-                
+
                 return true;
             }
             )
@@ -245,9 +247,9 @@ class MenProducts extends React.Component {
         } else {
             this.setState({
                 shoesData: this.state.shoesData.filter(shoe => shoe.name.toLowerCase().includes(this.state.search.toLowerCase().trim())
-                || shoe.brand.toLowerCase().includes(this.state.search.toLowerCase().trim())
-                || shoe.color.toLowerCase().includes(this.state.search.toLowerCase().trim())
-                || shoe.type.toLowerCase().includes(this.state.search.toLowerCase().trim())
+                    || shoe.brand.toLowerCase().includes(this.state.search.toLowerCase().trim())
+                    || shoe.color.toLowerCase().includes(this.state.search.toLowerCase().trim())
+                    || shoe.type.toLowerCase().includes(this.state.search.toLowerCase().trim())
                 )
             })
         }
@@ -311,29 +313,29 @@ class MenProducts extends React.Component {
                 })
             })
             const uniqueSizes = [...new Set(sizes)].sort((a, b) => a - b);
-            
-    
+
+
             return (
                 <div className="products-page-container">
                     <div className="products-page-functions">
-                        <h1>Men's Shoes ({this.state.shoesData.length})</h1>
-                        <div className="search">
-                            <input type="text" placeholder="Search" onChange={this.handleSearch} />
+                        <div className='functions-left'>
+                            <h1>Men's Shoes ({this.state.shoesData.length})</h1>
                         </div>
-                        <div>
-                            <button onClick={this.handleFilterBar}>Filters</button>
-                            <div className="sort" >
-                                <div>
-                                    <label>Sort By</label>
-                                </div>
-                                <div>
-                                    <select name="sort" onChange={this.handleSort}>
-                                        <option value="L-H">Lowest to Highest</option>
-                                        <option value="H-L">Highest to Lowest</option>
-                                        <option value='A-Z'>A-Z</option>
-                                        <option value='Z-A'>Z-A</option>
-                                    </select>
-                                </div>
+                        <div className="functions-right">
+                            <div className="search">
+                                <input type="text" placeholder="Search" onChange={this.handleSearch} />
+                            </div>
+                            <div className="filter-button">
+                                <button className="sideBarButton" onClick={this.handleFilterBar}><FaFilter /></button>
+                            </div>
+                            <div className="sort-container">
+                                <select id="sort-functions" name="sort" onChange={this.handleSort} defaultValue="Sort By">
+                                    <option defaultValue="default" disabled hidden>Sort By</option>
+                                    <option value="L-H">Lowest to Highest</option>
+                                    <option value="H-L">Highest to Lowest</option>
+                                    <option value='A-Z'>A-Z</option>
+                                    <option value='Z-A'>Z-A</option>
+                                </select>
                             </div>
                         </div>
                     </div>
@@ -341,51 +343,16 @@ class MenProducts extends React.Component {
                         <div className="mobile-sidebar">
 
                         </div>
-                        <div id="filter-bar">
-                            <div className="filter">
-                                <h2>Brand</h2>
-                                {uniqueBrands.map(brand => <div key={brand}>
-
-                                    <input type="checkbox" name="brand" value={brand} onChange={this.handleFilter} />
-                                    <label>{brand}</label>
-                                </div>)}
-
-                                <h2>Colour</h2>
-                                {uniqueColors.map(color => <div key={color}>
-                                    <input type="checkbox" name="colour" value={color} onChange={this.handleFilter} />
-                                    <label>{color}</label>
-                                </div>)}
-
-                                <h2>Type</h2>
-                                {uniqueType.map(type => <div key={type}>
-                                    <input type="checkbox" name="type" value={type} onChange={this.handleFilter} />
-                                    <label>{type}</label>
-                                </div>)}
-
-                                <h2>Size</h2>
-                                {uniqueSizes.map(size => <div key={size}>
-                                    <input type="checkbox" name="size" value={size} onChange={this.handleFilter} />
-                                    <label>{size}</label>
-                                </div>)}
-
-
-                            </div>
-                        </div>
+                        <FilterBar
+                            brands={uniqueBrands}
+                            colours={uniqueColors}
+                            types={uniqueType}
+                            sizes={uniqueSizes}
+                            handleFilter={this.handleFilter}
+                        />
                         <div className="products">
                             {this.state.shoesData.map(product =>
-                                <div className="products-shoe" key={product._id}>
-                                    <div className="product-image">
-                                        <Link to={`/products/${product._id}`}>
-                                            <img src={product.productImage} alt={product.name} />
-                                        </Link>
-                                    </div>
-                                    <div className="product-info">
-                                        <p>{product.name}</p>
-                                        <p>{product.age}</p>
-                                        <br></br>
-                                        <p>{`€${product.price}`}</p>
-                                    </div>
-                                </div>
+                                <Card key={product._id} product={product} />
                             )}
                         </div>
                     </div>
