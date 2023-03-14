@@ -5,6 +5,7 @@ import { FaFilter } from "react-icons/fa"
 import axios from "axios"
 import Card from "./ShoeCard"
 import FilterBar from "./FilterBar"
+import ScrollToTop from "../ScrollToTop"
 
 class AllProducts extends Component {
     constructor(props) {
@@ -469,6 +470,7 @@ class AllProducts extends Component {
 
             return (
                 <div className="products-page-container">
+                    <ScrollToTop />
                     <div className="products-page-functions">
                         <div className='functions-left'>
                             <h1>Shoes ({this.state.shoesData.length})</h1>

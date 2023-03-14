@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 import { SERVER_HOST } from '../config/global_constants';
+import ScrollToTop from '../ScrollToTop';
 
 class DeleteAccount extends Component {
   constructor(props) {
@@ -45,6 +46,7 @@ class DeleteAccount extends Component {
 
     return (
       <form onSubmit={this.handleSubmit}>
+        <ScrollToTop />
         <div>
           <label>Email</label>
           <input type="email" value={this.state.email} onChange={this.handleEmailChange} />

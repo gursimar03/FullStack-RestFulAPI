@@ -6,6 +6,7 @@ import jwt_decode from 'jwt-decode'; // to decode the token and get the user's e
 //icons
 import { FaEdit } from "react-icons/fa"
 import { FaHome } from "react-icons/fa"
+import ScrollToTop from "../ScrollToTop";
 
 export default class Profile extends Component {
     constructor(props) {
@@ -374,6 +375,7 @@ export default class Profile extends Component {
         return (
             <div className="profile-container">
                 {this.state.redirectToHome ? <Redirect to={{ pathname: "/", }} /> : null}
+                <ScrollToTop />
                 <h1>My Profile</h1>
                 <div className="profile-form">
                     {this.state.isPasswordUpdated ? <div>Password updated</div> : null}

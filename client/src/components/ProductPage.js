@@ -3,6 +3,7 @@ import axios from "axios"
 import { SERVER_HOST } from "../config/global_constants"
 import { AiOutlineArrowRight, AiOutlineArrowLeft } from 'react-icons/ai';
 import { Navigate as Redirect } from "react-router-dom";
+import ScrollToTop from "../ScrollToTop";
 
 
 export default class ProductPage extends Component {
@@ -149,6 +150,7 @@ export default class ProductPage extends Component {
         const { activeIndex } = this.state;
         return (   
             <div>
+                <ScrollToTop />
                 <div className="shoe-page-container">
                     <div className="shoe-page-container-left">
                         <div className="carousel">

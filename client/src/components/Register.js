@@ -7,6 +7,7 @@ import { SERVER_HOST } from "../config/global_constants"
 
 //icons
 import { FaArrowRight } from "react-icons/fa"
+import ScrollToTop from "../ScrollToTop"
 
 
 class Register extends React.Component {
@@ -64,6 +65,7 @@ class Register extends React.Component {
         } else {
             return (
                 <form className="form-container" noValidate={true} id="loginOrRegistrationForm">
+                    <ScrollToTop />
                     <div className="register-page-container">
                         <div className="register-page-container-left">
                             <h1>REGISTER</h1>

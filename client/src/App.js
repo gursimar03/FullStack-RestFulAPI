@@ -27,6 +27,7 @@ import WomenProducts from "./components/WomenProducts";
 import KidsProducts from "./components/KidProducts";
 import SearchPage from "./components/SearchPage";
 import ErrorPage from "./components/ErrorPage";
+import ScrollToTop from "./ScrollToTop";
 
 
 if (typeof localStorage.accessLevel === "undefined") {
@@ -114,6 +115,7 @@ class App extends React.Component {
     render() {
         return (
             <div className="App">
+                <ScrollToTop />
                 {localStorage.accessLevel === 0 ? this.reloadPageAfterLogOut() : null}
                 <BrowserRouter>
                     <div className="content-top">
