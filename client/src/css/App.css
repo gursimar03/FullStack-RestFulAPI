@@ -343,6 +343,7 @@ header {
     overflow-x: auto;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
+    
 }
 
 .find-your-style-boxes>div {
@@ -356,6 +357,7 @@ header {
     position: relative;
     overflow-y: hidden;
     border-radius: 3px;
+    /* right: 5000px; */
 }
 
 .style-box-text {
@@ -479,7 +481,7 @@ header {
 .contrast-genres {
     width: 100%;
     display: flex;
-    overflow-x: scroll;
+    margin-bottom: 10px;
 }
 
 .contrast-genres>div>img {
