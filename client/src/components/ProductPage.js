@@ -58,17 +58,18 @@ export default class ProductPage extends Component {
     handleAddToCartClick = () =>{
        
     
+        if(localStorage.acessLevel !== 0){
 
-     axios.post(`${SERVER_HOST}/cart/${this.state.product["_id"]}/10.5/1/${localStorage.email}`)
-     .then(res =>{
+            axios.post(`${SERVER_HOST}/cart/${this.state.product["_id"]}/${this.state.selected.size}/${this.state.selected.quantity}/${localStorage.email}`)
+            .then(res =>{
+       
+               console.log(res)
+       
+           })
+        }else{
+            window.alert("No User Logged in. Please Log in to add to cart");
+        }
 
-        console.log(res)
-
-        axios.post(`${SERVER_HOST}/cart/${this.state.product["_id"]}/11/1`)
-            .then(res => {
-                console.log(res)
-            })
-    })
 }
 
 
@@ -175,7 +176,9 @@ export default class ProductPage extends Component {
                                 <p>Quantity: {this.state.selected.quantity}</p>
                             </div>
                         </div>
-
+                        <div className="shoe-page-container-right-bottom">
+                            <button onClick={this.handleAddToCartClick}>Add To Basket</button>
+                        </div>
                     </div>
                 </div>
             </div>
