@@ -67,8 +67,68 @@ router.post(`/cart/:_id/:size/:quantity/:user_email`, (req, res) => {
             });
         }
     });
-    
+})
 
+
+router.delete(`/cart/:_id/:user_email`, (req, res) => {
+
+    cartsModel.findOne({ user_email: req.params.user_email }, (uniqueError, uniqueData) => {
+        if (uniqueData) {
+
+            for (let i = 0; i < uniqueData.products_cart.length; i++) {
+
+                if (uniqueData.products_cart[i][0] == req.params._id) {
+
+                    uniqueData.products_cart.splice(i, 1);
+
+                    cartsModel.updateOne({ user_email: req.params.user_email }, { products_cart: uniqueData.products_cart }, (updateError) => {});
+                    
+                    break;
+                }
+            }
+            
+            uniqueData.save((saveError) => {
+
+                if (saveError) {
+
+                    res.json({ errorMessage: saveError });
+
+                } else {
+
+                    res.json({ response: 'deleted from cart' });
+
+                }
+
+            });
+
+        } else {
+
+            res.json({ errorMessage: uniqueError });
+
+        }
+
+    });
 
 })
+
+
+router.get(`/cart/:user_email`, (req, res) => {
+
+    cartsModel.findOne({ user_email: req.params.user_email }, (uniqueError, uniqueData) => {
+
+        if (uniqueData) {
+
+            res.json(uniqueData);
+
+        } else {
+
+            res.json({ errorMessage: uniqueError });
+
+        }
+
+    });
+
+})
+
+
 module.exports = router
