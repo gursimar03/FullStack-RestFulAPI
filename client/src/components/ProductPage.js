@@ -80,6 +80,7 @@ export default class ProductPage extends Component {
 
                 })
         } else {
+
             window.alert("No User Logged in. Please Log in to add to cart");
         }
 
