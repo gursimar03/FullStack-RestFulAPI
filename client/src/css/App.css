@@ -1151,6 +1151,12 @@ select#sort-functions:focus {
     color: white;
 }
 
+.shoe-page-container-right-bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .shoe-page-container-right-bottom>button {
     width: 60%;
     height: 50px;
@@ -1419,6 +1425,14 @@ select.form-control {
 
 .error-page {
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.home-favicon {
+    font-size: 5em;
 }
 
 
@@ -1455,6 +1469,10 @@ select.form-control {
         height: 100%;
         border-bottom-right-radius: 0;
 
+    }
+
+    .nav-link:hover {
+        color: var(--selector-color);
     }
 
 }
@@ -1538,7 +1556,20 @@ select.form-control {
 
     #cart {
         display: flex;
+        text-decoration: none;
+        position: relative;
     }
+
+    #cart p {
+        position: absolute;
+        font-size: 0.7em;
+        top: -35px;
+        left: 25px;
+        color: black;
+        font-weight: 100;
+    }
+
+
 
     #dCart:hover>path {
         stroke: var(--selector-color);
