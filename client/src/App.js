@@ -53,6 +53,7 @@ class App extends React.Component {
 
             products: [],
             productsData: [],
+            itemsInCart: 0,
         }
     }
 
@@ -62,9 +63,33 @@ class App extends React.Component {
         }).then(() => {
             this.setState({ productsData: this.state.products })
         })
+
+        axios.get(`${SERVER_HOST}/cart/${localStorage.email}/countItems`)
+        .then(res => {
+            if(res.data.message) {
+                this.setState({itemsInCart: 0})
+            } else {
+                this.setState({itemsInCart: res.data.itemCount})
+            }
+            
+        })
+        .catch(err => {
+            console.log(err)
+        })
     }
 
-
+    handleCartSize = (e) => {
+        axios.get(`${SERVER_HOST}/cart/${localStorage.email}/countItems`)
+        .then(res => {
+            if(res.data.message) {
+                this.setState({itemsInCart: e})
+            } else {
+                const newVal = parseInt(e) + parseInt(res.data.itemCount)
+                console.log(newVal)
+                this.setState({itemsInCart: newVal})
+            }
+        })
+    }
 
     openMobileNav = () => {
         this.state.mobileNavOpen ? this.setState({ mobileNavOpen: false }, () => {
@@ -129,7 +154,8 @@ class App extends React.Component {
                                 {this.state.name !== "" && this.state.name !== null && this.state.name !== "GUEST" ? <p id="welcome">Welcome, {localStorage.name}</p> : <Link id="linkToSignIn" to={'/account-login'}><p>Sign In</p></Link>}
 
                                 {this.state.accessLevel > 0 ? <Link id="linkToAccount" onClick={this.toggleDropdown}> {
-                                    localStorage.profilePhoto !== "undefined" ?
+                                    
+                                    localStorage.profilePhoto !== "undefined" && localStorage.profilePhoto !== "null"?
                                         <img id="profilePhoto" className="profileImg" src={`data:;base64,${localStorage.profilePhoto}`} alt="Profile" />
                                         :
                                         <VscAccount className="account-icon" />
@@ -211,7 +237,7 @@ class App extends React.Component {
                                             <FaSistrix onClick={this.openSearchPage} />
                                         </div>
                                         <div className="cart-container">
-                                            <Link id="cart" to={'/'}><GrCart id="dCart" /></Link>
+                                            <Link id="cart" to={'/'}><GrCart id="dCart" /><p>{this.state.itemsInCart}</p></Link>
                                         </div>
                                     </div>
                                 </div>
@@ -225,7 +251,7 @@ class App extends React.Component {
                         <Route path="/products" element={<AllProducts />}></Route>
                         <Route path="/profile" element={<Profile />}></Route>
                         <Route path="/delete-account" element={<DeleteAccount />}></Route>
-                        <Route path="/products/:id" element={<ProductPage />}></Route>
+                        <Route path="/products/:id" element={<ProductPage handleCartSize={this.handleCartSize} />}></Route>
                         <Route path="/admin" element={<AdminBoard />}></Route>
                         <Route path='/products/men' element={<MenProducts />}></Route>
                         <Route path="/products/women" element={<WomenProducts />}></Route>
