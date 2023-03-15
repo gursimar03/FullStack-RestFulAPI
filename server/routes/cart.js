@@ -8,7 +8,8 @@ router.get(`/cart/:email/countItems`, (req, res) => {
             for (let i = 0; i < data.products_cart.length; i++) {
                 itemCount += parseInt(data.products_cart[i][1]);
             }
-            res.json({itemCount: itemCount});
+
+            res.json({itemCount: data.products_cart.length, totalItems: itemCount});
         } else {
             res.json({message: 'Cart not found'});
         }
@@ -123,7 +124,6 @@ router.delete(`/cart/:_id/:user_email`, (req, res) => {
 
     });
 
-    
 })
 
 
