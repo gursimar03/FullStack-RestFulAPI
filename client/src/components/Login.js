@@ -14,7 +14,8 @@ class Login extends React.Component {
         super(props)
         this.state = {
             email: "",
-            password: ""
+            password: "",
+            clientMessage: '',
         }
     }
 
@@ -22,13 +23,15 @@ class Login extends React.Component {
         this.setState({ [e.target.name]: e.target.value })
     }
 
-
-    handleSubmit = (e) => {
+    handleSubmit = () => {
         axios.post(`${SERVER_HOST}/users/login/${this.state.email}/${this.state.password}`)
             .then(res => {
                 if (res.data) {
                     if (res.data.errorMessage) {
                         console.log(res.data.errorMessage)
+                        this.setState({clientMessage: res.data.clientMessage}, ()=>{
+                            console.log(this.state)
+                        })
                     }
                     else // user successfully logged in
                     {
@@ -72,7 +75,6 @@ class Login extends React.Component {
                                     value={this.state.email}
                                     onChange={this.handleChange}
                                 />
-
                                 <input
                                     type="password"
                                     name="password"
@@ -81,6 +83,7 @@ class Login extends React.Component {
                                     value={this.state.password}
                                     onChange={this.handleChange}
                                 />
+                                <p style={{margin: 0, color: 'red'}}>{this.state.clientMessage ? this.state.clientMessage : null}</p>
                             </div>
                             <div className="login-btn-container">
                                 <LinkInClass value="Login" className="login-button" onClick={this.handleSubmit} />

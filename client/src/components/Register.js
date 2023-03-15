@@ -45,6 +45,8 @@ class Register extends React.Component {
                         localStorage.accessLevel = res.data.accessLevel
                         localStorage.token = res.data.token
                         localStorage.isLoggedIn = res.data.isLoggedIn
+                        localStorage.email = res.data.email
+                        localStorage.profilePhoto = res.data.profilePhotoFilename
 
                         // we can change this to redirect to profile page
                         window.location.replace(`http://localhost:3000/`)
