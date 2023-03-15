@@ -2,10 +2,11 @@ import React, { Component } from "react"
 import { Navigate as Redirect, Link } from "react-router-dom"
 import axios from "axios"
 import { SERVER_HOST } from "../config/global_constants"
-import jwt_decode from 'jwt-decode'; // to decode the token and get the user's email
+// import jwt_decode from 'jwt-decode'; // to decode the token and get the user's email
 //icons
 import { FaEdit } from "react-icons/fa"
 import { FaHome } from "react-icons/fa"
+import ScrollToTop from "../ScrollToTop";
 
 export default class Profile extends Component {
     constructor(props) {
@@ -40,17 +41,14 @@ export default class Profile extends Component {
     }
 
     componentDidMount() {
-
         if(localStorage.getItem('accessLevel') < 1) {
             window.location.replace(`http://localhost:3000/`)
         }
 
-
-        const token = localStorage.getItem('token') // get the token from local storage
-        const decodedToken = jwt_decode(token) // decode the token
-        // eslint-disable-next-line
-        const email = decodedToken.email // get the user's email from the decoded token
-
+        // const token = localStorage.getItem('token') // get the token from local storage
+        // const decodedToken = jwt_decode(token) // decode the token
+        // // eslint-disable-next-line
+        // const email = decodedToken.email // get the user's email from the decoded token
         // get the user's profile from the database using the user's email address and set the state with the user's profile data
         axios.get(`${SERVER_HOST}/users/profile/${localStorage.getItem('email')}`)
             .then(res => {
@@ -367,6 +365,7 @@ export default class Profile extends Component {
     }
 
     render() {
+        console.log('hey')
         if (localStorage.isLoggedIn === "false") {
             return <Redirect to="/" />
         }
@@ -374,14 +373,15 @@ export default class Profile extends Component {
         return (
             <div className="profile-container">
                 {this.state.redirectToHome ? <Redirect to={{ pathname: "/", }} /> : null}
+                <ScrollToTop />
                 <h1>My Profile</h1>
                 <div className="profile-form">
                     {this.state.isPasswordUpdated ? <div>Password updated</div> : null}
                     <form onSubmit={this.handleSubmit} encType="multipart/form-data">
                         <div className="profile-photo">
                             {
-                                localStorage.profilePhoto !== "undefined"?
-                                    <img id="profilePhoto" className="profileImg" src={`data:;base64,${localStorage.profilePhoto}`} alt="profile" />
+                                localStorage.profilePhoto !== "undefined" && localStorage.profilePhoto !== "null"?
+                                    localStorage.profilePhoto.includes('google') ? <img id="profilePhoto" className="profileImg" src={`${localStorage.profilePhoto}`} alt="Profile" /> :<img id="profilePhoto" className="profileImg" src={`data:;base64,${localStorage.profilePhoto}`} alt="Profile" />
                                     :
                                     null
                             }

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import { SERVER_HOST } from "../config/global_constants"
 
 import axios from "axios"
+import ScrollToTop from "../ScrollToTop"
 
 class AllProducts extends Component {
     constructor(props) {
@@ -55,6 +56,7 @@ class AllProducts extends Component {
         } else {
             return (
                 <div>
+                    <ScrollToTop />
                     <div className="products-container">
                         <div className="filter-bar">
                         <input type="checkbox" name="client" onClick={this.handleClientView}/>
