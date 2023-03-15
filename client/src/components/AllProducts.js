@@ -209,143 +209,6 @@ class AllProducts extends Component {
 
     }
 
-    mobileFilter = (e) => {
-        const { name, value, checked } = e.target;
-
-        if (checked) {
-            if (name === "brand") {
-                this.setState({
-                    filters: {
-                        brand: [...this.state.filters.brand, value],
-                        colour: [...this.state.filters.colour],
-                        age: [...this.state.filters.age],
-                        type: [...this.state.filters.type],
-                        size: [...this.state.filters.size]
-                    }
-                })
-            }
-
-            if (name === "colour") {
-                this.setState({
-                    filters: {
-                        brand: [...this.state.filters.brand],
-                        colour: [...this.state.filters.colour, value],
-                        age: [...this.state.filters.age],
-                        type: [...this.state.filters.type],
-                        size: [...this.state.filters.size]
-                    }
-                })
-            }
-
-            if (name === "age") {
-                this.setState({
-                    filters: {
-                        brand: [...this.state.filters.brand],
-                        colour: [...this.state.filters.colour],
-                        age: [...this.state.filters.age, value],
-                        type: [...this.state.filters.type],
-                        size: [...this.state.filters.size]
-                    }
-                })
-            }
-
-            if (name === "type") {
-                this.setState({
-                    filters: {
-                        brand: [...this.state.filters.brand],
-                        colour: [...this.state.filters.colour],
-                        age: [...this.state.filters.age],
-                        type: [...this.state.filters.type, value],
-                        size: [...this.state.filters.size]
-                    }
-                })
-            }
-
-            if (name === "size") {
-                this.setState({
-                    filters: {
-                        brand: [...this.state.filters.brand],
-                        colour: [...this.state.filters.colour],
-                        age: [...this.state.filters.age],
-                        type: [...this.state.filters.type],
-                        size: [...this.state.filters.size, value]
-                    }
-                })
-            }
-        } else {
-            if (name === "brand") {
-                this.setState({
-                    filters: {
-                        brand: this.state.filters.brand.filter(brand => brand !== value),
-                        colour: [...this.state.filters.colour],
-                        age: [...this.state.filters.age],
-                        type: [...this.state.filters.type],
-                        size: [...this.state.filters.size]
-                    }
-                })
-            }
-
-            if (name === "colour") {
-                this.setState({
-                    filters: {
-                        brand: [...this.state.filters.brand],
-                        colour: this.state.filters.colour.filter(colour => colour !== value),
-                        age: [...this.state.filters.age],
-                        type: [...this.state.filters.type],
-                        size: [...this.state.filters.size]
-                    }
-                })
-            }
-
-            if (name === "age") {
-                this.setState({
-                    filters: {
-                        brand: [...this.state.filters.brand],
-                        colour: [...this.state.filters.colour],
-                        age: this.state.filters.age.filter(age => age !== value),
-                        type: [...this.state.filters.type],
-                        size: [...this.state.filters.size]
-                    }
-                })
-            }
-
-            if (name === "type") {
-                this.setState({
-                    filters: {
-                        brand: [...this.state.filters.brand],
-                        colour: [...this.state.filters.colour],
-                        age: [...this.state.filters.age],
-                        type: this.state.filters.type.filter(type => type !== value),
-                        size: [...this.state.filters.size]
-                    }
-                })
-            }
-
-            if (name === "size") {
-                this.setState({
-                    filters: {
-                        brand: [...this.state.filters.brand],
-                        colour: [...this.state.filters.colour],
-                        age: [...this.state.filters.age],
-                        type: [...this.state.filters.type],
-                        size: this.state.filters.size.filter(size => size !== value)
-                    }
-                })
-            }
-
-        }
-
-    }
-
-    mobileSort = (e) => {
-        const { value } = e.target;
-
-        this.setState({
-            sort: value
-        })
-    }
-
-
     //for mobile devices just call this function with an apply button.
     applyFilters = () => {
         if (this.state.filters.brand.length === 0 && this.state.filters.colour.length === 0 && this.state.filters.age.length === 0 && this.state.filters.type.length === 0 && this.state.filters.size.length === 0) {
@@ -436,15 +299,6 @@ class AllProducts extends Component {
             })
     }
 
-    handleMobileFilterBar = () => {
-        this.setState({ showMobileFilterBar: !this.state.showMobileFilterBar },
-            () => {
-                if (this.state.showMobileFilterBar) {
-                } else {
-                }
-            })
-    }
-
 
 
     render() {
@@ -509,47 +363,7 @@ class AllProducts extends Component {
                             )}
                         </div>
                     </div>
-                    <div id="mobile-products-filters">
-                        <h2>Sort By</h2>
-                        <input type="radio" name="sort" value="L-H" onChange={this.mobileSort} />
-                        <label>Lowest to Highest</label>
-                        <input type="radio" name="sort" value="H-L" onChange={this.mobileSort} />
-                        <label>Highest to Lowest</label>
-                        <input type="radio" name="sort" value="A-Z" onChange={this.mobileSort} />
-                        <label>A-Z</label>
-                        <input type="radio" name="sort" value="Z-A" onChange={this.mobileSort} />
-                        <label>Z-A</label>
-                        <h2>Brand</h2>
-                        {uniqueBrands.map(brand => <div key={brand}>
-                            <input type="checkbox" name="brand" value={brand} onChange={this.mobileFilter} />
-                            <label>{brand}</label>
-                        </div>)}
-                        <h2>Colour</h2>
-                        {uniqueColors.map(color => <div key={color}>
-                            <input type="checkbox" name="colour" value={color} onChange={this.mobileFilter} />
-                            <label>{color}</label>
-                        </div>)}
-                        <h2>Gender</h2>
-                        {uniqueAge.map(age => <div key={age}>
-                            <input type="checkbox" name="age" value={age} onChange={this.mobileFilter} />
-                            <label>{age}</label>
-                        </div>)}
-
-                        <h2>Type</h2>
-                        {uniqueType.map(type => <div key={type}>
-                            <input type="checkbox" name="type" value={type} onChange={this.mobileFilter} />
-                            <label>{type}</label>
-                        </div>)}
-
-                        <h2>Size</h2>
-                        {uniqueSizes.map(size => <div key={size}>
-                            <input type="checkbox" name="size" value={size} onChange={this.mobileFilter} />
-                            <label>{size}</label>
-                        </div>)}
-                        <div id="mobile-apply-filters">
-                            <button onClick={this.applyFilters}>Apply Filters</button>
-                        </div>
-                    </div>
+                    
                 </div>
             )
         }
