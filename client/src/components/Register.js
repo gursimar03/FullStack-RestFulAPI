@@ -41,6 +41,7 @@ class Register extends React.Component {
                         console.log("User registered and logged in")
 
                         localStorage.name = res.data.name
+                        localStorage.email = res.data.email
                         localStorage.accessLevel = res.data.accessLevel
                         localStorage.token = res.data.token
                         localStorage.isLoggedIn = res.data.isLoggedIn

@@ -59,11 +59,11 @@ export default class ProductPage extends Component {
        
     
         if(localStorage.acessLevel !== 0){
-
+            
             axios.post(`${SERVER_HOST}/cart/${this.state.product["_id"]}/${this.state.selected.size}/${this.state.selected.quantity}/${localStorage.email}`)
             .then(res =>{
-       
-               console.log(res)
+                console.log(res)
+                
        
            })
         }else{
