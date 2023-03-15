@@ -25,6 +25,9 @@ import AdminBoard from "./components/AdminDashboard";
 import MenProducts from "./components/MenProducts";
 import WomenProducts from "./components/WomenProducts";
 import KidsProducts from "./components/KidProducts";
+import SearchPage from "./components/SearchPage";
+import ErrorPage from "./components/ErrorPage";
+import ScrollToTop from "./ScrollToTop";
 
 
 if (typeof localStorage.accessLevel === "undefined") {
@@ -50,6 +53,7 @@ class App extends React.Component {
 
             products: [],
             productsData: [],
+            itemsInCart: 0,
         }
     }
 
@@ -59,9 +63,33 @@ class App extends React.Component {
         }).then(() => {
             this.setState({ productsData: this.state.products })
         })
+
+        axios.get(`${SERVER_HOST}/cart/${localStorage.email}/countItems`)
+        .then(res => {
+            if(res.data.message) {
+                this.setState({itemsInCart: 0})
+            } else {
+                this.setState({itemsInCart: res.data.itemCount})
+            }
+            
+        })
+        .catch(err => {
+            console.log(err)
+        })
     }
 
-
+    handleCartSize = (e) => {
+        axios.get(`${SERVER_HOST}/cart/${localStorage.email}/countItems`)
+        .then(res => {
+            if(res.data.message) {
+                this.setState({itemsInCart: e})
+            } else {
+                const newVal = parseInt(e) + parseInt(res.data.itemCount)
+                console.log(newVal)
+                this.setState({itemsInCart: newVal})
+            }
+        })
+    }
 
     openMobileNav = () => {
         this.state.mobileNavOpen ? this.setState({ mobileNavOpen: false }, () => {
@@ -82,7 +110,7 @@ class App extends React.Component {
     toggleDropdown = () => {
         this.setState({ showDropdown: !this.state.showDropdown },
             () => {
-                this.state.showDropdown ? document.getElementById('dropdown-content').style.top = '40.5px' : document.getElementById('dropdown-content').style.top = '-250px'
+                this.state.showDropdown ? document.getElementById('dropdown-content').style.top = '60.5px' : document.getElementById('dropdown-content').style.top = '-250px'
             }
         );
     };
@@ -99,10 +127,10 @@ class App extends React.Component {
         } else {
             this.setState({
                 productsData: this.state.products.filter(shoe => shoe.name.toLowerCase().includes(value.toLowerCase().trim())
-                || shoe.brand.toLowerCase().includes(value.toLowerCase().trim())
-                || shoe.color.toLowerCase().includes(value.toLowerCase().trim())
-                || shoe.type.toLowerCase().includes(value.toLowerCase().trim())
-                || shoe.age.toLowerCase().includes(value.toLowerCase().trim())
+                    || shoe.brand.toLowerCase().includes(value.toLowerCase().trim())
+                    || shoe.color.toLowerCase().includes(value.toLowerCase().trim())
+                    || shoe.type.toLowerCase().includes(value.toLowerCase().trim())
+                    || shoe.age.toLowerCase().includes(value.toLowerCase().trim())
                 )
             })
         }
@@ -112,6 +140,7 @@ class App extends React.Component {
     render() {
         return (
             <div className="App">
+                <ScrollToTop />
                 {localStorage.accessLevel === 0 ? this.reloadPageAfterLogOut() : null}
                 <BrowserRouter>
                     <div className="content-top">
@@ -125,8 +154,9 @@ class App extends React.Component {
                                 {this.state.name !== "" && this.state.name !== null && this.state.name !== "GUEST" ? <p id="welcome">Welcome, {localStorage.name}</p> : <Link id="linkToSignIn" to={'/account-login'}><p>Sign In</p></Link>}
 
                                 {this.state.accessLevel > 0 ? <Link id="linkToAccount" onClick={this.toggleDropdown}> {
-                                    localStorage.profilePhoto !== "undefined" ?
-                                        <img id="profilePhoto" className="profileImg" src={`data:;base64,${localStorage.profilePhoto}`} alt="Profile" />
+                                    
+                                    localStorage.profilePhoto !== "undefined" && localStorage.profilePhoto !== "null"?
+                                        localStorage.profilePhoto.includes('google') ? <img id="profilePhoto" className="profileImg" src={`${localStorage.profilePhoto}`} alt="Profile" /> :<img id="profilePhoto" className="profileImg" src={`data:;base64,${localStorage.profilePhoto}`} alt="Profile" />
                                         :
                                         <VscAccount className="account-icon" />
                                 }</Link> : null}
@@ -207,7 +237,7 @@ class App extends React.Component {
                                             <FaSistrix onClick={this.openSearchPage} />
                                         </div>
                                         <div className="cart-container">
-                                            <Link id="cart" to={'/'}><GrCart id="dCart" /></Link>
+                                            <Link id="cart" to={'/'}><GrCart id="dCart" /><p>{this.state.itemsInCart}</p></Link>
                                         </div>
                                     </div>
                                 </div>
@@ -221,33 +251,46 @@ class App extends React.Component {
                         <Route path="/products" element={<AllProducts />}></Route>
                         <Route path="/profile" element={<Profile />}></Route>
                         <Route path="/delete-account" element={<DeleteAccount />}></Route>
-                        <Route path="/products/:id" element={<ProductPage />}></Route>
+                        <Route path="/products/:id" element={<ProductPage handleCartSize={this.handleCartSize} />}></Route>
                         <Route path="/admin" element={<AdminBoard />}></Route>
                         <Route path='/products/men' element={<MenProducts />}></Route>
                         <Route path="/products/women" element={<WomenProducts />}></Route>
                         <Route path="/products/kids" element={<KidsProducts />}></Route>
                         {/* Page doesn't exist css later */}
-                        <Route path="*" element={<h2>This page does not exist</h2>} />
+                        <Route path="*" element={<ErrorPage />} />
                     </Routes>
-                    <div id="search-page">
-                    <RxCross1 className="nav-button" onClick={this.openSearchPage} />
-                    <div className="search-page-content">
-                        <div className="search-bar-container">
-                            <input type="text" placeholder="Search" onChange={this.handleSearch}/>
-                            <FaSistrix className="search-bar-icon" />
-                        </div>
-                        <div className="search-results">
-                            {this.state.productsData.map(product => <div key={product._id}>
-                                <Link to={`/products/${product._id}`}><p>{product.name}</p></Link></div>
-                            )}
-                        </div>
-                    </div>
-                </div>
+                    <SearchPage openSearchPage={this.openSearchPage} handleSearch={this.handleSearch} productsData={this.state.productsData} />
                 </BrowserRouter>
                 {/* keep these constant at bottom of page */}
                 <footer className="constant-footer">
                     <div className="footer-content">
-                        Footer for Now
+                        <div className="footer-content-left">
+                            social links, etc
+                        </div>
+                        <div className="contact-us-container">
+                            <div className="contact-us">
+                                {/* create a contact us form */}
+                                <h2 id="contacth1">Contact Us</h2>
+                                <p>
+                                    If you have any questions or concerns, please contact us using the form below.
+                                </p>
+                                <form id="contact">
+                                    <div className="form-group">
+
+                                        <input type="text" className="form-input" id="name" placeholder="Enter your name" required />
+                                    </div>
+                                    <div className="form-group">
+
+                                        <input type="email" className="form-input" id="email" placeholder="Enter your email" required />
+                                    </div>
+                                    <div className="form-group">
+
+                                        <textarea className="form-input" id="message" rows="3" placeholder="Enter your message" required={true} ></textarea>
+                                    </div>
+                                    <button type="submit" className="form-submit-btn">Submit</button>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                 </footer>
             </div>

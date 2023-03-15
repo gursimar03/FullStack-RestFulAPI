@@ -23,6 +23,10 @@ body {
     stroke-width: 0;
 }
 
+.nav-content-right:hover {
+    color: lightblue;
+}
+
 svg,
 path {
     stroke-width: 1;
@@ -31,7 +35,6 @@ path {
 
 #dropdown-content {
     position: absolute;
-    display: none;
     top: -250px;
     right: 0px;
     background-color: white;
@@ -39,14 +42,14 @@ path {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    z-index: 1;
     transition: 0.2s;
     border: 1px solid gray;
+    border-radius: 5px;
 }
 
 #dropdown-content>a {
     color: black;
-    padding: 12px 16px;
+    padding: 12px 5px;
     text-decoration: none;
     display: block;
     box-sizing: border-box;
@@ -111,26 +114,29 @@ header {
 
 .top-nav {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    height: 2.5em;
+    justify-content: space-between;
     background-color: white;
+    height: 3em;
     border-bottom: 1px solid rgba(128, 128, 128, 0.473);
+    z-index: 1;
 }
 
 .nav-content-left {
-    flex-basis: 50%;
+    margin: 0 10px;
 }
 
 .nav-content-right {
-    flex-basis: 50%;
+    margin: 0 10px;
+    scale: 1.1;
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
+
 }
 
 #logo {
-    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    scale: 1.1;
 }
 
 #linkToSignIn {
@@ -139,6 +145,7 @@ header {
 
 #welcome {
     margin-right: 10px;
+    font-size: 1em;
 }
 
 #linkToSignIn:hover {
@@ -158,9 +165,9 @@ header {
     cursor: pointer;
 }
 
-.profileImg{
-    width: 30px;
-    height: 30px;
+.profileImg {
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     margin-right: 5px;
 }
@@ -211,6 +218,10 @@ header {
 .nav-button {
     font-size: 1.5em;
     cursor: pointer;
+}
+
+.nav-button:hover {
+    color: lightblue;
 }
 
 .mobile-header-content-middle {
@@ -332,6 +343,7 @@ header {
     overflow-x: auto;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
+    
 }
 
 .find-your-style-boxes>div {
@@ -345,6 +357,7 @@ header {
     position: relative;
     overflow-y: hidden;
     border-radius: 3px;
+    /* right: 5000px; */
 }
 
 .style-box-text {
@@ -384,12 +397,11 @@ header {
 }
 
 .community-image {
-    height: 100%;
+    width: 80%;
 }
 
 .community-image>img {
     width: 100%;
-    height: auto;
 }
 
 .join-community-container {
@@ -469,7 +481,7 @@ header {
 .contrast-genres {
     width: 100%;
     display: flex;
-    overflow-x: scroll;
+    margin-bottom: 10px;
 }
 
 .contrast-genres>div>img {
@@ -494,7 +506,6 @@ form {
 .contact-us {
     display: flex;
     flex-direction: column;
-
 }
 
 .contact-us>h2 {
@@ -517,7 +528,7 @@ form {
 }
 
 .form-input {
-    width: 90%;
+    width: 80%;
     height: 50px;
     border: none;
     background-color: rgb(233, 233, 233);
@@ -527,7 +538,7 @@ form {
 }
 
 .form-submit-btn {
-    width: 90%;
+    width: 80%;
     height: 50px;
     border: none;
     background-color: rgb(25, 25, 25);
@@ -568,6 +579,15 @@ form {
 .footer-content {
     /* temporary */
     min-height: calc(100vh - 150px);
+    display: flex;
+}
+
+.footer-content>div {
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .search-btn {
@@ -576,13 +596,31 @@ form {
 
 #search-page {
     background-color: white;
-    position: absolute;
+    position: fixed;
     height: 0vh;
     width: 100vw;
-    overflow: hidden;
+    overflow-y: scroll;
     bottom: 0;
     transition: 0.2s;
+    z-index: 9999;
 }
+
+.search-page-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.search-page-content>.search {
+    margin: auto;
+    position: relative;
+    left: 0;
+    right: 0;
+    display: flex;
+    padding-bottom: 40px;
+    width: 60%;
+}
+
+
 
 .form-container,
 .login-form-container {
@@ -657,7 +695,7 @@ form {
     justify-content: space-evenly;
 }
 
-.gender-form-radio-buttons > div {
+.gender-form-radio-buttons>div {
     display: flex;
     align-items: center;
 }
@@ -865,6 +903,10 @@ input[type="radio"] {
     justify-content: flex-start;
 }
 
+.products-shoe:hover {
+    color: lightblue;
+}
+
 .product-image {
     border-top-right-radius: 5px;
     border-top-right-radius: 5px;
@@ -877,7 +919,9 @@ input[type="radio"] {
 .product-image img {
     max-width: 100%;
     height: 474px;
+
 }
+
 
 .product-info {
     padding: 20px;
@@ -912,19 +956,55 @@ input[type="radio"] {
     overflow: auto;
     display: flex;
     flex-direction: column;
-    padding-inline-start: 15px;
 }
 
 .filter>div {
     margin-bottom: 10px;
     display: flex;
+    flex-direction: column;
+}
+
+.filter aside {
+    display: flex;
     align-items: center;
+}
+
+.filter aside>h2 {
+    padding: 0 10px 0 0;
+}
+
+
+.filter aside > div {
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid lightgray;
+    cursor: pointer;
+}
+  
+
+.filter aside > div:hover {
+    border-top: 10px solid black;
+}
+
+.filter>div>div {
+    overflow: hidden;
+    height: 0;
+    border-bottom: 1px solid lightgrey;
+    transition: 0.5s ease-in-out;
+}
+
+.filter>div>div>div {
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
 }
 
 .filter input[type=checkbox] {
     cursor: pointer;
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
 }
 
 .products-page-functions {
@@ -946,6 +1026,7 @@ input[type="radio"] {
 
 .functions-left {
     flex-basis: 50%;
+    margin: 0 10px;
 }
 
 .sideBarButton {
@@ -978,7 +1059,7 @@ select#sort-functions:focus {
     outline: none;
 }
 
-.search > input {
+.search>input {
     width: 100%;
     height: 50px;
     border: none;
@@ -993,7 +1074,7 @@ select#sort-functions:focus {
     border-bottom: 2px solid black;
 }
 
-.search > input:focus {
+.search>input:focus {
     outline: none;
 }
 
@@ -1023,13 +1104,13 @@ select#sort-functions:focus {
 
 }
 
-.shoe-page-container-right-top > p {
+.shoe-page-container-right-top>p {
     margin: 10px;
     font-size: 1.1em;
     align-self: flex-start;
 }
 
-.shoe-page-container-right-top > p:first-child {
+.shoe-page-container-right-top>p:first-child {
     font-size: 1.5em;
     margin-bottom: 10px;
     align-self: flex-start;
@@ -1044,7 +1125,7 @@ select#sort-functions:focus {
     align-items: center;
 }
 
-.shoe-sizes > div {
+.shoe-sizes>div {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1056,21 +1137,27 @@ select#sort-functions:focus {
     position: relative;
 }
 
-.shoe-sizes > div > input[type=radio] {
+.shoe-sizes>div>input[type=radio] {
     cursor: pointer;
 }
 
-.shoe-sizes > div > input[type=radio]:disabled + label {
-    color: #d1d1d1;  
+.shoe-sizes>div>input[type=radio]:disabled+label {
+    color: #d1d1d1;
 }
 
 
-.shoe-sizes > div:hover {
+.shoe-sizes>div:hover {
     background-color: rgb(25, 25, 25);
     color: white;
 }
 
-.shoe-page-container-right-bottom > button {
+.shoe-page-container-right-bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.shoe-page-container-right-bottom>button {
     width: 60%;
     height: 50px;
     border: none;
@@ -1118,39 +1205,39 @@ select#sort-functions:focus {
     align-items: center;
     transition: background-color 0.2s ease-in-out;
     margin: 0 10px;
-  }
+}
 
-  .carousel-icon {
+.carousel-icon {
     color: white;
     scale: 2.5;
-  }
-  
-  #mobile-products-filters {
+}
+
+#mobile-products-filters {
     display: none;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     background-color: white;
-  }
+}
 
-  .profile-form > form {
+.profile-form>form {
     display: flex;
-    
-  }
 
-  .profile-form > form > div {
+}
+
+.profile-form>form>div {
     display: flex;
     width: 50%;
     justify-content: space-between;
     align-items: center;
-  }
+}
 
-  .span-grey {
+.span-grey {
     color: rgb(165, 165, 165);
-  }
+}
 
-  .profile-form > form > div > button {
+.profile-form>form>div>button {
     height: 50px;
     border: none;
     background: none;
@@ -1163,14 +1250,16 @@ select#sort-functions:focus {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+}
 
-  .profile-form > form > div > button:hover {
+.profile-form>form>div>button:hover {
     background-color: rgb(25, 25, 25);
     color: white;
-  }
+}
 
-  #name-modal, #email-modal, #password-modal {
+#name-modal,
+#email-modal,
+#password-modal {
     position: fixed;
     top: 0;
     left: 0;
@@ -1183,65 +1272,67 @@ select#sort-functions:focus {
     align-items: center;
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.5);
-  }
-  
-  .modal-content {
+}
+
+.modal-content {
     position: relative;
     background-color: #fff;
     padding: 40px;
     border-radius: 10px;
     max-width: 500px;
     width: 100%;
-  }
-  
-  .modal-header {
+}
+
+.modal-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-  
-  .modal-title {
+}
+
+.modal-title {
     font-size: 24px;
     margin: 0;
-  }
-  
-  .modal-body {
+}
+
+.modal-body {
     margin-top: 20px;
     margin-bottom: 20px;
     display: flex;
     flex-direction: column;
-  }
-  
-  .form-group {
+}
+
+.form-group {
     margin-bottom: 20px;
-  }
-  
-  .modal-body > div > label {
+}
+
+.modal-body>div>label {
     display: block;
     margin-bottom: 5px;
-  }
-  
-  .modal-body > div > input[type="text"], .modal-body > div > input[type="password"], .modal-body > div > input[type="email"] {
+}
+
+.modal-body>div>input[type="text"],
+.modal-body>div>input[type="password"],
+.modal-body>div>input[type="email"] {
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 10px;
     font-size: 16px;
-  }
-  
-  .invalid-feedback {
+}
+
+.invalid-feedback {
     color: red;
     margin-top: 5px;
     font-size: 14px;
-  }
-  
-  .modal-footer {
+}
+
+.modal-footer {
     display: flex;
     justify-content: space-around;
     align-items: center;
     margin-top: 20px;
-  }
+}
 
-  .modal-footer > button {
+.modal-footer>button {
     height: 50px;
     border: none;
     background: none;
@@ -1250,17 +1341,17 @@ select#sort-functions:focus {
     font-family: var(--main-font);
     font-size: 1.3em;
     cursor: pointer;
-  }
+}
 
-  .modal-footer > button:hover {
+.modal-footer>button:hover {
     color: lime;
-  }
+}
 
-  .modal-footer > button:first-child:hover {
+.modal-footer>button:first-child:hover {
     color: red;
-  }
+}
 
-  #save-update-button {
+#save-update-button {
     width: 5em;
     background-color: black;
     color: white;
@@ -1269,15 +1360,15 @@ select#sort-functions:focus {
     border: none;
     font-family: var(--main-font);
     font-size: 1.3em;
-  }
+}
 
-  #save-update-button:hover {
+#save-update-button:hover {
     border: 1px solid black;
     background-color: white;
     color: black;
-  } 
+}
 
-  #fixed-home-button {
+#fixed-home-button {
     position: fixed;
     top: 50%;
     right: 20px;
@@ -1294,21 +1385,21 @@ select#sort-functions:focus {
     transition: background-color 0.2s ease-in-out;
     font-size: 1.5em;
     border: 1px solid black;
-  }
+}
 
-  #fixed-home-button:hover {
+#fixed-home-button:hover {
     background-color: black;
     color: white;
     border: 1px solid black;
 
-  }
+}
 
-  .profile-photo {
+.profile-photo {
     position: relative;
     padding: 20px;
-  }
+}
 
-  .profile-photo> img#profilePhoto {
+.profile-photo>img#profilePhoto {
     position: absolute;
     top: 0;
     left: -150px;
@@ -1316,26 +1407,40 @@ select#sort-functions:focus {
     margin-top: 0;
     height: 150px;
     width: 150px;
-  }
+}
 
-  .profile-photo > input[type="file"] {
+.profile-photo>input[type="file"] {
     color: red;
     position: absolute;
     top: 130px;
     left: -150px;
-  }
+}
 
-  select.form-control {
+select.form-control {
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 10px;
     font-size: 16px;
-  }
-  
+}
+
+.error-page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.home-favicon {
+    font-size: 5em;
+}
+
 
 /* Setting up device breakpoints */
 
 /* Mobile */
+
+
 @media only screen and (max-width: 600px) {
 
     .hero-image1 {
@@ -1364,6 +1469,10 @@ select#sort-functions:focus {
         height: 100%;
         border-bottom-right-radius: 0;
 
+    }
+
+    .nav-link:hover {
+        color: var(--selector-color);
     }
 
 }
@@ -1447,7 +1556,20 @@ select#sort-functions:focus {
 
     #cart {
         display: flex;
+        text-decoration: none;
+        position: relative;
     }
+
+    #cart p {
+        position: absolute;
+        font-size: 0.7em;
+        top: -35px;
+        left: 25px;
+        color: black;
+        font-weight: 100;
+    }
+
+
 
     #dCart:hover>path {
         stroke: var(--selector-color);
@@ -1457,6 +1579,7 @@ select#sort-functions:focus {
         display: flex;
         flex-direction: row;
     }
+    
 }
 
 @media only screen and (min-width: 960px) {
@@ -1476,6 +1599,10 @@ select#sort-functions:focus {
         display: none;
     }
 
+    .sideBarButton {
+        display: none;
+    }
+
     .sort-container {
         display: none;
     }
@@ -1488,6 +1615,11 @@ select#sort-functions:focus {
 
 @media only screen and (max-width: 1000px) {
     .shoe-page-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer-content {
         display: flex;
         flex-direction: column;
     }

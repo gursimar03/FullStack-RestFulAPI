@@ -3,6 +3,7 @@ import axios from "axios";
 import React from "react";
 import { Link } from "react-router-dom";
 import { SERVER_HOST } from "../config/global_constants";
+import ScrollToTop from "../ScrollToTop";
 
 class HomePage extends React.Component {
 
@@ -13,12 +14,20 @@ class HomePage extends React.Component {
     };
   }
 
+
+  // scrollFunction = () => {
+  //   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+  //     document.querySelector(".find-your-style-boxes div").style.right = "auto";
+  //   }
+  // }
+
   componentDidMount() {
     axios.get(`${SERVER_HOST}/products`)
       .then(response => {
         this.setState({ products: response.data });
       });
     
+    // window.onscroll = this.scrollFunction;
   }
 
   render() {
@@ -28,7 +37,7 @@ class HomePage extends React.Component {
 
     return (
       <div className="homepage-container">
-
+        <ScrollToTop />
         <div className="homepage-body">
           <div className="homepage-hero">
             <div className="homepage-hero-images">
@@ -42,6 +51,7 @@ class HomePage extends React.Component {
             </div>
           </div>
           <main className="main-body">
+
             <div className="find-your-style-container">
               <h2>For you</h2>
               <div className="find-your-style-boxes">
@@ -107,31 +117,6 @@ class HomePage extends React.Component {
                 <div>
                   <img alt="contrast" src={require('../images/football.jpg')} />
                 </div>
-              </div>
-            </div>
-
-            <div className="contact-us-container">
-              <div className="contact-us">
-                {/* create a contact us form */}
-                <h2 id="contacth1">Contact Us</h2>
-                <p>
-                  If you have any questions or concerns, please contact us using the form below.
-                </p>
-                <form id="contact">
-                  <div className="form-group">
-                    
-                    <input type="text" className="form-input" id="name" placeholder="Enter your name" />
-                  </div>
-                  <div className="form-group">
-                    
-                    <input type="email" className="form-input" id="email" placeholder="Enter your email" />
-                  </div>
-                  <div className="form-group">
-                    
-                    <textarea className="form-input" id="message" rows="3" placeholder="Enter your message"  ></textarea>
-                  </div>
-                  <button type="submit" className="form-submit-btn">Submit</button>
-                </form>
               </div>
             </div>
           </main>

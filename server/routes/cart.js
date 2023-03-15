@@ -1,6 +1,20 @@
 const router = require(`express`).Router()
 const cartsModel = require(`../models/Carts`)
 
+router.get(`/cart/:email/countItems`, (req, res) => {
+    cartsModel.findOne({user_email: req.params.email}, (err, data) => {
+        if(data) {
+            let itemCount = 0;
+            for (let i = 0; i < data.products_cart.length; i++) {
+                itemCount += parseInt(data.products_cart[i][1]);
+            }
+            res.json({itemCount: itemCount});
+        } else {
+            res.json({message: 'Cart not found'});
+        }
+    })
+})
+
 router.get(`/cart/:_id`, (req, res) => {
     cartsModel.findById(req.params._id, (error, data) => {
         if (data) {
