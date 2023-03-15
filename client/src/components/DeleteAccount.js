@@ -32,6 +32,9 @@ class DeleteAccount extends Component {
       .then(response => {
         this.setState({ success: true, error: '' });
       })
+      .then(
+        localStorage.clear()
+      )
       .catch(error => {
         this.setState({ error: error.response.data.message });
       });
