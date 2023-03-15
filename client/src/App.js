@@ -156,7 +156,7 @@ class App extends React.Component {
                                 {this.state.accessLevel > 0 ? <Link id="linkToAccount" onClick={this.toggleDropdown}> {
                                     
                                     localStorage.profilePhoto !== "undefined" && localStorage.profilePhoto !== "null"?
-                                        <img id="profilePhoto" className="profileImg" src={`data:;base64,${localStorage.profilePhoto}`} alt="Profile" />
+                                        localStorage.profilePhoto.includes('google') ? <img id="profilePhoto" className="profileImg" src={`${localStorage.profilePhoto}`} alt="Profile" /> :<img id="profilePhoto" className="profileImg" src={`data:;base64,${localStorage.profilePhoto}`} alt="Profile" />
                                         :
                                         <VscAccount className="account-icon" />
                                 }</Link> : null}
