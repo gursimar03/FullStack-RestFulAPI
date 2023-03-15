@@ -7,8 +7,10 @@ import { SERVER_HOST } from "../config/global_constants"
 
 //icons
 import { FaArrowRight } from "react-icons/fa"
-import ScrollToTop from "../ScrollToTop"
 
+import ScrollToTop from "../ScrollToTop"
+import { GoogleLogin } from "@react-oauth/google";
+import jwtDecode from "jwt-decode";
 
 class Register extends React.Component {
     constructor(props) {
@@ -57,6 +59,39 @@ class Register extends React.Component {
                 }
             })
 
+    }
+
+    googleResponse = (response) => {
+        const details = jwtDecode(response.credential);
+        const email = details.email;
+        const name = details.given_name;
+        const surname = details.family_name;
+        const gender = "non-binary";
+        const profilePhoto = details.picture;
+        const password = details.sub;
+
+        axios.post(`${SERVER_HOST}/users/register/${name}/${surname}/${email}/${password}/${gender}`)
+            .then(res => {
+                if (res.data) {
+                    if (res.data.errorMessage) {
+                        console.log(res.data.errorMessage)
+                    } else {
+                        localStorage.name = res.data.name
+                        localStorage.accessLevel = res.data.accessLevel
+                        localStorage.isLoggedIn = res.data.isLoggedIn
+                        localStorage.email = res.data.email
+                        localStorage.profilePhoto = profilePhoto;
+
+                        window.location.replace(`http://localhost:3000/`)
+                    }
+                } else {
+                    console.log("Registration failed")
+                }
+            })
+
+    }
+    googleError = (error) => {
+        console.log(error)
     }
 
 
@@ -139,6 +174,7 @@ class Register extends React.Component {
                             </div>
                             <div className="register-btn-container">
                                 <LinkInClass value="Register" className="register-btn" onClick={this.handleSubmit} />
+                                <GoogleLogin onSuccess={this.googleResponse} onError={this.googleError} />
                             </div>
                             <div className="hidden-to-desktop">
                                 <h2>ALREADY HAVE AN ACCOUNT?</h2>

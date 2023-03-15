@@ -2,12 +2,11 @@ import React from "react"
 import { Navigate as Redirect, Link } from "react-router-dom"
 import axios from "axios";
 import LinkInClass from "./LinkInClass";
-
 import { SERVER_HOST } from "../config/global_constants"
-
 import { FaArrowRight } from "react-icons/fa"
 import ScrollToTop from "../ScrollToTop";
-
+import { GoogleLogin } from "@react-oauth/google";
+import jwtDecode from "jwt-decode";
 
 class Login extends React.Component {
     constructor(props) {
@@ -16,6 +15,7 @@ class Login extends React.Component {
             email: "",
             password: "",
             clientMessage: '',
+            googleUser: null,
         }
     }
 
@@ -54,6 +54,23 @@ class Login extends React.Component {
             })
     }
 
+    googleResponse = (response) => {
+        const details  = jwtDecode(response.credential);
+
+        const email = details.email;
+        const password = details.sub;
+
+        this.setState({email: email, password: password}, this.handleSubmit)
+        // const email = details.email
+        // const password = "00000000";
+        console.log(details)
+        // axios.post(`${SERVER_HOST}/users/login/${this.state.email}/${this.state.password}`)
+        // window.location.replace(`http://localhost:3000/`)
+
+    }
+    googleError = (error) => {
+        console.log(error)
+    }
 
     render() {
         if (localStorage.isLoggedIn === "true") {
@@ -87,6 +104,7 @@ class Login extends React.Component {
                             </div>
                             <div className="login-btn-container">
                                 <LinkInClass value="Login" className="login-button" onClick={this.handleSubmit} />
+                                <GoogleLogin onSuccess={this.googleResponse} onError={this.googleError} />
                             </div>
                             <div className="hidden-to-desktop">
                                 <h2>DON'T HAVE AN ACCOUNT?</h2>
