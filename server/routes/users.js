@@ -61,11 +61,11 @@ router.post(`/users/register/:name/:surname/:email/:password/:gender`, (req, res
     }
     else {
       bcrypt.hash(req.params.password, parseInt(process.env.PASSWORD_HASH_SALT_ROUNDS), (err, hash) => {
-        usersModel.create({ name: req.params.name, surname: req.params.surname, email: req.params.email, password: hash, gender: req.params.gender }, (error, data) => {
+        usersModel.create({ name: req.params.name, surname: req.params.surname, email: req.params.email, password: hash, gender: req.params.gender, profilePhotoFilename: null }, (error, data) => {
           if (data) {
             const token = jwt.sign({ email: data.email, accessLevel: data.accessLevel }, process.env.JWT_PRIVATE_KEY, { algorithm: 'HS256', expiresIn: process.env.JWT_EXPIRY })
 
-            res.json({ name: data.name, accessLevel: data.accessLevel, token: token, isLoggedIn: true })
+            res.json({ name: data.name, accessLevel: data.accessLevel, token: token, isLoggedIn: true, email: data.email})
           }
           else {
             console.log(error) // Add this line to log the error
@@ -94,7 +94,7 @@ router.post(`/users/login/:email/:password`, (req, res) => {
     }
     else {
       console.log("not found in db")
-      res.json({ errorMessage: `User is not logged in` })
+      res.json({ errorMessage: `User is not logged in`, clientMessage: 'The Email Address Or Password Is Incorrect.' })
     }
   })
 })
