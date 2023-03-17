@@ -9,6 +9,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: var(--main-font);
+    overflow-x: hidden;
 }
 
 /* If editing css please use these variables */
@@ -18,6 +19,7 @@ body {
 
 
 }
+
 
 #linkToAccount>svg>path {
     stroke-width: 0;
@@ -343,7 +345,7 @@ header {
     overflow-x: auto;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
-    
+
 }
 
 .find-your-style-boxes>div {
@@ -877,6 +879,7 @@ input[type="radio"] {
 }
 
 /* products  pages*/
+
 .products-container {
     display: flex;
     min-height: 100vh;
@@ -974,25 +977,24 @@ input[type="radio"] {
 }
 
 
-.filter aside > div {
-    width: 0; 
-    height: 0; 
+.filter aside>div {
+    width: 0;
+    height: auto;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     border-top: 10px solid lightgray;
     cursor: pointer;
 }
-  
 
-.filter aside > div:hover {
+
+.filter aside>div:hover {
     border-top: 10px solid black;
 }
 
 .filter>div>div {
     overflow: hidden;
-    height: 0;
+    max-height: 0;
     border-bottom: 1px solid lightgrey;
-    transition: 0.5s ease-in-out;
 }
 
 .filter>div>div>div {
@@ -1429,7 +1431,7 @@ select.form-control {
     align-items: center;
 }
 
-.error-page > * {
+.error-page>* {
     padding: 10px 0;
 }
 
@@ -1448,8 +1450,9 @@ select.form-control {
 
 .cart-item {
     display: flex;
-    border: 1.5px solid grey 0;
-    margin: 0 10px;
+    border-bottom: 1px solid gray;
+    padding: 10px 0;
+    margin: 5px 10px;
 }
 
 .cart-item p {
@@ -1462,12 +1465,12 @@ select.form-control {
     object-fit: cover;
 }
 
-.cart-btn-container > a {
+.cart-btn-container>a {
     text-decoration: none;
     color: black;
 }
 
-.cart-btn-container > a > * {
+.cart-btn-container>a>* {
     font-size: 1.4em;
 }
 
@@ -1526,6 +1529,55 @@ select.form-control {
     flex-basis: 35%;
     background-color: blue;
 }
+
+.delete-account-page {
+    max-width: 500px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input[type="email"],
+  input[type="password"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  button[type="submit"] {
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .error-message {
+    color: #f44336;
+    margin-bottom: 20px;
+  }
+  
+  .cancel-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #666;
+    text-decoration: none;
+  }
+  
+  .cancel-link:hover {
+    text-decoration: underline;
+  }
+  
+
 
 
 /* Setting up device breakpoints */
@@ -1671,7 +1723,7 @@ select.form-control {
         display: flex;
         flex-direction: row;
     }
-    
+
 }
 
 @media only screen and (min-width: 960px) {
@@ -1687,23 +1739,9 @@ select.form-control {
 }
 
 @media only screen and (max-width: 768px) {
-    #filter-bar {
-        display: none;
-    }
 
-    .sideBarButton {
-        display: none;
-    }
-
-    .sort-container {
-        display: none;
-    }
-
-    #mobile-products-filters {
-        display: block;
-    }
+    /* mobile filter sort bar */
 }
-
 
 @media only screen and (max-width: 1000px) {
     .shoe-page-container {
@@ -1718,6 +1756,16 @@ select.form-control {
     }
 
     .footer-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cart-item-info-name {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cart-item-sizeQuantity {
         display: flex;
         flex-direction: column;
     }
