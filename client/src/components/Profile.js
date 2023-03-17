@@ -52,7 +52,7 @@ export default class Profile extends Component {
         const email = decodedToken.email // get the user's email from the decoded token
 
         // get the user's profile from the database using the user's email address and set the state with the user's profile data
-        axios.get(`${SERVER_HOST}/users/profile/${localStorage.getItem('email')}`)
+        axios.get(`${SERVER_HOST}/users/profile/${email}`)
             .then(res => {
                 if (res.data) {
                     if (res.data.errorMessage) {
