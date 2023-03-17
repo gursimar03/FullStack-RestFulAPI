@@ -188,7 +188,7 @@ class App extends React.Component {
                                         <FaSistrix onClick={this.openSearchPage} className="search-bar-icon-btn" />
                                     </div>
                                     <div className="cart-btn-container">
-                                        <GrCart className="cart-btn" />
+                                        <Link to={'/cart'}><GrCart/>{this.state.itemsInCart}</Link>
                                     </div>
                                 </div>
                             </div>
