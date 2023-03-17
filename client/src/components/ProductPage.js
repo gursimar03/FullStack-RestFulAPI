@@ -2,6 +2,8 @@ import React, { Component } from "react"
 import axios from "axios"
 import { SERVER_HOST } from "../config/global_constants"
 import { AiOutlineArrowRight, AiOutlineArrowLeft } from 'react-icons/ai';
+import { Navigate as Redirect } from "react-router-dom";
+import ScrollToTop from "../ScrollToTop";
 
 
 export default class ProductPage extends Component {
@@ -11,10 +13,10 @@ export default class ProductPage extends Component {
             product: null,
             activeIndex: 0,
             maxQuantity: 0,
-
+            errorMessage: null,
             selected: {
                 size: 0,
-                quantity: 0,
+                quantity: 1,
             }
         }
     }
@@ -26,11 +28,19 @@ export default class ProductPage extends Component {
 
         axios.get(`${SERVER_HOST}/products/${id}`)
             .then(response => {
-                this.setState({ product: response.data })
+                if (response.data.name === "CastError") {
+                    this.setState({ product: response.data.name })
+                } else {
+                    this.setState({ product: response.data })
+                }
+
             }
-            )
+            ).catch((error) => {
+                console.log(error)
+            })
 
     }
+
 
     handlePrevClick = () => {
         const { activeIndex } = this.state;
@@ -55,27 +65,32 @@ export default class ProductPage extends Component {
     }
 
 
-    handleAddToCartClick = () =>{
-       
-    
-        if(localStorage.acessLevel !== 0){
+    handleAddToCartClick = () => {
 
+        if (this.state.selected.size === 0) {
+            this.setState({ errorMessage: 'Please select atleast one size.' })
+            return;
+        }
+
+        if (localStorage.acessLevel !== 0) {
+            this.props.handleCartSize(this.state.selected.quantity);
             axios.post(`${SERVER_HOST}/cart/${this.state.product["_id"]}/${this.state.selected.size}/${this.state.selected.quantity}/${localStorage.email}`)
-            .then(res =>{
-       
-               console.log(res)
-       
-           })
-        }else{
+                .then(res => {
+                    console.log(res)
+
+                })
+        } else {
+
             window.alert("No User Logged in. Please Log in to add to cart");
         }
 
-}
+    }
 
 
     updateSize = (e) => {
         const { value } = e.target;
         this.setState({
+            errorMessage: '',
             selected: {
                 size: value,
                 quantity: this.state.selected.quantity
@@ -83,7 +98,7 @@ export default class ProductPage extends Component {
         }, () => {
             // eslint-disable-next-line
             this.state.product.inventory.stock.map(stock => {
-                if (stock.size === parseInt(this.state.selected.size)) {
+                if (stock.size === parseFloat(this.state.selected.size)) {
                     this.setState({
                         maxQuantity: stock.quantity
                     }, () => {
@@ -134,10 +149,13 @@ export default class ProductPage extends Component {
     render() {
         if (this.state.product === null) {
             return <div>Loading...</div>
+        } else if (this.state.product === "CastError") {
+            return <Redirect to="/404" />
         }
         const { activeIndex } = this.state;
         return (
             <div>
+                <ScrollToTop />
                 <div className="shoe-page-container">
                     <div className="shoe-page-container-left">
                         <div className="carousel">
@@ -177,6 +195,7 @@ export default class ProductPage extends Component {
                             </div>
                         </div>
                         <div className="shoe-page-container-right-bottom">
+                            <p style={{ color: 'red', textAlign: 'center' }}>{this.state.errorMessage}</p>
                             <button onClick={this.handleAddToCartClick}>Add To Basket</button>
                         </div>
                     </div>
