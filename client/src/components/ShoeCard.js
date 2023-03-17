@@ -13,7 +13,6 @@ class Card extends React.Component {
             </div>
             <div className="product-info">
                 <p>{this.props.product.name}</p>
-                <p>{this.props.product.price}</p>
                 <p>{this.props.product.type}</p>
                 <br></br>
                 <p>{`€${this.props.product.price}`}</p>

@@ -40,7 +40,7 @@ class DeleteAccount extends Component {
       });
   }
 
-  
+
 
   render() {
     if (this.state.success) {
@@ -48,23 +48,23 @@ class DeleteAccount extends Component {
     }
 
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit} class="delete-account-page">
         <ScrollToTop />
-        <div>
-          <label>Email</label>
-          <input type="email" value={this.state.email} onChange={this.handleEmailChange} />
+        <div class="form-group">
+          <label for="email-input">Email</label>
+          <input id="email-input" type="email" value={this.state.email} onChange={this.handleEmailChange} />
         </div>
-        <div>
-          <label>Password</label>
-          <input type="password" value={this.state.password} onChange={this.handlePasswordChange} />
+        <div class="form-group">
+          <label for="password-input">Password</label>
+          <input id="password-input" type="password" value={this.state.password} onChange={this.handlePasswordChange} />
         </div>
-        <div>
+        <div class="form-group">
           <button type="submit">Delete Account</button>
         </div>
-        {this.state.error && <div>{this.state.error}</div>}
-
-        <Link to="/" className="red-button">Cancel</Link>
+        {this.state.error && <div class="error-message">{this.state.error}</div>}
+        <Link to="/" class="cancel-link">Cancel</Link>
       </form>
+
     );
   }
 }
