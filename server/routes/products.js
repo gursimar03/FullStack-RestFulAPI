@@ -78,14 +78,6 @@ router.get(`/shoes/kids`, (req, res) => {
     })
 })
 
-
-
-
-
-
-
-
-
 router.get(`/products/:_id`, (req, res) => {
     productsModel.findById(req.params._id, (error, data) => {
         if (data) {
