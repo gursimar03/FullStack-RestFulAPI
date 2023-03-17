@@ -1577,6 +1577,18 @@ select.form-control {
     text-decoration: underline;
   }
   
+  .prouct-added-to-cart-identifier {
+    position: fixed;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 9999;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    bottom: 10px;
+    right: -5000px;
+    transition: right 0.5s ease-in-out;
+  }
 
 
 
