@@ -41,6 +41,7 @@ router.post(`/cart/:_id/:size/:quantity/:user_email`, (req, res) => {
         sizeS = `0` + sizeS
     }
 
+
     let newProductId = req.params._id + sizeS
 
     let cartsAr = [newProductId, req.params.quantity]
@@ -127,7 +128,7 @@ router.delete(`/cart/:_id/:user_email`, (req, res) => {
 })
 
 
-router.get(`/cart/:user_email`, (req, res) => {
+router.get(`/cart/users/:user_email`, (req, res) => {
 
     cartsModel.findOne({ user_email: req.params.user_email }, (uniqueError, uniqueData) => {
 

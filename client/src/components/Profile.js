@@ -365,7 +365,6 @@ export default class Profile extends Component {
     }
 
     render() {
-        console.log('hey')
         if (localStorage.isLoggedIn === "false") {
             return <Redirect to="/" />
         }

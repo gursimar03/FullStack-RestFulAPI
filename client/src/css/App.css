@@ -9,6 +9,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: var(--main-font);
+    overflow-x: hidden;
 }
 
 /* If editing css please use these variables */
@@ -18,6 +19,7 @@ body {
 
 
 }
+
 
 #linkToAccount>svg>path {
     stroke-width: 0;
@@ -343,7 +345,7 @@ header {
     overflow-x: auto;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
-    
+
 }
 
 .find-your-style-boxes>div {
@@ -877,6 +879,7 @@ input[type="radio"] {
 }
 
 /* products  pages*/
+
 .products-container {
     display: flex;
     min-height: 100vh;
@@ -974,25 +977,24 @@ input[type="radio"] {
 }
 
 
-.filter aside > div {
-    width: 0; 
-    height: 0; 
+.filter aside>div {
+    width: 0;
+    height: auto;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     border-top: 10px solid lightgray;
     cursor: pointer;
 }
-  
 
-.filter aside > div:hover {
+
+.filter aside>div:hover {
     border-top: 10px solid black;
 }
 
 .filter>div>div {
     overflow: hidden;
-    height: 0;
+    max-height: 0;
     border-bottom: 1px solid lightgrey;
-    transition: 0.5s ease-in-out;
 }
 
 .filter>div>div>div {
@@ -1400,9 +1402,8 @@ select#sort-functions:focus {
 }
 
 .profile-photo>img#profilePhoto {
-    position: absolute;
+    position: relative;
     top: 0;
-    left: -150px;
     border-radius: 0;
     margin-top: 0;
     height: 150px;
@@ -1412,8 +1413,7 @@ select#sort-functions:focus {
 .profile-photo>input[type="file"] {
     color: red;
     position: absolute;
-    top: 130px;
-    left: -150px;
+    top: 150px;
 }
 
 select.form-control {
@@ -1427,13 +1427,157 @@ select.form-control {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+}
+
+.error-page>* {
+    padding: 10px 0;
 }
 
 .home-favicon {
     font-size: 5em;
 }
+
+.cart-page-container {
+    display: flex;
+    min-height: 80vh;
+}
+
+.cart-page-items {
+    flex-basis: 65%;
+}
+
+.cart-item {
+    display: flex;
+    border-bottom: 1px solid gray;
+    padding: 10px 0;
+    margin: 5px 10px;
+}
+
+.cart-item p {
+    margin: 0;
+}
+
+.cart-item-image>img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.cart-btn-container>a {
+    text-decoration: none;
+    color: black;
+}
+
+.cart-btn-container>a>* {
+    font-size: 1.4em;
+}
+
+.cart-item-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.cart-item-info-name {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.cart-item-info-name a {
+    color: black;
+    text-decoration: none;
+}
+
+.cart-item-info-name a:hover {
+    color: var(--selector-color);
+}
+
+.cart-item-gender p {
+    padding: 10px;
+}
+
+.cart-item-sizeQuantity {
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px;
+}
+
+.cart-item-sizeQuantity p {
+    margin: 0;
+    margin-right: 10px;
+}
+
+.cart-item-remove button {
+    margin: 0;
+    background-color: white;
+    border: none;
+    color: red;
+    font-size: 1em;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.cart-item-remove button:hover {
+    text-decoration: underline red;
+}
+
+.cart-page-checkout {
+    flex-basis: 35%;
+    background-color: blue;
+}
+
+.delete-account-page {
+    max-width: 500px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input[type="email"],
+  input[type="password"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  button[type="submit"] {
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .error-message {
+    color: #f44336;
+    margin-bottom: 20px;
+  }
+  
+  .cancel-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #666;
+    text-decoration: none;
+  }
+  
+  .cancel-link:hover {
+    text-decoration: underline;
+  }
+  
+
 
 
 /* Setting up device breakpoints */
@@ -1579,7 +1723,7 @@ select.form-control {
         display: flex;
         flex-direction: row;
     }
-    
+
 }
 
 @media only screen and (min-width: 960px) {
@@ -1595,23 +1739,9 @@ select.form-control {
 }
 
 @media only screen and (max-width: 768px) {
-    #filter-bar {
-        display: none;
-    }
 
-    .sideBarButton {
-        display: none;
-    }
-
-    .sort-container {
-        display: none;
-    }
-
-    #mobile-products-filters {
-        display: block;
-    }
+    /* mobile filter sort bar */
 }
-
 
 @media only screen and (max-width: 1000px) {
     .shoe-page-container {
@@ -1619,7 +1749,23 @@ select.form-control {
         flex-direction: column;
     }
 
+    .cart-page-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
     .footer-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cart-item-info-name {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cart-item-sizeQuantity {
         display: flex;
         flex-direction: column;
     }

@@ -28,7 +28,7 @@ import KidsProducts from "./components/KidProducts";
 import SearchPage from "./components/SearchPage";
 import ErrorPage from "./components/ErrorPage";
 import ScrollToTop from "./ScrollToTop";
-import AdminEdit from "./components/AdminEdit";
+import Cart from "./components/Cart";
 
 
 if (typeof localStorage.accessLevel === "undefined") {
@@ -83,11 +83,9 @@ class App extends React.Component {
         axios.get(`${SERVER_HOST}/cart/${localStorage.email}/countItems`)
         .then(res => {
             if(res.data.message) {
-                this.setState({itemsInCart: e})
+                this.setState({itemsInCart: 0})
             } else {
-                const newVal = parseInt(e) + parseInt(res.data.itemCount)
-                console.log(newVal)
-                this.setState({itemsInCart: newVal})
+                this.setState({itemsInCart: res.data.itemCount})
             }
         })
     }
@@ -190,7 +188,7 @@ class App extends React.Component {
                                         <FaSistrix onClick={this.openSearchPage} className="search-bar-icon-btn" />
                                     </div>
                                     <div className="cart-btn-container">
-                                        <GrCart className="cart-btn" />
+                                        <Link to={'/cart'}><GrCart/>{this.state.itemsInCart}</Link>
                                     </div>
                                 </div>
                             </div>
@@ -238,7 +236,7 @@ class App extends React.Component {
                                             <FaSistrix onClick={this.openSearchPage} />
                                         </div>
                                         <div className="cart-container">
-                                            <Link id="cart" to={'/'}><GrCart id="dCart" /><p>{this.state.itemsInCart}</p></Link>
+                                            <Link id="cart" to={'/cart'}><GrCart id="dCart" /><p>{this.state.itemsInCart}</p></Link>
                                         </div>
                                     </div>
                                 </div>
@@ -257,7 +255,7 @@ class App extends React.Component {
                         <Route path='/products/men' element={<MenProducts />}></Route>
                         <Route path="/products/women" element={<WomenProducts />}></Route>
                         <Route path="/products/kids" element={<KidsProducts />}></Route>
-                        <Route path="/products/:id/edit" element={<AdminEdit />}></Route>
+                        <Route path="/cart" element={<Cart products={this.state.productsData} />}></Route>
                         {/* Page doesn't exist css later */}
                         <Route path="*" element={<ErrorPage />} />
                     </Routes>
