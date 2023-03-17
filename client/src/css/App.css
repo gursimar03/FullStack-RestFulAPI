@@ -1400,9 +1400,8 @@ select#sort-functions:focus {
 }
 
 .profile-photo>img#profilePhoto {
-    position: absolute;
+    position: relative;
     top: 0;
-    left: -150px;
     border-radius: 0;
     margin-top: 0;
     height: 150px;
@@ -1412,8 +1411,7 @@ select#sort-functions:focus {
 .profile-photo>input[type="file"] {
     color: red;
     position: absolute;
-    top: 130px;
-    left: -150px;
+    top: 150px;
 }
 
 select.form-control {
