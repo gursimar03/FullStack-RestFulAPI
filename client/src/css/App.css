@@ -1435,6 +1435,87 @@ select.form-control {
     font-size: 5em;
 }
 
+.cart-page-container {
+    display: flex;
+    min-height: 80vh;
+}
+
+.cart-page-items {
+    flex-basis: 65%;
+}
+
+.cart-item {
+    display: flex;
+    border: 1.5px solid grey 0;
+    margin: 0 10px;
+}
+
+.cart-item p {
+    margin: 0;
+}
+
+.cart-item-image>img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.cart-item-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.cart-item-info-name {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.cart-item-info-name a {
+    color: black;
+    text-decoration: none;
+}
+
+.cart-item-info-name a:hover {
+    color: var(--selector-color);
+}
+
+.cart-item-gender p {
+    padding: 10px;
+}
+
+.cart-item-sizeQuantity {
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px;
+}
+
+.cart-item-sizeQuantity p {
+    margin: 0;
+    margin-right: 10px;
+}
+
+.cart-item-remove button {
+    margin: 0;
+    background-color: white;
+    border: none;
+    color: red;
+    font-size: 1em;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.cart-item-remove button:hover {
+    text-decoration: underline red;
+}
+
+.cart-page-checkout {
+    flex-basis: 35%;
+    background-color: blue;
+}
+
 
 /* Setting up device breakpoints */
 
