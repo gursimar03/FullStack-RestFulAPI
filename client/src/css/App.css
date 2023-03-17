@@ -484,6 +484,7 @@ header {
     width: 100%;
     display: flex;
     margin-bottom: 10px;
+    overflow-x: scroll;
 }
 
 .contrast-genres>div>img {
@@ -1751,8 +1752,35 @@ select.form-control {
 }
 
 @media only screen and (max-width: 768px) {
+    #filter-bar {
+        flex-basis: 70%;
+        right: 0%;
+    }
 
-    /* mobile filter sort bar */
+    .products {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .functions-left {
+        display: none;
+    }
+
+    .functions-right {
+        flex-basis: 100%;
+    }
+
+    .products-shoe {
+        width:fit-content;
+    }
+
+    .products-shoe img {
+        height: auto;
+    }
+ 
+    .filter-button {
+        display: none;
+    }
 }
 
 @media only screen and (max-width: 1000px) {
