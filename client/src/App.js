@@ -28,6 +28,7 @@ import KidsProducts from "./components/KidProducts";
 import SearchPage from "./components/SearchPage";
 import ErrorPage from "./components/ErrorPage";
 import ScrollToTop from "./ScrollToTop";
+import AdminEdit from "./components/AdminEdit";
 
 
 if (typeof localStorage.accessLevel === "undefined") {
@@ -256,6 +257,7 @@ class App extends React.Component {
                         <Route path='/products/men' element={<MenProducts />}></Route>
                         <Route path="/products/women" element={<WomenProducts />}></Route>
                         <Route path="/products/kids" element={<KidsProducts />}></Route>
+                        <Route path="/products/:id/edit" element={<AdminEdit />}></Route>
                         {/* Page doesn't exist css later */}
                         <Route path="*" element={<ErrorPage />} />
                     </Routes>

@@ -96,4 +96,16 @@ router.get(`/products/:_id`, (req, res) => {
     })
 })
 
+
+router.put(`/products/:_id`, (req, res) => {
+    productsModel.findByIdAndUpdate(req.params._id, req.body, (error, data) => {
+        if (data) {
+            res.json(data)
+        } else {
+            res.json(error)
+        }
+    })
+})
+
+
 module.exports = router
