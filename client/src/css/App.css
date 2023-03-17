@@ -1427,8 +1427,12 @@ select.form-control {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+}
+
+.error-page > * {
+    padding: 10px 0;
 }
 
 .home-favicon {
@@ -1458,6 +1462,19 @@ select.form-control {
     width: 150px;
     height: 150px;
     object-fit: cover;
+}
+
+.cart-btn-container > a {
+    text-decoration: none;
+    color: black;
+}
+
+.cart-btn-container > a > * {
+    font-size: 1.4em;
+}
+
+.cart-btn-container > a:hover {
+    font-size: 1.5em;
 }
 
 .cart-item-info {
@@ -1698,6 +1715,12 @@ select.form-control {
     .shoe-page-container {
         display: flex;
         flex-direction: column;
+    }
+
+    .cart-page-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 
     .footer-content {
