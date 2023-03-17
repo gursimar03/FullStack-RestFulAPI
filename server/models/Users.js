@@ -50,16 +50,7 @@ let usersSchema = new mongoose.Schema(
       default: parseInt(process.env.ACCESS_LEVEL_NORMAL_USER),
       min: 0,
     },
-    profilePhotoFilename: {
-      type: String,
-      default: "",
-      validate: {
-        validator: function (value) {
-          return value.match(/\.(jpg|jpeg|png|gif)$/i);
-        },
-        message: "Invalid file extension for profile photo",
-      },
-    },
+    profilePhotoFilename: {type:String, default:""},
   },
   {
     collection: `Users`,

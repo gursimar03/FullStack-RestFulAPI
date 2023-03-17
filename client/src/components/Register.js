@@ -145,8 +145,8 @@ class Register extends React.Component {
 
                                     </div>
                                     <div>
-                                        <input type="radio" id="non-binary" name="gender" value="non-binary" onChange={this.handleChange} checked={this.state.gender === "non-binary"} />
-                                        <label htmlFor="female">Non-Binary</label>
+                                        <input type="radio" id="other" name="gender" value="other" onChange={this.handleChange} checked={this.state.gender === "non-binary"} />
+                                        <label htmlFor="female">Other</label>
                                     </div>
 
 
