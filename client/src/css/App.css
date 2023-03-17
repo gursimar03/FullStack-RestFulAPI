@@ -1471,10 +1471,6 @@ select.form-control {
     font-size: 1.4em;
 }
 
-.cart-btn-container > a:hover {
-    font-size: 1.5em;
-}
-
 .cart-item-info {
     display: flex;
     flex-direction: column;
