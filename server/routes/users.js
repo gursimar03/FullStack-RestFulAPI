@@ -49,32 +49,64 @@ router.post(`/users/reset_user_collection`, (req, res) => {
   })
 })
 
+// router.post(`/users/register/:name/:surname/:email/:password/:gender`, (req, res) => {
+//   // If a user with this email does not already exist, then create new user
+//   usersModel.findOne({ email: req.params.email }, (uniqueError, uniqueData) => {
+//     if (uniqueData) {
+//       res.json({ errorMessage: `User already exists` })
+//     }
+//     else {
+//       bcrypt.hash(req.params.password, parseInt(process.env.PASSWORD_HASH_SALT_ROUNDS), (err, hash) => {
+//         usersModel.create({ name: req.params.name, surname: req.params.surname, email: req.params.email, password: hash, gender: req.params.gender, profilePhotoFilename: null }, (error, data) => {
+//           if (data) {
+//             const token = jwt.sign({ email: data.email, accessLevel: data.accessLevel }, process.env.JWT_PRIVATE_KEY, { algorithm: 'HS256', expiresIn: process.env.JWT_EXPIRY })
 
-  
-
+//             res.json({ name: data.name, accessLevel: data.accessLevel, token: token, isLoggedIn: true, email: data.email })
+//           }
+//           else {
+//             console.log(error) // Add this line to log the error
+//             res.json({ errorMessage: `User was not registered` })
+//           }
+//         })
+//       })
+//     }
+//   })
+// })
 
 router.post(`/users/register/:name/:surname/:email/:password/:gender`, (req, res) => {
-  // If a user with this email does not already exist, then create new user
-  usersModel.findOne({ email: req.params.email }, (uniqueError, uniqueData) => {
-    if (uniqueData) {
-      res.json({ errorMessage: `User already exists` })
-    }
-    else {
-      bcrypt.hash(req.params.password, parseInt(process.env.PASSWORD_HASH_SALT_ROUNDS), (err, hash) => {
-        usersModel.create({ name: req.params.name, surname: req.params.surname, email: req.params.email, password: hash, gender: req.params.gender, profilePhotoFilename: null }, (error, data) => {
-          if (data) {
-            const token = jwt.sign({ email: data.email, accessLevel: data.accessLevel }, process.env.JWT_PRIVATE_KEY, { algorithm: 'HS256', expiresIn: process.env.JWT_EXPIRY })
+  // Validate input
+  if (!/^[a-zA-Z]+$/.test(req.params.name)) {
+    res.json({ errorMessage: `Name must be a string` })
+  } else if (!/^[a-zA-Z]+$/.test(req.params.surname)) {
+    res.json({ errorMessage: `Surname must be a string` })
+  } else if (!/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(req.params.email)) {
+    res.json({ errorMessage: `Invalid email address` })
+  } else if (req.params.password.length < 6) {
+    res.json({ errorMessage: `Password must be at least 6 characters long` })
+  } else if (!/^(Male|Female|Other)$/i.test(req.params.gender)) {
+    res.json({ errorMessage: `Invalid gender` })
+  } else {
+    // If a user with this email does not already exist, then create new user
+    const email = req.params.email.toLowerCase(); // convert email to lowercase
+    usersModel.findOne({ email: email }, (uniqueError, uniqueData) => {
+      if (uniqueData) {
+        res.json({ errorMessage: `User already exists` })
+      } else {
+        bcrypt.hash(req.params.password, parseInt(process.env.PASSWORD_HASH_SALT_ROUNDS), (err, hash) => {
+          usersModel.create({ name: req.params.name, surname: req.params.surname, email: email, password: hash, gender: req.params.gender, profilePhotoFilename: null }, (error, data) => {
+            if (data) {
+              const token = jwt.sign({ email: data.email, accessLevel: data.accessLevel }, process.env.JWT_PRIVATE_KEY, { algorithm: 'HS256', expiresIn: process.env.JWT_EXPIRY })
 
-            res.json({ name: data.name, accessLevel: data.accessLevel, token: token, isLoggedIn: true, email: data.email})
-          }
-          else {
-            console.log(error) // Add this line to log the error
-            res.json({ errorMessage: `User was not registered` })
-          }
+              res.json({ name: data.name, accessLevel: data.accessLevel, token: token, isLoggedIn: true, email: data.email })
+            } else {
+              console.log(error) // Add this line to log the error
+              res.json({ errorMessage: `User was not registered` })
+            }
+          })
         })
-      })
-    }
-  })
+      }
+    })
+  }
 })
 
 router.post(`/users/login/:email/:password`, (req, res) => {
@@ -98,6 +130,7 @@ router.post(`/users/login/:email/:password`, (req, res) => {
     }
   })
 })
+
 
 router.post(`/users/logout`, (req, res) => {
   res.json({})
@@ -160,7 +193,7 @@ router.put('/users/password/:email', (req, res) => {
           }
 
           //then update the password in the database
-          usersModel.findOneAndUpdate({ email: req.params.email }, { $set: { password: hash } }, (error, data) => {        
+          usersModel.findOneAndUpdate({ email: req.params.email }, { $set: { password: hash } }, (error, data) => {
             if (error) {
               console.log(error);
               res.json({ errorMessage: 'An error occurred. Please try again.' });
