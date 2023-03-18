@@ -17,11 +17,9 @@ class FilterBar extends React.Component {
         this.setState({[e.target.className]: !this.state[e.target.className]},
             () => {
                 if (this.state[e.target.className]) {
-                    box.style.height = "auto";
-                    box.style.transition = "0.5s ease-in-out";
+                    box.style.maxHeight = "5000px";
                 } else {
-                    box.style.height = "0";
-                    box.style.transition = "0.5s ease-in-out";
+                    box.style.maxHeight = "0px";
                 }
         });
 

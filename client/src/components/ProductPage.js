@@ -41,6 +41,14 @@ export default class ProductPage extends Component {
 
     }
 
+    productAddedToCartIdentifier = () => {
+        const productAddedToCartIdentifier = document.querySelector(".prouct-added-to-cart-identifier");
+        productAddedToCartIdentifier.style.right = "0px";
+        setTimeout(() => {
+            productAddedToCartIdentifier.style.right = "-5000px";
+        }, 2000)
+    }
+
 
     handlePrevClick = () => {
         const { activeIndex } = this.state;
@@ -73,11 +81,11 @@ export default class ProductPage extends Component {
         }
 
         if (localStorage.acessLevel !== 0) {
-            this.props.handleCartSize(this.state.selected.quantity);
             axios.post(`${SERVER_HOST}/cart/${this.state.product["_id"]}/${this.state.selected.size}/${this.state.selected.quantity}/${localStorage.email}`)
                 .then(res => {
                     console.log(res)
-
+                    this.props.handleCartSize(this.state.selected.quantity);
+                    this.productAddedToCartIdentifier();
                 })
         } else {
 
@@ -155,6 +163,9 @@ export default class ProductPage extends Component {
         const { activeIndex } = this.state;
         return (
             <div>
+                <div className="prouct-added-to-cart-identifier">
+                    <p>Product Added to Cart</p>
+                </div>
                 <ScrollToTop />
                 <div className="shoe-page-container">
                     <div className="shoe-page-container-left">

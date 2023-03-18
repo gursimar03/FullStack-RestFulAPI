@@ -63,7 +63,6 @@ class AllProducts extends Component {
                         <label htmlFor="client">Client View</label>
 
                         </div>
-                       {this.state.clientView ? 
                             <div className="products">
                                 {this.state.products.map(product =>
                                     <div className="products-shoe" key={product._id}>
@@ -72,6 +71,12 @@ class AllProducts extends Component {
                                                 <img src={product.productImage} alt={product.name} />
                                             </Link>
                                         </div>
+                                        { !this.state.clientView ? <div className="admin-btns">
+                                            <Link to={`/products/${product._id}/edit`}>
+                                                <button className="edit-btn">Edit</button>
+                                            </Link>
+                                            <button className="delete-btn">Delete</button>
+                                            </div> : " "}
                                         <div className="product-info">
                                             <p>{product.name}</p>
                                             <p>{`€${product.price}`}</p>
@@ -79,7 +84,7 @@ class AllProducts extends Component {
                                     </div>
                                 )}
                             </div>
-                        : null}
+                     
                     </div> 
                 </div>
             )
