@@ -484,6 +484,7 @@ header {
     width: 100%;
     display: flex;
     margin-bottom: 10px;
+    overflow-x: scroll;
 }
 
 .contrast-genres>div>img {
@@ -1577,6 +1578,18 @@ select.form-control {
     text-decoration: underline;
   }
   
+  .prouct-added-to-cart-identifier {
+    position: fixed;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 9999;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    bottom: 10px;
+    right: -5000px;
+    transition: right 0.5s ease-in-out;
+  }
 
 
 
@@ -1739,8 +1752,35 @@ select.form-control {
 }
 
 @media only screen and (max-width: 768px) {
+    #filter-bar {
+        flex-basis: 70%;
+        right: 0%;
+    }
 
-    /* mobile filter sort bar */
+    .products {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .functions-left {
+        display: none;
+    }
+
+    .functions-right {
+        flex-basis: 100%;
+    }
+
+    .products-shoe {
+        width:fit-content;
+    }
+
+    .products-shoe img {
+        height: auto;
+    }
+ 
+    .filter-button {
+        display: none;
+    }
 }
 
 @media only screen and (max-width: 1000px) {
