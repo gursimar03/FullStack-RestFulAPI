@@ -137,7 +137,8 @@ router.post(`/users/login/:email/:password`, (req, res) => {
   } else if (req.params.password.length < 8) {
     res.json({ errorMessage: `Password must be at least 8 characters long` })
   } else {
-    usersModel.findOne({ email: req.params.email }, (error, data) => {
+    const email = req.params.email.toLowerCase(); // convert email to lowercase
+    usersModel.findOne({ email: email }, (error, data) => {
       if (data) {
         bcrypt.compare(req.params.password, data.password, (err, result) => {
           if (result) {
