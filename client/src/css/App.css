@@ -618,9 +618,9 @@ form {
     flex-basis: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
+
+  
 
 .search-btn {
     cursor: pointer;
@@ -1559,6 +1559,9 @@ select.form-control {
 
 .cart-page-checkout {
     flex-basis: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .cart-page-checkout-total {
