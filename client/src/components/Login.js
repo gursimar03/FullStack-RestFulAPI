@@ -61,11 +61,6 @@ class Login extends React.Component {
         const password = details.sub;
 
         this.setState({email: email, password: password}, this.handleSubmit)
-        // const email = details.email
-        // const password = "00000000";
-        console.log(details)
-        // axios.post(`${SERVER_HOST}/users/login/${this.state.email}/${this.state.password}`)
-        // window.location.replace(`http://localhost:3000/`)
 
     }
     googleError = (error) => {
