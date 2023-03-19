@@ -7,14 +7,13 @@ import { SERVER_HOST } from "../config/global_constants";
 
 //Paypall
 
-import {SANDBOX_CLIENT_ID } from "../config/global_constants"
+import { SANDBOX_CLIENT_ID } from "../config/global_constants"
 import PayPalMessage from "./PayPalMessage"
 import { PayPalButtons } from "@paypal/react-paypal-js"
 import { PayPalScriptProvider } from "@paypal/react-paypal-js"
-
-
-
 import ScrollToTop from "../ScrollToTop";
+import emailjs from 'emailjs-com';
+
 
 
 class Cart extends React.Component {
@@ -28,32 +27,83 @@ class Cart extends React.Component {
     }
 
 
-    createOrder = (data, actions) => 
-    {
-        return actions.order.create({purchase_units:[{amount:{value:parseFloat(this.state.productsInCart.reduce((a, b) => a + (b.product_price * b.product_quantity), 0)).toFixed(2)}}]})
+    createOrder = (data, actions) => {
+        return actions.order.create({ purchase_units: [{ amount: { value: parseFloat(this.state.productsInCart.reduce((a, b) => a + (b.product_price * b.product_quantity), 0)).toFixed(2) } }] })
     }
-    
-    
-    onApprove = paymentData =>
-    {      
-    
-        
-       axios.post(`${SERVER_HOST}/cart/checkout`, paymentData).then(res => {
-              console.log(res)
-         })
-    
+
+    sendConfirmationEmail = (userEmail, orderDetails) => {
+        const emailServiceId = 'service_9fv842g';
+        const emailTemplateId = 'template_ncymqlu';
+        const emailUserId = 'tJvfyyQkDDB_UcRss';
+        const emailTemplateParams = {
+            userEmail: userEmail,
+            orderDetails: orderDetails
+        };
+
+        emailjs.send(emailServiceId, emailTemplateId, emailTemplateParams, emailUserId)
+            .then((response) => {
+                console.log('SUCCESS!', response.status, response.text);
+            }, (err) => {
+                console.log('FAILED...', err);
+            });
+
+
+    onApprove = async (paymentData, actions) => {
+        const totalPrice = parseFloat(
+            this.state.productsInCart.reduce((a, b) => a + b.product_price * b.product_quantity, 0)
+        ).toFixed(2);
+
+        const order = await actions.order.capture();
+
+        const data = {
+            paypalPaymentID: order.id,
+            user_email: localStorage.email,
+            product_array: this.state.productsInCart,
+            price: totalPrice,
+            product_date: new Date(),
+        };
+
+        axios
+            .post(`${SERVER_HOST}/cart/checkout`, data)
+            .then((res) => {
+                console.log("PayPal payment success");
+                console.log(res);
+                // Send confirmation email
+                const userEmail = localStorage.email;
+                const orderDetails = this.state.productsInCart.map((product) => {
+                    return `${product.product_name} - ${product.product_quantity} x $${product.product_price}`;
+                }).join(', ');
+                this.sendConfirmationEmail(userEmail, orderDetails);
+                this.state.productsInCart.forEach((product) => {
+                    axios
+                        .delete(`${SERVER_HOST}/cart/${product.databaseID}/${localStorage.email}`)
+                        .then((res) => {
+                            console.log(res);
+                            //reload the page
+                            setTimeout(() => {
+                                window.location.reload();
+                            }, 3000);
+                        })
+                        .catch((err) => {
+                            console.log(err);
+                        });
+                });
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    };
+
+
+
+
+    onError = errorData => {
+        console.log("PayPal payment error")
     }
- 
-        
-    onError = errorData => 
-    {
-        console.log("PayPal payment error")         
-    }
-    
-    
-    onCancel = cancelData => 
-    {
-        console.log("PayPal payment cancelled")      
+
+
+    onCancel = cancelData => {
+        console.log("PayPal payment cancelled")
     }
 
 
@@ -61,7 +111,7 @@ class Cart extends React.Component {
         if (this.fetchCart) {
             let total_price = 0;
             this.state.cart.map((product) => {
-              
+
                 total_price += product.price;
             })
             this.setState({
@@ -84,9 +134,9 @@ class Cart extends React.Component {
                         this.state.cart.forEach((product) => {
                             const databaseID = product[0];
                             const id = product[0].substring(0, 24);
-                            const size = parseFloat(product[0].substring(24, product[0].length));           
+                            const size = parseFloat(product[0].substring(24, product[0].length));
                             const getProduct = async () => {
-                               await axios.get(`${SERVER_HOST}/products/${id}`)
+                                await axios.get(`${SERVER_HOST}/products/${id}`)
                                     .then(res => {
                                         if (res.data.errorMessage) {
                                             console.log(res.data.errorMessage)
@@ -94,28 +144,28 @@ class Cart extends React.Component {
 
 
                                             this.setState(prevState => ({
-                                                productsInCart: [...prevState.productsInCart, 
-                                                    {
-                                                        databaseID: databaseID,
-                                                        product_id: res.data._id,
-                                                        product_name: res.data.name,
-                                                        product_gender: res.data.age,
-                                                        product_image: res.data.productImage,
-                                                        product_price: res.data.price,
-                                                        product_quantity: product[1],
-                                                        product_size: size,
-                                                        product_brand: res.data.brand,
-                                                        product_color: res.data.color,
-                                                    }
+                                                productsInCart: [...prevState.productsInCart,
+                                                {
+                                                    databaseID: databaseID,
+                                                    product_id: res.data._id,
+                                                    product_name: res.data.name,
+                                                    product_gender: res.data.age,
+                                                    product_image: res.data.productImage,
+                                                    product_price: res.data.price,
+                                                    product_quantity: product[1],
+                                                    product_size: size,
+                                                    product_brand: res.data.brand,
+                                                    product_color: res.data.color,
+                                                }
                                                 ]
                                             }))
                                         }
                                     })
                             }
                             getProduct().then(() => {
-                               
+
                             });
-                            
+
                         })
                     })
                 }
@@ -127,7 +177,7 @@ class Cart extends React.Component {
 
     handleRemoveFromCart = (e) => {
         const id = e.target.value;
-        
+
         axios.delete(`${SERVER_HOST}/cart/${id}/${localStorage.email}`)
             .then(res => {
                 if (res.data.errorMessage) {
@@ -153,7 +203,7 @@ class Cart extends React.Component {
             <div className="cart-page-container">
                 <ScrollToTop />
                 <div className="cart-page-items">
-                    {this.state.productsInCart.map((product) => 
+                    {this.state.productsInCart.map((product) =>
                         <div className="cart-item" key={product.databaseID}>
                             <div className="cart-item-image">
                                 <img src={product.product_image} alt="product" />
@@ -164,7 +214,7 @@ class Cart extends React.Component {
                                     <p className="cart-item-price">€{product.product_price}</p>
                                 </div>
                                 <div className="cart-item-gender">
-                                    <p>{product.product_gender}</p> 
+                                    <p>{product.product_gender}</p>
                                 </div>
                                 <div className="cart-item-sizeQuantity">
                                     <p>Size  {product.product_size}</p>
@@ -185,9 +235,12 @@ class Cart extends React.Component {
                         </p>
                     </div>
                     <div className="cart-page-checkout-button">
-                        <PayPalScriptProvider options={{currency:"EUR", "client-id":SANDBOX_CLIENT_ID }}>
-                    <PayPalButtons style={{layout: "horizontal"}} createOrder={this.createOrder} onApprove={this.onApprove} onError={this.onError} onCancel={this.onCancel}/>
-                </PayPalScriptProvider>
+
+                        <h1>Paypal Button Here</h1>
+                        <PayPalScriptProvider options={{ currency: "EUR", "client-id": SANDBOX_CLIENT_ID }}>
+                            <PayPalButtons style={{ layout: "horizontal" }} createOrder={this.createOrder} onApprove={this.onApprove} onError={this.onError} onCancel={this.onCancel} />
+                        </PayPalScriptProvider>
+
                     </div>
                 </div>
             </div>

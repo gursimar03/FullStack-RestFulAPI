@@ -30,7 +30,11 @@ import SearchPage from "./components/SearchPage";
 import ErrorPage from "./components/ErrorPage";
 import ScrollToTop from "./ScrollToTop";
 import Cart from "./components/Cart";
+
+import Orders from "./components/Orders";
+
 import DeleteProduct from "./components/DeleteProduct";
+
 
 
 if (typeof localStorage.accessLevel === "undefined") {
@@ -257,6 +261,7 @@ class App extends React.Component {
                         <Route path='/products/men' element={<MenProducts />}></Route>
                         <Route path="/products/women" element={<WomenProducts />}></Route>
                         <Route path="/products/kids" element={<KidsProducts />}></Route>
+                        <Route path="/orders" element={<Orders />}></Route>
                         <Route path="/cart" element={<Cart products={this.state.productsData} />}></Route>
                         <Route path="*" element={<ErrorPage />} />
                         <Route exact path="/DeleteProduct/:id" component={DeleteProduct} />
