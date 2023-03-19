@@ -614,11 +614,51 @@ form {
     display: flex;
 }
 
+.footer-links {
+    display: flex;
+    flex-direction: row !important;
+    justify-content: space-around;
+}
+
+.footer-content-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.footer-content-left h3 {
+    font-size: 1.5em;
+    font-weight: 800;
+    font-family: var(--main-font);
+    margin: 0;
+    padding-inline-start: 5.85em;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links ul li {
+    margin: 10px 0;
+}
+
+.footer-links ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-links ul li a:hover {
+    color: rgb(228, 132, 132);
+}
+
+
 .footer-content>div {
     flex-basis: 50%;
     display: flex;
     flex-direction: column;
 }
+
 
   
 

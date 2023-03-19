@@ -11,7 +11,8 @@ import { GrCart } from 'react-icons/gr';
 import { RxHamburgerMenu, RxCross1 } from 'react-icons/rx';
 import { VscAccount } from 'react-icons/vsc';
 import { FiHelpCircle } from 'react-icons/fi';
-import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
+import { FacebookShareButton, TwitterShareButton, WhatsappShareButton } from "react-share";
+import { FaFacebook, FaTwitter, FaWhatsapp } from 'react-icons/fa';
 
 //components
 import HomePage from "./components/HomePage";
@@ -145,6 +146,7 @@ class App extends React.Component {
 
 
     render() {
+        const shareUrl = window.location.href;
         return (
             <div className="App">
                 <ScrollToTop />
@@ -274,7 +276,8 @@ class App extends React.Component {
                 <footer className="constant-footer">
                     <div className="footer-content">
                         <div className="footer-content-left">
-                            <h3>Links</h3>
+                            <h3>Not Nike</h3>
+                            <div className="footer-links">
                             <ul>
                                 <li><a href="#">Home</a></li>
                                 <li><a href="#">About Us</a></li>
@@ -287,13 +290,19 @@ class App extends React.Component {
                                 <li><a href="/products/women">Shop Womens'</a></li>
                                 <li><a href="/products/kids">Shop Kids</a></li>
                             </ul>
+                            </div>
                             <div class="social-links">
-                                <ul>
-                                    <li><a href="#"><FaFacebookF /></a></li>
-                                    <li><a href="#"><FaTwitter /></a></li>
-                                    <li><a href="#"><FaInstagram /></a></li>
-
-                                </ul>
+                            <div className="share-buttons">
+                            <FacebookShareButton url={shareUrl} title="Share on Facebook">
+                                <FaFacebook size={24} title="Share on Facebook"/>
+                            </FacebookShareButton>
+                            <TwitterShareButton url={shareUrl} title="Share on Twitter">
+                                <FaTwitter size={24} title="Share on Twitter"/>
+                            </TwitterShareButton>
+                            <WhatsappShareButton url={shareUrl} title="Share on Whatsapp">
+                                <FaWhatsapp size={24} title="Share on Whatsapp"/>
+                            </WhatsappShareButton>
+                        </div>
                             </div>
                         </div>
                         <div className="contact-us-container">
