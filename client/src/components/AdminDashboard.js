@@ -10,9 +10,9 @@ class AllProducts extends Component {
         super(props)
         this.state = {
             products: [],
-            clientView:false,
-            email:localStorage.email,
-            level:0
+            clientView: false,
+            email: localStorage.email,
+            level: 0
         }
     }
 
@@ -31,7 +31,7 @@ class AllProducts extends Component {
                     }
                     else // user successfully logged in
                     {
-                    
+
                     }
                 }
                 else {
@@ -42,26 +42,67 @@ class AllProducts extends Component {
 
     handleClientView = () => {
 
-        this.setState({ clientView : !this.state.clientView})
+        this.setState({ clientView: !this.state.clientView })
 
     }
 
 
-    handleDelete = (e) => {
+    // handleDelete = (e) => {
 
-        e.preventDefault()
-        axios.delete(`${SERVER_HOST}/product/${e.value}`, {headers:{"authorization":localStorage.token}})
-        .then(res => 
-        {            
-            this.setState({redirect:true})   
-            console.log(res.data)         
-        })
-        .catch(err =>
-        {
-            console.log(err)
-        })
-    
-    }
+    //     e.preventDefault()
+    //     axios.delete(`${SERVER_HOST}/product/${e.value}`, {headers:{"authorization":localStorage.token}})
+    //     .then(res => 
+    //     {            
+    //         this.setState({redirect:true})   
+    //         console.log(res.data)         
+    //     })
+    //     .catch(err =>
+    //     {
+    //         console.log(err)
+    //     })
+
+    // }
+    // handleDelete = (e) => {
+    //     e.preventDefault();
+    //     const productId = e.value;
+    //     if (productId) {
+    //       if (window.confirm("Are you sure you want to delete this product?")) {
+    //         axios
+    //           .delete(`${SERVER_HOST}/product/${productId}`, {
+    //             headers: { authorization: localStorage.token },
+    //           })
+    //           .then((res) => {
+    //             this.setState({ redirect: true });
+    //             console.log(res.data);
+    //           })
+    //           .catch((err) => {
+    //             console.log(err);
+    //           });
+    //       }
+    //     } else {
+    //       console.log("Product id is undefined");
+    //     }
+    //   };
+
+    handleDelete = (productId) => {
+        if (window.confirm("Are you sure you want to delete this product?")) {
+            axios
+                .delete(`${SERVER_HOST}/product/${productId}`, {
+                    headers: { authorization: localStorage.token },
+                })
+                .then((res) => {
+                    this.setState({ redirect: true });
+                    console.log(res.data);
+                    window.location.reload();
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+        }
+    };
+
+
+
 
     render() {
         if (this.state.products.length === 0) {
@@ -76,34 +117,35 @@ class AllProducts extends Component {
                     <ScrollToTop />
                     <div className="products-container">
                         <div className="filter-bar">
-                        <input type="checkbox" name="client" onClick={this.handleClientView}/>
-                        <label htmlFor="client">Client View</label>
+                            <input type="checkbox" name="client" onClick={this.handleClientView} />
+                            <label htmlFor="client">Client View</label>
 
                         </div>
-                            <div className="products">
-                                {this.state.products.map(product =>
-                                    <div className="products-shoe" key={product._id}>
-                                        <div className="product-image">
-                                            <Link to={`/products/${product._id}`}>
-                                                <img src={product.productImage} alt={product.name} />
-                                            </Link>
-                                        </div>
-                                        { !this.state.clientView ? <div className="admin-btns">
-                                            <Link to={`/products/${product._id}/edit`}>
-                                                <button className="edit-btn">Edit</button>
-                                            </Link>
-                                            <Link className="del-btn" to={"/DeleteProduct/" + product._id}>Delete</Link>
-                                            <button className="del-btn" value={product._id} onClick={this.handleDelete}>Delete</button>
-                                            </div> : " "}
-                                        <div className="product-info">
-                                            <p>{product.name}</p>
-                                            <p>{`€${product.price}`}</p>
-                                        </div>
+                        <div className="products">
+                            {this.state.products.map(product =>
+                                <div className="products-shoe" key={product._id}>
+                                    <div className="product-image">
+                                        <Link to={`/products/${product._id}`}>
+                                            <img src={product.productImage} alt={product.name} />
+                                        </Link>
                                     </div>
-                                )}
-                            </div>
-                     
-                    </div> 
+                                    {!this.state.clientView ? <div className="admin-btns">
+                                        <Link to={`/products/${product._id}/edit`}>
+                                            <button className="edit-btn">Edit</button>
+                                        </Link>
+                                        {/* <Link className="del-btn" to={"/DeleteProduct/" + product._id}>Delete</Link> */}
+                                        {/* <button className="del-btn" value={product._id} onClick={this.handleDelete}>Delete</button> */}
+                                        <button className="del-btn" onClick={() => this.handleDelete(product._id)}>Delete</button>
+                                    </div> : " "}
+                                    <div className="product-info">
+                                        <p>{product.name}</p>
+                                        <p>{`€${product.price}`}</p>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+
+                    </div>
                 </div>
             )
         }
