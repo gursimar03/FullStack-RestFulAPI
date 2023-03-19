@@ -21,7 +21,7 @@ class Cart extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            cart: [], //the users cart
+            cart: [], //the users cart from the database
             productsInCart: [],
             total_price: 0,
         }

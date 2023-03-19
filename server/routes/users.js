@@ -76,21 +76,21 @@ router.post(`/users/reset_user_collection`, (req, res) => {
 router.post(`/users/register/:name/:surname/:email/:password/:gender`, (req, res) => {
   // Validate input
   if (!/^[a-zA-Z]+$/.test(req.params.name)) {
-    res.json({ errorMessage: `Name must be a string` })
+    res.json({ errorMessage: `Name must be a string`, clientMessage: `Name must be a string` })
   } else if (!/^[a-zA-Z]+$/.test(req.params.surname)) {
-    res.json({ errorMessage: `Surname must be a string` })
+    res.json({ errorMessage: `Surname must be a string` , clientMessage: `Surname must be a string` })
   } else if (!/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(req.params.email)) {
-    res.json({ errorMessage: `Invalid email address` })
-  } else if (req.params.password.length < 6) {
-    res.json({ errorMessage: `Password must be at least 6 characters long` })
-  } else if (!/^(Male|Female|Other)$/i.test(req.params.gender)) {
-    res.json({ errorMessage: `Invalid gender` })
+    res.json({ errorMessage: `Invalid email address`, clientMessage: `Invalid email address` })
+  } else if (req.params.password.length < 8) {
+    res.json({ errorMessage: `Password must be at least 8 characters long` , clientMessage: `Password must be at least 8 characters long` })
+  } else if (!/^(Male|Female|Other|non-binary)$/i.test(req.params.gender)) {
+    res.json({ errorMessage: `Invalid gender` , clientMessage: `Invalid gender` })
   } else {
     // If a user with this email does not already exist, then create new user
     const email = req.params.email.toLowerCase(); // convert email to lowercase
     usersModel.findOne({ email: email }, (uniqueError, uniqueData) => {
       if (uniqueData) {
-        res.json({ errorMessage: `User already exists` })
+        res.json({ errorMessage: `User already exists` , clientMessage: `User already exists` })
       } else {
         bcrypt.hash(req.params.password, parseInt(process.env.PASSWORD_HASH_SALT_ROUNDS), (err, hash) => {
           usersModel.create({ name: req.params.name, surname: req.params.surname, email: email, password: hash, gender: req.params.gender, profilePhotoFilename: null }, (error, data) => {
@@ -100,7 +100,7 @@ router.post(`/users/register/:name/:surname/:email/:password/:gender`, (req, res
               res.json({ name: data.name, accessLevel: data.accessLevel, token: token, isLoggedIn: true, email: data.email })
             } else {
               console.log(error) // Add this line to log the error
-              res.json({ errorMessage: `User was not registered` })
+              res.json({ errorMessage: `User was not registered`, clientMessage: `User was not registered` })
             }
           })
         })
@@ -109,26 +109,55 @@ router.post(`/users/register/:name/:surname/:email/:password/:gender`, (req, res
   }
 })
 
+// router.post(`/users/login/:email/:password`, (req, res) => {
+//   usersModel.findOne({ email: req.params.email }, (error, data) => {
+//     if (data) {
+//       bcrypt.compare(req.params.password, data.password, (err, result) => {
+//         if (result) {
+//           const token = jwt.sign({ email: data.email, accessLevel: data.accessLevel }, process.env.JWT_PRIVATE_KEY, { algorithm: 'HS256', expiresIn: process.env.JWT_EXPIRY })
+
+//           res.json({ name: data.name, accessLevel: data.accessLevel, token: token, isLoggedIn: true, email: data.email, profilePhoto: data.profilePhotoFilename })
+
+//         }
+//         else {
+//           res.json({ errorMessage: `User is not logged in` })
+//         }
+//       })
+//     }
+//     else {
+//       console.log("not found in db")
+//       res.json({ errorMessage: `User is not logged in`, clientMessage: 'The Email Address Or Password Is Incorrect.' })
+//     }
+//   })
+// })
+
 router.post(`/users/login/:email/:password`, (req, res) => {
-  usersModel.findOne({ email: req.params.email }, (error, data) => {
-    if (data) {
-      bcrypt.compare(req.params.password, data.password, (err, result) => {
-        if (result) {
-          const token = jwt.sign({ email: data.email, accessLevel: data.accessLevel }, process.env.JWT_PRIVATE_KEY, { algorithm: 'HS256', expiresIn: process.env.JWT_EXPIRY })
+  if (!/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(req.params.email)) {
+    res.json({ errorMessage: `Invalid email address` })
+  } else if (req.params.password.length < 8) {
+    res.json({ errorMessage: `Password must be at least 8 characters long` })
+  } else {
+    const email = req.params.email.toLowerCase(); // convert email to lowercase
+    usersModel.findOne({ email: email }, (error, data) => {
+      if (data) {
+        bcrypt.compare(req.params.password, data.password, (err, result) => {
+          if (result) {
+            const token = jwt.sign({ email: data.email, accessLevel: data.accessLevel }, process.env.JWT_PRIVATE_KEY, { algorithm: 'HS256', expiresIn: process.env.JWT_EXPIRY })
 
-          res.json({ name: data.name, accessLevel: data.accessLevel, token: token, isLoggedIn: true, email: data.email, profilePhoto: data.profilePhotoFilename })
+            res.json({ name: data.name, accessLevel: data.accessLevel, token: token, isLoggedIn: true, email: data.email, profilePhoto: data.profilePhotoFilename })
 
-        }
-        else {
-          res.json({ errorMessage: `User is not logged in` })
-        }
-      })
-    }
-    else {
-      console.log("not found in db")
-      res.json({ errorMessage: `User is not logged in`, clientMessage: 'The Email Address Or Password Is Incorrect.' })
-    }
-  })
+          }
+          else {
+            res.json({ errorMessage: `User is not logged in` })
+          }
+        })
+      }
+      else {
+        console.log("not found in db")
+        res.json({ errorMessage: `User is not logged in`, clientMessage: 'The Email Address Or Password Is Incorrect.' })
+      }
+    })
+  }
 })
 
 
@@ -136,10 +165,25 @@ router.post(`/users/logout`, (req, res) => {
   res.json({})
 })
 
+// router.get(`/users/profile/:email`, (req, res) => {
+//   usersModel.findOne({ email: req.params.email }, (error, data) => {
+//     res.json(data)
+//   })
+// })
+
 router.get(`/users/profile/:email`, (req, res) => {
-  usersModel.findOne({ email: req.params.email }, (error, data) => {
-    res.json(data)
-  })
+  // Validate email parameter
+  if (!/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(req.params.email)) {
+    res.json({ errorMessage: `Invalid email address` })
+  } else {
+    usersModel.findOne({ email: req.params.email }, (error, data) => {
+      if (data) {
+        res.json(data)
+      } else {
+        res.json({ errorMessage: `User not found` })
+      }
+    })
+  }
 })
 
 router.put('/users/password/:email', (req, res) => {
@@ -212,6 +256,34 @@ router.put('/users/password/:email', (req, res) => {
   });
 });
 
+// router.put('/users/profile/:email', upload.single('profilePhoto'), (req, res) => {
+//   // Get the updated profile information from the request body
+//   const updatedProfile = {
+//     name: req.body.name,
+//     surname: req.body.surname,
+//     email: req.body.email,
+//     gender: req.body.gender
+//   }
+
+//   if (req.file) {
+//     console.log(req.file.path);
+//     updatedProfile.profilePhotoFilename = fs.readFileSync(req.file.path, 'base64');
+//   }
+
+//   // Update the user's profile in the database
+//   usersModel.findOneAndUpdate({ email: req.params.email }, { $set: { ...updatedProfile } }, (error, data) => {
+//     if (data) {
+//       const token = jwt.sign({ email: updatedProfile.email, accessLevel: data.accessLevel }, process.env.JWT_PRIVATE_KEY, { algorithm: 'HS256', expiresIn: process.env.JWT_EXPIRY })
+//       res.json({ name: updatedProfile.name, email: updatedProfile.email, accessLevel: data.accessLevel, profilePhoto: updatedProfile.profilePhotoFilename, token: token, isLoggedIn: true })
+//     }
+//     else {
+//       res.json({ errorMessage: `Failed to update profile` })
+//     }
+//   })
+// });
+
+const allowedMimeTypes = ['image/jpeg', 'image/png', 'image/gif'];
+
 router.put('/users/profile/:email', upload.single('profilePhoto'), (req, res) => {
   // Get the updated profile information from the request body
   const updatedProfile = {
@@ -222,6 +294,10 @@ router.put('/users/profile/:email', upload.single('profilePhoto'), (req, res) =>
   }
 
   if (req.file) {
+    if (!allowedMimeTypes.includes(req.file.mimetype)) {
+      return res.status(400).json({ errorMessage: 'Invalid file type. Please upload an image in JPEG, PNG, or GIF format.' });
+    }
+    
     console.log(req.file.path);
     updatedProfile.profilePhotoFilename = fs.readFileSync(req.file.path, 'base64');
   }
@@ -237,6 +313,7 @@ router.put('/users/profile/:email', upload.single('profilePhoto'), (req, res) =>
     }
   })
 });
+
 
 router.delete('/users/delete-account/:email', (req, res) => {
   const email = req.params.email;

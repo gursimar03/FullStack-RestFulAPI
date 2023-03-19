@@ -16,20 +16,55 @@ class Login extends React.Component {
             password: "",
             clientMessage: '',
             googleUser: null,
+            emailErrorMessage: "",
         }
     }
 
+    // handleChange = (e) => {
+    //     this.setState({ [e.target.name]: e.target.value })
+    // }
+
+    // handleChange = (e) => {
+    //     if (e.target.name === "email") {
+    //       this.setState({ [e.target.name]: e.target.value.toLowerCase() });
+    //     } else {
+    //       this.setState({ [e.target.name]: e.target.value });
+    //     }
+    //   };
+
     handleChange = (e) => {
-        this.setState({ [e.target.name]: e.target.value })
-    }
+        if (e.target.name === "email") {
+            const email = e.target.value.toLowerCase();
+            const emailErrorMessage = this.validateEmail(email);
+            this.setState({ email: email, emailErrorMessage: emailErrorMessage });
+        } else {
+            this.setState({ [e.target.name]: e.target.value });
+        }
+    };
+
+
+    //function to validate email and return error message
+    validateEmail = (email) => {
+        let emailErrorMessage = "";
+        if (!email) {
+            emailErrorMessage = "Please enter your email";
+        } else if (!/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(email)) {
+            emailErrorMessage = "Please enter a valid email";
+        }
+        return emailErrorMessage;
+    };
 
     handleSubmit = () => {
+        if (!this.state.email || !this.state.password) {
+            this.setState({ clientMessage: "Please enter your email and password" });
+            return;
+        }
         axios.post(`${SERVER_HOST}/users/login/${this.state.email}/${this.state.password}`)
             .then(res => {
                 if (res.data) {
                     if (res.data.errorMessage) {
                         console.log(res.data.errorMessage)
-                        this.setState({clientMessage: res.data.clientMessage}, ()=>{
+                        this.setState({ clientMessage: res.data.clientMessage }, () => {
                             console.log(this.state)
                         })
                     }
@@ -55,12 +90,13 @@ class Login extends React.Component {
     }
 
     googleResponse = (response) => {
-        const details  = jwtDecode(response.credential);
+        const details = jwtDecode(response.credential);
 
         const email = details.email;
         const password = details.sub;
 
-        this.setState({email: email, password: password}, this.handleSubmit)
+
+        this.setState({ email: email, password: password }, this.handleSubmit)
         // const email = details.email
         // const password = "00000000";
         console.log(details)
@@ -92,6 +128,7 @@ class Login extends React.Component {
                                     value={this.state.email}
                                     onChange={this.handleChange}
                                 />
+                                <p style={{ margin: 0, color: 'red' }}>{this.state.emailErrorMessage ? this.state.emailErrorMessage : null}</p>
                                 <input
                                     type="password"
                                     name="password"
@@ -100,7 +137,7 @@ class Login extends React.Component {
                                     value={this.state.password}
                                     onChange={this.handleChange}
                                 />
-                                <p style={{margin: 0, color: 'red'}}>{this.state.clientMessage ? this.state.clientMessage : null}</p>
+                                <p style={{ margin: 0, color: 'red' }}>{this.state.clientMessage ? this.state.clientMessage : null}</p>
                             </div>
                             <div className="login-btn-container">
                                 <LinkInClass value="Login" className="login-button" onClick={this.handleSubmit} />

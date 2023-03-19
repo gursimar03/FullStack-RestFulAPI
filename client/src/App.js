@@ -256,12 +256,10 @@ class App extends React.Component {
                         <Route path="/products/women" element={<WomenProducts />}></Route>
                         <Route path="/products/kids" element={<KidsProducts />}></Route>
                         <Route path="/cart" element={<Cart products={this.state.productsData} />}></Route>
-                        {/* Page doesn't exist css later */}
                         <Route path="*" element={<ErrorPage />} />
                     </Routes>
                     <SearchPage openSearchPage={this.openSearchPage} handleSearch={this.handleSearch} productsData={this.state.productsData} />
                 </BrowserRouter>
-                {/* keep these constant at bottom of page */}
                 <footer className="constant-footer">
                     <div className="footer-content">
                         <div className="footer-content-left">
@@ -269,7 +267,6 @@ class App extends React.Component {
                         </div>
                         <div className="contact-us-container">
                             <div className="contact-us">
-                                {/* create a contact us form */}
                                 <h2 id="contacth1">Contact Us</h2>
                                 <p>
                                     If you have any questions or concerns, please contact us using the form below.
