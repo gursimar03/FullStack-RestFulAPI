@@ -130,15 +130,7 @@ router.get(`/shoes/kids`, (req, res) => {
     })
 })
 
-// router.get(`/products/:_id`, (req, res) => {
-//     productsModel.findById(req.params._id, (error, data) => {
-//         if (data) {
-//             res.json(data)
-//         } else {
-//             res.json(error)
-//         }
-//     })
-// })
+
 router.get(`/products/:_id`, (req, res) => {
     productsModel.findById(req.params._id, (error, data) => {
         if (error) {
@@ -150,5 +142,17 @@ router.get(`/products/:_id`, (req, res) => {
         res.json(data)
     })
 })
+
+
+router.put(`/products/:_id`, (req, res) => {
+    productsModel.findByIdAndUpdate(req.params._id, req.body, (error, data) => {
+        if (data) {
+            res.json(data)
+        } else {
+            res.json(error)
+        }
+    })
+})
+
 
 module.exports = router
