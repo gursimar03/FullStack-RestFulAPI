@@ -19,17 +19,29 @@ class Login extends React.Component {
         }
     }
 
+    // handleChange = (e) => {
+    //     this.setState({ [e.target.name]: e.target.value })
+    // }
+
     handleChange = (e) => {
-        this.setState({ [e.target.name]: e.target.value })
-    }
+        if (e.target.name === "email") {
+          this.setState({ [e.target.name]: e.target.value.toLowerCase() });
+        } else {
+          this.setState({ [e.target.name]: e.target.value });
+        }
+      };
 
     handleSubmit = () => {
+        if (!this.state.email || !this.state.password) {
+            this.setState({ clientMessage: "Please enter your email and password" });
+            return;
+        }
         axios.post(`${SERVER_HOST}/users/login/${this.state.email}/${this.state.password}`)
             .then(res => {
                 if (res.data) {
                     if (res.data.errorMessage) {
                         console.log(res.data.errorMessage)
-                        this.setState({clientMessage: res.data.clientMessage}, ()=>{
+                        this.setState({ clientMessage: res.data.clientMessage }, () => {
                             console.log(this.state)
                         })
                     }
@@ -55,12 +67,12 @@ class Login extends React.Component {
     }
 
     googleResponse = (response) => {
-        const details  = jwtDecode(response.credential);
+        const details = jwtDecode(response.credential);
 
         const email = details.email;
         const password = details.sub;
 
-        this.setState({email: email, password: password}, this.handleSubmit)
+        this.setState({ email: email, password: password }, this.handleSubmit)
         // const email = details.email
         // const password = "00000000";
         console.log(details)
@@ -100,7 +112,7 @@ class Login extends React.Component {
                                     value={this.state.password}
                                     onChange={this.handleChange}
                                 />
-                                <p style={{margin: 0, color: 'red'}}>{this.state.clientMessage ? this.state.clientMessage : null}</p>
+                                <p style={{ margin: 0, color: 'red' }}>{this.state.clientMessage ? this.state.clientMessage : null}</p>
                             </div>
                             <div className="login-btn-container">
                                 <LinkInClass value="Login" className="login-button" onClick={this.handleSubmit} />

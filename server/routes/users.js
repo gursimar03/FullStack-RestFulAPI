@@ -165,10 +165,25 @@ router.post(`/users/logout`, (req, res) => {
   res.json({})
 })
 
+// router.get(`/users/profile/:email`, (req, res) => {
+//   usersModel.findOne({ email: req.params.email }, (error, data) => {
+//     res.json(data)
+//   })
+// })
+
 router.get(`/users/profile/:email`, (req, res) => {
-  usersModel.findOne({ email: req.params.email }, (error, data) => {
-    res.json(data)
-  })
+  // Validate email parameter
+  if (!/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(req.params.email)) {
+    res.json({ errorMessage: `Invalid email address` })
+  } else {
+    usersModel.findOne({ email: req.params.email }, (error, data) => {
+      if (data) {
+        res.json(data)
+      } else {
+        res.json({ errorMessage: `User not found` })
+      }
+    })
+  }
 })
 
 router.put('/users/password/:email', (req, res) => {
@@ -241,6 +256,34 @@ router.put('/users/password/:email', (req, res) => {
   });
 });
 
+// router.put('/users/profile/:email', upload.single('profilePhoto'), (req, res) => {
+//   // Get the updated profile information from the request body
+//   const updatedProfile = {
+//     name: req.body.name,
+//     surname: req.body.surname,
+//     email: req.body.email,
+//     gender: req.body.gender
+//   }
+
+//   if (req.file) {
+//     console.log(req.file.path);
+//     updatedProfile.profilePhotoFilename = fs.readFileSync(req.file.path, 'base64');
+//   }
+
+//   // Update the user's profile in the database
+//   usersModel.findOneAndUpdate({ email: req.params.email }, { $set: { ...updatedProfile } }, (error, data) => {
+//     if (data) {
+//       const token = jwt.sign({ email: updatedProfile.email, accessLevel: data.accessLevel }, process.env.JWT_PRIVATE_KEY, { algorithm: 'HS256', expiresIn: process.env.JWT_EXPIRY })
+//       res.json({ name: updatedProfile.name, email: updatedProfile.email, accessLevel: data.accessLevel, profilePhoto: updatedProfile.profilePhotoFilename, token: token, isLoggedIn: true })
+//     }
+//     else {
+//       res.json({ errorMessage: `Failed to update profile` })
+//     }
+//   })
+// });
+
+const allowedMimeTypes = ['image/jpeg', 'image/png', 'image/gif'];
+
 router.put('/users/profile/:email', upload.single('profilePhoto'), (req, res) => {
   // Get the updated profile information from the request body
   const updatedProfile = {
@@ -251,6 +294,10 @@ router.put('/users/profile/:email', upload.single('profilePhoto'), (req, res) =>
   }
 
   if (req.file) {
+    if (!allowedMimeTypes.includes(req.file.mimetype)) {
+      return res.status(400).json({ errorMessage: 'Invalid file type. Please upload an image in JPEG, PNG, or GIF format.' });
+    }
+    
     console.log(req.file.path);
     updatedProfile.profilePhotoFilename = fs.readFileSync(req.file.path, 'base64');
   }
@@ -266,6 +313,7 @@ router.put('/users/profile/:email', upload.single('profilePhoto'), (req, res) =>
     }
   })
 });
+
 
 router.delete('/users/delete-account/:email', (req, res) => {
   const email = req.params.email;
