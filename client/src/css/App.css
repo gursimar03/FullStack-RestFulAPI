@@ -161,6 +161,29 @@ header {
     cursor: pointer;
 }
 
+.share-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.share-buttons > button {
+    scale: 1.6;
+    margin: 0 40px;
+}
+
+.share-buttons > button:nth-child(1) > svg {
+    color: #3b5998;
+}
+
+.share-buttons > button:nth-child(2) > svg {
+    color: #00acee;
+}
+
+.share-buttons > button:nth-child(3) > svg {
+    color: #02d891;
+}
+
 .account-icon {
     font-size: 1.5em;
     color: black;
@@ -541,17 +564,23 @@ form {
 }
 
 .form-submit-btn {
-    width: 80%;
-    height: 50px;
-    border: none;
-    background-color: rgb(25, 25, 25);
-    border-radius: 2px;
-    margin: 10px auto 10px auto;
-    padding: 0 10px 0 10px;
-    color: white;
-    font-weight: 800;
-    font-family: var(--main-font);
-    font-size: 1em;
+    width: 80% !important; 
+    height: 50px !important;
+    border: none !important;
+    background-color: rgb(25, 25, 25) !important; 
+    border-radius: 2px !important; 
+    margin: 10px auto 10px auto !important;
+    padding: 0 10px 0 10px !important;
+    color: white !important;
+    font-weight: 800 !important;
+    font-family: var(--main-font) !important;
+    font-size: 1em !important;
+} 
+
+.form-submit-btn:hover {
+    background-color: #ffff !important;
+    color: black !important;
+    border: 1px solid rgb(88, 88, 88) !important;
 }
 
 .form-input:focus {
@@ -589,9 +618,9 @@ form {
     flex-basis: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
+
+  
 
 .search-btn {
     cursor: pointer;
@@ -1447,6 +1476,8 @@ select.form-control {
 
 .cart-page-items {
     flex-basis: 65%;
+    height: 80vh;
+    overflow-y: auto;
 }
 
 .cart-item {
@@ -1528,7 +1559,15 @@ select.form-control {
 
 .cart-page-checkout {
     flex-basis: 35%;
-    background-color: blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cart-page-checkout-total {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
 }
 
 .delete-account-page {
