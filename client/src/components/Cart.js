@@ -56,6 +56,8 @@ class Cart extends React.Component {
             this.state.productsInCart.reduce((a, b) => a + b.product_price * b.product_quantity, 0)
         ).toFixed(2);
 
+        axios.post(`${SERVER_HOST}/payment-success`, this.state.productsInCart) 
+
         const order = await actions.order.capture();
 
         const data = {
@@ -244,7 +246,6 @@ class Cart extends React.Component {
                     </div>
                     <div className="cart-page-checkout-button">
 
-                        <h1>Paypal Button Here</h1>
                         <PayPalScriptProvider options={{ currency: "EUR", "client-id": SANDBOX_CLIENT_ID }}>
                             <PayPalButtons style={{ layout: "horizontal" }} createOrder={this.createOrder} onApprove={this.onApprove} onError={this.onError} onCancel={this.onCancel} />
                         </PayPalScriptProvider>

@@ -169,19 +169,43 @@ router.put(`/products/:_id`, (req, res) => {
 })
 
 
-const verifyUsersJWTPassword = (req, res, next) =>
-{
-    jwt.verify(req.headers.authorization, privateKey, {algorithm: "HS256"}, (err, decodedToken) => 
-    {
-        if (err) 
-        { 
-            return next(err)
-        }
 
-        req.decodedToken = decodedToken
-        return next()
-    })
-}
+router.post('/payment/success', async (req, res) => {
+    try {
+      const { productsInCart } = req.body;
+  
+      // Loop through all the products in the cart
+      for (let i = 0; i < productsInCart.length; i++) {
+        const { databaseID, product_id, product_quantity } = productsInCart[i];
+  
+        // Find the product in the database by ID
+        const product = await Product.findById(product_id);
+  
+        // Loop through the product sizes and find the matching size
+        for (let j = 0; j < product.inventory.stock.length; j++) {
+          if (product.inventory.stock[j].size === productsInCart[i].product_size) {
+            // Calculate the new quantity
+            const newQuantity = product.inventory.stock[j].quantity - product_quantity;
+  
+            // Update the product quantity in the database
+            await Product.updateOne(
+              { _id: product_id, 'inventory.stock.size': productsInCart[i].product_size },
+              { $set: { 'inventory.stock.$.quantity': newQuantity } }
+            );
+  
+            break;
+          }
+        }
+      }
+  
+      res.send('Payment successful');
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Server error');
+    }
+  });
+  
+
 
 
 const checkThatUserIsAnAdministrator = (req, res, next) =>
