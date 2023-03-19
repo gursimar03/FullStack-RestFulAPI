@@ -185,7 +185,6 @@ class Cart extends React.Component {
                         </p>
                     </div>
                     <div className="cart-page-checkout-button">
-                        <h1>Paypal Button Here</h1>
                         <PayPalScriptProvider options={{currency:"EUR", "client-id":SANDBOX_CLIENT_ID }}>
                     <PayPalButtons style={{layout: "horizontal"}} createOrder={this.createOrder} onApprove={this.onApprove} onError={this.onError} onCancel={this.onCancel}/>
                 </PayPalScriptProvider>
