@@ -30,5 +30,18 @@ router.post(`/cart/checkout`, async (req, res) => {
     }
 });
 
+router.get(`/cart/orders/:email`, async (req, res) => {
+    try {
+      const { email } = req.params;
+      const orders = await salesModel.find({ user_email: email });
+      res.json(orders);
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({ error: 'Something went wrong', details: err });
+    }
+  });
+
+
+
 
 module.exports = router
