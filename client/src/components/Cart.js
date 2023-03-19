@@ -17,6 +17,7 @@ import emailjs from 'emailjs-com';
 
 
 class Cart extends React.Component {
+    
     constructor(props) {
         super(props);
         this.state = {
@@ -46,6 +47,8 @@ class Cart extends React.Component {
             }, (err) => {
                 console.log('FAILED...', err);
             });
+
+        }
 
 
     onApprove = async (paymentData, actions) => {
@@ -97,6 +100,7 @@ class Cart extends React.Component {
 
 
 
+
     onError = errorData => {
         console.log("PayPal payment error")
     }
@@ -107,7 +111,11 @@ class Cart extends React.Component {
     }
 
 
+
     componentDidMount() {
+
+
+
         if (this.fetchCart) {
             let total_price = 0;
             this.state.cart.map((product) => {
@@ -187,7 +195,7 @@ class Cart extends React.Component {
                 }
             })
             .catch(err => console.log(err));
-    }
+    };
 
 
     render() {
