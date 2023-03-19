@@ -4,6 +4,9 @@ import { SERVER_HOST } from "../config/global_constants"
 import { AiOutlineArrowRight, AiOutlineArrowLeft } from 'react-icons/ai';
 import { Navigate as Redirect } from "react-router-dom";
 import ScrollToTop from "../ScrollToTop";
+import { FacebookShareButton, TwitterShareButton, WhatsappShareButton } from "react-share";
+import { FaFacebook, FaTwitter, FaWhatsapp } from 'react-icons/fa';
+
 
 
 export default class ProductPage extends Component {
@@ -161,6 +164,7 @@ export default class ProductPage extends Component {
             return <Redirect to="/404" />
         }
         const { activeIndex } = this.state;
+        const shareUrl = window.location.href;
         return (
             <div>
                 <div className="prouct-added-to-cart-identifier">
@@ -204,6 +208,17 @@ export default class ProductPage extends Component {
                                 <input type="range" min={1} max={this.state.maxQuantity} defaultValue={1} onChange={this.setQuantity} />
                                 <p>Quantity: {this.state.selected.quantity}</p>
                             </div>
+                        </div>
+                        <div className="share-buttons">
+                            <FacebookShareButton url={shareUrl}>
+                                <FaFacebook size={24} />
+                            </FacebookShareButton>
+                            <TwitterShareButton url={shareUrl}>
+                                <FaTwitter size={24} />
+                            </TwitterShareButton>
+                            <WhatsappShareButton url={shareUrl}>
+                                <FaWhatsapp size={24} />
+                            </WhatsappShareButton>
                         </div>
                         <div className="shoe-page-container-right-bottom">
                             <p style={{ color: 'red', textAlign: 'center' }}>{this.state.errorMessage}</p>
