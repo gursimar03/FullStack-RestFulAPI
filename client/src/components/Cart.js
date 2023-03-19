@@ -34,15 +34,42 @@ class Cart extends React.Component {
     }
     
     
-    onApprove = paymentData =>
-    {      
+    // onApprove = paymentData =>
+    // {      
     
 
-       axios.post(`${SERVER_HOST}/cart/checkout`, paymentData).then(res => {
-              console.log(res)
-         })
+    //    axios.post(`${SERVER_HOST}/cart/checkout`, paymentData).then(res => {
+    //           console.log(res)
+    //      })
     
-    }
+    // }
+
+    onApprove = async (paymentData, actions) => {
+        const totalPrice = parseFloat(
+          this.state.productsInCart.reduce((a, b) => a + b.product_price * b.product_quantity, 0)
+        ).toFixed(2);
+      
+        const order = await actions.order.capture();
+      
+        const data = {
+          paypalPaymentID: order.id,
+          user_email: localStorage.email,
+          product_array: this.state.productsInCart,
+          price: totalPrice,
+          product_date: new Date(),
+        };
+      
+        axios
+          .post(`${SERVER_HOST}/cart/checkout`, data)
+          .then((res) => {
+            console.log("PayPal payment success");
+            console.log(res);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      };
+      
  
         
     onError = errorData => 
