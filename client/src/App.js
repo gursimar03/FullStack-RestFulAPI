@@ -11,6 +11,7 @@ import { GrCart } from 'react-icons/gr';
 import { RxHamburgerMenu, RxCross1 } from 'react-icons/rx';
 import { VscAccount } from 'react-icons/vsc';
 import { FiHelpCircle } from 'react-icons/fi';
+import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 //components
 import HomePage from "./components/HomePage";
@@ -34,6 +35,7 @@ import Cart from "./components/Cart";
 import Orders from "./components/Orders";
 
 import DeleteProduct from "./components/DeleteProduct";
+import SuccessMessage from "./components/PayPalMessage";
 
 
 
@@ -72,28 +74,28 @@ class App extends React.Component {
         })
 
         axios.get(`${SERVER_HOST}/cart/${localStorage.email}/countItems`)
-        .then(res => {
-            if(res.data.message) {
-                this.setState({itemsInCart: 0})
-            } else {
-                this.setState({itemsInCart: res.data.itemCount})
-            }
-            
-        })
-        .catch(err => {
-            console.log(err)
-        })
+            .then(res => {
+                if (res.data.message) {
+                    this.setState({ itemsInCart: 0 })
+                } else {
+                    this.setState({ itemsInCart: res.data.itemCount })
+                }
+
+            })
+            .catch(err => {
+                console.log(err)
+            })
     }
 
     handleCartSize = (e) => {
         axios.get(`${SERVER_HOST}/cart/${localStorage.email}/countItems`)
-        .then(res => {
-            if(res.data.message) {
-                this.setState({itemsInCart: 0})
-            } else {
-                this.setState({itemsInCart: res.data.itemCount})
-            }
-        })
+            .then(res => {
+                if (res.data.message) {
+                    this.setState({ itemsInCart: 0 })
+                } else {
+                    this.setState({ itemsInCart: res.data.itemCount })
+                }
+            })
     }
 
     openMobileNav = () => {
@@ -159,9 +161,9 @@ class App extends React.Component {
                                 {this.state.name !== "" && this.state.name !== null && this.state.name !== "GUEST" ? <p id="welcome">Welcome, {localStorage.name}</p> : <Link id="linkToSignIn" to={'/account-login'}><p>Sign In</p></Link>}
 
                                 {this.state.accessLevel > 0 ? <Link id="linkToAccount" onClick={this.toggleDropdown}> {
-                                    
-                                    localStorage.profilePhoto !== "undefined" && localStorage.profilePhoto !== "null"?
-                                        localStorage.profilePhoto.includes('google') ? <img id="profilePhoto" className="profileImg" src={`${localStorage.profilePhoto}`} alt="Profile" /> :<img id="profilePhoto" className="profileImg" src={`data:;base64,${localStorage.profilePhoto}`} alt="Profile" />
+
+                                    localStorage.profilePhoto !== "undefined" && localStorage.profilePhoto !== "null" ?
+                                        localStorage.profilePhoto.includes('google') ? <img id="profilePhoto" className="profileImg" src={`${localStorage.profilePhoto}`} alt="Profile" /> : <img id="profilePhoto" className="profileImg" src={`data:;base64,${localStorage.profilePhoto}`} alt="Profile" />
                                         :
                                         <VscAccount className="account-icon" />
                                 }</Link> : null}
@@ -194,7 +196,7 @@ class App extends React.Component {
                                         <FaSistrix onClick={this.openSearchPage} className="search-bar-icon-btn" />
                                     </div>
                                     <div className="cart-btn-container">
-                                        <Link to={'/cart'}><GrCart/>{this.state.itemsInCart}</Link>
+                                        <Link to={'/cart'}><GrCart />{this.state.itemsInCart}</Link>
                                     </div>
                                 </div>
                             </div>
@@ -265,13 +267,34 @@ class App extends React.Component {
                         <Route path="/cart" element={<Cart products={this.state.productsData} />}></Route>
                         <Route path="*" element={<ErrorPage />} />
                         <Route exact path="/DeleteProduct/:id" component={DeleteProduct} />
+                        <Route path="/success" element={<SuccessMessage />}></Route>
                     </Routes>
                     <SearchPage openSearchPage={this.openSearchPage} handleSearch={this.handleSearch} productsData={this.state.productsData} />
                 </BrowserRouter>
                 <footer className="constant-footer">
                     <div className="footer-content">
                         <div className="footer-content-left">
-                            social links, etc
+                            <h3>Links</h3>
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Services</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="/products">Shop All</a></li>
+                                <li><a href="/products/men">Shop Mens'</a></li>
+                                <li><a href="/products/women">Shop Womens'</a></li>
+                                <li><a href="/products/kids">Shop Kids</a></li>
+                            </ul>
+                            <div class="social-links">
+                                <ul>
+                                    <li><a href="#"><FaFacebookF /></a></li>
+                                    <li><a href="#"><FaTwitter /></a></li>
+                                    <li><a href="#"><FaInstagram /></a></li>
+
+                                </ul>
+                            </div>
                         </div>
                         <div className="contact-us-container">
                             <div className="contact-us">

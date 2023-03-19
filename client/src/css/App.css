@@ -1564,6 +1564,7 @@ select.form-control {
     justify-content: space-between;
 }
 
+
 .cart-page-checkout-total {
     display: flex;
     justify-content: space-between;
@@ -1604,6 +1605,13 @@ select.form-control {
   .error-message {
     color: #f44336;
     margin-bottom: 20px;
+  }
+
+  .success-message-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
   }
   
   .cancel-link {
