@@ -1,7 +1,21 @@
+
 const router = require(`express`).Router()
 const productsModel = require(`../models/products`)
+const UserModal = require(`../models/users`)
+
 
 const dataset = require('../dataset/shoes.json');
+
+const fs = require('fs')
+const path = require('path');
+const jwt = require('jsonwebtoken');
+const privateKey = fs.readFileSync(path.join(__dirname, '..', 'config', 'jwt_private_key.pem'));
+
+// Use the privateKey variable in your code as needed
+
+
+const multer  = require('multer');
+const { deleteOne } = require('../models/products');
 
 
 //stores the dataset in the database when the server starts
@@ -154,5 +168,77 @@ router.put(`/products/:_id`, (req, res) => {
     })
 })
 
+
+const verifyUsersJWTPassword = (req, res, next) =>
+{
+    jwt.verify(req.headers.authorization, privateKey, {algorithm: "HS256"}, (err, decodedToken) => 
+    {
+        if (err) 
+        { 
+            return next(err)
+        }
+
+        req.decodedToken = decodedToken
+        return next()
+    })
+}
+
+
+const checkThatUserIsAnAdministrator = (req, res, next) =>
+{
+    if(req.accessLevel >= process.env.ACCESS_LEVEL_ADMIN)
+    {    
+        return next()
+    }
+    else
+    {
+        return next(createError(401))
+    }
+}
+
+const getAccessLevel = (req, res, next) =>
+
+{
+    UserModal.findOne({email: req.body.email}, (error, data) =>
+    {
+        if (error)
+        {
+            return next(error)
+        }
+        if (!data)
+        {
+            return next(createError(404))
+        }
+        req.accessLevel = data.accessLevel
+        return next()
+    })
+}
+
+
+const deleteOneProduct = (req, res, next) =>
+{
+    const productId = req.params._id;
+
+    if (typeof productId !== 'string' && !Buffer.isBuffer(productId)) {
+        return next(createError(400, 'Invalid product ID'));
+    }
+
+    productsModel.findByIdAndDelete(productId, (error, data) =>
+    {
+        if (error)
+        {
+            return next(error)
+        }
+        if (!data)
+        {
+            return next(createError(404))
+        }
+        res.json(data)
+    })
+}
+
+
+// Delete one record
+router.delete(`/product/:_id/:email`,  getAccessLevel , checkThatUserIsAnAdministrator, deleteOneProduct)
 
 module.exports = router

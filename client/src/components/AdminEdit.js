@@ -13,6 +13,7 @@ class AdminEdit extends Component{
         super(props)
         this.state = {
             product: null,
+            id: null,
         }
 
     }
@@ -20,6 +21,7 @@ class AdminEdit extends Component{
     componentDidMount() {
         const url = window.location.href
         const id = url.substring(url.lastIndexOf('/') + 1)
+        this.setState({ id: id })
 
         axios.get(`${SERVER_HOST}/products/${id}`)
             .then(response => {
@@ -58,7 +60,10 @@ class AdminEdit extends Component{
             .catch(err => console.log(err))
 
     }
+
+
     
+
 
 
 

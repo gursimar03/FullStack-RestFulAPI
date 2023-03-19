@@ -209,15 +209,16 @@ export default class ProductPage extends Component {
                                 <p>Quantity: {this.state.selected.quantity}</p>
                             </div>
                         </div>
+                        <p style={{textAlign: "center"}}>Share with a friend</p>
                         <div className="share-buttons">
-                            <FacebookShareButton url={shareUrl}>
-                                <FaFacebook size={24} />
+                            <FacebookShareButton url={shareUrl} title="Share on Facebook">
+                                <FaFacebook size={24} title="Share on Facebook"/>
                             </FacebookShareButton>
-                            <TwitterShareButton url={shareUrl}>
-                                <FaTwitter size={24} />
+                            <TwitterShareButton url={shareUrl} title="Share on Twitter">
+                                <FaTwitter size={24} title="Share on Twitter"/>
                             </TwitterShareButton>
-                            <WhatsappShareButton url={shareUrl}>
-                                <FaWhatsapp size={24} />
+                            <WhatsappShareButton url={shareUrl} title="Share on Whatsapp">
+                                <FaWhatsapp size={24} title="Share on Whatsapp"/>
                             </WhatsappShareButton>
                         </div>
                         <div className="shoe-page-container-right-bottom">

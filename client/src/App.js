@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { SERVER_HOST } from "./config/global_constants"
 
+
 //Icon imports
 import { FaSistrix } from 'react-icons/fa';
 import { GrCart } from 'react-icons/gr';
@@ -29,7 +30,11 @@ import SearchPage from "./components/SearchPage";
 import ErrorPage from "./components/ErrorPage";
 import ScrollToTop from "./ScrollToTop";
 import Cart from "./components/Cart";
+
 import Orders from "./components/Orders";
+
+import DeleteProduct from "./components/DeleteProduct";
+
 
 
 if (typeof localStorage.accessLevel === "undefined") {
@@ -259,6 +264,7 @@ class App extends React.Component {
                         <Route path="/orders" element={<Orders />}></Route>
                         <Route path="/cart" element={<Cart products={this.state.productsData} />}></Route>
                         <Route path="*" element={<ErrorPage />} />
+                        <Route exact path="/DeleteProduct/:id" component={DeleteProduct} />
                     </Routes>
                     <SearchPage openSearchPage={this.openSearchPage} handleSearch={this.handleSearch} productsData={this.state.productsData} />
                 </BrowserRouter>
