@@ -16,6 +16,7 @@ class Login extends React.Component {
             password: "",
             clientMessage: '',
             googleUser: null,
+            emailErrorMessage: "",
         }
     }
 
@@ -23,13 +24,35 @@ class Login extends React.Component {
     //     this.setState({ [e.target.name]: e.target.value })
     // }
 
+    // handleChange = (e) => {
+    //     if (e.target.name === "email") {
+    //       this.setState({ [e.target.name]: e.target.value.toLowerCase() });
+    //     } else {
+    //       this.setState({ [e.target.name]: e.target.value });
+    //     }
+    //   };
+
     handleChange = (e) => {
         if (e.target.name === "email") {
-          this.setState({ [e.target.name]: e.target.value.toLowerCase() });
+            const email = e.target.value.toLowerCase();
+            const emailErrorMessage = this.validateEmail(email);
+            this.setState({ email: email, emailErrorMessage: emailErrorMessage });
         } else {
-          this.setState({ [e.target.name]: e.target.value });
+            this.setState({ [e.target.name]: e.target.value });
         }
-      };
+    };
+
+
+    //function to validate email and return error message
+    validateEmail = (email) => {
+        let emailErrorMessage = "";
+        if (!email) {
+            emailErrorMessage = "Please enter your email";
+        } else if (!/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(email)) {
+            emailErrorMessage = "Please enter a valid email";
+        }
+        return emailErrorMessage;
+    };
 
     handleSubmit = () => {
         if (!this.state.email || !this.state.password) {
@@ -104,6 +127,7 @@ class Login extends React.Component {
                                     value={this.state.email}
                                     onChange={this.handleChange}
                                 />
+                                <p style={{ margin: 0, color: 'red' }}>{this.state.emailErrorMessage ? this.state.emailErrorMessage : null}</p>
                                 <input
                                     type="password"
                                     name="password"

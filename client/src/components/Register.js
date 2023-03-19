@@ -21,23 +21,114 @@ class Register extends React.Component {
             email: "",
             gender: "",
             password: "",
+            clientMessage: '',
+            nameErrorMessage: "",
+            surnameErrorMessage: "",
+            emailErrorMessage: "",
+            passwordErrorMessage: "",
         }
 
     }
 
 
+    // handleChange = (e) => {
+    //     this.setState({ [e.target.name]: e.target.value })
+    // }
+
     handleChange = (e) => {
-        this.setState({ [e.target.name]: e.target.value })
+        if (e.target.name === "email") {
+            const email = e.target.value.toLowerCase();
+            const emailErrorMessage = this.validateEmail(email);
+            this.setState({ email: email, emailErrorMessage: emailErrorMessage });
+        }
+        else if (e.target.name === "name") {
+            const name = e.target.value
+            const nameErrorMessage = this.validateName(name);
+            this.setState({ name: name, nameErrorMessage: nameErrorMessage });
+        }
+        else if (e.target.name === "surname") {
+            const surname = e.target.value
+            const surnameErrorMessage = this.validateName(surname);
+            this.setState({ surname: surname, surnameErrorMessage: surnameErrorMessage });
+        }
+        else if (e.target.name === "password") {
+            const password = e.target.value
+            const passwordErrorMessage = this.validatePassword(password);
+            this.setState({ password: password, passwordErrorMessage: passwordErrorMessage });
+        }
+        else {
+            this.setState({ [e.target.name]: e.target.value });
+        }
+    };
 
-    }
+    //function to validate name and return error message
+    validateName = (name) => {
+        let nameErrorMessage = "";
+        if (!name) {
+            nameErrorMessage = "Please enter your name";
+        } else if (!/^[a-zA-Z]+$/.test(name)) {
+            nameErrorMessage = "Please enter a valid name";
+        }
+        return nameErrorMessage;
+    };
 
+    //funmction to validate surname and return error message
+    validateSurname = (surname) => {
+        let surnameErrorMessage = "";
+        if (!surname) {
+            surnameErrorMessage = "Please enter your surname";
+        } else if (!/^[a-zA-Z]+$/.test(surname)) {
+            surnameErrorMessage = "Please enter a valid surname";
+        }
+        return surnameErrorMessage;
+    };
+
+    //function to validate email and return error message
+    validateEmail = (email) => {
+        let emailErrorMessage = "";
+        if (!email) {
+            emailErrorMessage = "Please enter your email";
+        } else if (!/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(email)) {
+            emailErrorMessage = "Please enter a valid email";
+        }
+        return emailErrorMessage;
+    };     
+
+    //function to validate password and return error message that password should be at least 8 characters long
+    //and contain at least one number and one uppercase letter and one lowercase letterand one special character
+    validatePassword = (password) => {
+        let passwordErrorMessage = "";
+        if (!password) {
+            passwordErrorMessage = "Please enter your password";
+        }// output separate error messages for each condition's failure starting with the most important
+         else if (!/\d/.test(password)) {
+            passwordErrorMessage = "Password must contain at least one number";
+        } else if (!/[a-z]/.test(password)) {
+            passwordErrorMessage = "Password must contain at least one lowercase letter";
+        } else if (!/[A-Z]/.test(password)) {
+            passwordErrorMessage = "Password must contain at least one uppercase letter";
+        } else if (!/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(password)) {
+            passwordErrorMessage = "Password must contain at least one special character";
+        }
+        else if (password.length < 8) {
+            passwordErrorMessage = "Password must be at least 8 characters long";
+        }
+        return passwordErrorMessage;
+    };
 
     handleSubmit = (e) => {
+        if (!this.state.name || !this.state.surname || !this.state.email || !this.state.gender || !this.state.password) {
+            this.setState({ clientMessage: "Please enter all fields" })
+            return;
+        }
         axios.post(`${SERVER_HOST}/users/register/${this.state.name}/${this.state.surname}/${this.state.email}/${this.state.password}/${this.state.gender}`)
             .then(res => {
                 if (res.data) {
                     if (res.data.errorMessage) {
                         console.log(res.data.errorMessage)
+                        this.setState({ clientMessage: res.data.clientMessage }, () => {
+                            console.log(this.state)
+                        })
                     }
                     else // user successfully registered
                     {
@@ -119,7 +210,7 @@ class Register extends React.Component {
                                         onChange={this.handleChange}
                                         ref={(input) => { this.inputToFocus = input }}
                                     />
-
+                                    <p style={{ margin: 0, color: 'red' }}>{this.state.nameErrorMessage ? this.state.nameErrorMessage : null}</p>
                                     <input
                                         name="surname"
                                         type="text"
@@ -129,6 +220,7 @@ class Register extends React.Component {
                                         onChange={this.handleChange}
                                         ref={(input) => { this.inputToFocus = input }}
                                     />
+                                    <p style={{ margin: 0, color: 'red' }}>{this.state.surnameErrorMessage ? this.state.surnameErrorMessage : null}</p>
                                 </div>
 
                             </div>
@@ -145,7 +237,7 @@ class Register extends React.Component {
 
                                     </div>
                                     <div>
-                                        <input type="radio" id="other" name="gender" value="other" onChange={this.handleChange} checked={this.state.gender === "non-binary"} />
+                                        <input type="radio" id="other" name="gender" value="other" onChange={this.handleChange} checked={this.state.gender === "other"} />
                                         <label htmlFor="female">Other</label>
                                     </div>
 
@@ -158,20 +250,22 @@ class Register extends React.Component {
                                     name="email"
                                     type="email"
                                     placeholder="Email *"
-                                    autoComplete="email"
+                                    autoComplete="off"
                                     value={this.state.email}
                                     onChange={this.handleChange}
                                 />
-
+                                <p style={{ margin: 0, color: 'red' }}>{this.state.emailErrorMessage ? this.state.emailErrorMessage : null}</p>
                                 <input
                                     name="password"
                                     type="password"
                                     placeholder="Password"
-                                    autoComplete="password"
+                                    autoComplete="off"
                                     title="Password must be at least ten-digits long and contains at least one lowercase letter, one uppercase letter, one digit and one of the following characters (£!#€$%^&*)"
                                     value={this.state.password}
                                     onChange={this.handleChange}
                                 />
+                                <p style={{ margin: 0, color: 'red' }}>{this.state.passwordErrorMessage ? this.state.passwordErrorMessage : null}</p>
+                                <p style={{ margin: 0, color: 'red' }}>{this.state.clientMessage ? this.state.clientMessage : null}</p>
                             </div>
                             <div className="register-btn-container">
                                 <LinkInClass value="Register" className="register-btn" onClick={this.handleSubmit} />

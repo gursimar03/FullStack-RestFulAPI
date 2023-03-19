@@ -76,21 +76,21 @@ router.post(`/users/reset_user_collection`, (req, res) => {
 router.post(`/users/register/:name/:surname/:email/:password/:gender`, (req, res) => {
   // Validate input
   if (!/^[a-zA-Z]+$/.test(req.params.name)) {
-    res.json({ errorMessage: `Name must be a string` })
+    res.json({ errorMessage: `Name must be a string`, clientMessage: `Name must be a string` })
   } else if (!/^[a-zA-Z]+$/.test(req.params.surname)) {
-    res.json({ errorMessage: `Surname must be a string` })
+    res.json({ errorMessage: `Surname must be a string` , clientMessage: `Surname must be a string` })
   } else if (!/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(req.params.email)) {
-    res.json({ errorMessage: `Invalid email address` })
+    res.json({ errorMessage: `Invalid email address`, clientMessage: `Invalid email address` })
   } else if (req.params.password.length < 8) {
-    res.json({ errorMessage: `Password must be at least 8 characters long` })
-  } else if (!/^(Male|Female|Other)$/i.test(req.params.gender)) {
-    res.json({ errorMessage: `Invalid gender` })
+    res.json({ errorMessage: `Password must be at least 8 characters long` , clientMessage: `Password must be at least 8 characters long` })
+  } else if (!/^(Male|Female|Other|non-binary)$/i.test(req.params.gender)) {
+    res.json({ errorMessage: `Invalid gender` , clientMessage: `Invalid gender` })
   } else {
     // If a user with this email does not already exist, then create new user
     const email = req.params.email.toLowerCase(); // convert email to lowercase
     usersModel.findOne({ email: email }, (uniqueError, uniqueData) => {
       if (uniqueData) {
-        res.json({ errorMessage: `User already exists` })
+        res.json({ errorMessage: `User already exists` , clientMessage: `User already exists` })
       } else {
         bcrypt.hash(req.params.password, parseInt(process.env.PASSWORD_HASH_SALT_ROUNDS), (err, hash) => {
           usersModel.create({ name: req.params.name, surname: req.params.surname, email: email, password: hash, gender: req.params.gender, profilePhotoFilename: null }, (error, data) => {
@@ -100,7 +100,7 @@ router.post(`/users/register/:name/:surname/:email/:password/:gender`, (req, res
               res.json({ name: data.name, accessLevel: data.accessLevel, token: token, isLoggedIn: true, email: data.email })
             } else {
               console.log(error) // Add this line to log the error
-              res.json({ errorMessage: `User was not registered` })
+              res.json({ errorMessage: `User was not registered`, clientMessage: `User was not registered` })
             }
           })
         })
