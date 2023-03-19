@@ -36,9 +36,6 @@ class AllProducts extends Component {
     }
 
 
-    //these three functions set the state of the sort, search and filter
-    //and then they call the apply filters function
-
     handleFilter = (e) => {
         const { name, value, checked } = e.target
 
