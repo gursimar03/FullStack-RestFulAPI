@@ -11,10 +11,9 @@ import { SANDBOX_CLIENT_ID } from "../config/global_constants"
 import PayPalMessage from "./PayPalMessage"
 import { PayPalButtons } from "@paypal/react-paypal-js"
 import { PayPalScriptProvider } from "@paypal/react-paypal-js"
-
-
-
 import ScrollToTop from "../ScrollToTop";
+import emailjs from 'emailjs-com';
+
 
 
 class Cart extends React.Component {
@@ -31,6 +30,24 @@ class Cart extends React.Component {
     createOrder = (data, actions) => {
         return actions.order.create({ purchase_units: [{ amount: { value: parseFloat(this.state.productsInCart.reduce((a, b) => a + (b.product_price * b.product_quantity), 0)).toFixed(2) } }] })
     }
+
+    sendConfirmationEmail = (userEmail, orderDetails) => {
+        const emailServiceId = 'service_9fv842g';
+        const emailTemplateId = 'template_ncymqlu';
+        const emailUserId = 'tJvfyyQkDDB_UcRss';
+        const emailTemplateParams = {
+            userEmail: userEmail,
+            orderDetails: orderDetails
+        };
+
+        emailjs.send(emailServiceId, emailTemplateId, emailTemplateParams, emailUserId)
+            .then((response) => {
+                console.log('SUCCESS!', response.status, response.text);
+            }, (err) => {
+                console.log('FAILED...', err);
+            });
+    }
+
 
 
     // onApprove = paymentData =>
@@ -63,13 +80,21 @@ class Cart extends React.Component {
             .then((res) => {
                 console.log("PayPal payment success");
                 console.log(res);
+                // Send confirmation email
+                const userEmail = localStorage.email;
+                const orderDetails = this.state.productsInCart.map((product) => {
+                    return `${product.product_name} - ${product.product_quantity} x $${product.product_price}`;
+                }).join(', ');
+                this.sendConfirmationEmail(userEmail, orderDetails);
                 this.state.productsInCart.forEach((product) => {
                     axios
                         .delete(`${SERVER_HOST}/cart/${product.databaseID}/${localStorage.email}`)
                         .then((res) => {
                             console.log(res);
                             //reload the page
-                            window.location.reload();
+                            setTimeout(() => {
+                                window.location.reload();
+                            }, 3000);
                         })
                         .catch((err) => {
                             console.log(err);
