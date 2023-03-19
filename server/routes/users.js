@@ -81,8 +81,8 @@ router.post(`/users/register/:name/:surname/:email/:password/:gender`, (req, res
     res.json({ errorMessage: `Surname must be a string` })
   } else if (!/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(req.params.email)) {
     res.json({ errorMessage: `Invalid email address` })
-  } else if (req.params.password.length < 6) {
-    res.json({ errorMessage: `Password must be at least 6 characters long` })
+  } else if (req.params.password.length < 8) {
+    res.json({ errorMessage: `Password must be at least 8 characters long` })
   } else if (!/^(Male|Female|Other)$/i.test(req.params.gender)) {
     res.json({ errorMessage: `Invalid gender` })
   } else {
@@ -109,26 +109,54 @@ router.post(`/users/register/:name/:surname/:email/:password/:gender`, (req, res
   }
 })
 
+// router.post(`/users/login/:email/:password`, (req, res) => {
+//   usersModel.findOne({ email: req.params.email }, (error, data) => {
+//     if (data) {
+//       bcrypt.compare(req.params.password, data.password, (err, result) => {
+//         if (result) {
+//           const token = jwt.sign({ email: data.email, accessLevel: data.accessLevel }, process.env.JWT_PRIVATE_KEY, { algorithm: 'HS256', expiresIn: process.env.JWT_EXPIRY })
+
+//           res.json({ name: data.name, accessLevel: data.accessLevel, token: token, isLoggedIn: true, email: data.email, profilePhoto: data.profilePhotoFilename })
+
+//         }
+//         else {
+//           res.json({ errorMessage: `User is not logged in` })
+//         }
+//       })
+//     }
+//     else {
+//       console.log("not found in db")
+//       res.json({ errorMessage: `User is not logged in`, clientMessage: 'The Email Address Or Password Is Incorrect.' })
+//     }
+//   })
+// })
+
 router.post(`/users/login/:email/:password`, (req, res) => {
-  usersModel.findOne({ email: req.params.email }, (error, data) => {
-    if (data) {
-      bcrypt.compare(req.params.password, data.password, (err, result) => {
-        if (result) {
-          const token = jwt.sign({ email: data.email, accessLevel: data.accessLevel }, process.env.JWT_PRIVATE_KEY, { algorithm: 'HS256', expiresIn: process.env.JWT_EXPIRY })
+  if (!/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(req.params.email)) {
+    res.json({ errorMessage: `Invalid email address` })
+  } else if (req.params.password.length < 8) {
+    res.json({ errorMessage: `Password must be at least 8 characters long` })
+  } else {
+    usersModel.findOne({ email: req.params.email }, (error, data) => {
+      if (data) {
+        bcrypt.compare(req.params.password, data.password, (err, result) => {
+          if (result) {
+            const token = jwt.sign({ email: data.email, accessLevel: data.accessLevel }, process.env.JWT_PRIVATE_KEY, { algorithm: 'HS256', expiresIn: process.env.JWT_EXPIRY })
 
-          res.json({ name: data.name, accessLevel: data.accessLevel, token: token, isLoggedIn: true, email: data.email, profilePhoto: data.profilePhotoFilename })
+            res.json({ name: data.name, accessLevel: data.accessLevel, token: token, isLoggedIn: true, email: data.email, profilePhoto: data.profilePhotoFilename })
 
-        }
-        else {
-          res.json({ errorMessage: `User is not logged in` })
-        }
-      })
-    }
-    else {
-      console.log("not found in db")
-      res.json({ errorMessage: `User is not logged in`, clientMessage: 'The Email Address Or Password Is Incorrect.' })
-    }
-  })
+          }
+          else {
+            res.json({ errorMessage: `User is not logged in` })
+          }
+        })
+      }
+      else {
+        console.log("not found in db")
+        res.json({ errorMessage: `User is not logged in`, clientMessage: 'The Email Address Or Password Is Incorrect.' })
+      }
+    })
+  }
 })
 
 
