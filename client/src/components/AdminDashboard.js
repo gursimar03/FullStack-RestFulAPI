@@ -46,6 +46,23 @@ class AllProducts extends Component {
 
     }
 
+
+    handleDelete = (e) => {
+
+        e.preventDefault()
+        axios.delete(`${SERVER_HOST}/product/${e.value}`, {headers:{"authorization":localStorage.token}})
+        .then(res => 
+        {            
+            this.setState({redirect:true})   
+            console.log(res.data)         
+        })
+        .catch(err =>
+        {
+            console.log(err)
+        })
+    
+    }
+
     render() {
         if (this.state.products.length === 0) {
             return (
@@ -75,7 +92,8 @@ class AllProducts extends Component {
                                             <Link to={`/products/${product._id}/edit`}>
                                                 <button className="edit-btn">Edit</button>
                                             </Link>
-                                            <button className="delete-btn">Delete</button>
+                                            <Link className="del-btn" to={"/DeleteProduct/" + product._id}>Delete</Link>
+                                            <button className="del-btn" value={product._id} onClick={this.handleDelete}>Delete</button>
                                             </div> : " "}
                                         <div className="product-info">
                                             <p>{product.name}</p>

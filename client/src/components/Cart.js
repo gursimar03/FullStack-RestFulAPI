@@ -37,7 +37,7 @@ class Cart extends React.Component {
     onApprove = paymentData =>
     {      
     
-
+        
        axios.post(`${SERVER_HOST}/cart/checkout`, paymentData).then(res => {
               console.log(res)
          })
