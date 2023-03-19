@@ -4,6 +4,16 @@ import { Link } from "react-router-dom"
 import axios from "axios"
 import { SERVER_HOST } from "../config/global_constants";
 
+
+//Paypall
+
+import {SANDBOX_CLIENT_ID } from "../config/global_constants"
+import PayPalMessage from "./PayPalMessage"
+import { PayPalButtons } from "@paypal/react-paypal-js"
+import { PayPalScriptProvider } from "@paypal/react-paypal-js"
+
+
+
 import ScrollToTop from "../ScrollToTop";
 
 
@@ -13,10 +23,51 @@ class Cart extends React.Component {
         this.state = {
             cart: [], //the users cart
             productsInCart: [],
+            total_price: 0,
         }
     }
+
+
+    createOrder = (data, actions) => 
+    {
+        return actions.order.create({purchase_units:[{amount:{value:parseFloat(this.state.productsInCart.reduce((a, b) => a + (b.product_price * b.product_quantity), 0)).toFixed(2)}}]})
+    }
+    
+    
+    onApprove = paymentData =>
+    {      
+    
+
+       axios.post(`${SERVER_HOST}/cart/checkout`, paymentData).then(res => {
+              console.log(res)
+         })
+    
+    }
+ 
+        
+    onError = errorData => 
+    {
+        console.log("PayPal payment error")         
+    }
+    
+    
+    onCancel = cancelData => 
+    {
+        console.log("PayPal payment cancelled")      
+    }
+
+
     componentDidMount() {
         if (this.fetchCart) {
+            let total_price = 0;
+            this.state.cart.map((product) => {
+              
+                total_price += product.price;
+            })
+            this.setState({
+                total_price: total_price
+            })
+
             return;
         }
 
@@ -40,6 +91,8 @@ class Cart extends React.Component {
                                         if (res.data.errorMessage) {
                                             console.log(res.data.errorMessage)
                                         } else {
+
+
                                             this.setState(prevState => ({
                                                 productsInCart: [...prevState.productsInCart, 
                                                     {
@@ -127,10 +180,15 @@ class Cart extends React.Component {
                 <div className="cart-page-checkout">
                     <div className="cart-page-checkout-total">
                         <p>Total</p>
-                        <p>€{parseFloat(this.state.productsInCart.reduce((a, b) => a + (b.product_price * b.product_quantity), 0)).toFixed(2)}</p>
+                        <p>
+                            €{parseFloat(this.state.productsInCart.reduce((a, b) => a + (b.product_price * b.product_quantity), 0)).toFixed(2)}
+                        </p>
                     </div>
                     <div className="cart-page-checkout-button">
                         <h1>Paypal Button Here</h1>
+                        <PayPalScriptProvider options={{currency:"EUR", "client-id":SANDBOX_CLIENT_ID }}>
+                    <PayPalButtons style={{layout: "horizontal"}} createOrder={this.createOrder} onApprove={this.onApprove} onError={this.onError} onCancel={this.onCancel}/>
+                </PayPalScriptProvider>
                     </div>
                 </div>
             </div>
