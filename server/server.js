@@ -32,6 +32,17 @@ app.listen(process.env.SERVER_PORT, () =>
 })
 
 
+//deployment
+const path = require("path")
+const appPath = path.join(__dirname,"..","client","build")
+app.use(express.static(appPath))
+
+app.get('/', (req, res) => 
+{
+    res.sendFile(path.resolve(appPath, "index.html"))
+})
+
+
 // Error 404
 app.use((req, res, next) => {next(createError(404))})
 

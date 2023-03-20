@@ -1,0 +1,14 @@
+{
+    "name": "development",
+    "version": "1.0.0",
+    "description": "Local host Development Server",
+    "main": "server.js",
+    "scripts": {
+      "start": "npm start --prefix server"
+    },
+    "dependencies": {
+      "express": "^4.16.3"
+    },
+    "author": "Gursimar Singh Ply",
+    "license": "MIT"
+  }
