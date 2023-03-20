@@ -105,7 +105,11 @@ class Cart extends React.Component {
                             //     this.setState({ redirectToOrders: true })
                             // }, 3000);
                             //windows.location reload to /success
-                            window.location.replace("http://localhost:3000/success")
+                            // window.location.replace("http://localhost:3000/success")
+                            //have a timeout  before redirecting to success page with the window.location.replace
+                            setTimeout(() => {
+                                window.location.replace("http://localhost:3000/success")
+                            }, 3000);
                         })
                         .catch((err) => {
                             console.log(err);
