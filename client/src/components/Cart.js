@@ -53,18 +53,7 @@ class Cart extends React.Component {
 
 
 
-     reduceProductQuantity = async (productId, size, quantityToReduce) => {
-            try {
 
-                localStorage.setItem('checkout',`${SERVER_HOST}/payment/success/${productId}/${size}/${quantityToReduce}`) 
-              const response = await axios.post(`${SERVER_HOST}/payment/success/${productId}/${size}/${quantityToReduce}`);
-          
-              console.log(response.data.message);
-              localStorage.setItem('cart', JSON.stringify(response));
-            } catch (err) {
-              console.error(err);
-            }
-          }
         
 
 
@@ -74,7 +63,13 @@ class Cart extends React.Component {
         ).toFixed(2);
 
         this.state.productsInCart.forEach((product) => {
-            this.reduceProductQuantity(product._id, product.product_size, product.product_quantity);
+            //change product quanityu to int 
+
+            axios.post(`${SERVER_HOST}/payment/success/${product.product_id}/${product.product_size}/${product.product_quantity}`).then((res) => {
+                console.log(res);
+            }
+            )
+
           });
 
         const order = await actions.order.capture();
@@ -201,14 +196,16 @@ class Cart extends React.Component {
                             getProduct().then(() => {
 
                             });
+                           
 
                         })
+                        
                     })
                 }
             }
             )
             .catch(err => console.log(err));
-
+            
     }
 
     handleRemoveFromCart = (e) => {
@@ -234,7 +231,6 @@ class Cart extends React.Component {
                 </div>
             )
         }
-
         return (
             <div className="cart-page-container">
                 <ScrollToTop />
