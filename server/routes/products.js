@@ -170,41 +170,55 @@ router.put(`/products/:_id`, (req, res) => {
 
 
 
-router.post('/payment/success', async (req, res) => {
+router.post('/payment/success/:productID/:productSize/:productQuantity', async (req, res) => {
     try {
-      const { productsInCart } = req.body;
-  
-      // Loop through all the products in the cart
-      for (let i = 0; i < productsInCart.length; i++) {
-        const { databaseID, product_id, product_quantity } = productsInCart[i];
-  
-        // Find the product in the database by ID
-        const product = await Product.findById(product_id);
-  
-        // Loop through the product sizes and find the matching size
-        for (let j = 0; j < product.inventory.stock.length; j++) {
-          if (product.inventory.stock[j].size === productsInCart[i].product_size) {
-            // Calculate the new quantity
-            const newQuantity = product.inventory.stock[j].quantity - product_quantity;
-  
-            // Update the product quantity in the database
-            await Product.updateOne(
-              { _id: product_id, 'inventory.stock.size': productsInCart[i].product_size },
-              { $set: { 'inventory.stock.$.quantity': newQuantity } }
-            );
-  
-            break;
-          }
-        }
-      }
-  
-      res.send('Payment successful');
+      
+        const productID = req.params.productID;
+        const productSize = req.params.productSize;
+        const productQuantity = req.params.productQuantity;
+
+
+        
+
+        productsModel.findOne({ _id: productID }, (error, data) => {
+
+            if (error) {
+                return res.status(500).json({ message: 'An error occurred while retrieving the product.' })
+            }
+            if (!data) {
+                return res.status(404).json({ message: 'Product not found.' })
+            }
+          
+            for(let i = 0; i < data.inventory.stock.length; i++) {
+                if(data.inventory.stock[i].size == productSize) {
+                   
+                    data.inventory.stock[i].quantity -= productQuantity;
+                    
+                }
+            }
+
+            productsModel.updateOne({ _id: productID },{inventory: data.inventory}, (error, data) => {
+
+                if (error) {
+                    
+                    return res.status(500).json({ message: 'An error occurred while updating the product.' })
+
+                }
+                if (!data) {
+                    return res.status(404).json({ message: 'Product not found.' })
+                }
+                
+                res.json(data)
+            })
+        })
     } catch (error) {
-      console.error(error);
-      res.status(500).send('Server error');
+        console.log(error)
     }
-  });
+})
+
+
   
+
 
 
 

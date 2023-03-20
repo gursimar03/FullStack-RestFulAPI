@@ -50,13 +50,28 @@ class Cart extends React.Component {
 
         }
 
+     reduceProductQuantity = async (productId, size, quantityToReduce) => {
+            try {
+
+                localStorage.setItem('checkout',`${SERVER_HOST}/payment/success/${productId}/${size}/${quantityToReduce}`) 
+              const response = await axios.post(`${SERVER_HOST}/payment/success/${productId}/${size}/${quantityToReduce}`);
+          
+              console.log(response.data.message);
+              localStorage.setItem('cart', JSON.stringify(response));
+            } catch (err) {
+              console.error(err);
+            }
+          }
+        
 
     onApprove = async (paymentData, actions) => {
         const totalPrice = parseFloat(
             this.state.productsInCart.reduce((a, b) => a + b.product_price * b.product_quantity, 0)
         ).toFixed(2);
 
-        axios.post(`${SERVER_HOST}/payment-success`, this.state.productsInCart) 
+        this.state.productsInCart.forEach((product) => {
+            this.reduceProductQuantity(product._id, product.product_size, product.product_quantity);
+          });
 
         const order = await actions.order.capture();
 
