@@ -370,4 +370,37 @@ router.delete("/product/:id", async (req, res) => {
       .catch(err => res.status(400).json('Error: ' + err));
   });
   
+//to get a product
+router.get('/editproduct/:id', (req, res) => {
+    productsModel.findById(req.params.id)
+        .then(product => res.json(product))
+        .catch(err => res.status(400).json('Error: ' + err));
+});
+
+//to update a product
+router.post('/editproduct/:id', (req, res) => {
+    productsModel.findById(req.params.id)
+        .then(product => {
+            product.brand = req.body.brand;
+            product.name = req.body.name;
+            product.description = req.body.description;
+            product.age = req.body.age;
+            product.type = req.body.type;
+            product.color = req.body.color;
+            product.productImage = req.body.productImage;
+            product.images = req.body.images;
+            product.sizes = req.body.sizes;
+            product.price = req.body.price;
+            product.inventory = req.body.inventory;
+
+            product.save()
+                .then(() => res.json('Product updated!'))
+                .catch(err => res.status(400).json('Error: ' + err));
+        })
+        .catch(err => res.status(400).json('Error: ' + err));
+});
+
+
+
+
 module.exports = router
