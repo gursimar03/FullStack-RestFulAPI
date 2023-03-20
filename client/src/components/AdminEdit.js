@@ -157,9 +157,13 @@ class AdminEdit extends Component {
           <br />
   
           <label htmlFor="inventory">Inventory:</label>
-          <input type="text" name="inventory" id="inventory" value={JSON.stringify(inventory)} onChange={this.handleChange} />
-          <br />
-  
+          {inventory.stock.map(stock => (
+            <div key={stock.size}>
+              <label htmlFor={stock.size}>{stock.size}:</label>
+              <input type="number" name={stock.size} id={stock.size} value={stock.quantity} onChange={this.handleStockChange} />
+            </div>
+          ))}
+          <br />  
           <button type="submit">Save</button>
         </form>
       </div>

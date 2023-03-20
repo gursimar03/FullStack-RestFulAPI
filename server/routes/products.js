@@ -14,7 +14,7 @@ const privateKey = fs.readFileSync(path.join(__dirname, '..', 'config', 'jwt_pri
 // Use the privateKey variable in your code as needed
 
 
-const multer  = require('multer');
+const multer = require('multer');
 const { deleteOne } = require('../models/products');
 
 
@@ -37,7 +37,7 @@ productsModel.deleteMany({}, (error, data) => {
                     inventory: product.inventory
                 }
             )
-        })  
+        })
 
     } else {
        res.json(error)
@@ -77,7 +77,7 @@ router.get(`/products`, (req, res) => {
 // })
 
 router.get(`/shoes/men`, (req, res) => {
-    productsModel.find({age: 'Men'}, (error, data) => {
+    productsModel.find({ age: 'Men' }, (error, data) => {
         if (error) {
             return res.status(500).json({ message: 'An error occurred while retrieving men\'s shoes.' })
         }
@@ -99,7 +99,7 @@ router.get(`/shoes/men`, (req, res) => {
 // })
 
 router.get(`/shoes/women`, (req, res) => {
-    productsModel.find({age: 'Women'}, (error, data) => {
+    productsModel.find({ age: 'Women' }, (error, data) => {
         if (error) {
             return res.status(500).json({ message: 'An error occurred while retrieving women\'s shoes.' })
         }
@@ -136,7 +136,7 @@ router.get(`/shoes/kids`, (req, res) => {
         }
         let kids = [];
         data.forEach((product) => {
-            if(product.age === 'Boys' || product.age === 'Girls') {
+            if (product.age === 'Boys' || product.age === 'Girls') {
                 kids.push(product);
             }
         })
@@ -172,13 +172,13 @@ router.put(`/products/:_id`, (req, res) => {
 
 router.post('/payment/success/:productID/:productSize/:productQuantity', async (req, res) => {
     try {
-      
+
         const productID = req.params.productID;
         const productSize = req.params.productSize;
         const productQuantity = req.params.productQuantity;
 
 
-        
+
 
         productsModel.findOne({ _id: productID }, (error, data) => {
 
@@ -188,26 +188,26 @@ router.post('/payment/success/:productID/:productSize/:productQuantity', async (
             if (!data) {
                 return res.status(404).json({ message: 'Product not found.' })
             }
-          
-            for(let i = 0; i < data.inventory.stock.length; i++) {
-                if(data.inventory.stock[i].size == productSize) {
-                   
+
+            for (let i = 0; i < data.inventory.stock.length; i++) {
+                if (data.inventory.stock[i].size == productSize) {
+
                     data.inventory.stock[i].quantity -= productQuantity;
-                    
+
                 }
             }
 
-            productsModel.updateOne({ _id: productID },{inventory: data.inventory}, (error, data) => {
+            productsModel.updateOne({ _id: productID }, { inventory: data.inventory }, (error, data) => {
 
                 if (error) {
-                    
+
                     return res.status(500).json({ message: 'An error occurred while updating the product.' })
 
                 }
                 if (!data) {
                     return res.status(404).json({ message: 'Product not found.' })
                 }
-                
+
                 res.json(data)
             })
         })
@@ -235,26 +235,26 @@ router.put(`/product/return/:id/:size/:quantity`, (req, res) => {
         if (!data) {
             return res.status(404).json({ message: 'Product not found.' })
         }
-      
-        for(let i = 0; i < data.inventory.stock.length; i++) {
-            if(data.inventory.stock[i].size == productSize) {
-               
+
+        for (let i = 0; i < data.inventory.stock.length; i++) {
+            if (data.inventory.stock[i].size == productSize) {
+
                 data.inventory.stock[i].quantity += productQuantity;
-                
+
             }
         }
 
-        productsModel.updateOne({ _id: productID },{inventory: data.inventory}, (error, data) => {
+        productsModel.updateOne({ _id: productID }, { inventory: data.inventory }, (error, data) => {
 
             if (error) {
-                
+
                 return res.status(500).json({ message: 'An error occurred while updating the product.' })
 
             }
             if (!data) {
                 return res.status(404).json({ message: 'Product not found.' })
             }
-            
+
             res.json(data)
         })
     })
@@ -267,29 +267,21 @@ router.put(`/product/return/:id/:size/:quantity`, (req, res) => {
 
 
 
-const checkThatUserIsAnAdministrator = (req, res, next) =>
-{
-    if(req.accessLevel >= process.env.ACCESS_LEVEL_ADMIN)
-    {    
+const checkThatUserIsAnAdministrator = (req, res, next) => {
+    if (req.accessLevel >= process.env.ACCESS_LEVEL_ADMIN) {
         return next()
     }
-    else
-    {
+    else {
         return next(createError(401))
     }
 }
 
-const getAccessLevel = (req, res, next) =>
-
-{
-    UserModal.findOne({email: req.body.email}, (error, data) =>
-    {
-        if (error)
-        {
+const getAccessLevel = (req, res, next) => {
+    UserModal.findOne({ email: req.body.email }, (error, data) => {
+        if (error) {
             return next(error)
         }
-        if (!data)
-        {
+        if (!data) {
             return next(createError(404))
         }
         req.accessLevel = data.accessLevel
@@ -298,22 +290,18 @@ const getAccessLevel = (req, res, next) =>
 }
 
 
-const deleteOneProduct = (req, res, next) =>
-{
+const deleteOneProduct = (req, res, next) => {
     const productId = req.params._id;
 
     if (typeof productId !== 'string' && !Buffer.isBuffer(productId)) {
         return next(createError(400, 'Invalid product ID'));
     }
 
-    productsModel.findByIdAndDelete(productId, (error, data) =>
-    {
-        if (error)
-        {
+    productsModel.findByIdAndDelete(productId, (error, data) => {
+        if (error) {
             return next(error)
         }
-        if (!data)
-        {
+        if (!data) {
             return next(createError(404))
         }
         res.json(data)
@@ -326,48 +314,44 @@ const deleteOneProduct = (req, res, next) =>
 
 router.delete("/product/:id", async (req, res) => {
     try {
-      const deletedProduct = await productsModel.findByIdAndDelete(req.params.id);
-      if (!deletedProduct) {
-        return res.status(404).send();
-      }
-      res.send(deletedProduct);
+        const deletedProduct = await productsModel.findByIdAndDelete(req.params.id);
+        if (!deletedProduct) {
+            return res.status(404).send();
+        }
+        res.send(deletedProduct);
     } catch (error) {
-      res.status(500).send(error);
+        res.status(500).send(error);
     }
-  });
+});
 
-  router.post('/products/add', (req, res) => {
+router.post('/products/add', (req, res) => {
     const {
-      brand,
-      name,
-      description,
-      age,
-      type,
-      color,
-      productImage,
-      images,
-      sizes,
-      price,
-      inventory
+        brand,
+        name,
+        description,
+        age,
+        type,
+        color,
+        productImage,
+        images,
+        sizes,
+        price,
+        inventory
     } = req.body;
   
-    const newProduct = new productsModel({
-      brand,
-      name,
-      description,
-      age,
-      type,
-      color,
-      productImage,
-      images,
-      sizes,
-      price,
-      inventory
-    });
-  
-    newProduct.save()
-      .then(() => res.json('Product added!'))
-      .catch(err => res.status(400).json('Error: ' + err));
+    productsModel.create({
+        brand: req.body.brand,
+        name: name,
+        description: description,
+        age: age,
+        type: type,
+        color: color,
+        productImage: productImage,
+        images: images,
+        sizes: sizes,
+        price: price,
+        inventory: inventory
+    })
   });
   
 //to get a product
@@ -378,8 +362,8 @@ router.get('/editproduct/:id', (req, res) => {
 });
 
 //to update a product
-router.post('/editproduct/:id', (req, res) => {
-    productsModel.findById(req.params.id)
+router.put('/editproduct/:_id', (req, res) => {
+    productsModel.findById(req.params._id)
         .then(product => {
             product.brand = req.body.brand;
             product.name = req.body.name;

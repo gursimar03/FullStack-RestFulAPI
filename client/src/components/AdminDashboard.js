@@ -79,6 +79,7 @@ class AllProducts extends Component {
             return (
                 <div>
                     <ScrollToTop />
+                    <Link to={"/addProduct"}>Add New Product</Link>
                     <div className="products-container">
                         <div className="filter-bar">
                             <input type="checkbox" name="client" onClick={this.handleClientView} />
@@ -86,6 +87,7 @@ class AllProducts extends Component {
 
                         </div>
                         <div className="products">
+                            
                             {this.state.products.map(product =>
                                 <div className="products-shoe" key={product._id}>
                                     <div className="product-image">

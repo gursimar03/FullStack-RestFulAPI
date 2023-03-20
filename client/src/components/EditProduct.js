@@ -18,7 +18,9 @@ class EditProduct extends Component {
             images: [],
             sizes: [],
             price: "",
-            inventory: {},
+            inventory: {
+                stock: [],
+            },
         }
     }
 
@@ -28,32 +30,18 @@ class EditProduct extends Component {
         axios
             .get(`${SERVER_HOST}/editproduct/${productId}`)
             .then((res) => {
-                this.setState({ product: res.data });
-                const {
-                    brand,
-                    name,
-                    description,
-                    age,
-                    type,
-                    color,
-                    productImage,
-                    images,
-                    sizes,
-                    price,
-                    inventory,
-                } = res.data;
                 this.setState({
-                    brand,
-                    name,
-                    description,
-                    age,
-                    type,
-                    color,
-                    productImage,
-                    images,
-                    sizes,
-                    price,
-                    inventory,
+                    brand : res.data.brand,
+                    name : res.data.name,
+                    description : res.data.description,
+                    age : res.data.age,
+                    type : res.data.type,
+                    color : res.data.color,
+                    productImage : res.data.productImage,
+                    images : res.data.images,
+                    sizes : res.data.sizes,
+                    price : res.data.price,
+                    inventory : res.data.inventory
                 });
             })
             .catch((err) => {
@@ -62,48 +50,69 @@ class EditProduct extends Component {
     }
 
     handleSubmit = (e) => {
+        const url = window.location.href
+        const id = url.substring(url.lastIndexOf('/') + 1)
         e.preventDefault();
-        const {
-            brand,
-            name,
-            description,
-            age,
-            type,
-            color,
-            productImage,
-            images,
-            sizes,
-            price,
-            inventory,
-        } = this.state;
         axios
-            .put(`${SERVER_HOST}/product/${this.props.match.params.id}`, {
-                brand,
-                name,
-                description,
-                age,
-                type,
-                color,
-                productImage,
-                images,
-                sizes,
-                price,
-                inventory,
+            .put(`${SERVER_HOST}/editproduct/${id}`, {
+                brand: this.state.brand,
+                name: this.state.name,
+                description: this.state.description,
+                age: this.state.age,
+                type: this.state.type,
+                color: this.state.color,
+                productImage: this.state.productImage,
+                images: this.state.images,
+                sizes: this.state.sizes,
+                price: this.state.price,
+                inventory: this.state.inventory
             })
             .then((res) => {
                 console.log(res.data);
-                alert("Product updated successfully");
+                this.productAddedToCartIdentifier();
                 this.props.history.push("/products");
             })
             .catch((err) => {
                 console.log(err);
-                alert("Failed to update product");
             });
     };
+
+    productAddedToCartIdentifier = () => {
+        const productAddedToCartIdentifier = document.querySelector(".edit-identifier");
+        console.log(productAddedToCartIdentifier);
+        productAddedToCartIdentifier.style.right = "0px";
+        setTimeout(() => {
+            productAddedToCartIdentifier.style.right = "-5000px";
+        }, 2000)
+        setTimeout(() => {
+            window.location.replace("http://localhost:3000/admin");
+        }, 4000)
+        
+    }
 
     handleChange = (e) => {
         this.setState({ [e.target.name]: e.target.value });
     };
+
+    handleStockChange = (e) => {
+        const { name, value } = e.target;
+
+
+        for (let i = 0; i < this.state.inventory.stock.length; i++) {
+            if (this.state.inventory.stock[i].size == name) {
+                
+                this.state.inventory.stock.splice(i, 1, { size: name, quantity: parseInt(value) });
+                this.setState(prevState => ({
+                    ...prevState,
+                    inventory: { ...prevState.inventory, stock: this.state.inventory.stock }
+                }));
+
+                return;
+            }
+        }
+  
+    };
+    
 
     render() {
         const {
@@ -125,6 +134,9 @@ class EditProduct extends Component {
             //sizes is an array of strings, price is a number, inventory is an object with a stock array
             //of objects with a size and quantity
             <div>
+                <div className="edit-identifier">
+                    <p>Product Updated!</p>
+                </div>
                 <ScrollToTop />
                 <h3>Edit Product</h3>
                 <form onSubmit={this.handleSubmit}>
@@ -239,15 +251,13 @@ class EditProduct extends Component {
                         />
                     </div>
                     <div className="form-group">
-                        <label>Inventory: </label>
-                        <input
-                            type="text"
-                            required
-                            className="form-control"
-                            name="inventory"
-                            value={inventory}
-                            onChange={this.handleChange}
-                        />
+                        <label htmlFor="inventory">Inventory:</label>
+                        {inventory.stock.map(stock => (
+                            <div key={stock.size}>
+                                <label htmlFor={stock.size}>{stock.size}:</label>
+                                <input type="number" name={stock.size} id={stock.size} defaultValue={stock.quantity} onChange={this.handleStockChange} />
+                            </div>
+                        ))}
                     </div>
                     <div className="form-group">
                         <input
