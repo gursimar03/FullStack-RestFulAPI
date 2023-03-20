@@ -147,6 +147,10 @@ class App extends React.Component {
         }
     }
 
+    homeClick = () => {
+
+        
+    }
 
     render() {
         const shareUrl = window.location.href;
@@ -194,7 +198,7 @@ class App extends React.Component {
                                 </div>
                                 <div className="mobile-header-content-middle">
                                     <div className="text-logo">
-                                        <p>Not Nike</p>
+                                        <p onClick={}>Not Nike</p>
                                     </div>
                                 </div>
                                 <div className="mobile-header-content-right">
