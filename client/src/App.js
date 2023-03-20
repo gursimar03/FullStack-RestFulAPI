@@ -37,7 +37,7 @@ import AdminOrders from "./components/AdminOrders";
 import AddProduct from "./components/AddProduct";
 
 import Orders from "./components/Orders";
-
+import AdminEdit from "./components/AdminEdit";
 import DeleteProduct from "./components/DeleteProduct";
 import SuccessMessage from "./components/PayPalMessage";
 
@@ -276,7 +276,11 @@ class App extends React.Component {
                         <Route path="*" element={<ErrorPage />} />
                         <Route exact path="/DeleteProduct/:id" component={DeleteProduct} />
                         <Route path="/success" element={<SuccessMessage />}></Route>
+
                         <Route path="/addproduct" element={<AddProduct />}></Route>
+
+                        <Route path="/products/:id/edit" element={<AdminEdit />}></Route>
+
                     </Routes>
                     <SearchPage openSearchPage={this.openSearchPage} handleSearch={this.handleSearch} productsData={this.state.productsData} />
                 </BrowserRouter>

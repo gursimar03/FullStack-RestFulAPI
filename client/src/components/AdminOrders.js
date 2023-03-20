@@ -11,10 +11,9 @@ class AdminOrders extends Component {
   }
 
   componentDidMount() {
-    const { params } = this.props.match;
-    console.log(params.userEmail);
-    if (params && params.userEmail) {
-      const email = params.userEmail;
+    const url = window.location.href
+    const email = url.substring(url.lastIndexOf('/') + 1)
+  
       axios
         .get(`${SERVER_HOST}/cart/orders/${email}`)
         .then((res) => {
@@ -27,9 +26,7 @@ class AdminOrders extends Component {
           }
         })
         .catch((err) => console.log(err));
-    } else {
-      console.log('No email parameter found');
-    }
+   
   }
   
   render() {

@@ -41,6 +41,18 @@ router.get(`/cart/orders/:email`, async (req, res) => {
     }
   });
 
+router.delete(`/sales/delete/:paypalID`, async (req, res) => {
+
+   
+    try {
+        const { paypalID } = req.params;
+        const deleted = await cartModel.deleteOne({ paypalPaymentID: paypalID });
+        res.json(deleted);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: 'Something went wrong', details: err });
+    }
+})
 
 
 
