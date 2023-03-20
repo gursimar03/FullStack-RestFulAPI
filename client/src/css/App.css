@@ -1811,6 +1811,32 @@ button[type="submit"] {
     transition: right 0.5s ease-in-out;
 }
 
+.edit-product-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.edit-product-form div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+.edit-product-form div label {
+    margin: 10px 0 10px 15px;
+}
+
+.edit-product-form div input {
+    width: 80%;
+    height: 50px;
+    border: none;
+    background-color: rgb(233, 233, 233);
+    border-radius: 2px;
+    margin: 10px auto 10px auto;
+    padding: 0 10px 0 10px;
+}
 
 
 /* Setting up device breakpoints */

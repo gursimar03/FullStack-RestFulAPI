@@ -139,7 +139,7 @@ class EditProduct extends Component {
                 </div>
                 <ScrollToTop />
                 <h3>Edit Product</h3>
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleSubmit} className="edit-product-form">
                     <div className="form-group">
                         <label>Brand: </label>
                         <input

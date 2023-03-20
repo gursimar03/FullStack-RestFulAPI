@@ -12,7 +12,8 @@ class AllProducts extends Component {
             products: [],
             clientView: false,
             email: localStorage.email,
-            level: 0
+            level: 0,
+            chosenDelete: "",
         }
     }
 
@@ -27,7 +28,7 @@ class AllProducts extends Component {
             .then(res => {
                 if (res.data) {
                     if (res.data.errorMessage) {
-                      
+
                     }
                     else // user successfully logged in
                     {
@@ -35,7 +36,7 @@ class AllProducts extends Component {
                     }
                 }
                 else {
-                    
+
                 }
             })
     }
@@ -48,22 +49,38 @@ class AllProducts extends Component {
 
 
     handleDelete = (productId) => {
-        if (window.confirm("Are you sure you want to delete this product?")) {
-            axios
-                .delete(`${SERVER_HOST}/product/${productId}`, {
-                    headers: { authorization: localStorage.token },
-                })
-                .then((res) => {
-                    this.setState({ redirect: true });
-                  
 
-                    window.location.reload();
-                })
-                .catch((err) => {
-                   
-                });
-        }
+        axios
+            .delete(`${SERVER_HOST}/product/${productId}`, {
+                headers: { authorization: localStorage.token },
+            })
+            .then((res) => {
+                this.setState({ redirect: true });
+
+
+                window.location.reload();
+            })
+            .catch((err) => {
+
+            });
+
     };
+
+    showModal = (e) => {
+        document.querySelector('.delete-Modal').style.top = 0;
+        this.setState({ chosenDelete: e.target.value })
+
+    }
+
+    hideModal = () => {
+        document.querySelector('.delete-Modal').style.top = "-5000px";
+        this.setState({ chosenDelete: "" })
+    }
+
+    handleSub = (event) => {
+        console.log(this.state.chosenDelete)
+        this.handleDelete(this.state.chosenDelete)
+    }
 
 
 
@@ -78,6 +95,12 @@ class AllProducts extends Component {
         } else {
             return (
                 <div>
+                    <div className="delete-Modal">
+                        <h1>Are you sure you want to delete this product?</h1>
+                        <p>Once you delete this product, there is no going back. Please be certain.</p>
+                        <button type="submit" onClick={this.handleSub}>Delete Product</button>
+                        <button type="submit" onClick={this.hideModal}>Cancel</button>
+                    </div>
                     <ScrollToTop />
                     <Link to={"/addProduct"}>Add New Product</Link>
                     <div className="products-container">
@@ -87,7 +110,7 @@ class AllProducts extends Component {
 
                         </div>
                         <div className="products">
-                            
+
                             {this.state.products.map(product =>
                                 <div className="products-shoe" key={product._id}>
                                     <div className="product-image">
@@ -101,7 +124,7 @@ class AllProducts extends Component {
                                         </Link>
                                         {/* <Link className="del-btn" to={"/DeleteProduct/" + product._id}>Delete</Link> */}
                                         {/* <button className="del-btn" value={product._id} onClick={this.handleDelete}>Delete</button> */}
-                                        <button className="del-btn" onClick={() => this.handleDelete(product._id)}>Delete</button>
+                                        <button className="del-btn" id={product._id} value={product._id} onClick={this.showModal}>Delete</button>
                                     </div> : " "}
                                     <div className="product-info">
                                         <p>{product.name}</p>
