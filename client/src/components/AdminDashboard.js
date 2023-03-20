@@ -130,7 +130,7 @@ class AllProducts extends Component {
                                         </Link>
                                     </div>
                                     {!this.state.clientView ? <div className="admin-btns">
-                                        <Link to={`/products/${product._id}/edit`}>
+                                        <Link to={`/editproduct/${product._id}`}>
                                             <button className="edit-btn">Edit</button>
                                         </Link>
                                         {/* <Link className="del-btn" to={"/DeleteProduct/" + product._id}>Delete</Link> */}

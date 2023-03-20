@@ -35,6 +35,7 @@ import Cart from "./components/Cart";
 import UserList from "./components/UserList";
 import AdminOrders from "./components/AdminOrders";
 import AddProduct from "./components/AddProduct";
+import EditProduct from "./components/EditProduct";
 
 import Orders from "./components/Orders";
 
@@ -274,6 +275,7 @@ class App extends React.Component {
                         <Route path="/cart/orders/:userEmail" element={<AdminOrders />} />
                         <Route path="/cart" element={<Cart products={this.state.productsData} />}></Route>
                         <Route path="*" element={<ErrorPage />} />
+                        <Route path="/editproduct/:id" element={<EditProduct />} />
                         <Route exact path="/DeleteProduct/:id" component={DeleteProduct} />
                         <Route path="/success" element={<SuccessMessage />}></Route>
                         <Route path="/addproduct" element={<AddProduct />}></Route>
