@@ -338,4 +338,38 @@ router.delete("/product/:id", async (req, res) => {
     }
   });
 
+  router.post('/products/add', (req, res) => {
+    const {
+      brand,
+      name,
+      description,
+      age,
+      type,
+      color,
+      productImage,
+      images,
+      sizes,
+      price,
+      inventory
+    } = req.body;
+  
+    const newProduct = new productsModel({
+      brand,
+      name,
+      description,
+      age,
+      type,
+      color,
+      productImage,
+      images,
+      sizes,
+      price,
+      inventory
+    });
+  
+    newProduct.save()
+      .then(() => res.json('Product added!'))
+      .catch(err => res.status(400).json('Error: ' + err));
+  });
+  
 module.exports = router
