@@ -25,6 +25,33 @@ class Orders extends Component {
       .catch((err) => console.log(err));
   }
 
+  HandleReturn = (id,quantity,size,paypalID) => {
+
+    console.log(id,quantity,size)
+    axios.delete(`${SERVER_HOST}/sales/delete/${paypalID}}`).then((res) => {
+      console.log(res.data);
+    });
+
+
+    // axios
+    //   .put(`${SERVER_HOST}/product/return/${id}/${size}/${quantity}`)
+    //   .then((res) => {
+    //     if (res.data.errorMessage) {
+    //       console.log(res.data.errorMessage);
+    //     } else {
+          
+    //       axios.delete(`${SERVER_HOST}/sales/delete/${paypalID}}`)
+          
+    //       window.location.reload();
+
+    //     }
+    //   })
+    //   .catch((err) => console.log(err));
+
+
+  }
+
+
   render() {
     const { orders } = this.state;
 
@@ -40,6 +67,7 @@ class Orders extends Component {
       <div className="cart-page-container">
         <div className="cart-page-items">
           {orders.map((order) => (
+              
             <div key={order.paypalPaymentID} className="cart-item">
               <div className="cart-item-image">
                 <img
@@ -78,8 +106,11 @@ class Orders extends Component {
                       PayPal Payment ID: {order.paypalPaymentID}
                     </small>
                   </p>
+                
+                  <button onClick={() => this.HandleReturn(order.product_array[0].product_id, order.product_array[0].product_quantity , order.product_array[0].product_size,order.paypalPaymentID)} className="return-button">Return Item</button>
                 </div>
               </div>
+              
             </div>
           ))}
         </div>
