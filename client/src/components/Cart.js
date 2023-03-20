@@ -48,6 +48,12 @@ class Cart extends React.Component {
             }, (err) => {
                 console.log('FAILED...', err);
             });
+    }
+
+
+
+    // onApprove = paymentData =>
+    // {      
 
         }
 
@@ -64,6 +70,12 @@ class Cart extends React.Component {
             }
           }
         
+
+    //    axios.post(`${SERVER_HOST}/cart/checkout`, paymentData).then(res => {
+    //           console.log(res)
+    //      })
+
+    // }
 
     onApprove = async (paymentData, actions) => {
         const totalPrice = parseFloat(
@@ -268,10 +280,10 @@ class Cart extends React.Component {
                     </div>
                     <div className="cart-page-checkout-button">
 
+
                         <PayPalScriptProvider options={{ currency: "EUR", "client-id": SANDBOX_CLIENT_ID }}>
                             <PayPalButtons style={{ layout: "horizontal" }} createOrder={this.createOrder} onApprove={this.onApprove} onError={this.onError} onCancel={this.onCancel} />
                         </PayPalScriptProvider>
-
                     </div>
                 </div>
             </div>

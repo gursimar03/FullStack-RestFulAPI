@@ -277,6 +277,18 @@ const deleteOneProduct = (req, res, next) =>
 
 
 // Delete one record
-router.delete(`/product/:_id/:email`,  getAccessLevel , checkThatUserIsAnAdministrator, deleteOneProduct)
+// router.delete(`/product/:_id/:email`,  getAccessLevel , checkThatUserIsAnAdministrator, deleteOneProduct)
+
+router.delete("/product/:id", async (req, res) => {
+    try {
+      const deletedProduct = await productsModel.findByIdAndDelete(req.params.id);
+      if (!deletedProduct) {
+        return res.status(404).send();
+      }
+      res.send(deletedProduct);
+    } catch (error) {
+      res.status(500).send(error);
+    }
+  });
 
 module.exports = router
