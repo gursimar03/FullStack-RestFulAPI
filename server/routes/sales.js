@@ -41,19 +41,20 @@ router.get(`/cart/orders/:email`, async (req, res) => {
     }
   });
 
-router.delete(`/sales/delete/:paypalID`, async (req, res) => {
-
-   
-    try {
-        const { paypalID } = req.params;
-        const deleted = await cartModel.deleteOne({ paypalPaymentID: paypalID });
-        res.json(deleted);
-    } catch (err) {
+  router.delete('/sales/delete/:paypalID', (req, res) => {
+    const paypalID = req.params.paypalID;
+  
+    salesModel.findOneAndDelete({ paypalPaymentID: paypalID }, (err, data) => {
+      if (err) {
         console.error(err);
-        res.status(500).json({ error: 'Something went wrong', details: err });
-    }
-})
-
+        res.status(500).json({ message: 'An error occurred while deleting the sale.' });
+      } else if (!data) {
+        res.status(404).json({ message: 'Sale not found.' });
+      } else {
+        res.json({ message: 'Sale successfully deleted.' });
+      }
+    });
+  });
 
 
 module.exports = router

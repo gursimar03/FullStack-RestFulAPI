@@ -27,26 +27,23 @@ class Orders extends Component {
 
   HandleReturn = (id,quantity,size,paypalID) => {
 
-    console.log(id,quantity,size)
-    axios.delete(`${SERVER_HOST}/sales/delete/${paypalID}}`).then((res) => {
-      console.log(res.data);
-    });
 
-
-    // axios
-    //   .put(`${SERVER_HOST}/product/return/${id}/${size}/${quantity}`)
-    //   .then((res) => {
-    //     if (res.data.errorMessage) {
-    //       console.log(res.data.errorMessage);
-    //     } else {
+    axios
+      .put(`${SERVER_HOST}/product/return/${id}/${size}/${quantity}`)
+      .then((res) => {
+        if (res.data.errorMessage) {
+          console.log(res.data.errorMessage);
+        } else {
           
-    //       axios.delete(`${SERVER_HOST}/sales/delete/${paypalID}}`)
+          axios.delete(`${SERVER_HOST}/sales/delete/${paypalID}`).then((res) => {
+            console.log(res.data);
+          });
           
-    //       window.location.reload();
+          window.location.reload();
 
-    //     }
-    //   })
-    //   .catch((err) => console.log(err));
+        }
+      })
+      .catch((err) => console.log(err));
 
 
   }
