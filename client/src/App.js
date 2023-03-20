@@ -32,6 +32,8 @@ import SearchPage from "./components/SearchPage";
 import ErrorPage from "./components/ErrorPage";
 import ScrollToTop from "./ScrollToTop";
 import Cart from "./components/Cart";
+import UserList from "./components/UserList";
+import AdminOrders from "./components/AdminOrders";
 
 import Orders from "./components/Orders";
 import AdminEdit from "./components/AdminEdit";
@@ -173,8 +175,9 @@ class App extends React.Component {
                                 <div id="dropdown-content">
                                     <Link to={'/profile'}>Profile</Link>
                                     <Link to="/orders">Orders</Link>
-                                    <Link to="/payment-method">Payment Method</Link>
                                     {localStorage.accessLevel === '2' ? <Link to="/admin"> Admin Dashboard </Link> : null}
+                                    {localStorage.accessLevel === '2' ? <Link to="/viewusers">View Users</Link> : null}
+
 
                                     <Logout refresh={this.reloadPageAfterLogOut} />
                                 </div>
@@ -266,6 +269,8 @@ class App extends React.Component {
                         <Route path="/products/women" element={<WomenProducts />}></Route>
                         <Route path="/products/kids" element={<KidsProducts />}></Route>
                         <Route path="/orders" element={<Orders />}></Route>
+                        <Route path="/viewusers" element={<UserList />}></Route>
+                        <Route path="/cart/orders/:userEmail" element={<AdminOrders />} />
                         <Route path="/cart" element={<Cart products={this.state.productsData} />}></Route>
                         <Route path="*" element={<ErrorPage />} />
                         <Route exact path="/DeleteProduct/:id" component={DeleteProduct} />
