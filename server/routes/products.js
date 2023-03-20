@@ -217,7 +217,54 @@ router.post('/payment/success/:productID/:productSize/:productQuantity', async (
 })
 
 
-  
+router.put(`/product/return/:id/:size/:quantity`, (req, res) => {
+
+    let productID = req.params.id;
+    let productQuantity = req.params.quantity;
+    let productSize = req.params.size;
+
+    //change to int
+    productQuantity = parseInt(productQuantity);
+    productSize = parseInt(productSize);
+ 
+
+    console.log(productID, productQuantity, productSize)
+    productsModel.findOne({ _id:productID}, (error, data) => {
+
+        if (error) {
+            return res.status(500).json({ message: 'An error occurred while retrieving the product.' })
+        }
+        if (!data) {
+            return res.status(404).json({ message: 'Product not found.' })
+        }
+      
+        for(let i = 0; i < data.inventory.stock.length; i++) {
+            if(data.inventory.stock[i].size == productSize) {
+               
+                data.inventory.stock[i].quantity += productQuantity;
+                
+            }
+        }
+
+        productsModel.updateOne({ _id: productID },{inventory: data.inventory}, (error, data) => {
+
+            if (error) {
+                
+                return res.status(500).json({ message: 'An error occurred while updating the product.' })
+
+            }
+            if (!data) {
+                return res.status(404).json({ message: 'Product not found.' })
+            }
+            
+            res.json(data)
+        })
+    })
+
+})
+
+
+
 
 
 
