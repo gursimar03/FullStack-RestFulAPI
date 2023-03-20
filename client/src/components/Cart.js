@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Link } from "react-router-dom"
+import { Link, Navigate as Redirect } from "react-router-dom"
 
 import axios from "axios"
 import { SERVER_HOST } from "../config/global_constants";
@@ -24,6 +24,7 @@ class Cart extends React.Component {
             cart: [], //the users cart from the database
             productsInCart: [],
             total_price: 0,
+            redirectToOrders: false,
         }
     }
 
@@ -100,9 +101,11 @@ class Cart extends React.Component {
                         .then((res) => {
                             console.log(res);
                             //reload the page
-                            setTimeout(() => {
-                                window.location.reload();
-                            }, 3000);
+                            // setTimeout(() => {
+                            //     this.setState({ redirectToOrders: true })
+                            // }, 3000);
+                            //windows.location reload to /success
+                            window.location.replace("http://localhost:3000/success")
                         })
                         .catch((err) => {
                             console.log(err);
@@ -144,6 +147,10 @@ class Cart extends React.Component {
             })
 
             return;
+        }
+
+        if(this.state.redirectToOrders) {
+            return <Redirect to="/success" />
         }
 
 
