@@ -23,8 +23,10 @@ class EditProduct extends Component {
     }
 
     componentDidMount() {
+        const url = window.location.href
+        const productId = url.substring(url.lastIndexOf('/') + 1)
         axios
-            .get(`${SERVER_HOST}/editproduct/${this.props.match.params.id}`)
+            .get(`${SERVER_HOST}/editproduct/${productId}`)
             .then((res) => {
                 this.setState({ product: res.data });
                 const {
