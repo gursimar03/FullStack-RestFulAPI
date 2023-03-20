@@ -42,7 +42,7 @@ export default class Profile extends Component {
 
     componentDidMount() {
         if(localStorage.getItem('accessLevel') < 1) {
-            window.location.replace(`http://localhost:3000/`)
+            window.location.replace(`http://localhost:4000/`)
         }
 
         // const token = localStorage.getItem('token') // get the token from local storage
