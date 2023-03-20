@@ -27,7 +27,7 @@ class AllProducts extends Component {
             .then(res => {
                 if (res.data) {
                     if (res.data.errorMessage) {
-                        console.log(res.data.errorMessage)
+                      
                     }
                     else // user successfully logged in
                     {
@@ -35,7 +35,7 @@ class AllProducts extends Component {
                     }
                 }
                 else {
-                    console.log("Login failed")
+                    
                 }
             })
     }
@@ -47,43 +47,6 @@ class AllProducts extends Component {
     }
 
 
-    // handleDelete = (e) => {
-
-    //     e.preventDefault()
-    //     axios.delete(`${SERVER_HOST}/product/${e.value}`, {headers:{"authorization":localStorage.token}})
-    //     .then(res => 
-    //     {            
-    //         this.setState({redirect:true})   
-    //         console.log(res.data)         
-    //     })
-    //     .catch(err =>
-    //     {
-    //         console.log(err)
-    //     })
-
-    // }
-    // handleDelete = (e) => {
-    //     e.preventDefault();
-    //     const productId = e.value;
-    //     if (productId) {
-    //       if (window.confirm("Are you sure you want to delete this product?")) {
-    //         axios
-    //           .delete(`${SERVER_HOST}/product/${productId}`, {
-    //             headers: { authorization: localStorage.token },
-    //           })
-    //           .then((res) => {
-    //             this.setState({ redirect: true });
-    //             console.log(res.data);
-    //           })
-    //           .catch((err) => {
-    //             console.log(err);
-    //           });
-    //       }
-    //     } else {
-    //       console.log("Product id is undefined");
-    //     }
-    //   };
-
     handleDelete = (productId) => {
         if (window.confirm("Are you sure you want to delete this product?")) {
             axios
@@ -92,11 +55,12 @@ class AllProducts extends Component {
                 })
                 .then((res) => {
                     this.setState({ redirect: true });
-                    console.log(res.data);
+                  
+
                     window.location.reload();
                 })
                 .catch((err) => {
-                    console.log(err);
+                   
                 });
         }
     };

@@ -18,14 +18,14 @@ class AdminOrders extends Component {
         .get(`${SERVER_HOST}/cart/orders/${email}`)
         .then((res) => {
           if (res.data.errorMessage) {
-            console.log(res.data.errorMessage);
+            
           } else {
             this.setState({
               orders: res.data,
             });
           }
         })
-        .catch((err) => console.log(err));
+        
    
   }
   

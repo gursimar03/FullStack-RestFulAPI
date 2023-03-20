@@ -63,16 +63,14 @@ class Login extends React.Component {
             .then(res => {
                 if (res.data) {
                     if (res.data.errorMessage) {
-                        console.log(res.data.errorMessage)
+                       
                         this.setState({ clientMessage: res.data.clientMessage }, () => {
-                            console.log(this.state)
+                     
                         })
                     }
                     else // user successfully logged in
                     {
-                        console.log("alsjfbhikahsdbk")
-                        console.log("User logged in")
-                        console.log("email:" + res.data.email)
+                       
                         localStorage.name = res.data.name
                         localStorage.accessLevel = res.data.accessLevel
                         localStorage.token = res.data.token
@@ -97,15 +95,11 @@ class Login extends React.Component {
 
 
         this.setState({ email: email, password: password }, this.handleSubmit)
-        // const email = details.email
-        // const password = "00000000";
-        console.log(details)
-        // axios.post(`${SERVER_HOST}/users/login/${this.state.email}/${this.state.password}`)
-        // window.location.replace(`http://localhost:3000/`)
+       
 
     }
     googleError = (error) => {
-        console.log(error)
+      
     }
 
     render() {

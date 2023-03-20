@@ -52,8 +52,7 @@ class AddProduct extends Component {
             inventory: this.state.inventory
         };
 
-        axios.post(`${SERVER_HOST}/products/add`, product)
-            .then(res => console.log(res.data));
+        axios.post(`${SERVER_HOST}/products/add`, product);
 
         this.setState({
             brand: '',

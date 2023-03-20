@@ -25,7 +25,7 @@ router.post(`/cart/checkout`, async (req, res) => {
 
         res.json({ message: 'Payment data saved successfully', data: result });
     } catch (err) {
-        console.error(err);
+      
         res.status(500).json({ error: 'Something went wrong', details: err });
     }
 });
@@ -36,7 +36,7 @@ router.get(`/cart/orders/:email`, async (req, res) => {
       const orders = await salesModel.find({ user_email: email });
       res.json(orders);
     } catch (err) {
-      console.error(err);
+    
       res.status(500).json({ error: 'Something went wrong', details: err });
     }
   });
@@ -46,7 +46,7 @@ router.get(`/cart/orders/:email`, async (req, res) => {
   
     salesModel.findOneAndDelete({ paypalPaymentID: paypalID }, (err, data) => {
       if (err) {
-        console.error(err);
+     
         res.status(500).json({ message: 'An error occurred while deleting the sale.' });
       } else if (!data) {
         res.status(404).json({ message: 'Sale not found.' });

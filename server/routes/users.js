@@ -49,29 +49,9 @@ router.post(`/users/reset_user_collection`, (req, res) => {
   })
 })
 
-// router.post(`/users/register/:name/:surname/:email/:password/:gender`, (req, res) => {
-//   // If a user with this email does not already exist, then create new user
-//   usersModel.findOne({ email: req.params.email }, (uniqueError, uniqueData) => {
-//     if (uniqueData) {
-//       res.json({ errorMessage: `User already exists` })
-//     }
-//     else {
-//       bcrypt.hash(req.params.password, parseInt(process.env.PASSWORD_HASH_SALT_ROUNDS), (err, hash) => {
-//         usersModel.create({ name: req.params.name, surname: req.params.surname, email: req.params.email, password: hash, gender: req.params.gender, profilePhotoFilename: null }, (error, data) => {
-//           if (data) {
-//             const token = jwt.sign({ email: data.email, accessLevel: data.accessLevel }, process.env.JWT_PRIVATE_KEY, { algorithm: 'HS256', expiresIn: process.env.JWT_EXPIRY })
 
-//             res.json({ name: data.name, accessLevel: data.accessLevel, token: token, isLoggedIn: true, email: data.email })
-//           }
-//           else {
-//             console.log(error) // Add this line to log the error
-//             res.json({ errorMessage: `User was not registered` })
-//           }
-//         })
-//       })
-//     }
-//   })
-// })
+
+
 
 router.post(`/users/register/:name/:surname/:email/:password/:gender`, (req, res) => {
   // Validate input
@@ -374,24 +354,7 @@ router.delete('/users/delete-account/:email', (req, res) => {
   });
 });
 
-// router.get(`/users`, (req, res) => {
-//   console.log('req.user:', req.user); // Check the value of req.user
-//   // Check if the user is an admin
-//   if (req.user && req.user.accessLevel === process.env.ACCESS_LEVEL_ADMIN) {
-//     // Find all users
-//     usersModel.find({}, (error, data) => {
-//       if (data) {
-//         res.json(data)
-//       }
-//       else {
-//         res.json({ errorMessage: `Failed to get users` })
-//       }
-//     })
-//   }
-//   else {
-//     res.json({ errorMessage: `You do not have the required access level` })
-//   }
-// })
+
 
 router.get(`/users`, (req, res) => {
   usersModel.find({}, (error, data) => {
@@ -404,24 +367,7 @@ router.get(`/users`, (req, res) => {
   })
 })
 
-// router.delete(`/users/:userId`, (req, res) => {
-//   console.log('req.user:', req.user); // Check the value of req.user
-//   // Check if the user is an admin
-//   if (req.user && req.user.accessLevel === process.env.ACCESS_LEVEL_ADMIN) {
-//     // Find the user with the given ID and delete it
-//     usersModel.findOneAndDelete({_id: req.params.userId}, (error, data) => {
-//       if (data) {
-//         res.json(data)
-//       }
-//       else {
-//         res.json({ errorMessage: `Failed to delete user with ID ${req.params.userId}` })
-//       }
-//     })
-//   }
-//   else {
-//     res.json({ errorMessage: `You do not have the required access level` })
-//   }
-// })
+
 
 router.delete(`/users`, (req, res) => {
   const { userId, accessLevel } = req.body;

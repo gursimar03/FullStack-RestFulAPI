@@ -40,7 +40,7 @@ productsModel.deleteMany({}, (error, data) => {
         })  
 
     } else {
-        console.log('dataset not inserted')
+       res.json(error)
     }
 })
 
@@ -212,7 +212,7 @@ router.post('/payment/success/:productID/:productSize/:productQuantity', async (
             })
         })
     } catch (error) {
-        console.log(error)
+        res.status(500).json({ message: 'An error occurred while processing the payment.' })
     }
 })
 
@@ -227,8 +227,6 @@ router.put(`/product/return/:id/:size/:quantity`, (req, res) => {
     productQuantity = parseInt(productQuantity);
     productSize = parseInt(productSize);
  
-
-    console.log(productID, productQuantity, productSize)
     productsModel.findOne({ _id:productID}, (error, data) => {
 
         if (error) {

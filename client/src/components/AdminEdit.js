@@ -30,7 +30,7 @@ class AdminEdit extends Component {
     axios.get(`/products/${productId}`)
     
       .then(response => {
-        console.log(response);
+        
         this.setState({
           brand: response.brand,
           name: response.name,
@@ -46,7 +46,7 @@ class AdminEdit extends Component {
         });
       })
       .catch(error => {
-        console.log(error);
+       
       });
   }
 
@@ -92,10 +92,10 @@ class AdminEdit extends Component {
     };
     axios.put(`/products/${this.props.match.params._id}`, updatedProduct)
       .then(response => {
-        console.log(response);
+       
       })
       .catch(error => {
-        console.log(error);
+ 
       });
   };
 
