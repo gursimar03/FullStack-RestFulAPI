@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Link } from "react-router-dom"
+import { Link, Navigate as Redirect } from "react-router-dom"
 
 import axios from "axios"
 import { SERVER_HOST } from "../config/global_constants";
@@ -17,12 +17,14 @@ import emailjs from 'emailjs-com';
 
 
 class Cart extends React.Component {
+    
     constructor(props) {
         super(props);
         this.state = {
             cart: [], //the users cart from the database
             productsInCart: [],
             total_price: 0,
+            redirectToOrders: false,
         }
     }
 
@@ -53,6 +55,21 @@ class Cart extends React.Component {
     // onApprove = paymentData =>
     // {      
 
+        }
+
+     reduceProductQuantity = async (productId, size, quantityToReduce) => {
+            try {
+
+                localStorage.setItem('checkout',`${SERVER_HOST}/payment/success/${productId}/${size}/${quantityToReduce}`) 
+              const response = await axios.post(`${SERVER_HOST}/payment/success/${productId}/${size}/${quantityToReduce}`);
+          
+              console.log(response.data.message);
+              localStorage.setItem('cart', JSON.stringify(response));
+            } catch (err) {
+              console.error(err);
+            }
+          }
+        
 
     //    axios.post(`${SERVER_HOST}/cart/checkout`, paymentData).then(res => {
     //           console.log(res)
@@ -64,6 +81,10 @@ class Cart extends React.Component {
         const totalPrice = parseFloat(
             this.state.productsInCart.reduce((a, b) => a + b.product_price * b.product_quantity, 0)
         ).toFixed(2);
+
+        this.state.productsInCart.forEach((product) => {
+            this.reduceProductQuantity(product._id, product.product_size, product.product_quantity);
+          });
 
         const order = await actions.order.capture();
 
@@ -92,9 +113,11 @@ class Cart extends React.Component {
                         .then((res) => {
                             console.log(res);
                             //reload the page
-                            setTimeout(() => {
-                                window.location.reload();
-                            }, 3000);
+                            // setTimeout(() => {
+                            //     this.setState({ redirectToOrders: true })
+                            // }, 3000);
+                            //windows.location reload to /success
+                            window.location.replace("http://localhost:3000/success")
                         })
                         .catch((err) => {
                             console.log(err);
@@ -109,6 +132,7 @@ class Cart extends React.Component {
 
 
 
+
     onError = errorData => {
         console.log("PayPal payment error")
     }
@@ -119,7 +143,11 @@ class Cart extends React.Component {
     }
 
 
+
     componentDidMount() {
+
+
+
         if (this.fetchCart) {
             let total_price = 0;
             this.state.cart.map((product) => {
@@ -131,6 +159,10 @@ class Cart extends React.Component {
             })
 
             return;
+        }
+
+        if(this.state.redirectToOrders) {
+            return <Redirect to="/success" />
         }
 
 
@@ -199,7 +231,7 @@ class Cart extends React.Component {
                 }
             })
             .catch(err => console.log(err));
-    }
+    };
 
 
     render() {
@@ -247,7 +279,8 @@ class Cart extends React.Component {
                         </p>
                     </div>
                     <div className="cart-page-checkout-button">
-                        <h1>Paypal Button Here</h1>
+
+
                         <PayPalScriptProvider options={{ currency: "EUR", "client-id": SANDBOX_CLIENT_ID }}>
                             <PayPalButtons style={{ layout: "horizontal" }} createOrder={this.createOrder} onApprove={this.onApprove} onError={this.onError} onCancel={this.onCancel} />
                         </PayPalScriptProvider>
