@@ -55,7 +55,7 @@ class Cart extends React.Component {
     // onApprove = paymentData =>
     // {      
 
-        }
+        
 
      reduceProductQuantity = async (productId, size, quantityToReduce) => {
             try {
