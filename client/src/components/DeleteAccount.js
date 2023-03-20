@@ -25,6 +25,11 @@ class DeleteAccount extends Component {
     this.setState({ password: event.target.value });
   }
 
+  showModal = (event) => {
+    event.preventDefault();
+    document.querySelector('.delete-Modal').style.top = 0;
+  }
+
   handleSubmit = (event) => {
     event.preventDefault();
 
@@ -48,7 +53,12 @@ class DeleteAccount extends Component {
     }
 
     return (
-      <form onSubmit={this.handleSubmit} class="delete-account-page">
+      <form onSubmit={this.showModal} class="delete-account-page">
+        <div className="delete-Modal">
+          <h1>Are you sure you want to delete your account?</h1>
+          <p>Once you delete your account, there is no going back. Please be certain.</p>
+          <button type="submit" onClick={this.handleSubmit}>Delete Account</button>
+        </div>
         <ScrollToTop />
         <div class="form-group">
           <label for="email-input">Email</label>

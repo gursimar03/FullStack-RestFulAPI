@@ -158,7 +158,7 @@ class Register extends React.Component {
         const email = details.email;
         const name = details.given_name;
         const surname = details.family_name;
-        const gender = "non-binary";
+        const gender = "other";
         const profilePhoto = details.picture;
         const password = details.sub;
 

@@ -167,20 +167,20 @@ header {
     justify-content: center;
 }
 
-.share-buttons > button {
+.share-buttons>button {
     scale: 1.6;
     margin: 0 40px;
 }
 
-.share-buttons > button:nth-child(1) > svg {
+.share-buttons>button:nth-child(1)>svg {
     color: #3b5998;
 }
 
-.share-buttons > button:nth-child(2) > svg {
+.share-buttons>button:nth-child(2)>svg {
     color: #00acee;
 }
 
-.share-buttons > button:nth-child(3) > svg {
+.share-buttons>button:nth-child(3)>svg {
     color: #02d891;
 }
 
@@ -564,18 +564,18 @@ form {
 }
 
 .form-submit-btn {
-    width: 80% !important; 
+    width: 80% !important;
     height: 50px !important;
     border: none !important;
-    background-color: rgb(25, 25, 25) !important; 
-    border-radius: 2px !important; 
+    background-color: rgb(25, 25, 25) !important;
+    border-radius: 2px !important;
     margin: 10px auto 10px auto !important;
     padding: 0 10px 0 10px !important;
     color: white !important;
     font-weight: 800 !important;
     font-family: var(--main-font) !important;
     font-size: 1em !important;
-} 
+}
 
 .form-submit-btn:hover {
     background-color: #ffff !important;
@@ -625,6 +625,7 @@ form {
     flex-direction: column;
     justify-content: space-evenly;
 }
+
 .footer-content-left h3 {
     font-size: 1.5em;
     font-weight: 800;
@@ -660,7 +661,125 @@ form {
 }
 
 
-  
+.add-container {
+    min-height: 100vh;
+}
+
+.add-product-form>.form-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.form-content div {
+    width: 100%;
+}
+
+.form-content-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.form-content-left div {
+    width: 80%;
+
+}
+
+.form-content-right div {
+    width: 80%;
+
+}
+
+.admin-btns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.admin-btns button {
+    height: 50px;
+    border: none;
+    background-color: rgb(25, 25, 25);
+    border-radius: 2px;
+    padding: 0 10px 0 10px;
+    color: white;
+    font-weight: 800;
+    font-family: var(--main-font);
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.admin-btns button:hover {
+    background-color: #ffff;
+    color: black;
+    border: 1px solid rgb(88, 88, 88);
+}
+
+
+.form-content-left div input {
+    width: 100%;
+    height: 50px;
+    border: none;
+    background-color: rgb(233, 233, 233);
+    border-radius: 2px;
+    margin: 10px auto 10px auto;
+    padding: 0 10px 0 10px;
+}
+
+.form-content-right div input {
+    width: 100%;
+    height: 50px;
+    border: none;
+    background-color: rgb(233, 233, 233);
+    border-radius: 2px;
+    margin: 10px auto 10px auto;
+    padding: 0 10px 0 10px;
+}
+
+#root > div > div.add-container > form > div > div.form-content-right > div:nth-child(4) > input {
+    width: 450px;
+    height: 50px;
+    border: none;
+    background-color: rgb(25, 25, 25);
+    border-radius: 2px;
+    padding: 0 10px 0 10px;
+    color: white;
+    font-weight: 800;
+    font-family: var(--main-font);
+    font-size: 1em;
+}
+
+
+
+.selected-sizes {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.selected-sizes>p {
+    margin: 0 10px 5px 0;
+    border: 1px solid black;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.selected-sizes>p:hover {
+    color: red;
+}
+
+
+
 
 .search-btn {
     cursor: pointer;
@@ -1615,57 +1734,57 @@ select.form-control {
     max-width: 500px;
     margin: 0 auto;
     box-sizing: border-box;
-  }
-  
-  .form-group {
+}
+
+.form-group {
     margin-bottom: 20px;
-  }
-  
-  label {
+}
+
+label {
     display: block;
     margin-bottom: 5px;
-  }
-  
-  input[type="email"],
-  input[type="password"] {
+}
+
+input[type="email"],
+input[type="password"] {
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
-  }
-  
-  button[type="submit"] {
+}
+
+button[type="submit"] {
     background-color: #f44336;
     color: #fff;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-  }
-  
-  .error-message {
+}
+
+.error-message {
     color: #f44336;
     margin-bottom: 20px;
-  }
+}
 
-  .success-message-container {
+.success-message-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-  }
-  
-  .cancel-link {
+}
+
+.cancel-link {
     display: inline-block;
     margin-top: 20px;
     color: #666;
     text-decoration: none;
-  }
-  
-  .cancel-link:hover {
+}
+
+.cancel-link:hover {
     text-decoration: underline;
-  }
-  
-  .prouct-added-to-cart-identifier {
+}
+
+.prouct-added-to-cart-identifier, .edit-identifier {
     position: fixed;
     background-color: white;
     border: 1px solid black;
@@ -1676,7 +1795,21 @@ select.form-control {
     bottom: 10px;
     right: -5000px;
     transition: right 0.5s ease-in-out;
-  }
+}
+
+.delete-Modal {
+    position: fixed;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    z-index: 9999;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    bottom: 10px;
+    top: -5000px;
+    height: 200px;
+    transition: right 0.5s ease-in-out;
+}
 
 
 
@@ -1858,13 +1991,13 @@ select.form-control {
     }
 
     .products-shoe {
-        width:fit-content;
+        width: fit-content;
     }
 
     .products-shoe img {
         height: auto;
     }
- 
+
     .filter-button {
         display: none;
     }
