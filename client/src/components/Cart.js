@@ -52,10 +52,6 @@ class Cart extends React.Component {
 
 
 
-    // onApprove = paymentData =>
-    // {      
-
-        }
 
      reduceProductQuantity = async (productId, size, quantityToReduce) => {
             try {
@@ -71,11 +67,6 @@ class Cart extends React.Component {
           }
         
 
-    //    axios.post(`${SERVER_HOST}/cart/checkout`, paymentData).then(res => {
-    //           console.log(res)
-    //      })
-
-    // }
 
     onApprove = async (paymentData, actions) => {
         const totalPrice = parseFloat(
@@ -127,9 +118,10 @@ class Cart extends React.Component {
             .catch((err) => {
                 console.log(err);
             });
-    };
+        }
 
 
+ 
 
 
 
