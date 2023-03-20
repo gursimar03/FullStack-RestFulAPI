@@ -374,4 +374,74 @@ router.delete('/users/delete-account/:email', (req, res) => {
   });
 });
 
+// router.get(`/users`, (req, res) => {
+//   console.log('req.user:', req.user); // Check the value of req.user
+//   // Check if the user is an admin
+//   if (req.user && req.user.accessLevel === process.env.ACCESS_LEVEL_ADMIN) {
+//     // Find all users
+//     usersModel.find({}, (error, data) => {
+//       if (data) {
+//         res.json(data)
+//       }
+//       else {
+//         res.json({ errorMessage: `Failed to get users` })
+//       }
+//     })
+//   }
+//   else {
+//     res.json({ errorMessage: `You do not have the required access level` })
+//   }
+// })
+
+router.get(`/users`, (req, res) => {
+  usersModel.find({}, (error, data) => {
+    if (data) {
+      res.json(data)
+    }
+    else {
+      res.json({ errorMessage: `Failed to get users` })
+    }
+  })
+})
+
+// router.delete(`/users/:userId`, (req, res) => {
+//   console.log('req.user:', req.user); // Check the value of req.user
+//   // Check if the user is an admin
+//   if (req.user && req.user.accessLevel === process.env.ACCESS_LEVEL_ADMIN) {
+//     // Find the user with the given ID and delete it
+//     usersModel.findOneAndDelete({_id: req.params.userId}, (error, data) => {
+//       if (data) {
+//         res.json(data)
+//       }
+//       else {
+//         res.json({ errorMessage: `Failed to delete user with ID ${req.params.userId}` })
+//       }
+//     })
+//   }
+//   else {
+//     res.json({ errorMessage: `You do not have the required access level` })
+//   }
+// })
+
+router.delete(`/users`, (req, res) => {
+  const { userId, accessLevel } = req.body;
+  // Check if the user is an admin
+  if (accessLevel === process.env.ACCESS_LEVEL_ADMIN) {
+    // Find the user with the given ID and delete it
+    usersModel.findOneAndDelete({_id: userId}, (error, data) => {
+      if (data) {
+        res.json(data)
+      }
+      else {
+        res.json({ errorMessage: `Failed to delete user with ID ${userId}` })
+      }
+    })
+  }
+  else {
+    res.json({ errorMessage: `You do not have the required access level` })
+  }
+})
+
+
+
 module.exports = router;
