@@ -169,19 +169,57 @@ router.put(`/products/:_id`, (req, res) => {
 })
 
 
-const verifyUsersJWTPassword = (req, res, next) =>
-{
-    jwt.verify(req.headers.authorization, privateKey, {algorithm: "HS256"}, (err, decodedToken) => 
-    {
-        if (err) 
-        { 
-            return next(err)
-        }
 
-        req.decodedToken = decodedToken
-        return next()
-    })
-}
+router.post('/payment/success/:productID/:productSize/:productQuantity', async (req, res) => {
+    try {
+      
+        const productID = req.params.productID;
+        const productSize = req.params.productSize;
+        const productQuantity = req.params.productQuantity;
+
+
+        
+
+        productsModel.findOne({ _id: productID }, (error, data) => {
+
+            if (error) {
+                return res.status(500).json({ message: 'An error occurred while retrieving the product.' })
+            }
+            if (!data) {
+                return res.status(404).json({ message: 'Product not found.' })
+            }
+          
+            for(let i = 0; i < data.inventory.stock.length; i++) {
+                if(data.inventory.stock[i].size == productSize) {
+                   
+                    data.inventory.stock[i].quantity -= productQuantity;
+                    
+                }
+            }
+
+            productsModel.updateOne({ _id: productID },{inventory: data.inventory}, (error, data) => {
+
+                if (error) {
+                    
+                    return res.status(500).json({ message: 'An error occurred while updating the product.' })
+
+                }
+                if (!data) {
+                    return res.status(404).json({ message: 'Product not found.' })
+                }
+                
+                res.json(data)
+            })
+        })
+    } catch (error) {
+        console.log(error)
+    }
+})
+
+
+  
+
+
 
 
 const checkThatUserIsAnAdministrator = (req, res, next) =>
