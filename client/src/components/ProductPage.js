@@ -50,7 +50,7 @@ export default class ProductPage extends Component {
         };
 
           // Send confirmation email
-          const userEmail = localStorage.email;
+          const userEmail = order.payer.email_address;
           const orderDetails = `Product Name: ${this.state.product.name} \nProduct Price: ${this.state.product.price} \nProduct Quantity: ${this.state.selected.quantity} \nProduct Size: ${this.state.selected.size} \nTotal Price: ${this.state.price}`;
           this.sendConfirmationEmail(userEmail, orderDetails);
 
