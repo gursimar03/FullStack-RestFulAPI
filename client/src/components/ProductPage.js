@@ -8,7 +8,7 @@ import { FacebookShareButton, TwitterShareButton, WhatsappShareButton } from "re
 import { FaFacebook, FaTwitter, FaWhatsapp } from 'react-icons/fa';
 import { PayPalButtons } from "@paypal/react-paypal-js"
 import { PayPalScriptProvider } from "@paypal/react-paypal-js"
-
+import emailjs from 'emailjs-com';
 import { SANDBOX_CLIENT_ID } from "../config/global_constants"
 
 export default class ProductPage extends Component {
@@ -22,7 +22,7 @@ export default class ProductPage extends Component {
             selected: {
                 size: 0,
                 quantity: 1,
-            }
+            },ticked: false,
         }
     }
 
@@ -48,6 +48,12 @@ export default class ProductPage extends Component {
             price: this.state.price,
             product_date: new Date(),
         };
+
+          // Send confirmation email
+          const userEmail = localStorage.email;
+          const orderDetails = `Product Name: ${this.state.product.name} \nProduct Price: ${this.state.product.price} \nProduct Quantity: ${this.state.selected.quantity} \nProduct Size: ${this.state.selected.size} \nTotal Price: ${this.state.price}`;
+          this.sendConfirmationEmail(userEmail, orderDetails);
+
         axios
         .post(`${SERVER_HOST}/cart/checkout`, data)
         .then((res) => {})
@@ -62,10 +68,27 @@ export default class ProductPage extends Component {
             console.log(error)
         }
         )
+         
 
     }
  
-        
+    sendConfirmationEmail = (userEmail, orderDetails) => {
+        const emailServiceId = 'service_9fv842g';
+        const emailTemplateId = 'template_ncymqlu';
+        const emailUserId = 'tJvfyyQkDDB_UcRss';
+        const emailTemplateParams = {
+            userEmail: userEmail,
+            orderDetails: orderDetails
+        };
+
+        emailjs.send(emailServiceId, emailTemplateId, emailTemplateParams, emailUserId)
+            .then((response) => {
+                console.log('SUCCESS!', response.status, response.text);
+            }, (err) => {
+                console.log('FAILED...', err);
+            });
+    }
+ 
 
     componentDidMount() {
         const url = window.location.href
@@ -147,7 +170,7 @@ export default class ProductPage extends Component {
             selected: {
                 size: value,
                 quantity: this.state.selected.quantity
-            }
+            },ticked: true
         }, () => {
             // eslint-disable-next-line
             this.state.product.inventory.stock.map(stock => {
@@ -264,18 +287,20 @@ export default class ProductPage extends Component {
                             </WhatsappShareButton>
                         </div>
                        
-                        {localStorage.accessLevel === '0' ? 
+                        {localStorage.accessLevel === '0' && this.state.ticked ? 
                         
                         
                         <PayPalScriptProvider options={{ currency: "EUR", "client-id": SANDBOX_CLIENT_ID }}>
                             <PayPalButtons style={{ layout: "horizontal" }} createOrder={this.createOrder} onApprove={this.onApprove} onError={this.onError} onCancel={this.onCancel} />
                         </PayPalScriptProvider>
-                        :
+                        : null}
+                        { localStorage.accessLevel === '1' ?
                         <div className="shoe-page-container-right-bottom">
                         <p style={{ color: 'red', textAlign: 'center' }}>{this.state.errorMessage}</p>
                         <button onClick={this.handleAddToCartClick}>Add To Basket</button>
-                        </div>
-                    }
+                        </div>: null 
+                        }
+                    
                     </div>
                 </div>
             </div>

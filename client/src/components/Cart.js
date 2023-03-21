@@ -51,14 +51,6 @@ class Cart extends React.Component {
     }
 
 
-
-
-
-
-
-        
-
-
     onApprove = async (paymentData, actions) => {
         const totalPrice = parseFloat(
             this.state.productsInCart.reduce((a, b) => a + b.product_price * b.product_quantity, 0)
