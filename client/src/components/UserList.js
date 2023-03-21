@@ -12,7 +12,7 @@ class UserList extends Component {
   }
 
   componentDidMount() {
-    console.log("token: " + localStorage.token)
+    
     axios
       .get(`${SERVER_HOST}/users`, { headers: { authorization: localStorage.token } })
       .then((res) => {
@@ -21,6 +21,11 @@ class UserList extends Component {
       .catch((err) => {
         console.log(err);
       });
+
+      axios.get(`${SERVER_HOST}/accessLevel/${localStorage.email}`).then(res => {
+        this.setState({ level: res.data })
+        
+    })  
   }
 
   //   handleDelete = (userId) => {
@@ -85,47 +90,44 @@ class UserList extends Component {
 
 
   render() {
-    if (this.state.users.length === 0) {
+    
+    if(this.state.level >=2){
       return (
         <div>
-          <p>Loading...</p>
+        <div className="delete-Modal">
+          <h1>Are you sure you want to delete this User?</h1>
+          <p>Once you delete this User, there is no going back. Please be certain.</p>
+          <button type="submit" onClick={this.handleSub}>Delete User</button>
+          <button type="submit" onClick={this.hideModal}>Cancel</button>
         </div>
-      );
-    } else {
-      return (
-        <div>
-          <div className="delete-Modal">
-            <h1>Are you sure you want to delete this User?</h1>
-            <p>Once you delete this User, there is no going back. Please be certain.</p>
-            <button type="submit" onClick={this.handleSub}>Delete User</button>
-            <button type="submit" onClick={this.hideModal}>Cancel</button>
-          </div>
-          <h1>User List</h1>
-          <table>
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Actions</th>
+        <h1>User List</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {this.state.users.map((user) => (
+              <tr key={user._id}>
+                <td>{user.name}</td>
+                <td>{user.email}</td>
+                <td>
+                  <button value={user._id} onClick={this.showModal}>Delete User</button>
+                  <button onClick={() => this.handleViewOrderHistory(user.email)}>View Order History</button>
+                </td>
               </tr>
-            </thead>
-            <tbody>
-              {this.state.users.map((user) => (
-                <tr key={user._id}>
-                  <td>{user.name}</td>
-                  <td>{user.email}</td>
-                  <td>
-                    <button value={user._id} onClick={this.showModal}>Delete User</button>
-                    <button onClick={() => this.handleViewOrderHistory(user.email)}>View Order History</button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      );
+            ))}
+          </tbody>
+        </table>
+      </div>
+      )
     }
   }
-}
+  }
 
 export default UserList;
+
+

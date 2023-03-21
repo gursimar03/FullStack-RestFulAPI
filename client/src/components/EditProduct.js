@@ -85,7 +85,7 @@ class EditProduct extends Component {
             productAddedToCartIdentifier.style.right = "-5000px";
         }, 2000)
         setTimeout(() => {
-            window.location.replace("http://localhost:4000/admin");
+            window.location.replace("http://localhost:3000/admin");
         }, 4000)
         
     }

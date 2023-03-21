@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { SERVER_HOST } from "../config/global_constants"
 
 class AdminEdit extends Component {
   constructor(props) {
@@ -48,6 +49,10 @@ class AdminEdit extends Component {
       .catch(error => {
        
       });
+
+      axios.get(`${SERVER_HOST}/accessLevel/${this.state.email}`).then(res => {
+        this.setState({ level: res.data })
+    })  
   }
 
   handleChange = event => {
@@ -101,7 +106,17 @@ class AdminEdit extends Component {
 
   render() {
     const {  name, description, age, type, color, productImage, images, sizes, price, inventory } = this.state.product;
+
+    if(this.state.level < 2){
+        
+      return(
+        <div>
+        <h1>Access Denied</h1>
+      </div>
+      )
+  } else{
     return (
+      
       <div>
         <form onSubmit={this.handleSave}>
           <label htmlFor="brand">Brand:</label>
@@ -169,6 +184,8 @@ class AdminEdit extends Component {
       </div>
     );
   }
+  
+}
 }
 
 export default AdminEdit;

@@ -6,8 +6,10 @@ import { Navigate as Redirect } from "react-router-dom";
 import ScrollToTop from "../ScrollToTop";
 import { FacebookShareButton, TwitterShareButton, WhatsappShareButton } from "react-share";
 import { FaFacebook, FaTwitter, FaWhatsapp } from 'react-icons/fa';
+import { PayPalButtons } from "@paypal/react-paypal-js"
+import { PayPalScriptProvider } from "@paypal/react-paypal-js"
 
-
+import { SANDBOX_CLIENT_ID } from "../config/global_constants"
 
 export default class ProductPage extends Component {
     constructor(props) {
@@ -24,6 +26,46 @@ export default class ProductPage extends Component {
         }
     }
 
+
+    createOrder = (data, actions) => 
+    {
+        let price = this.state.product.price * this.state.selected.quantity
+        let roundedPrice = Math.ceil(price);
+        this.setState({price: roundedPrice})
+        return actions.order.create({purchase_units:[{amount:{value:roundedPrice}}]})
+    }
+    
+    
+    onApprove = async (paymentData, actions)  =>
+    {           const url = window.location.href
+        const id = url.substring(url.lastIndexOf('/') + 1)
+        
+        const order = await actions.order.capture();
+        const data = {
+            paypalPaymentID: order.id,
+            user_email: order.payer.email_address,
+            product_array: this.state.product,
+            price: this.state.price,
+            product_date: new Date(),
+        };
+        axios
+        .post(`${SERVER_HOST}/cart/checkout`, data)
+        .then((res) => {})
+        
+
+        axios.post(`${SERVER_HOST}/payment/success/${id}/${this.state.selected.size}/${this.state.selected.quantity}`,).then(res => {
+            setTimeout(() => {
+                window.location.replace("http://localhost:3000/success")
+            }, 3000);
+        }
+        ).catch((error) => {
+            console.log(error)
+        }
+        )
+
+    }
+ 
+        
 
     componentDidMount() {
         const url = window.location.href
@@ -221,10 +263,19 @@ export default class ProductPage extends Component {
                                 <FaWhatsapp size={24} title="Share on Whatsapp"/>
                             </WhatsappShareButton>
                         </div>
+                       
+                        {localStorage.accessLevel === '0' ? 
+                        
+                        
+                        <PayPalScriptProvider options={{ currency: "EUR", "client-id": SANDBOX_CLIENT_ID }}>
+                            <PayPalButtons style={{ layout: "horizontal" }} createOrder={this.createOrder} onApprove={this.onApprove} onError={this.onError} onCancel={this.onCancel} />
+                        </PayPalScriptProvider>
+                        :
                         <div className="shoe-page-container-right-bottom">
-                            <p style={{ color: 'red', textAlign: 'center' }}>{this.state.errorMessage}</p>
-                            <button onClick={this.handleAddToCartClick}>Add To Basket</button>
+                        <p style={{ color: 'red', textAlign: 'center' }}>{this.state.errorMessage}</p>
+                        <button onClick={this.handleAddToCartClick}>Add To Basket</button>
                         </div>
+                    }
                     </div>
                 </div>
             </div>

@@ -143,7 +143,7 @@ class Register extends React.Component {
                         localStorage.profilePhoto = res.data.profilePhotoFilename
 
                         // we can change this to redirect to profile page
-                        window.location.replace(`http://localhost:4000/`)
+                        window.location.replace(`http://localhost:3000/`)
                     }
                 }
                 else {
@@ -174,7 +174,7 @@ class Register extends React.Component {
                         localStorage.email = res.data.email
                         localStorage.profilePhoto = profilePhoto;
 
-                        window.location.replace(`http://localhost:4000/`)
+                        window.location.replace(`http://localhost:3000/`)
                     }
                 } else {
                     console.log("Registration failed")

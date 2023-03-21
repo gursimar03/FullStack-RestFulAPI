@@ -78,7 +78,7 @@ class Login extends React.Component {
                         localStorage.isLoggedIn = res.data.isLoggedIn
                         localStorage.profilePhoto = res.data.profilePhoto
 
-                        window.location.replace(`http://localhost:4000/`)
+                        window.location.replace(`http://localhost:3000/`)
                     }
                 }
                 else {

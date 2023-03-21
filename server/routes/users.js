@@ -49,8 +49,16 @@ router.post(`/users/reset_user_collection`, (req, res) => {
   })
 })
 
+//get access level
 
-
+router.get(`/accessLevel/:email`, (req, res) => {
+  usersModel.findOne({ email: req.params.email }, (error, data) => {
+    if (data) {
+      res.json(data.accessLevel)
+      
+    }
+  })
+})
 
 
 router.post(`/users/register/:name/:surname/:email/:password/:gender`, (req, res) => {

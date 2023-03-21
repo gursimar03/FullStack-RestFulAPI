@@ -21,6 +21,10 @@ class AllProducts extends Component {
         axios.get(`${SERVER_HOST}/products`).then(res => {
             this.setState({ products: res.data })
         })
+
+        axios.get(`${SERVER_HOST}/accessLevel/${this.state.email}`).then(res => {
+            this.setState({ level: res.data })
+        })  
     }
 
     handleSubmit = (e) => {
@@ -86,13 +90,19 @@ class AllProducts extends Component {
 
 
     render() {
-        if (this.state.products.length === 0) {
+        if (this.state.products.length === 0 ) {
             return (
                 <div>
                     <p>Loading...</p>
                 </div>
             )
-        } else {
+        }else if(this.state.level < 2){
+        
+            return(
+                <div>Page Not Found </div>
+            )
+        } 
+        else {
             return (
                 <div>
                     <div className="delete-Modal">

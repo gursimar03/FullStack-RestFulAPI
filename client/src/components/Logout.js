@@ -41,6 +41,7 @@ export default class Logout extends Component
                 else
                 { 
                     console.log("User logged out")
+                    window.location.replace("/")
                     this.handleLogoutLocalStorage()
                 }
             }

@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { SERVER_HOST } from "./config/global_constants"
-
+// import nodemailer from "nodemailer";
 
 //Icon imports
 import { FaSistrix } from 'react-icons/fa';
@@ -90,6 +90,19 @@ class App extends React.Component {
             .catch(err => {
                 console.log(err)
             })
+
+           if(localStorage.isLoggedIn === "true"){
+            axios.get(`${SERVER_HOST}/accessLevel/${localStorage.email}`)
+            .then(res => {
+                this.setState({level: res.data})
+            })
+            .catch(err => {
+                console.log(err)
+            })
+           }else{
+                this.setState({level: 0})
+           }
+            
     }
 
     handleCartSize = (e) => {
@@ -149,6 +162,37 @@ class App extends React.Component {
     }
 
    
+
+    //  handleContactSubmit = (event) => {
+    //     event.preventDefault();
+      
+    //     const name = document.getElementById("name").value;
+    //     const email = document.getElementById("email").value;
+    //     const message = document.getElementById("message").value;
+      
+    //     const transporter = nodemailer.createTransport({
+    //       service: "gmail",
+    //       auth: {
+    //         user: "notnike89@gmail.com",
+    //         pass: "K#PBs34mrEkRYdd5",
+    //       },
+    //     });
+      
+    //     const mailOptions = {
+    //       from: email,
+    //       to: "notnike89@gmail.com",
+    //       subject: `New message from ${name}`,
+    //       text: message,
+    //     };
+      
+    //     transporter.sendMail(mailOptions, function (error, info) {
+    //       if (error) {
+    //         console.log(error);
+    //       } else {
+    //         console.log("Email sent: " + info.response);
+    //       }
+    //     });
+    //   };
     
 
     render() {
@@ -175,12 +219,12 @@ class App extends React.Component {
                                         :
                                         <VscAccount className="account-icon" />
                                 }</Link> : null}
-
+        
                                 <div id="dropdown-content">
                                     <Link to={'/profile'}>Profile</Link>
                                     <Link to="/orders">Orders</Link>
-                                    {localStorage.accessLevel === '2' ? <Link to="/admin"> Admin Dashboard </Link> : null}
-                                    {localStorage.accessLevel === '2' ? <Link to="/viewusers">View Users</Link> : null}
+                                    {this.state.level >= 2 ? <Link to="/admin"> Admin Dashboard </Link> : null}
+                                    {this.state.level >= 2 ? <Link to="/viewusers">View Users</Link> : null}
 
 
                                     <Logout refresh={this.reloadPageAfterLogOut} />
@@ -339,7 +383,7 @@ class App extends React.Component {
 
                                         <textarea className="form-input" id="message" rows="3" placeholder="Enter your message" required={true} ></textarea>
                                     </div>
-                                    <button type="submit" className="form-submit-btn">Submit</button>
+                                    <button type="submit"className="form-submit-btn">Submit</button>
                                 </form>
                             </div>
                         </div>

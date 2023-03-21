@@ -25,21 +25,28 @@ class AdminOrders extends Component {
             });
           }
         })
-        
+        axios.get(`${SERVER_HOST}/accessLevel/${this.state.email}`).then(res => {
+          this.setState({ level: res.data })
+      })  
    
   }
   
   render() {
     const { orders } = this.state;
 
-    if (orders.length < 1) {
-      return (
-        <div className="cart">
-          <h3>The User has  no orders</h3>
-        </div>
-      );
-    }
+    
 
+    if(this.state.level >=2){
+      if (orders.length < 1) {
+        return (
+          <div className="cart">
+            <h3>The User has  no orders</h3>
+          </div>
+        );
+
+        
+      }else{
+        
     return (
       <div className="cart-page-container">
         <div className="cart-page-items">
@@ -89,6 +96,15 @@ class AdminOrders extends Component {
         </div>
       </div>
     );
+      }
+    }else{
+      return(
+        <div>
+          <h1>Access Denied</h1>
+        </div>
+      )
+    }
+
   }
 }
 
